@@ -67,9 +67,7 @@ new_order = [
     "productos",     # 14. Catálogo
     "servicios",     # 15. Servicios
     "emporia-eco",   # 16. Ecosistema Emporia
-    "coverage",      # 17. Cobertura geográfica
-    "gallery-sec",   # 18. Galería
-    "testimonials",  # 19. Testimonios
+    "testimonials",  # 17. Testimonios
     "faq",           # 20. FAQ
     "cta-sec",       # 21. CTA final
 ]
