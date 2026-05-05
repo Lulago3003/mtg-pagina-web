@@ -1798,20 +1798,90 @@ html{scroll-behavior:smooth}
 .product-result-banner.show{display:block}
 @keyframes prb-in{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 .prb-inner{
-  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
   background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(37,99,235,.06));
   border:1px solid rgba(245,158,11,.35);
   border-left:4px solid var(--mtg-orange);
-  border-radius:12px;
-  padding:16px 20px;
+  border-radius:14px;
+  padding:14px 18px;
   position:relative;
 }
+.prb-image{
+  width:120px;height:90px;
+  border-radius:10px;overflow:hidden;flex-shrink:0;
+  position:relative;
+  background:#0b1e4d;
+  box-shadow:0 8px 24px rgba(0,0,0,.3);
+}
+.prb-image img{width:100%;height:100%;object-fit:cover;display:block}
+.prb-image::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,transparent 50%,rgba(245,158,11,.18));
+  pointer-events:none;
+}
 .prb-icon{
-  width:44px;height:44px;border-radius:10px;
+  width:42px;height:42px;border-radius:10px;
   background:var(--grad-warm);
   display:flex;align-items:center;justify-content:center;
   color:#fff;flex-shrink:0;
   box-shadow:0 6px 20px var(--mtg-glow);
+}
+@media(max-width:680px){
+  .prb-image{width:100%;height:140px}
+  .prb-icon{display:none}
+}
+
+/* Lista del catálogo con thumbnails */
+#catalogProducts a.cat-prod-item{
+  display:grid;
+  grid-template-columns:32px 56px 1fr 20px;
+  gap:12px;align-items:center;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;
+  margin-bottom:8px;
+  background:rgba(255,255,255,.03);
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+  text-decoration:none;
+  color:rgba(255,255,255,.85);
+}
+#catalogProducts a.cat-prod-item:hover{
+  background:rgba(245,158,11,.08);
+  border-color:rgba(245,158,11,.4);
+  transform:translateX(4px);
+  color:#fff;
+}
+#catalogProducts a.cat-prod-item .cat-prod-num{
+  font-size:.72rem;font-weight:800;
+  color:rgba(245,158,11,.7);letter-spacing:.05em;
+  font-family:var(--heading,'Poppins',sans-serif);
+}
+#catalogProducts a.cat-prod-item .cat-prod-thumb{
+  width:56px;height:42px;border-radius:6px;overflow:hidden;
+  background:#0b1e4d;flex-shrink:0;
+  position:relative;
+}
+#catalogProducts a.cat-prod-item .cat-prod-thumb img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .35s ease;
+}
+#catalogProducts a.cat-prod-item:hover .cat-prod-thumb img{transform:scale(1.08)}
+#catalogProducts a.cat-prod-item .cat-prod-name{
+  font-size:.92rem;font-weight:600;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+#catalogProducts a.cat-prod-item .cat-prod-arrow{
+  color:rgba(245,158,11,.6);
+  transition:transform .25s ease;
+}
+#catalogProducts a.cat-prod-item:hover .cat-prod-arrow{
+  color:var(--mtg-orange);
+  transform:translateX(3px);
+}
+@media(max-width:520px){
+  #catalogProducts a.cat-prod-item{grid-template-columns:28px 44px 1fr;gap:10px;padding:8px 10px}
+  #catalogProducts a.cat-prod-item .cat-prod-thumb{width:44px;height:34px}
+  #catalogProducts a.cat-prod-item .cat-prod-arrow{display:none}
 }
 .prb-content{flex:1;min-width:0}
 .prb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--mtg-orange);margin-bottom:2px}
@@ -1827,17 +1897,21 @@ html{scroll-behavior:smooth}
 .prb-close:hover{color:#fff}
 /* Producto resaltado en la lista */
 #catalogProducts a.highlighted{
-  background:rgba(245,158,11,.12) !important;
-  border-color:rgba(245,158,11,.5) !important;
+  background:linear-gradient(90deg,rgba(245,158,11,.18),rgba(245,158,11,.06)) !important;
+  border-color:rgba(245,158,11,.65) !important;
   color:#fff !important;
-  font-weight:800;
-  box-shadow:0 4px 16px rgba(245,158,11,.15);
+  box-shadow:0 6px 24px rgba(245,158,11,.22);
+  transform:translateX(4px);
 }
-#catalogProducts a.highlighted span{
-  background:var(--grad-warm);
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;
+#catalogProducts a.highlighted .cat-prod-num,
+#catalogProducts a.highlighted .cat-prod-arrow{color:var(--mtg-orange) !important}
+#catalogProducts a.highlighted .cat-prod-name{font-weight:800}
+#catalogProducts a.highlighted::before{
+  content:'';position:absolute;left:-4px;top:0;bottom:0;width:3px;
+  background:var(--grad-warm);border-radius:2px;
+  box-shadow:0 0 12px var(--mtg-glow);
 }
+#catalogProducts a.highlighted{position:relative}
 
 /* ── Respeto a usuarios con motion reduced ── */
 @media(prefers-reduced-motion:reduce){
@@ -4211,6 +4285,42 @@ html{scroll-behavior:smooth}
      JS
 ═══════════════════════════════════════════════════════════ -->
 <script>
+/* ═══ IMÁGENES DE CATÁLOGO — por categoría y por producto destacado ═══ */
+const CATEGORY_IMAGES={
+  fibra:'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&auto=format&fit=crop&q=80',
+  rf:'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&auto=format&fit=crop&q=80',
+  infra:'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80',
+  dc:'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80',
+  monitor:'https://images.unsplash.com/photo-1551808525-51a94da548ce?w=600&auto=format&fit=crop&q=80',
+  energia:'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&auto=format&fit=crop&q=80',
+  svc:'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=600&auto=format&fit=crop&q=80'
+};
+const PRODUCT_IMAGES={
+  'OTDR · Reflectómetro':'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&auto=format&fit=crop&q=80',
+  'Fusionadoras de fibra':'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=80',
+  'Cables de fibra óptica':'https://images.unsplash.com/photo-1558346547-4439467bd1d5?w=600&auto=format&fit=crop&q=80',
+  'Patch Cords':'https://images.unsplash.com/photo-1551808525-51a94da548ce?w=600&auto=format&fit=crop&q=80',
+  'ODF · Distribuidores Ópticos':'https://images.unsplash.com/photo-1597733336794-12d05021d510?w=600&auto=format&fit=crop&q=80',
+  'Antenas RF':'https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=600&auto=format&fit=crop&q=80',
+  'Sistemas DAS':'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&auto=format&fit=crop&q=80',
+  'Repetidores de señal':'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80',
+  'Torres de telecomunicaciones':'https://images.unsplash.com/photo-1545566239-0b51c11dad58?w=600&auto=format&fit=crop&q=80',
+  'Racks abiertos y cerrados':'https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?w=600&auto=format&fit=crop&q=80',
+  'Gabinetes indoor y outdoor':'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&auto=format&fit=crop&q=80',
+  'KHIPU Micro DC':'https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=600&auto=format&fit=crop&q=80',
+  'Data Center modular indoor y outdoor':'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80',
+  'Cableado estructurado Cat 6A / Cat 7':'https://images.unsplash.com/photo-1551808525-51a94da548ce?w=600&auto=format&fit=crop&q=80',
+  'PDUs, UPS y gestión de cables':'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&auto=format&fit=crop&q=80',
+  'Emporia Vue 3':'https://images.unsplash.com/photo-1591197172062-c718f82aba20?w=600&auto=format&fit=crop&q=80',
+  'Smart Plugs Emporia':'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80',
+  'Cargador EV Nivel 2':'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&auto=format&fit=crop&q=80',
+  'Plataforma N-Test':'https://images.unsplash.com/photo-1551808525-51a94da548ce?w=600&auto=format&fit=crop&q=80'
+};
+function getProductImage(item){
+  if(!item)return CATEGORY_IMAGES.fibra;
+  return PRODUCT_IMAGES[item.name]||CATEGORY_IMAGES[item.catKey]||CATEGORY_IMAGES.fibra;
+}
+
 /* ═══ ÍNDICE DE BÚSQUEDA — productos, ítems, servicios ═══ */
 const SEARCH_INDEX=[
   // ── 01 · FIBRA ÓPTICA ──
@@ -4343,8 +4453,10 @@ function showProductBanner(it){
   const lang=typeof catalogLang==='function'?catalogLang():'es';
   const waMsg=lang==='es'?'Hola, necesito información sobre ':'Hello, I need information about ';
   const waUrl='https://wa.me/50766743062?text='+encodeURIComponent(waMsg+it.name);
+  const imgUrl=getProductImage(it);
   banner.innerHTML=
     '<div class="prb-inner">'+
+      '<div class="prb-image"><img src="'+imgUrl+'" alt="'+it.name+'" loading="lazy"></div>'+
       '<div class="prb-icon"><span class="ico ico-md"><svg><use href="#i-'+it.ico+'"/></svg></span></div>'+
       '<div class="prb-content">'+
         '<div class="prb-label">'+(lang==='es'?'Producto encontrado':'Product found')+'</div>'+
@@ -4504,8 +4616,14 @@ function renderCatalogDetail(filter){
       list.innerHTML=indexItems.map((item,idx)=>{
         const label=safeHtml(item.name);
         const num=String(idx+1).padStart(2,'0');
+        const img=typeof getProductImage==='function'?getProductImage(item):'';
         const href='https://wa.me/50766743062?text='+encodeURIComponent((lang==='es'?'Hola, necesito información sobre ':'Hello, I need information about ')+item.name);
-        return '<a href="'+href+'" target="_blank" rel="noopener" data-product-name="'+label+'"><span>'+num+'</span>'+label+'</a>';
+        return '<a href="'+href+'" target="_blank" rel="noopener" class="cat-prod-item" data-product-name="'+label+'">'+
+          '<span class="cat-prod-num">'+num+'</span>'+
+          (img?'<span class="cat-prod-thumb"><img src="'+img+'" alt="" loading="lazy"></span>':'')+
+          '<span class="cat-prod-name">'+label+'</span>'+
+          '<span class="cat-prod-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>'+
+        '</a>';
       }).join('');
     }else{
       const products=data.products?.[lang]||data.products?.es||[];
