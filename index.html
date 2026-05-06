@@ -67,24 +67,31 @@
 <!-- <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID');fbq('track','PageView');</script> -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --g950:#0a1410;--g900:#0d1a16;--g800:#112320;--g700:#1a2e2a;--g600:#233a35;
-  --grn:#14b8a6;--grn-lt:#5eead4;--grn-dk:#0d9488;
-  --cyn:#f97316;--cyn-lt:#fb923c;
-  --white:#fff;--txt:#dce5e2;--txt2:#7a918a;
-  --bdr:rgba(255,255,255,.07);--bdr-g:rgba(20,184,166,.22);
-  --card:rgba(255,255,255,.028);--card-h:rgba(20,184,166,.06);
-  --r:14px;--r-sm:8px;--sh:0 8px 40px rgba(0,0,0,.5);
-  --glow:0 0 32px rgba(20,184,166,.12);
+  /* ── Grises/blancos — fondo claro ── */
+  --g950:#ffffff;--g900:#f4f7ff;--g800:#eaf0fd;--g700:#dce8fb;--g600:#c7d9f8;
+  /* ── Azules principales ── */
+  --grn:#2563eb;--grn-lt:#60a5fa;--grn-dk:#1d4ed8;
+  --cyn:#0ea5e9;--cyn-lt:#38bdf8;
+  /* ── Texto ── */
+  --white:#0f172a;--txt:#1e293b;--txt2:#64748b;
+  /* ── Bordes / cards ── */
+  --bdr:rgba(15,23,42,.08);--bdr-g:rgba(37,99,235,.2);
+  --card:rgba(255,255,255,.95);--card-h:rgba(37,99,235,.04);
+  --r:14px;--r-sm:8px;
+  --sh:0 4px 24px rgba(15,23,42,.07),0 1px 4px rgba(15,23,42,.04);
+  --sh-lg:0 12px 48px rgba(15,23,42,.1),0 2px 8px rgba(15,23,42,.05);
+  --glow:0 0 40px rgba(37,99,235,.12);
   --tr:.25s cubic-bezier(.4,0,.2,1);
-  --ff:'Sora',system-ui,sans-serif;
+  --ff:'Manrope',system-ui,sans-serif;
+  --ff-head:'Fraunces',Georgia,serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--ff);background:var(--g950);color:var(--txt);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{line-height:1.13;letter-spacing:-.03em}
+h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.13;letter-spacing:-.02em}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{max-width:1200px;margin:0 auto;padding:0 28px}
@@ -1920,6 +1927,167 @@ html{scroll-behavior:smooth}
     transition-duration:.01ms !important;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   TEMA BLANCO / AZUL — overrides globales
+══════════════════════════════════════════════════════════════ */
+
+/* Headings con Fraunces */
+.s-title,.slide-h1,.cta-h2,.about-h2,.emp-card-name{font-family:var(--ff-head)}
+.s-title span{background:linear-gradient(130deg,var(--grn),var(--cyn));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Navbar — blanco */
+#nav{background:rgba(255,255,255,.97);border-bottom:1px solid rgba(37,99,235,.1)}
+#nav.scrolled{box-shadow:0 2px 24px rgba(15,23,42,.08);border-bottom-color:rgba(37,99,235,.15)}
+.nav-link{color:#1e293b}
+.nav-link:hover,.nav-link.active{color:var(--grn)}
+.nav-cta{background:var(--grn);color:#fff}
+.nav-cta:hover{background:var(--grn-dk)}
+.nl-name{color:#0f172a}
+.nl-tag{color:var(--grn)}
+.mob-toggle span{background:#1e293b}
+.mob-menu{background:#fff;border:1px solid rgba(37,99,235,.12)}
+.mob-nav-link{color:#1e293b}
+.mm-panel-title{color:#0f172a}
+.mm-panel-sub,.mm-panel-cta{color:var(--txt2)}
+.mm-panel-cta{color:var(--grn)}
+.search-input{background:#f4f7ff;border-color:rgba(37,99,235,.2);color:#0f172a}
+.search-input::placeholder{color:#94a3b8}
+.search-results{background:#fff;border-color:rgba(37,99,235,.15)}
+.sr-item:hover{background:rgba(37,99,235,.05)}
+.sr-name{color:#0f172a}
+.sr-cat{color:var(--txt2)}
+.btt{background:var(--grn);box-shadow:0 4px 20px rgba(37,99,235,.35)}
+
+/* Sections — fondos alternos */
+.sec{background:var(--g950)}
+#about.sec,#solutions.sec,#how.sec,#markets.sec,#benefits.sec,#faq.sec{background:var(--g900)}
+#stats-strip{background:var(--grn-dk)}
+#stats-strip .ss-val,#stats-strip .ss-lbl{color:#fff}
+#trustbar{background:#0f172a}
+#trustbar .tb-label{color:rgba(255,255,255,.5)}
+#trustbar .tb-logo{color:rgba(255,255,255,.8)}
+#cta-sec{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%)}
+
+/* Cards — blancas con sombra */
+.sol-card{background:#fff;border:1px solid rgba(37,99,235,.1);box-shadow:var(--sh)}
+.sol-card:hover{border-color:rgba(37,99,235,.3);box-shadow:var(--sh-lg);transform:translateY(-4px)}
+.sol-ico{color:var(--grn)}
+.sol-card h3{color:#0f172a;font-family:var(--ff-head)}
+.sol-card p{color:var(--txt2)}
+.sol-chip{background:rgba(37,99,235,.08);color:var(--grn);border:1px solid rgba(37,99,235,.15)}
+
+/* Emporia cards */
+.emp-card{background:#fff;border:1px solid rgba(37,99,235,.1);box-shadow:var(--sh)}
+.emp-card:hover{box-shadow:var(--sh-lg)}
+.emp-card-name{color:#0f172a;font-family:var(--ff-head);font-size:1.3rem}
+.emp-card-sub{color:var(--grn)}
+.emp-card-desc{color:var(--txt2)}
+.emp-use{color:var(--txt)}
+.emp-stat-val{color:var(--grn);font-family:var(--ff-head)}
+.emp-stat-lbl{color:var(--txt2)}
+.emp-cta-row{background:var(--g800);border:1px solid rgba(37,99,235,.15);border-radius:16px}
+.emp-cta-txt h4{color:#0f172a;font-family:var(--ff-head)}
+.emp-cta-txt p{color:var(--txt2)}
+.eco-hero-banner{background:linear-gradient(135deg,var(--grn-dk),var(--grn));border-radius:20px}
+.eco-hero-banner h3{color:#fff}
+.eco-hero-banner p{color:rgba(255,255,255,.8)}
+
+/* Testimonials */
+.test-card{background:#fff;border:1px solid rgba(37,99,235,.1);box-shadow:var(--sh)}
+.test-card:hover{box-shadow:var(--sh-lg)}
+.test-badge{background:rgba(37,99,235,.08);color:var(--grn)}
+.test-text{color:var(--txt)}
+.test-name{color:#0f172a;font-family:var(--ff-head)}
+.test-role{color:var(--txt2)}
+.test-star svg{fill:var(--cyn)}
+
+/* FAQ */
+.faq-item{background:#fff;border:1px solid rgba(37,99,235,.1);border-radius:12px;margin-bottom:8px}
+.faq-q{color:#0f172a}
+.faq-q-txt{font-family:var(--ff-head);font-weight:600}
+.faq-a-inner{color:var(--txt2)}
+.faq-arr{color:var(--grn)}
+
+/* About */
+.about-p{color:var(--txt2)}
+.about-h2,.about-lead{color:#0f172a}
+.aib-text h4{color:#fff}
+.about-img-badge{background:var(--grn-dk)}
+
+/* How section */
+.how-step-num{background:linear-gradient(135deg,var(--grn),var(--cyn));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-family:var(--ff-head)}
+.how-step-title{color:#0f172a;font-family:var(--ff-head)}
+.how-step-body{color:var(--txt2)}
+
+/* Markets */
+.mkt-card{background:#fff;border:1px solid rgba(37,99,235,.1);box-shadow:var(--sh)}
+.mkt-card:hover{box-shadow:var(--sh-lg)}
+.mkt-title{color:#0f172a;font-family:var(--ff-head)}
+.mkt-desc{color:var(--txt2)}
+
+/* Buttons */
+.btn-primary{background:linear-gradient(135deg,var(--grn-dk),var(--grn));box-shadow:0 4px 20px rgba(37,99,235,.3)}
+.btn-primary:hover{box-shadow:0 8px 32px rgba(37,99,235,.45)}
+.btn-outline{color:var(--grn);border-color:rgba(37,99,235,.4)}
+.btn-outline:hover{background:rgba(37,99,235,.06);border-color:var(--grn)}
+
+/* Tag chips */
+.tag{background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.2);color:var(--grn)}
+.tag-dot{background:var(--grn)}
+
+/* Prog bar */
+#prog{background:linear-gradient(90deg,var(--grn),var(--cyn))}
+
+/* Simulator, comparativa, benefits, video sections */
+.sim-card,.ben-card,.vis-card{background:#fff;border:1px solid rgba(37,99,235,.1);box-shadow:var(--sh)}
+.ben-ico{color:var(--grn)}
+.ben-title{color:#0f172a;font-family:var(--ff-head)}
+.ben-body{color:var(--txt2)}
+
+/* Stats strip override — hero-stats */
+.hero-stats{background:rgba(255,255,255,.92);border-top:1px solid rgba(37,99,235,.15)}
+.hs-val{color:var(--grn);font-family:var(--ff-head)}
+.hs-lbl{color:#64748b}
+.hs-sep{background:rgba(37,99,235,.15)}
+
+/* Services */
+.svc-card{background:#fff;border:1px solid rgba(37,99,235,.1);box-shadow:var(--sh)}
+.svc-card:hover{box-shadow:var(--sh-lg)}
+.svc-title{color:#0f172a;font-family:var(--ff-head)}
+.svc-desc,.svc-value{color:var(--txt2)}
+.svc-ico{color:var(--grn)}
+
+/* Catalog / Products */
+.catalog-panel{background:#fff;border:1px solid rgba(37,99,235,.1)}
+.catalog-panel-title{color:#0f172a}
+.cat-card{background:#fff;border:1px solid rgba(37,99,235,.1);box-shadow:var(--sh)}
+.cat-card:hover{box-shadow:var(--sh-lg)}
+.cat-name{color:#0f172a;font-family:var(--ff-head)}
+.cat-desc{color:var(--txt2)}
+.prod-item{color:#0f172a}
+.prod-item:hover{background:rgba(37,99,235,.05)}
+.search-btn{background:var(--grn)}
+.cat-value-txt{color:var(--txt2)}
+.cat-chip{background:rgba(37,99,235,.08);color:var(--grn);border-color:rgba(37,99,235,.15)}
+
+/* Dashboard section */
+.dbm-panel{background:#fff;border:1px solid rgba(37,99,235,.1)}
+.dbm-label,.dbm-sub{color:var(--txt2)}
+.dbm-val{color:#0f172a;font-family:var(--ff-head)}
+
+/* Cookie banner */
+#cookie-banner{background:rgba(255,255,255,.98);border-top:1px solid rgba(37,99,235,.15)}
+#cookie-banner p{color:var(--txt)}
+
+/* CTA section text override */
+.cta-h2{color:#fff}
+.cta-p{color:rgba(255,255,255,.75)}
+.cta-urgency{background:rgba(96,165,250,.15);border-color:rgba(96,165,250,.35);color:#93c5fd}
+
+/* Nav dots (slider) */
+.slide-dot{background:rgba(255,255,255,.4)}
+.slide-dot.active{background:#fff}
 
 /* ── MEJORAS VISUALES 2026 ─────────────────────────────────── */
 
