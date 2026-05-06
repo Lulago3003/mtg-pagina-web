@@ -2091,6 +2091,118 @@ html{scroll-behavior:smooth}
 
 /* ── MEJORAS VISUALES 2026 ─────────────────────────────────── */
 
+/* ── DASHBOARD MOCKUP ──────────────────────────────────────── */
+.mi-dash-wrap{border-radius:18px;overflow:hidden;box-shadow:0 24px 80px rgba(15,23,42,.14),0 4px 16px rgba(15,23,42,.08);border:1px solid rgba(37,99,235,.12);margin-bottom:56px;background:#fff}
+.mi-chrome{display:flex;align-items:center;gap:12px;padding:10px 16px;background:#f4f7ff;border-bottom:1px solid rgba(37,99,235,.1)}
+.mi-dots{display:flex;gap:6px}.mi-dots span{width:12px;height:12px;border-radius:50%;display:block}
+.mi-url{flex:1;background:#fff;border:1px solid rgba(37,99,235,.15);border-radius:6px;padding:5px 12px;font-size:.72rem;color:#64748b;font-family:var(--ff)}
+.mi-url strong{color:#0f172a}
+.mi-live{display:flex;align-items:center;gap:5px;font-size:.68rem;font-weight:700;color:#16a34a;letter-spacing:.06em}
+.mi-live-dot{width:7px;height:7px;background:#16a34a;border-radius:50%;animation:waPulse 1.8s infinite}
+.mi-body{display:grid;grid-template-columns:52px 1fr;min-height:560px}
+/* Sidebar */
+.mi-side{background:#0f172a;padding:14px 0;display:flex;flex-direction:column;align-items:center;gap:6px}
+.mi-side-logo{width:32px;height:32px;background:var(--grn);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-head);font-weight:800;color:#fff;font-size:.7rem;margin-bottom:8px}
+.mi-side-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:9px;color:rgba(255,255,255,.4);cursor:pointer;transition:.2s;position:relative}
+.mi-side-icon svg{width:16px;height:16px;stroke:currentColor}
+.mi-side-icon:hover{background:rgba(255,255,255,.08);color:rgba(255,255,255,.8)}
+.mi-active{background:rgba(37,99,235,.25);color:#60a5fa!important}
+.mi-notif{position:absolute;top:4px;right:4px;width:14px;height:14px;background:#ef4444;border-radius:50%;font-size:.55rem;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center}
+/* Main */
+.mi-main{padding:16px 20px;display:flex;flex-direction:column;gap:14px;background:#f8fafc;overflow:hidden}
+.mi-header-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.mi-greeting{font-size:.92rem;font-weight:700;color:#0f172a;font-family:var(--ff)}
+.mi-date{font-size:.72rem;color:#94a3b8}
+.mi-alert-pill{display:flex;align-items:center;gap:6px;background:#fef2f2;border:1px solid #fecaca;border-radius:50px;padding:5px 12px;font-size:.72rem;font-weight:600;color:#dc2626}
+/* KPI row */
+.mi-kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mi-kpi{background:#fff;border-radius:12px;padding:12px 14px;border:1px solid rgba(37,99,235,.1);box-shadow:0 1px 6px rgba(15,23,42,.04)}
+.mi-kpi-blue{border-color:rgba(37,99,235,.25);background:linear-gradient(135deg,#eff6ff,#dbeafe)}
+.mi-kpi-icon{font-size:1.1rem;margin-bottom:4px}
+.mi-kpi-val{font-size:1.25rem;font-weight:800;color:#0f172a;font-family:var(--ff-head);line-height:1}
+.mi-kpi-val span{font-size:.72rem;font-weight:500;color:#64748b;font-family:var(--ff)}
+.mi-kpi-lbl{font-size:.7rem;color:#94a3b8;margin:3px 0}
+.mi-kpi-delta{font-size:.7rem;font-weight:700}
+.mi-kpi-delta.up{color:#ef4444}
+.mi-kpi-delta.down{color:#16a34a}
+/* Row 3 */
+.mi-row3{display:grid;grid-template-columns:200px 1fr;gap:12px}
+/* Score card */
+.mi-score-card{background:#fff;border-radius:14px;padding:14px;border:1px solid rgba(37,99,235,.1);box-shadow:0 1px 6px rgba(15,23,42,.04);display:flex;flex-direction:column;align-items:center}
+.mi-panel-title{font-size:.72rem;font-weight:700;color:#0f172a;letter-spacing:.02em;text-transform:uppercase;margin-bottom:10px;width:100%}
+.mi-panel-badge{background:#eff6ff;color:var(--grn);border-radius:50px;padding:2px 8px;font-size:.65rem;font-weight:600;text-transform:none;letter-spacing:0;margin-left:8px}
+.mi-gauge-wrap{position:relative;width:130px;height:130px;margin:0 auto 8px}
+.mi-gauge-svg{width:100%;height:100%}
+.mi-gauge-arc{transition:stroke-dashoffset 1.5s cubic-bezier(.4,0,.2,1)}
+.mi-gauge-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.mi-gauge-num{font-size:2.2rem;font-weight:800;color:#0f172a;font-family:var(--ff-head);line-height:1}
+.mi-gauge-sub{font-size:.72rem;color:#94a3b8}
+.mi-gauge-grade{font-size:.75rem;font-weight:700;color:var(--grn);margin-top:2px}
+.mi-score-tags{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
+.mi-score-tag{font-size:.64rem;font-weight:600;padding:2px 8px;border-radius:50px}
+.mi-score-tag.green{background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0}
+.mi-score-tag.blue{background:#eff6ff;color:var(--grn);border:1px solid #bfdbfe}
+.mi-score-tag.orange{background:#fff7ed;color:#ea580c;border:1px solid #fed7aa}
+/* Bars card */
+.mi-bars-card{background:#fff;border-radius:14px;padding:14px;border:1px solid rgba(37,99,235,.1);box-shadow:0 1px 6px rgba(15,23,42,.04)}
+.mi-bars-wrap{display:flex;align-items:flex-end;gap:8px;height:110px;padding:0 4px}
+.mi-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%}
+.mi-bar-val{font-size:.6rem;color:#94a3b8;font-weight:600;height:14px;display:flex;align-items:center}
+.mi-bar-track{flex:1;width:100%;background:#f1f5f9;border-radius:6px 6px 0 0;display:flex;align-items:flex-end;overflow:hidden}
+.mi-bar-fill{width:100%;border-radius:6px 6px 0 0;transition:height 1.2s cubic-bezier(.4,0,.2,1)}
+.mi-bar-weekend{background:linear-gradient(180deg,#fde68a,#f59e0b)!important}
+.mi-bar-active{background:linear-gradient(180deg,#93c5fd,#2563eb)!important}
+.mi-bar-day{font-size:.64rem;color:#94a3b8;height:16px;display:flex;align-items:center}
+.mi-bar-day-we{color:#f59e0b}
+.mi-bar-today-val{color:#2563eb!important}
+.mi-bar-legend{display:flex;gap:12px;margin-top:8px;font-size:.65rem;color:#94a3b8;flex-wrap:wrap}
+/* Row 4 */
+.mi-row4{display:grid;grid-template-columns:1fr 240px;gap:12px}
+/* Circuits */
+.mi-circuits-card{background:#fff;border-radius:14px;padding:14px;border:1px solid rgba(37,99,235,.1);box-shadow:0 1px 6px rgba(15,23,42,.04)}
+.mi-circ{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid #f1f5f9}
+.mi-circ:last-child{border-bottom:none}
+.mi-circ-icon{font-size:1rem;width:24px;text-align:center}
+.mi-circ-info{flex:1;min-width:0}
+.mi-circ-name{font-size:.73rem;font-weight:600;color:#0f172a;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.mi-circ-warning{background:#fef2f2;color:#dc2626;border-radius:4px;padding:1px 6px;font-size:.6rem;font-weight:700}
+.mi-circ-bar-w{height:6px;background:#f1f5f9;border-radius:3px;overflow:hidden}
+.mi-circ-bar{height:100%;border-radius:3px;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+.mi-circ-val{font-size:.72rem;font-weight:700;color:#0f172a;white-space:nowrap;text-align:right;min-width:80px}
+.mi-circ-pct{font-size:.64rem;font-weight:500;color:#94a3b8;margin-left:4px}
+.mi-circ-alert{background:#fff7ed;border-radius:8px;padding:7px 8px;border-bottom:none!important;margin-top:4px}
+/* Right col */
+.mi-right-col{display:flex;flex-direction:column;gap:10px}
+.mi-alert-card{background:#fff;border-radius:14px;padding:14px;border:1.5px solid #fca5a5;box-shadow:0 2px 12px rgba(239,68,68,.08)}
+.mi-alert-head{display:flex;align-items:center;gap:7px;font-size:.78rem;font-weight:700;color:#dc2626;margin-bottom:8px}
+.mi-alert-dot{width:8px;height:8px;background:#ef4444;border-radius:50%;animation:waPulse 1.5s infinite;flex-shrink:0}
+.mi-alert-body{font-size:.72rem;color:#64748b;line-height:1.6;margin-bottom:10px}
+.mi-alert-actions{display:flex;gap:6px}
+.mi-btn-primary{background:var(--grn);color:#fff;border:none;border-radius:7px;padding:6px 12px;font-size:.7rem;font-weight:700;cursor:pointer;font-family:var(--ff)}
+.mi-btn-ghost{background:transparent;border:1px solid #e2e8f0;color:#64748b;border-radius:7px;padding:6px 10px;font-size:.7rem;cursor:pointer;font-family:var(--ff)}
+.mi-savings-card{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1px solid #bbf7d0;border-radius:14px;padding:14px;display:flex;align-items:center;gap:10px}
+.mi-savings-icon{font-size:1.4rem}
+.mi-savings-val{font-size:1.2rem;font-weight:800;color:#15803d;font-family:var(--ff-head)}
+.mi-savings-lbl{font-size:.68rem;color:#16a34a;margin-top:1px}
+.mi-savings-badge{margin-left:auto;background:#16a34a;color:#fff;border-radius:8px;padding:4px 10px;font-size:.78rem;font-weight:800;font-family:var(--ff-head)}
+/* Responsive */
+@media(max-width:900px){
+  .mi-body{grid-template-columns:1fr}
+  .mi-side{flex-direction:row;padding:8px 16px;height:44px}
+  .mi-side-logo{margin-bottom:0;margin-right:8px}
+  .mi-row3{grid-template-columns:1fr}
+  .mi-score-card{flex-direction:row;gap:14px}
+  .mi-gauge-wrap{width:90px;height:90px;flex-shrink:0}
+  .mi-row4{grid-template-columns:1fr}
+  .mi-kpi-row{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:600px){
+  .mi-kpi-row{grid-template-columns:1fr 1fr}
+  .mi-kpi:last-child{display:none}
+  .mi-bar-legend{display:none}
+  .mi-right-col .mi-savings-card{display:none}
+}
+
 /* Scroll progress bar */
 #scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#14b8a6,#06b6d4,#6366f1);z-index:9999;transition:width .1s linear;border-radius:0 2px 2px 0}
 
@@ -3301,68 +3413,228 @@ html{scroll-behavior:smooth}
       <h2 class="s-title"><span data-lang="es">Tu instalación eléctrica, <span>visible al instante</span></span><span data-lang="en">Your electrical installation, <span>visible instantly</span></span></h2>
       <p class="s-sub"><span data-lang="es">No solo datos — contexto, alertas y recomendaciones en una sola pantalla.</span><span data-lang="en">Not just data — context, alerts and recommendations on a single screen.</span></p>
     </div>
-    <div class="dash-real-wrap rv">
-      <img class="dash-real-img" src="assets/images/dashboard.png" alt="Panel de Energía Medidor Inteligente · consumo en tiempo real" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="dash-real-fallback" style="display:none">
-        <span class="ico ico-2xl" style="color:var(--grn-lt)"><svg><use href="#i-chart"/></svg></span>
-        <span data-lang="es">Panel de Energía Medidor Inteligente</span>
-        <span data-lang="en">Medidor Inteligente Energy Panel</span>
+    <!-- ══ DASHBOARD MOCKUP ══ -->
+    <div class="mi-dash-wrap rv">
+      <!-- Browser chrome -->
+      <div class="mi-chrome">
+        <div class="mi-dots"><span style="background:#ef4444"></span><span style="background:#f59e0b"></span><span style="background:#22c55e"></span></div>
+        <div class="mi-url">🔒 app.medidorinteligente.pa · <strong>Residencia González — San Francisco</strong></div>
+        <div class="mi-live"><span class="mi-live-dot"></span>EN VIVO</div>
       </div>
-    </div>
-    <div class="dbm rv" style="display:none">
-      <div class="dbm-chrome">
-        <div class="dbm-dots"><div class="dbm-dot" style="background:#ef4444"></div><div class="dbm-dot" style="background:#f59e0b"></div><div class="dbm-dot" style="background:#22c55e"></div></div>
-        <div class="dbm-url"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> app.medidorinteligente.mtg · Dashboard <span data-lang="es">Residencia González · Zona San Francisco</span><span data-lang="en">González Residence · San Francisco Zone</span></div>
-        <div style="font-size:.65rem;color:var(--txt2);white-space:nowrap"><span data-lang="es">EN VIVO</span><span data-lang="en">LIVE</span> <span style="color:var(--grn);font-weight:700">●</span></div>
-      </div>
-      <div class="dbm-body">
-        <div class="dbm-side">
-          <div class="dbm-si on">🏠</div><div class="dbm-si">⚡</div><div class="dbm-si">📊</div>
-          <div class="dbm-si">🔍</div><div class="dbm-si">🔔</div><div class="dbm-si">⚙️</div>
-        </div>
-        <div class="dbm-content">
-          <div class="dbm-kpi-row">
-            <div class="dbm-kcard"><div class="dbm-kv">3.24 <span style="font-size:.65rem;color:var(--txt2)">kW</span></div><div class="dbm-kl"><span data-lang="es">Consumo actual</span><span data-lang="en">Current load</span></div><div class="dbm-kd dup">↑ +12%</div></div>
-            <div class="dbm-kcard"><div class="dbm-kv">B/.68</div><div class="dbm-kl"><span data-lang="es">Proyección mes</span><span data-lang="en">Month forecast</span></div><div class="dbm-kd ddn">↓ –28%</div></div>
-            <div class="dbm-kcard" style="border-color:rgba(20,184,166,.28)"><div class="dbm-kv" style="color:var(--grn)">82</div><div class="dbm-kl">Score</div><div class="dbm-kd" style="color:var(--grn)">Grado A</div></div>
-            <div class="dbm-kcard" style="border-color:rgba(239,68,68,.2)"><div class="dbm-kv" style="color:#ef4444">2</div><div class="dbm-kl"><span data-lang="es">Anomalías</span><span data-lang="en">Anomalies</span></div><div class="dbm-kd dup">⚠ <span data-lang="es">Revisar</span><span data-lang="en">Review</span></div></div>
+      <!-- Dashboard body -->
+      <div class="mi-body">
+
+        <!-- ── SIDEBAR ── -->
+        <nav class="mi-side">
+          <div class="mi-side-logo">MI</div>
+          <div class="mi-side-icon mi-active" title="Inicio">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
-          <div class="dbm-panel">
-            <div class="dbm-pt"><span data-lang="es">Consumo 7 días · kWh</span><span data-lang="en">7-day consumption · kWh</span></div>
-            <div class="bars-lg">
-              <div class="bar-lg" style="height:45%;background:rgba(22,196,106,.38);animation-delay:.1s"></div>
-              <div class="bar-lg" style="height:62%;background:rgba(20,184,166,.42);animation-delay:.2s"></div>
-              <div class="bar-lg" style="height:38%;background:rgba(22,196,106,.38);animation-delay:.3s"></div>
-              <div class="bar-lg" style="height:78%;background:rgba(20,184,166,.5);animation-delay:.4s"></div>
-              <div class="bar-lg" style="height:55%;background:rgba(20,184,166,.42);animation-delay:.5s"></div>
-              <div class="bar-lg" style="height:92%;background:rgba(20,184,166,.65);animation-delay:.6s"></div>
-              <div class="bar-lg" style="height:70%;background:var(--grn);animation-delay:.7s;box-shadow:0 0 10px rgba(20,184,166,.4)"></div>
+          <div class="mi-side-icon" title="Consumo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="mi-side-icon" title="Facturas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div class="mi-side-icon mi-alert-badge" title="Alertas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="mi-notif">2</span>
+          </div>
+          <div class="mi-side-icon" title="Ajustes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+        </nav>
+
+        <!-- ── MAIN CONTENT ── -->
+        <div class="mi-main">
+
+          <!-- Row 1: header -->
+          <div class="mi-header-row">
+            <div>
+              <div class="mi-greeting">Buenos días, Roberto 👋</div>
+              <div class="mi-date">Martes 6 mayo · 10:42 a.m.</div>
+            </div>
+            <div class="mi-alert-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              ⚠ Standby elevado en cocina
             </div>
           </div>
-          <div class="dbm-panel">
-            <div class="dbm-pt"><span data-lang="es">Por circuito</span><span data-lang="en">By circuit</span></div>
-            <div class="circ-item"><div class="ci-dot" style="background:#f97316"></div><div class="ci-name">❄️ <span data-lang="es">Climatización</span><span data-lang="en">HVAC</span></div><div class="ci-bw"><div class="ci-bf" style="width:78%;background:#f97316"></div></div><div class="ci-val">1.84 kW</div></div>
-            <div class="circ-item"><div class="ci-dot" style="background:#f59e0b"></div><div class="ci-name">🍳 <span data-lang="es">Cocina</span><span data-lang="en">Kitchen</span></div><div class="ci-bw"><div class="ci-bf" style="width:46%;background:#f59e0b"></div></div><div class="ci-val">0.92 kW</div></div>
-            <div class="circ-item"><div class="ci-dot" style="background:#818cf8"></div><div class="ci-name">👕 <span data-lang="es">Lavandería</span><span data-lang="en">Laundry</span></div><div class="ci-bw"><div class="ci-bf" style="width:26%;background:#818cf8"></div></div><div class="ci-val">0.52 kW</div></div>
-            <div class="circ-item"><div class="ci-dot" style="background:#f87171"></div><div class="ci-name">🔌 Standby ⚠</div><div class="ci-bw"><div class="ci-bf" style="width:18%;background:#f87171"></div></div><div class="ci-val">0.38 kW</div></div>
+
+          <!-- Row 2: KPI cards -->
+          <div class="mi-kpi-row">
+            <div class="mi-kpi mi-kpi-blue">
+              <div class="mi-kpi-icon">⚡</div>
+              <div class="mi-kpi-val">3.24 <span>kW</span></div>
+              <div class="mi-kpi-lbl">Consumo ahora</div>
+              <div class="mi-kpi-delta up">↑ +12% vs ayer</div>
+            </div>
+            <div class="mi-kpi">
+              <div class="mi-kpi-icon">📅</div>
+              <div class="mi-kpi-val">142 <span>kWh</span></div>
+              <div class="mi-kpi-lbl">Este mes</div>
+              <div class="mi-kpi-delta down">↓ –28% vs mayo ant.</div>
+            </div>
+            <div class="mi-kpi">
+              <div class="mi-kpi-icon">💰</div>
+              <div class="mi-kpi-val">B/.68 <span>/mes</span></div>
+              <div class="mi-kpi-lbl">Proyección factura</div>
+              <div class="mi-kpi-delta down">↓ Ahorras B/.27</div>
+            </div>
           </div>
-          <div class="dbm-panel">
-            <div class="dbm-pt">Score</div>
-            <div class="score-wrap">
-              <div class="score-ring">
-                <svg width="100" height="100" viewBox="0 0 100 100">
-                  <circle fill="none" stroke="rgba(255,255,255,.07)" stroke-width="8" cx="50" cy="50" r="40"/>
-                  <circle fill="none" stroke="url(#sg)" stroke-width="8" stroke-linecap="round" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="50.24"/>
-                  <defs><linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#14b8a6"/><stop offset="100%" stop-color="#f97316"/></linearGradient></defs>
+
+          <!-- Row 3: Score + Bars -->
+          <div class="mi-row3">
+
+            <!-- Score gauge -->
+            <div class="mi-score-card">
+              <div class="mi-panel-title">Score Energético</div>
+              <div class="mi-gauge-wrap">
+                <svg class="mi-gauge-svg" viewBox="0 0 160 160">
+                  <defs>
+                    <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#2563eb"/>
+                      <stop offset="100%" stop-color="#0ea5e9"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- Track -->
+                  <circle cx="80" cy="80" r="64" fill="none" stroke="#e8effe" stroke-width="12"/>
+                  <!-- Progress — 82/100 → dashoffset = 402.12*(1-0.82) = 72.38 -->
+                  <circle cx="80" cy="80" r="64" fill="none" stroke="url(#gaugeGrad)" stroke-width="12"
+                    stroke-linecap="round" stroke-dasharray="402.12" stroke-dashoffset="72.38"
+                    transform="rotate(-90 80 80)" class="mi-gauge-arc"/>
+                  <!-- Inner ring decoration -->
+                  <circle cx="80" cy="80" r="52" fill="none" stroke="#e8effe" stroke-width="1.5" stroke-dasharray="3 6"/>
                 </svg>
-                <div class="score-center"><div class="score-num">82</div><div class="score-lbl">/100</div></div>
+                <div class="mi-gauge-center">
+                  <div class="mi-gauge-num" id="mi-score-num">82</div>
+                  <div class="mi-gauge-sub">/100</div>
+                  <div class="mi-gauge-grade">Grado A</div>
+                </div>
               </div>
-              <div class="score-grade">Grado A · <span data-lang="es">Eficiente</span><span data-lang="en">Efficient</span></div>
+              <div class="mi-score-tags">
+                <span class="mi-score-tag green">✓ Eficiente</span>
+                <span class="mi-score-tag blue">✓ Sin picos</span>
+                <span class="mi-score-tag orange">⚡ Standby</span>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+            <!-- 7-day bar chart -->
+            <div class="mi-bars-card">
+              <div class="mi-panel-title">Consumo diario — kWh <span class="mi-panel-badge">Esta semana</span></div>
+              <div class="mi-bars-wrap">
+                <div class="mi-bar-col">
+                  <div class="mi-bar-val">18.4</div>
+                  <div class="mi-bar-track"><div class="mi-bar-fill" style="height:52%;background:#c7d9f8"></div></div>
+                  <div class="mi-bar-day">Lun</div>
+                </div>
+                <div class="mi-bar-col">
+                  <div class="mi-bar-val">21.7</div>
+                  <div class="mi-bar-track"><div class="mi-bar-fill" style="height:63%;background:#93c5fd"></div></div>
+                  <div class="mi-bar-day">Mar</div>
+                </div>
+                <div class="mi-bar-col">
+                  <div class="mi-bar-val">15.2</div>
+                  <div class="mi-bar-track"><div class="mi-bar-fill" style="height:43%;background:#c7d9f8"></div></div>
+                  <div class="mi-bar-day">Mié</div>
+                </div>
+                <div class="mi-bar-col">
+                  <div class="mi-bar-val">27.8</div>
+                  <div class="mi-bar-track"><div class="mi-bar-fill" style="height:80%;background:#60a5fa"></div></div>
+                  <div class="mi-bar-day">Jue</div>
+                </div>
+                <div class="mi-bar-col">
+                  <div class="mi-bar-val">19.5</div>
+                  <div class="mi-bar-track"><div class="mi-bar-fill" style="height:56%;background:#93c5fd"></div></div>
+                  <div class="mi-bar-day">Vie</div>
+                </div>
+                <div class="mi-bar-col">
+                  <div class="mi-bar-val">31.2</div>
+                  <div class="mi-bar-track"><div class="mi-bar-fill mi-bar-weekend" style="height:90%"></div></div>
+                  <div class="mi-bar-day mi-bar-day-we">Sáb</div>
+                </div>
+                <div class="mi-bar-col mi-bar-today">
+                  <div class="mi-bar-val mi-bar-today-val">14.1</div>
+                  <div class="mi-bar-track"><div class="mi-bar-fill mi-bar-active" style="height:40%"></div></div>
+                  <div class="mi-bar-day"><strong>Hoy</strong></div>
+                </div>
+              </div>
+              <div class="mi-bar-legend">
+                <span>🟦 Días normales</span>
+                <span style="color:#f59e0b">🟨 Fin de semana (+41%)</span>
+                <span style="color:#2563eb">🔵 Hoy (en curso)</span>
+              </div>
+            </div>
+
+          </div><!-- /row3 -->
+
+          <!-- Row 4: Circuits + Alert -->
+          <div class="mi-row4">
+
+            <!-- Circuit breakdown -->
+            <div class="mi-circuits-card">
+              <div class="mi-panel-title">Por circuito — consumo actual</div>
+              <div class="mi-circ">
+                <div class="mi-circ-icon">❄️</div>
+                <div class="mi-circ-info">
+                  <div class="mi-circ-name">Climatización (A/C)</div>
+                  <div class="mi-circ-bar-w"><div class="mi-circ-bar" style="width:78%;background:linear-gradient(90deg,#f97316,#fb923c)"></div></div>
+                </div>
+                <div class="mi-circ-val">1.84 kW <span class="mi-circ-pct">57%</span></div>
+              </div>
+              <div class="mi-circ">
+                <div class="mi-circ-icon">🍳</div>
+                <div class="mi-circ-info">
+                  <div class="mi-circ-name">Cocina</div>
+                  <div class="mi-circ-bar-w"><div class="mi-circ-bar" style="width:46%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div>
+                </div>
+                <div class="mi-circ-val">0.92 kW <span class="mi-circ-pct">28%</span></div>
+              </div>
+              <div class="mi-circ">
+                <div class="mi-circ-icon">💡</div>
+                <div class="mi-circ-info">
+                  <div class="mi-circ-name">Iluminación</div>
+                  <div class="mi-circ-bar-w"><div class="mi-circ-bar" style="width:18%;background:linear-gradient(90deg,#60a5fa,#93c5fd)"></div></div>
+                </div>
+                <div class="mi-circ-val">0.24 kW <span class="mi-circ-pct">7%</span></div>
+              </div>
+              <div class="mi-circ mi-circ-alert">
+                <div class="mi-circ-icon">⚠️</div>
+                <div class="mi-circ-info">
+                  <div class="mi-circ-name">Standby <span class="mi-circ-warning">Consumo anómalo</span></div>
+                  <div class="mi-circ-bar-w"><div class="mi-circ-bar" style="width:26%;background:linear-gradient(90deg,#ef4444,#f87171)"></div></div>
+                </div>
+                <div class="mi-circ-val">0.24 kW <span class="mi-circ-pct" style="color:#ef4444">8%</span></div>
+              </div>
+            </div>
+
+            <!-- Alert card + savings -->
+            <div class="mi-right-col">
+              <div class="mi-alert-card">
+                <div class="mi-alert-head">
+                  <span class="mi-alert-dot"></span>
+                  <strong>Alerta detectada</strong>
+                </div>
+                <p class="mi-alert-body">El circuito de cocina lleva <strong>6 horas</strong> activo con consumo continuo. Posible refrigerador con puerta abierta o fuga térmica.</p>
+                <div class="mi-alert-actions">
+                  <button class="mi-btn-primary">Ver circuito</button>
+                  <button class="mi-btn-ghost">Ignorar</button>
+                </div>
+              </div>
+              <div class="mi-savings-card">
+                <div class="mi-savings-icon">💚</div>
+                <div class="mi-savings-info">
+                  <div class="mi-savings-val">B/.27.40</div>
+                  <div class="mi-savings-lbl">ahorrados este mes vs. mes anterior</div>
+                </div>
+                <div class="mi-savings-badge">–28%</div>
+              </div>
+            </div>
+
+          </div><!-- /row4 -->
+
+        </div><!-- /mi-main -->
+      </div><!-- /mi-body -->
+    </div><!-- /mi-dash-wrap -->
     <div class="dash-feats">
       <div class="df rv"><div class="df-ico ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-signal"/></svg></span></div><h4><span data-lang="es">Tiempo real</span><span data-lang="en">Real time</span></h4><p><span data-lang="es">Datos actualizados cada 5 min desde cada circuito.</span><span data-lang="en">Data updated every 5 min from each circuit.</span></p></div>
       <div class="df rv"><div class="df-ico ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></div><h4><span data-lang="es">Alertas inteligentes</span><span data-lang="en">Smart alerts</span></h4><p><span data-lang="es">Notificaciones inmediatas ante consumos anómalos.</span><span data-lang="en">Immediate notifications for abnormal consumption.</span></p></div>
