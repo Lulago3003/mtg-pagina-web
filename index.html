@@ -1921,9 +1921,63 @@ html{scroll-behavior:smooth}
   }
 }
 
+/* ── MEJORAS VISUALES 2026 ─────────────────────────────────── */
+
+/* Scroll progress bar */
+#scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#14b8a6,#06b6d4,#6366f1);z-index:9999;transition:width .1s linear;border-radius:0 2px 2px 0}
+
+/* Floating WhatsApp button */
+.wa-fab{position:fixed;bottom:28px;right:28px;z-index:8000;display:flex;align-items:center;gap:10px;background:#25d366;color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;padding:14px 20px 14px 16px;border-radius:50px;box-shadow:0 6px 32px rgba(37,211,102,.45);text-decoration:none;transition:transform .2s ease,box-shadow .2s ease;animation:waPulse 2.5s ease-in-out infinite}
+.wa-fab:hover{transform:scale(1.06) translateY(-2px);box-shadow:0 10px 40px rgba(37,211,102,.6);color:#fff}
+.wa-fab svg{width:22px;height:22px;fill:#fff;flex-shrink:0}
+.wa-fab-txt{white-space:nowrap}
+@keyframes waPulse{0%,100%{box-shadow:0 6px 32px rgba(37,211,102,.45)}50%{box-shadow:0 6px 32px rgba(37,211,102,.45),0 0 0 8px rgba(37,211,102,.12)}}
+@media(max-width:600px){.wa-fab-txt{display:none}.wa-fab{padding:16px}}
+
+/* Emporia card product images — white bg for official PNGs */
+.emp-card-img{background:#fff;border-radius:14px 14px 0 0;overflow:hidden}
+.emp-card-img img{display:block;width:100%;height:220px;object-fit:contain;padding:18px;background:#fff}
+
+/* Testimonial avatars */
+.test-avatar-letter{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;letter-spacing:-.02em;flex-shrink:0}
+
+/* Hero slide-2 badge color */
+#slide-1 .slide-eyebrow{border-color:rgba(99,102,241,.4);color:#a5b4fc}
+#slide-1 .slide-eyebrow-dot{background:#6366f1}
+
+/* Stats strip upgrade */
+.ss-item:hover .ss-val{background:linear-gradient(135deg,#5eead4,#67e8f9,#a5b4fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* About image polish */
+.about-img-wrap img{border-radius:18px;width:100%;height:520px;object-fit:cover;object-position:top center}
+
+/* Better section transitions */
+.sec{scroll-margin-top:72px}
+
+/* CTA final urgency stripe */
+.cta-urgency{display:inline-flex;align-items:center;gap:8px;background:rgba(20,184,166,.12);border:1px solid rgba(20,184,166,.25);border-radius:50px;padding:6px 16px;font-size:.8rem;font-weight:600;color:#5eead4;margin-bottom:20px}
+.cta-urgency-dot{width:8px;height:8px;background:#14b8a6;border-radius:50%;animation:waPulse 2s infinite}
+
+/* Floating hero stat widget */
+.hero-live-badge{position:absolute;bottom:110px;right:40px;background:rgba(3,7,17,.85);backdrop-filter:blur(16px);border:1px solid rgba(20,184,166,.25);border-radius:14px;padding:14px 18px;z-index:20;display:flex;flex-direction:column;gap:4px;min-width:160px}
+.hlb-dot{width:8px;height:8px;background:#10b981;border-radius:50%;animation:waPulse 2s infinite;display:inline-block;margin-right:6px}
+.hlb-label{font-size:.7rem;color:var(--txt2);font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+.hlb-value{font-size:1.4rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.03em}
+.hlb-sub{font-size:.72rem;color:#5eead4;font-weight:600}
+@media(max-width:768px){.hero-live-badge{display:none}}
+
 </style>
 </head>
 <body class="lang-es" id="html-root">
+
+<!-- Scroll progress bar (conectado al JS existente via id="prog") -->
+<div id="scroll-progress" style="display:none"></div>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/50766743062?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Medidor%20Inteligente" target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp MTG">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.99 2C6.47 2 2 6.47 2 12c0 1.797.476 3.505 1.322 4.99L2 22l5.125-1.298A9.953 9.953 0 0 0 11.99 22C17.51 22 22 17.53 22 12S17.51 2 11.99 2zm0 18c-1.652 0-3.197-.456-4.516-1.24l-.323-.19-3.044.77.806-2.965-.21-.337A7.948 7.948 0 0 1 3.99 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+  <span class="wa-fab-txt">WhatsApp</span>
+</a>
 
 <!-- ═══ SVG ICON SPRITE (reutilizable via <svg><use href="#i-..."/></svg>) ═══ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -2635,6 +2689,12 @@ html{scroll-behavior:smooth}
     <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1600&auto=format&fit=crop&q=80')"></div>
     <div class="slide-overlay"></div>
     <div class="container">
+      <!-- Live badge widget -->
+      <div class="hero-live-badge">
+        <div class="hlb-label"><span class="hlb-dot"></span>Monitoreo activo</div>
+        <div class="hlb-value">38<span style="font-size:.9rem">%</span></div>
+        <div class="hlb-sub">ahorro promedio · clientes MTG</div>
+      </div>
       <div class="slide-content">
         <div class="slide-eyebrow"><span class="slide-eyebrow-dot"></span><span data-lang="es">Medidor Inteligente · Panamá</span><span data-lang="en">Medidor Inteligente · Panama</span></div>
         <h1 class="slide-h1">
@@ -2654,7 +2714,7 @@ html{scroll-behavior:smooth}
   </div>
   <!-- Slide 2 — Dashboard -->
   <div class="slide" id="slide-1">
-    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1600&auto=format&fit=crop&q=80')"></div>
+    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&auto=format&fit=crop&q=80')"></div>
     <div class="slide-overlay"></div>
     <div class="container">
       <div class="slide-content">
@@ -3891,7 +3951,7 @@ html{scroll-behavior:smooth}
         <div class="test-stars"><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span></div>
         <p class="test-text"><span data-lang="es">El primer mes ya vi la diferencia. Me identificaron que el A/C del cuarto principal era el culpable del 60% de mi factura. Ahora programo horarios y bajé B/.45 mensual.</span><span data-lang="en">I saw the difference the first month. They identified that the main bedroom A/C was responsible for 60% of my bill. I now schedule hours and dropped B/.45 monthly.</span></p>
         <div class="test-author">
-          <div class="test-avatar">👨‍💼</div>
+          <div class="test-avatar-letter" style="background:linear-gradient(135deg,#14b8a6,#06b6d4);color:#fff">RM</div>
           <div>
             <div class="test-name">Roberto M.</div>
             <div class="test-role"><span data-lang="es">San Francisco, Panamá · EDEMET</span><span data-lang="en">San Francisco, Panama · EDEMET</span></div>
@@ -3903,7 +3963,7 @@ html{scroll-behavior:smooth}
         <div class="test-stars"><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span></div>
         <p class="test-text"><span data-lang="es">Instalaron todo en mi local en menos de 2 horas. Descubrí que el servidor de cámaras nunca se apagaba en fin de semana. Ahorro B/.38 al mes sin cambiar nada de hardware.</span><span data-lang="en">They installed everything in my store in under 2 hours. Discovered the camera server never shut down on weekends. Save B/.38/month without changing any hardware.</span></p>
         <div class="test-author">
-          <div class="test-avatar">👩‍💼</div>
+          <div class="test-avatar-letter" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff">MC</div>
           <div>
             <div class="test-name">Mariana C.</div>
             <div class="test-role"><span data-lang="es">Local comercial, Miraflores · ENSA</span><span data-lang="en">Commercial space, Miraflores · ENSA</span></div>
@@ -3915,7 +3975,7 @@ html{scroll-behavior:smooth}
         <div class="test-stars"><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span></div>
         <p class="test-text"><span data-lang="es">Le pedimos a MTG el suministro de pasivos de fibra óptica y la instalación para nuestro edificio de 8 pisos. Entregaron a tiempo, certificaron los tendidos y el precio fue muy competitivo.</span><span data-lang="en">We asked MTG for passive fiber optic supply and installation for our 8-floor building. Delivered on time, certified the runs, and pricing was very competitive.</span></p>
         <div class="test-author">
-          <div class="test-avatar">🏗️</div>
+          <div class="test-avatar-letter" style="background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff">JR</div>
           <div>
             <div class="test-name">Ing. J. Pérez</div>
             <div class="test-role"><span data-lang="es">Administrador de edificio, Obarrio</span><span data-lang="en">Building manager, Obarrio</span></div>
@@ -3999,7 +4059,7 @@ html{scroll-behavior:smooth}
   <div class="cta-bg-glow"></div>
   <div class="container">
     <div class="cta-inner rv">
-      <div class="tag" style="margin:0 auto 18px"><span class="tag-dot"></span><span data-lang="es">Comenzar ahora</span><span data-lang="en">Get started</span></div>
+      <div class="cta-urgency"><span class="cta-urgency-dot"></span><span data-lang="es">Análisis gratuito · sin compromiso · en menos de 48 h</span><span data-lang="en">Free analysis · no commitment · in under 48 h</span></div>
       <h2 class="cta-h2"><span data-lang="es">¿Listo para saber qué <span>consume tu dinero</span>?</span><span data-lang="en">Ready to know what <span>consumes your money</span>?</span></h2>
       <p class="cta-p"><span data-lang="es">El primer análisis es gratuito. Instalamos, medimos y entregamos un reporte con los ahorros potenciales concretos — sin compromiso.</span><span data-lang="en">The first analysis is free. We install, measure and deliver a report with concrete potential savings — no commitment.</span></p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
