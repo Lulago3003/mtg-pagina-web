@@ -2057,6 +2057,75 @@ html{scroll-behavior:smooth}
 .sr-cat{color:var(--txt2)}
 .btt{background:var(--grn);box-shadow:0 4px 20px rgba(37,99,235,.35)}
 
+/* ── TRUSTBAR rediseño ───────────────────────────────────── */
+#trustbar{background:#f8faff !important;border-top:1px solid rgba(37,99,235,.08) !important;border-bottom:1px solid rgba(37,99,235,.08) !important;padding:52px 0 !important}
+.tb-eyebrow{text-align:center;font-size:.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#94a3b8;margin-bottom:40px}
+.tb-brands{display:flex;justify-content:center;align-items:flex-start;gap:0;flex-wrap:wrap}
+.tb-brand-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 48px;text-decoration:none;transition:all .2s ease;border-radius:14px}
+.tb-brand-card:hover{background:rgba(37,99,235,.04);transform:translateY(-2px)}
+.tb-brand-logo{display:flex;align-items:center;justify-content:center;height:52px;margin-bottom:10px}
+.tb-brand-desc{font-size:.75rem;color:#94a3b8;max-width:180px;line-height:1.5;font-weight:500}
+.tb-divider{width:1px;height:80px;background:rgba(37,99,235,.1);align-self:center;margin:0 8px}
+@media(max-width:700px){.tb-divider{display:none}.tb-brands{gap:8px}.tb-brand-card{padding:16px 24px}}
+
+/* ── SOLUTIONS rediseño ──────────────────────────────────── */
+#solutions{background:#f4f7ff !important}
+#solutions .s-title{color:#0f172a !important}
+#solutions .s-title span{background:linear-gradient(130deg,#2563eb,#0ea5e9) !important;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#solutions .s-sub{color:#475569 !important}
+#solutions .tag{color:#2563eb !important;background:rgba(37,99,235,.08) !important;border-color:rgba(37,99,235,.15) !important}
+#solutions .tag-dot{background:#2563eb !important}
+/* Informe mensual — hero card */
+.sol-hero-card{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:#fff;border-radius:20px;padding:44px 48px;border:1px solid rgba(37,99,235,.10);box-shadow:0 8px 40px rgba(15,23,42,.06);margin-bottom:40px}
+.sol-hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.1);color:#16a34a;font-size:.7rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:14px}
+.sol-hero-title{font-size:1.7rem;font-weight:800;color:#0f172a;letter-spacing:-.04em;margin:0 0 14px;font-family:var(--ff-head)}
+.sol-hero-text{font-size:.9rem;color:#475569;line-height:1.75;margin-bottom:20px}
+.sol-hero-list{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:9px}
+.sol-hero-list li{display:flex;align-items:flex-start;gap:10px;font-size:.86rem;color:#334155;line-height:1.5}
+.sol-hero-list svg{flex-shrink:0;margin-top:2px}
+/* Mock informe */
+.sol-report{background:#fff;border:1px solid rgba(37,99,235,.12);border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(15,23,42,.12)}
+.sr-topbar{background:#f1f5f9;padding:10px 16px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(37,99,235,.08)}
+.sr-dot{width:10px;height:10px;border-radius:50%}
+.sr-filename{margin-left:10px;font-size:.72rem;color:#64748b;font-weight:500}
+.sr-body{padding:20px 24px;display:flex;flex-direction:column;gap:16px}
+.sr-header-block{border-bottom:1px solid #f1f5f9;padding-bottom:12px}
+.sr-logo-line{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.sr-mtg{font-size:.8rem;font-weight:900;color:#2563eb;letter-spacing:.5px}
+.sr-sep{color:#cbd5e1;font-size:.8rem}
+.sr-mi{font-size:.72rem;color:#64748b;font-weight:500}
+.sr-title-line{font-size:.88rem;font-weight:700;color:#0f172a}
+.sr-client{font-size:.72rem;color:#94a3b8;margin-top:2px}
+.sr-score-row{display:flex;align-items:center;gap:20px}
+.sr-score-block{text-align:center;background:linear-gradient(135deg,#2563eb,#0ea5e9);border-radius:10px;padding:10px 18px;color:#fff;flex-shrink:0}
+.sr-score-letter{font-size:1.8rem;font-weight:900;line-height:1}
+.sr-score-lbl{font-size:.6rem;opacity:.8;margin-top:2px;white-space:nowrap}
+.sr-kpis{display:flex;gap:16px;flex-wrap:wrap}
+.sr-kpi{display:flex;flex-direction:column;gap:2px}
+.sr-kv{font-size:.88rem;font-weight:700;color:#0f172a}
+.sr-kl{font-size:.64rem;color:#94a3b8}
+.sr-bars{display:flex;flex-direction:column;gap:8px}
+.sr-bar-row{display:flex;align-items:center;gap:8px}
+.sr-br-lbl{font-size:.7rem;color:#475569;width:80px;flex-shrink:0}
+.sr-bar-track{flex:1;height:7px;background:#f1f5f9;border-radius:4px;overflow:hidden}
+.sr-bar-fill{height:100%;border-radius:4px;transition:width .6s ease}
+.sr-br-val{font-size:.68rem;color:#64748b;width:52px;text-align:right;flex-shrink:0}
+.sr-rec-block{background:#f8faff;border-radius:8px;padding:12px 14px;border-left:3px solid #2563eb}
+.sr-rec-title{font-size:.72rem;font-weight:700;color:#0f172a;margin-bottom:5px}
+.sr-rec-text{font-size:.72rem;color:#475569;line-height:1.55}
+/* 6 módulos */
+.sol-modules{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(37,99,235,.08);border-radius:16px;overflow:hidden}
+.sol-mod{display:flex;align-items:flex-start;gap:14px;padding:22px 24px;background:#fff;transition:background .2s}
+.sol-mod:hover{background:#f8faff}
+.sol-mod-ico{width:40px;height:40px;border-radius:10px;background:rgba(37,99,235,.08);color:#2563eb;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sol-mod-name{font-size:.88rem;font-weight:700;color:#0f172a;margin-bottom:3px}
+.sol-mod-desc{font-size:.76rem;color:#64748b;line-height:1.5}
+@media(max-width:900px){
+  .sol-hero-card{grid-template-columns:1fr;gap:28px}
+  .sol-modules{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){.sol-modules{grid-template-columns:1fr}}
+
 /* Sections — fondos alternos */
 .sec{background:var(--g950)}
 #about.sec,#solutions.sec,#how.sec,#markets.sec,#benefits.sec,#faq.sec{background:var(--g900)}
@@ -3257,107 +3326,156 @@ html{scroll-behavior:smooth}
 </section>
 
 
-<section id="stats-strip">
-  <div class="container">
-    <div class="stats-strip-grid">
-      <div class="ss-item rv">
-        <span class="ss-icon ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-clock"/></svg></span></span>
-        <div class="ss-val" data-count="2008" data-suffix="">0</div>
-        <div class="ss-lbl"><span data-lang="es">Trayectoria desde</span><span data-lang="en">Track record since</span></div>
-      </div>
-      <div class="ss-item rv">
-        <span class="ss-icon ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-grid"/></svg></span></span>
-        <div class="ss-val" data-count="6" data-suffix="">0</div>
-        <div class="ss-lbl"><span data-lang="es">Líneas de producto</span><span data-lang="en">Product lines</span></div>
-      </div>
-      <div class="ss-item rv">
-        <span class="ss-icon ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-wrench"/></svg></span></span>
-        <div class="ss-val" data-count="7" data-suffix="">0</div>
-        <div class="ss-lbl"><span data-lang="es">Servicios profesionales</span><span data-lang="en">Professional services</span></div>
-      </div>
-      <div class="ss-item rv">
-        <span class="ss-icon ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span></span>
-        <div class="ss-val" data-count="40" data-suffix="%">0%</div>
-        <div class="ss-lbl"><span data-lang="es">Reducción máx. consumo</span><span data-lang="en">Max consumption cut</span></div>
-      </div>
-      <div class="ss-item rv">
-        <span class="ss-icon ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-headset"/></svg></span></span>
-        <div class="ss-lbl" style="font-size:1.6rem;font-weight:800;background:linear-gradient(135deg,#fff,var(--grn-lt));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em;line-height:1;margin-bottom:8px">24/7</div>
-        <div class="ss-lbl"><span data-lang="es">Soporte técnico</span><span data-lang="en">Tech support</span></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <!-- ═══════════════════════════════════════════════════════════
-     TRUST BAR · Partners y certificaciones
+     PARTNERS · Marcas que distribuimos
 ═══════════════════════════════════════════════════════════ -->
-<section id="trustbar" aria-label="Partners y tecnología certificada">
+<section id="trustbar" aria-label="Marcas que distribuimos">
   <div class="container">
-    <div class="tb-label"><span data-lang="es">Trabajamos con la mejor tecnología del mercado</span><span data-lang="en">Built on industry-leading technology</span></div>
-    <div class="tb-row">
-      <div class="tb-logo">EMPORIA <span>ENERGY</span></div>
-      <div class="tb-logo">ANTHROPIC <span>CLAUDE</span></div>
-      <div class="tb-logo">KHIPU <span>DATA CENTERS</span></div>
-      <div class="tb-logo">PROSE <span>RACKS</span></div>
-      <div class="tb-logo">N-TEST <span>OTDR</span></div>
-      <div class="tb-logo">EDEMET <span>· ENSA · EDECHI</span></div>
+    <p class="tb-eyebrow"><span data-lang="es">Distribuidor oficial de tecnología de clase mundial</span><span data-lang="en">Official distributor of world-class technology</span></p>
+    <div class="tb-brands">
+
+      <!-- EMPORIA -->
+      <a href="#productos" class="tb-brand-card">
+        <div class="tb-brand-logo">
+          <svg viewBox="0 0 160 52" width="130" height="42" aria-label="emporia energy">
+            <circle cx="14" cy="18" r="10" fill="#5a9e2f" opacity=".15"/>
+            <path d="M9 18 Q14 8 19 18 Q14 24 9 18Z" fill="#5a9e2f"/>
+            <text x="28" y="26" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="800" fill="#3d7a1a" letter-spacing="-0.5">emporia</text>
+            <text x="28" y="40" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#7ab34a" letter-spacing="2">ENERGY</text>
+          </svg>
+        </div>
+        <p class="tb-brand-desc"><span data-lang="es">Sensores de monitoreo energético por circuito</span><span data-lang="en">Circuit-level energy monitoring sensors</span></p>
+      </a>
+
+      <div class="tb-divider"></div>
+
+      <!-- PROSE -->
+      <a href="#productos" class="tb-brand-card">
+        <div class="tb-brand-logo">
+          <svg viewBox="0 0 140 52" width="110" height="42" aria-label="PROSE racks">
+            <text x="0" y="38" font-family="'Arial Narrow','Impact',Arial,sans-serif" font-size="38" font-weight="900" font-style="italic" fill="#1a2c5b" letter-spacing="-1">PROSE</text>
+          </svg>
+        </div>
+        <p class="tb-brand-desc"><span data-lang="es">Racks, gabinetes e infraestructura telecom</span><span data-lang="en">Racks, cabinets and telecom infrastructure</span></p>
+      </a>
+
+      <div class="tb-divider"></div>
+
+      <!-- N-TEST -->
+      <a href="#productos" class="tb-brand-card">
+        <div class="tb-brand-logo">
+          <svg viewBox="0 0 150 52" width="120" height="42" aria-label="N-TEST OTDR">
+            <circle cx="22" cy="26" r="18" fill="#0d2b6e"/>
+            <line x1="10" y1="21" x2="34" y2="21" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="10" y1="27" x2="34" y2="27" stroke="#4a7fd4" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="10" y1="33" x2="34" y2="33" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+            <text x="48" y="34" font-family="'Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="900" fill="#0d2b6e" letter-spacing="1">N-TEST</text>
+          </svg>
+        </div>
+        <p class="tb-brand-desc"><span data-lang="es">OTDR, medidores de potencia óptica y test de fibra</span><span data-lang="en">OTDR, optical power meters and fiber test gear</span></p>
+      </a>
+
     </div>
   </div>
 </section>
 
 
 <!-- ═══════════════════════════════════════════════════════════
-     B2B · Lineas de producto para empresas
+     PLATAFORMA · Medidor Inteligente
 ═══════════════════════════════════════════════════════════ -->
 <section id="solutions" class="sec">
-  <div class="bg-orb bg-orb-1"></div>
-  <div class="bg-orb bg-orb-2"></div>
   <div class="container">
-    <div class="centered rv">
+
+    <div class="centered rv" style="margin-bottom:48px">
       <div class="tag"><span class="tag-dot"></span><span data-lang="es">Plataforma Medidor Inteligente</span><span data-lang="en">Medidor Inteligente Platform</span></div>
-      <h2 class="s-title"><span data-lang="es">Todo lo que necesitas para <span>optimizar tu consumo</span></span><span data-lang="en">Everything you need to <span>optimize consumption</span></span></h2>
-      <p class="s-sub"><span data-lang="es">Seis módulos integrados que trabajan juntos para darte visión completa de tu instalación eléctrica.</span><span data-lang="en">Six integrated modules working together to give you full visibility of your electrical installation.</span></p>
+      <h2 class="s-title"><span data-lang="es">Monitoreo continuo.<br><span>Informe mensual. Ahorro real.</span></span><span data-lang="en">Continuous monitoring.<br><span>Monthly report. Real savings.</span></span></h2>
+      <p class="s-sub"><span data-lang="es">Instalamos el sensor, conectamos la plataforma y cada mes recibes un análisis completo con recomendaciones concretas para reducir tu factura.</span><span data-lang="en">We install the sensor, connect the platform and every month you receive a full analysis with concrete recommendations to cut your bill.</span></p>
     </div>
-    <div class="sol-grid">
-      <div class="sol-card rv">
-        <div class="sol-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span></div>
-        <h3><span data-lang="es">Monitoreo por circuito</span><span data-lang="en">Circuit monitoring</span></h3>
-        <p><span data-lang="es">Visualiza en tiempo real el consumo de cada breaker. Lecturas cada 5 minutos, históricos de 12 meses y comparativas entre períodos.</span><span data-lang="en">Visualize real-time consumption per breaker. Readings every 5 minutes, 12-month history and period comparisons.</span></p>
-        <div class="sol-chip"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-clock"/></svg></span> <span data-lang="es">Cada 5 minutos</span><span data-lang="en">Every 5 minutes</span></div>
+
+    <!-- Informe mensual — tarjeta destacada -->
+    <div class="sol-hero-card rv">
+      <div class="sol-hero-left">
+        <div class="sol-hero-badge"><span data-lang="es">Incluido en cada instalación</span><span data-lang="en">Included with every installation</span></div>
+        <h3 class="sol-hero-title"><span data-lang="es">Informe mensual con IA</span><span data-lang="en">Monthly AI Report</span></h3>
+        <p class="sol-hero-text"><span data-lang="es">Cada mes recibes un PDF personalizado con el análisis completo de tu consumo: comparativo vs mes anterior, circuitos con mayor gasto, consumos fantasma detectados, score energético actualizado y recomendaciones de ahorro concretas generadas por inteligencia artificial.</span><span data-lang="en">Every month you receive a personalized PDF with a full consumption analysis: comparison vs previous month, highest-usage circuits, detected phantom loads, updated energy score and concrete savings recommendations generated by AI.</span></p>
+        <ul class="sol-hero-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Consumo por circuito y comparativo mensual</span><span data-lang="en">Per-circuit usage and monthly comparison</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Detección de anomalías y consumo fantasma</span><span data-lang="en">Anomaly detection and phantom load</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Score energético A–F con análisis de tendencia</span><span data-lang="en">A–F energy score with trend analysis</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">5 recomendaciones de ahorro personalizadas</span><span data-lang="en">5 personalized savings recommendations</span></li>
+        </ul>
+        <a href="#cta-sec" class="btn btn-primary" style="margin-top:8px"><span data-lang="es">Solicitar mi análisis →</span><span data-lang="en">Request my analysis →</span></a>
       </div>
-      <div class="sol-card rv">
-        <div class="sol-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-search"/></svg></span></div>
-        <h3><span data-lang="es">Detección de anomalías</span><span data-lang="en">Anomaly detection</span></h3>
-        <p><span data-lang="es">Algoritmos z-score identifican picos inusuales por circuito. Alertas en tiempo real con nivel de severidad y recomendación.</span><span data-lang="en">Z-score algorithms identify unusual spikes per circuit. Real-time alerts with severity level and recommendation.</span></p>
-        <div class="sol-chip"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-spark"/></svg></span> IA + <span data-lang="es">estadística</span><span data-lang="en">statistics</span></div>
-      </div>
-      <div class="sol-card rv">
-        <div class="sol-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-eye"/></svg></span></div>
-        <h3><span data-lang="es">Consumo fantasma</span><span data-lang="en">Phantom load</span></h3>
-        <p><span data-lang="es">Detecta electrodomésticos en standby que consumen sin que lo notes. Identifica el desperdicio exacto en kWh y cuánto te cuesta.</span><span data-lang="en">Detect standby appliances consuming without you noticing. Identifies exact waste in kWh and how much it costs.</span></p>
-        <div class="sol-chip"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-spark"/></svg></span> <span data-lang="es">Ahorro inmediato</span><span data-lang="en">Immediate savings</span></div>
-      </div>
-      <div class="sol-card rv">
-        <div class="sol-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></div>
-        <h3><span data-lang="es">Score energético inteligente</span><span data-lang="en">Smart energy score</span></h3>
-        <p><span data-lang="es">Índice compuesto 0–100 que integra eficiencia, estabilidad, fantasma y presupuesto. Calificación A–F con análisis detallado.</span><span data-lang="en">Composite index 0–100 integrating efficiency, stability, phantom load and budget. A–F rating with detailed analysis.</span></p>
-        <div class="sol-chip"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-chart"/></svg></span> IEE·IES·IPA·IER</div>
-      </div>
-      <div class="sol-card rv">
-        <div class="sol-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-spark"/></svg></span></div>
-        <h3><span data-lang="es">Predicción de consumo</span><span data-lang="en">Consumption prediction</span></h3>
-        <p><span data-lang="es">Proyecta tu factura del mes en curso con base en datos históricos. Alerta si vas a superar tu presupuesto antes del cierre.</span><span data-lang="en">Projects your current month's bill based on historical data. Alerts you if you'll exceed your budget before closing.</span></p>
-        <div class="sol-chip"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-clock"/></svg></span> <span data-lang="es">Proyección mensual</span><span data-lang="en">Monthly forecast</span></div>
-      </div>
-      <div class="sol-card rv">
-        <div class="sol-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-trend"/></svg></span></div>
-        <h3><span data-lang="es">Dashboard ejecutivo</span><span data-lang="en">Executive dashboard</span></h3>
-        <p><span data-lang="es">Vista unificada de todos los proyectos: pipeline, comparativa de propiedades, score promedio, tendencia y actividad reciente.</span><span data-lang="en">Unified view of all projects: pipeline, property comparison, average score, trend and recent activity.</span></p>
-        <div class="sol-chip"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-building"/></svg></span> <span data-lang="es">Multi-propiedad</span><span data-lang="en">Multi-property</span></div>
+      <div class="sol-hero-right">
+        <!-- Mock informe preview -->
+        <div class="sol-report">
+          <div class="sr-topbar">
+            <div class="sr-dot" style="background:#ef4444"></div>
+            <div class="sr-dot" style="background:#f59e0b"></div>
+            <div class="sr-dot" style="background:#22c55e"></div>
+            <span class="sr-filename"><span data-lang="es">Informe_Mayo_2025.pdf</span><span data-lang="en">Report_May_2025.pdf</span></span>
+          </div>
+          <div class="sr-body">
+            <div class="sr-header-block">
+              <div class="sr-logo-line"><span class="sr-mtg">MTG</span><span class="sr-sep">·</span><span class="sr-mi">Medidor Inteligente</span></div>
+              <div class="sr-title-line"><span data-lang="es">Informe Energético — Mayo 2025</span><span data-lang="en">Energy Report — May 2025</span></div>
+              <div class="sr-client">Casa Familia González · EDEMET</div>
+            </div>
+            <div class="sr-score-row">
+              <div class="sr-score-block">
+                <div class="sr-score-letter">B+</div>
+                <div class="sr-score-lbl">Score energético</div>
+              </div>
+              <div class="sr-kpis">
+                <div class="sr-kpi"><span class="sr-kv">847 kWh</span><span class="sr-kl"><span data-lang="es">Consumo total</span><span data-lang="en">Total usage</span></span></div>
+                <div class="sr-kpi"><span class="sr-kv" style="color:#22c55e">−12%</span><span class="sr-kl"><span data-lang="es">vs mes anterior</span><span data-lang="en">vs prev month</span></span></div>
+                <div class="sr-kpi"><span class="sr-kv">$189.40</span><span class="sr-kl"><span data-lang="es">Factura estimada</span><span data-lang="en">Estimated bill</span></span></div>
+              </div>
+            </div>
+            <div class="sr-bars">
+              <div class="sr-bar-row"><span class="sr-br-lbl">A/C principal</span><div class="sr-bar-track"><div class="sr-bar-fill" style="width:78%;background:#2563eb"></div></div><span class="sr-br-val">312 kWh</span></div>
+              <div class="sr-bar-row"><span class="sr-br-lbl">Cocina</span><div class="sr-bar-track"><div class="sr-bar-fill" style="width:42%;background:#0ea5e9"></div></div><span class="sr-br-val">168 kWh</span></div>
+              <div class="sr-bar-row"><span class="sr-br-lbl">Iluminación</span><div class="sr-bar-track"><div class="sr-bar-fill" style="width:24%;background:#38bdf8"></div></div><span class="sr-br-val">96 kWh</span></div>
+            </div>
+            <div class="sr-rec-block">
+              <div class="sr-rec-title">💡 <span data-lang="es">Recomendación principal</span><span data-lang="en">Top recommendation</span></div>
+              <div class="sr-rec-text"><span data-lang="es">El A/C del cuarto principal opera 6h/día en modo standby. Ajustar el termostato a 24°C puede ahorrar ~38 kWh al mes.</span><span data-lang="en">The main bedroom A/C runs 6h/day in standby. Setting the thermostat to 24°C can save ~38 kWh/month.</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- 6 módulos de la plataforma -->
+    <div class="sol-modules rv">
+      <div class="sol-mod">
+        <div class="sol-mod-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+        <div class="sol-mod-body"><div class="sol-mod-name"><span data-lang="es">Monitoreo por circuito</span><span data-lang="en">Circuit monitoring</span></div><div class="sol-mod-desc"><span data-lang="es">Lecturas cada 5 min, histórico 12 meses</span><span data-lang="en">Readings every 5 min, 12-month history</span></div></div>
+      </div>
+      <div class="sol-mod">
+        <div class="sol-mod-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <div class="sol-mod-body"><div class="sol-mod-name"><span data-lang="es">Detección de anomalías</span><span data-lang="en">Anomaly detection</span></div><div class="sol-mod-desc"><span data-lang="es">Alertas IA con nivel de severidad</span><span data-lang="en">AI alerts with severity level</span></div></div>
+      </div>
+      <div class="sol-mod">
+        <div class="sol-mod-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="sol-mod-body"><div class="sol-mod-name"><span data-lang="es">Consumo fantasma</span><span data-lang="en">Phantom load</span></div><div class="sol-mod-desc"><span data-lang="es">Identifica aparatos en standby oculto</span><span data-lang="en">Identifies hidden standby appliances</span></div></div>
+      </div>
+      <div class="sol-mod">
+        <div class="sol-mod-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="sol-mod-body"><div class="sol-mod-name"><span data-lang="es">Score energético A–F</span><span data-lang="en">Energy score A–F</span></div><div class="sol-mod-desc"><span data-lang="es">Índice compuesto eficiencia + estabilidad</span><span data-lang="en">Composite efficiency + stability index</span></div></div>
+      </div>
+      <div class="sol-mod">
+        <div class="sol-mod-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="sol-mod-body"><div class="sol-mod-name"><span data-lang="es">Predicción de factura</span><span data-lang="en">Bill prediction</span></div><div class="sol-mod-desc"><span data-lang="es">Proyección mensual antes del cierre</span><span data-lang="en">Monthly forecast before billing closes</span></div></div>
+      </div>
+      <div class="sol-mod">
+        <div class="sol-mod-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <div class="sol-mod-body"><div class="sol-mod-name"><span data-lang="es">Dashboard multi-propiedad</span><span data-lang="en">Multi-property dashboard</span></div><div class="sol-mod-desc"><span data-lang="es">Vista unificada de todos tus proyectos</span><span data-lang="en">Unified view of all your projects</span></div></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
