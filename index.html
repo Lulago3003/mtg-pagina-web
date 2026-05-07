@@ -2611,6 +2611,381 @@ footer .f-soc:hover{color:#2563eb !important;border-color:rgba(37,99,235,.4) !im
 /* ── FAQ — fondo ── */
 #faq{background:#ffffff !important}
 
+/* ═══════════════════════════════════════════════════════════════
+   CATÁLOGO MODERNO — Bento Grid + Modal
+   ══════════════════════════════════════════════════════════════ */
+
+#productos{background:linear-gradient(180deg,#fafbff 0%,#f0f5ff 100%)}
+
+/* ── Buscador minimalista ── */
+.catx-search-bar{
+  display:flex;align-items:center;gap:12px;
+  max-width:680px;margin:0 auto 36px;
+  background:#fff;border:1.5px solid rgba(37,99,235,.12);
+  border-radius:14px;padding:6px 6px 6px 18px;
+  box-shadow:0 4px 20px rgba(15,23,42,.04);
+  transition:all .25s cubic-bezier(.4,0,.2,1)
+}
+.catx-search-bar:focus-within{
+  border-color:#2563eb;
+  box-shadow:0 8px 28px rgba(37,99,235,.16),0 0 0 4px rgba(37,99,235,.08)
+}
+.catx-search-icon{width:20px;height:20px;color:#94a3b8;flex-shrink:0}
+.catx-search-input{
+  flex:1;border:none;outline:none;background:transparent;
+  font-family:var(--ff);font-size:1rem;color:#0f172a;
+  padding:14px 0
+}
+.catx-search-input::placeholder{color:#94a3b8;font-weight:500}
+.catx-search-clear{
+  width:32px;height:32px;border:none;background:#f1f5f9;
+  color:#64748b;border-radius:50%;cursor:pointer;
+  font-size:1.4rem;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s
+}
+.catx-search-clear:hover{background:#e2e8f0;color:#0f172a}
+
+/* ── Bento grid ── */
+.catx-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-bottom:48px
+}
+.catx-tile{
+  position:relative;
+  display:block;width:100%;
+  aspect-ratio:4/5;
+  border:none;padding:0;
+  border-radius:20px;overflow:hidden;
+  cursor:pointer;
+  font-family:var(--ff);
+  background:#0f172a;
+  box-shadow:0 6px 24px rgba(15,23,42,.08),0 1px 3px rgba(15,23,42,.06);
+  transition:all .35s cubic-bezier(.4,0,.2,1);
+  text-align:left
+}
+.catx-tile:hover{
+  transform:translateY(-6px);
+  box-shadow:0 22px 56px rgba(15,23,42,.18),0 4px 12px rgba(37,99,235,.15)
+}
+.catx-tile:focus-visible{
+  outline:3px solid #2563eb;outline-offset:3px
+}
+.catx-tile-img{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transition:transform .8s cubic-bezier(.4,0,.2,1)
+}
+.catx-tile:hover .catx-tile-img{transform:scale(1.08)}
+.catx-tile-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(15,23,42,.05) 0%,rgba(15,23,42,.4) 45%,rgba(15,23,42,.92) 100%);
+  pointer-events:none
+}
+.catx-tile-content{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:20px 22px 24px;
+  color:#fff
+}
+.catx-tile-top{
+  display:flex;align-items:center;justify-content:space-between
+}
+.catx-tile-num{
+  font-family:var(--ff-head);
+  font-size:1rem;font-weight:800;
+  color:rgba(255,255,255,.7);
+  letter-spacing:.02em;
+  background:rgba(255,255,255,.14);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  padding:6px 12px;border-radius:50px;
+  border:1px solid rgba(255,255,255,.18)
+}
+.catx-tile-count{
+  font-size:.7rem;font-weight:600;
+  color:rgba(255,255,255,.85);
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  padding:5px 10px;border-radius:50px;
+  letter-spacing:.02em
+}
+.catx-tile-badge{
+  font-size:.65rem;font-weight:800;
+  color:#0f172a;
+  background:linear-gradient(135deg,#fbbf24,#f59e0b);
+  padding:5px 11px;border-radius:50px;
+  letter-spacing:.06em;text-transform:uppercase;
+  box-shadow:0 4px 12px rgba(245,158,11,.4)
+}
+.catx-tile-bottom{
+  display:flex;flex-direction:column;gap:10px
+}
+.catx-tile-title{
+  font-family:var(--ff-head);
+  font-size:1.55rem;font-weight:700;
+  letter-spacing:-.025em;line-height:1.1;
+  color:#fff;margin:0
+}
+.catx-tile-sub{
+  font-size:.82rem;font-weight:500;
+  color:rgba(255,255,255,.85);
+  margin:0;line-height:1.5
+}
+.catx-tile-brands{
+  display:flex;flex-wrap:wrap;gap:5px;
+  margin-top:4px
+}
+.catx-brand-chip{
+  font-size:.65rem;font-weight:700;
+  color:#fff;
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  padding:4px 9px;border-radius:50px;
+  letter-spacing:.04em;
+  border:1px solid rgba(255,255,255,.22)
+}
+.catx-tile-featured{
+  grid-row:span 1
+}
+
+/* Tile oculto por filtro */
+.catx-tile.catx-hidden{
+  display:none
+}
+
+/* Empty state */
+.catx-empty{
+  text-align:center;padding:60px 20px;
+  color:#94a3b8
+}
+.catx-empty svg{margin:0 auto 16px;color:#cbd5e1}
+.catx-empty p{font-size:.95rem;margin:0}
+.catx-empty a{color:#2563eb;font-weight:600;text-decoration:underline}
+
+/* CTA al final */
+.catx-bottom-cta{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  background:#fff;
+  border:1px solid rgba(37,99,235,.12);
+  border-radius:18px;padding:28px 32px;
+  box-shadow:0 6px 24px rgba(15,23,42,.06);
+  flex-wrap:wrap
+}
+.catx-cta-text h4{
+  font-family:var(--ff-head);
+  font-size:1.2rem;font-weight:700;color:#0f172a;
+  letter-spacing:-.02em;margin:0 0 4px
+}
+.catx-cta-text p{
+  font-size:.88rem;color:#64748b;margin:0;line-height:1.55
+}
+.catx-cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ── MODAL ── */
+.catx-modal{
+  position:fixed;inset:0;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;
+  transition:opacity .3s,visibility .3s
+}
+.catx-modal[hidden]{display:none}
+.catx-modal.catx-modal-open{
+  opacity:1;visibility:visible
+}
+.catx-modal-overlay{
+  position:absolute;inset:0;
+  background:rgba(15,23,42,.6);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px)
+}
+.catx-modal-panel{
+  position:relative;
+  width:min(900px,94vw);
+  max-height:92vh;
+  background:#fff;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 30px 80px rgba(15,23,42,.4);
+  transform:scale(.94) translateY(20px);
+  transition:transform .35s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column
+}
+.catx-modal.catx-modal-open .catx-modal-panel{
+  transform:scale(1) translateY(0)
+}
+.catx-modal-close{
+  position:absolute;top:16px;right:16px;z-index:10;
+  width:40px;height:40px;
+  background:rgba(255,255,255,.95);
+  border:1px solid rgba(15,23,42,.1);
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:#0f172a;
+  transition:all .2s;
+  box-shadow:0 4px 14px rgba(15,23,42,.12)
+}
+.catx-modal-close:hover{
+  background:#fff;
+  transform:rotate(90deg);
+  box-shadow:0 6px 20px rgba(15,23,42,.18)
+}
+.catx-modal-hero{
+  position:relative;
+  height:240px;
+  flex-shrink:0;
+  overflow:hidden
+}
+.catx-modal-hero img{
+  width:100%;height:100%;object-fit:cover;
+  display:block
+}
+.catx-modal-hero-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(15,23,42,.1) 0%,rgba(15,23,42,.85) 100%)
+}
+.catx-modal-hero-text{
+  position:absolute;left:32px;right:32px;bottom:24px;
+  color:#fff
+}
+.catx-modal-num{
+  display:inline-block;
+  font-family:var(--ff-head);
+  font-size:.78rem;font-weight:700;
+  color:rgba(255,255,255,.85);
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  padding:5px 12px;border-radius:50px;
+  letter-spacing:.04em;
+  margin-bottom:10px;
+  border:1px solid rgba(255,255,255,.22)
+}
+.catx-modal-hero-text h2{
+  font-family:var(--ff-head);
+  font-size:clamp(1.6rem,3vw,2.2rem);
+  font-weight:700;color:#fff;
+  letter-spacing:-.03em;line-height:1.1;
+  margin:0 0 6px
+}
+.catx-modal-sub{
+  font-size:.92rem;color:rgba(255,255,255,.88);
+  margin:0;font-weight:500
+}
+.catx-modal-body{
+  padding:28px 32px 32px;
+  overflow-y:auto;
+  flex:1
+}
+.catx-modal-desc{
+  font-size:.96rem;color:#475569;
+  line-height:1.7;margin:0 0 22px
+}
+.catx-modal-brands-row{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  padding:14px 16px;background:#f8faff;
+  border-radius:12px;margin-bottom:24px;
+  border:1px solid rgba(37,99,235,.08)
+}
+.catx-modal-section-label{
+  font-size:.66rem;font-weight:800;color:#94a3b8;
+  letter-spacing:1.5px;text-transform:uppercase
+}
+.catx-modal-brands{display:flex;flex-wrap:wrap;gap:6px}
+.catx-modal-brands .catx-brand-chip{
+  background:#fff;
+  color:#2563eb;
+  border:1px solid rgba(37,99,235,.2);
+  font-size:.72rem;
+  padding:5px 11px
+}
+.catx-modal-section{margin-bottom:24px}
+.catx-modal-section-title{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--ff-head);
+  font-size:.95rem;font-weight:700;color:#0f172a;
+  letter-spacing:-.01em;margin:0 0 12px
+}
+.catx-modal-section-title .ico{color:#2563eb}
+.catx-modal-products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+  list-style:none;padding:0;margin:0
+}
+.catx-modal-products li{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 14px;
+  background:#fff;
+  border:1px solid rgba(37,99,235,.1);
+  border-radius:10px;
+  font-size:.85rem;color:#334155;
+  font-weight:500;
+  transition:all .2s
+}
+.catx-modal-products li:hover{
+  border-color:rgba(37,99,235,.3);
+  background:#f8faff;
+  transform:translateX(2px)
+}
+.catx-modal-products li::before{
+  content:'';
+  width:6px;height:6px;border-radius:50%;
+  background:#2563eb;
+  flex-shrink:0
+}
+.catx-modal-value{
+  display:flex;gap:14px;
+  padding:16px 18px;
+  background:linear-gradient(135deg,rgba(37,99,235,.06),rgba(14,165,233,.04));
+  border-left:3px solid #2563eb;
+  border-radius:0 12px 12px 0;
+  margin-bottom:24px
+}
+.catx-modal-value svg{color:#2563eb;flex-shrink:0;margin-top:2px}
+.catx-modal-value strong{
+  display:block;
+  font-size:.66rem;font-weight:800;color:#2563eb;
+  letter-spacing:1.2px;text-transform:uppercase;
+  margin-bottom:3px
+}
+.catx-modal-value p{
+  font-size:.88rem;color:#334155;margin:0;line-height:1.55;
+  font-weight:500
+}
+.catx-modal-actions{
+  display:flex;gap:10px;flex-wrap:wrap
+}
+.catx-modal-actions .btn{flex:1;min-width:200px;justify-content:center}
+
+/* Bloquear scroll del body cuando modal abierto */
+body.catx-modal-locked{overflow:hidden}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .catx-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .catx-tile{aspect-ratio:1/1.1}
+  .catx-tile-title{font-size:1.3rem}
+  .catx-modal-products{grid-template-columns:1fr}
+  .catx-bottom-cta{flex-direction:column;text-align:center}
+  .catx-cta-btns{justify-content:center;width:100%}
+}
+@media(max-width:560px){
+  .catx-grid{grid-template-columns:1fr;gap:12px}
+  .catx-tile{aspect-ratio:5/4}
+  .catx-tile-title{font-size:1.4rem}
+  .catx-search-bar{margin-bottom:24px}
+  .catx-modal-panel{width:100vw;max-height:100vh;border-radius:0}
+  .catx-modal-hero{height:180px}
+  .catx-modal-hero-text{left:20px;right:20px;bottom:16px}
+  .catx-modal-body{padding:20px 20px 24px}
+}
+
 </style>
 </head>
 <body class="lang-es" id="html-root">
@@ -3661,253 +4036,219 @@ footer .f-soc:hover{color:#2563eb !important;border-color:rgba(37,99,235,.4) !im
     <div class="centered rv">
       <div class="tag"><span class="tag-dot"></span><span data-lang="es">Catálogo de Productos</span><span data-lang="en">Product Catalog</span></div>
       <h2 class="s-title"><span data-lang="es">Soluciones <span>de extremo a extremo</span></span><span data-lang="en">Solutions <span>end to end</span></span></h2>
-      <p class="s-sub"><span data-lang="es">Seis líneas de productos especializadas para telecomunicaciones, fibra óptica, Data Centers, monitoreo y energía. Suministro con instalación certificada y soporte técnico en Panamá.</span><span data-lang="en">Six specialized product lines for telecommunications, fiber optic, Data Centers, monitoring and energy. Supply with certified installation and technical support in Panama.</span></p>
+      <p class="s-sub"><span data-lang="es">Seis líneas especializadas · 200+ referencias · 9 marcas de clase mundial. Toca cualquier categoría para ver el detalle completo.</span><span data-lang="en">Six specialized lines · 200+ references · 9 world-class brands. Tap any category to see full details.</span></p>
     </div>
 
-    <!-- BANNER: producto encontrado (se muestra al hacer clic en resultado de búsqueda) -->
-    <div id="productResultBanner" class="product-result-banner" style="display:none"></div>
-
-    <!-- BUSCADOR MEJORADO — hero oscuro prominente -->
-    <div class="cat-search-hero rv">
-      <div class="cat-search-hero-title" data-lang="es">🔍 ¿Qué producto estás buscando?</div>
-      <div class="cat-search-hero-title" data-lang="en">🔍 What product are you looking for?</div>
-      <div class="cat-search-hero-sub" data-lang="es">Busca entre más de 200 referencias — fibra óptica, antenas, racks, Data Centers, sensores de energía y más</div>
-      <div class="cat-search-hero-sub" data-lang="en">Search 200+ references — fiber optic, antennas, racks, Data Centers, energy sensors and more</div>
-      <div class="cat-search-bar-big">
-        <input type="text" class="cat-search-input-big" id="prodSearch" placeholder="OTDR, ODF, patch cord, antena, rack, Vue 3…" autocomplete="off" oninput="runSearch(this.value)" onkeydown="searchKey(event)" onfocus="if(this.value)showSearch()">
-        <button class="cat-search-btn-big" onclick="runSearch(document.getElementById('prodSearch').value,true)">
-          Buscar →
-        </button>
-      </div>
-      <div class="cat-quick-pills">
-        <span class="cat-quick-pill" onclick="runSearch('OTDR',true);document.getElementById('prodSearch').value='OTDR'">OTDR</span>
-        <span class="cat-quick-pill" onclick="runSearch('antena',true);document.getElementById('prodSearch').value='antena'">Antenas RF</span>
-        <span class="cat-quick-pill" onclick="runSearch('patch cord',true);document.getElementById('prodSearch').value='patch cord'">Patch cords FO</span>
-        <span class="cat-quick-pill" onclick="runSearch('rack',true);document.getElementById('prodSearch').value='rack'">Racks Prose</span>
-        <span class="cat-quick-pill" onclick="runSearch('Vue 3',true);document.getElementById('prodSearch').value='Vue 3'">Emporia Vue 3</span>
-        <span class="cat-quick-pill" onclick="runSearch('ODF',true);document.getElementById('prodSearch').value='ODF'">ODF</span>
-        <span class="cat-quick-pill" onclick="runSearch('Data Center',true);document.getElementById('prodSearch').value='Data Center'">Data Centers</span>
-      </div>
-      <!-- Hidden original search results container -->
-      <div class="search-wrap" style="position:relative;margin-top:0">
-        <div class="search-box" style="display:none">
-          <input type="text" id="prodSearch_hidden" style="display:none">
-          <button class="search-clear" id="searchClear" onclick="clearSearch()" aria-label="Limpiar" style="display:none"></button>
-        </div>
-        <div class="search-results" id="searchResults" style="position:static;margin-top:12px;border-radius:12px"></div>
-      </div>
+    <!-- ── Buscador minimalista ── -->
+    <div class="catx-search-bar rv">
+      <svg class="catx-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="catxSearch" class="catx-search-input" placeholder="Buscar producto, marca o categoría…" autocomplete="off" oninput="catxFilter(this.value)">
+      <button class="catx-search-clear" id="catxSearchClear" onclick="catxClearSearch()" aria-label="Limpiar" style="display:none">×</button>
     </div>
 
-    </div><!-- /old search-wrap hidden -->
+    <!-- ── Bento grid de 6 categorías ── -->
+    <div class="catx-grid rv" id="catxGrid">
 
-    <!-- Navegación tipo unidad de negocio -->
-    <div class="catalog-layout rv" id="catalogLayout">
-      <aside class="catalog-sidebar" aria-label="Categorías de productos">
-        <div class="catalog-sidebar-title"><span data-lang="es">Unidades de negocio</span><span data-lang="en">Business units</span></div>
-        <p class="catalog-sidebar-copy"><span data-lang="es">Elige una línea para ver productos, marcas, catálogos y rutas de cotización.</span><span data-lang="en">Choose a line to see products, brands, catalogs and quote paths.</span></p>
-        <div class="catalog-nav-list" id="catFilters">
-          <button type="button" class="cat-fbtn catalog-nav-btn active" data-filter="fibra" data-catalog-filter="fibra" onclick="filterCat(this,'fibra')"><span class="ico ico-sm cat-fbtn-ico"><svg><use href="#i-fiber"/></svg></span><span data-lang="es">Fibra Óptica</span><span data-lang="en">Fiber Optic</span></button>
-          <button type="button" class="cat-fbtn catalog-nav-btn" data-filter="rf" data-catalog-filter="rf" onclick="filterCat(this,'rf')"><span class="ico ico-sm cat-fbtn-ico"><svg><use href="#i-signal"/></svg></span><span data-lang="es">RF y Cobertura</span><span data-lang="en">RF & Coverage</span></button>
-          <button type="button" class="cat-fbtn catalog-nav-btn" data-filter="infra" data-catalog-filter="infra" onclick="filterCat(this,'infra')"><span class="ico ico-sm cat-fbtn-ico"><svg><use href="#i-tower"/></svg></span><span data-lang="es">Infraestructura Telecom</span><span data-lang="en">Telecom Infrastructure</span></button>
-          <button type="button" class="cat-fbtn catalog-nav-btn" data-filter="dc" data-catalog-filter="dc" onclick="filterCat(this,'dc')"><span class="ico ico-sm cat-fbtn-ico"><svg><use href="#i-server"/></svg></span><span data-lang="es">Data Centers y Redes</span><span data-lang="en">Data Centers & Networks</span></button>
-          <button type="button" class="cat-fbtn catalog-nav-btn" data-filter="monitor" data-catalog-filter="monitor" onclick="filterCat(this,'monitor')"><span class="ico ico-sm cat-fbtn-ico"><svg><use href="#i-chart"/></svg></span><span data-lang="es">Monitoreo de Redes</span><span data-lang="en">Network Monitoring</span></button>
-          <button type="button" class="cat-fbtn catalog-nav-btn" data-filter="energia" data-catalog-filter="energia" onclick="filterCat(this,'energia')"><span class="ico ico-sm cat-fbtn-ico"><svg><use href="#i-bolt"/></svg></span><span data-lang="es">Monitoreo Energético</span><span data-lang="en">Energy Monitoring</span></button>
-        </div>
-      </aside>
-
-      <article class="catalog-detail" aria-live="polite">
-        <div class="catalog-breadcrumb" id="catalogBreadcrumb">Inicio / Telecomunicaciones / Fibra Óptica</div>
-        <div class="catalog-detail-grid">
-          <div>
-            <div class="catalog-kicker" id="catalogEyebrow">Planta externa e interna</div>
-            <h3 id="catalogTitle">Soluciones de Fibra Óptica</h3>
-            <p class="catalog-summary" id="catalogSummary">Línea completa de productos para redes de fibra óptica, desde cableado y conectores hasta medición, empalme y distribución.</p>
-            <div class="catalog-meta">
-              <div class="catalog-meta-item">
-                <span class="catalog-meta-label"><span data-lang="es">Marca / aliado</span><span data-lang="en">Brand / partner</span></span>
-                <span class="catalog-meta-value" id="catalogBrand">MTG · N-Test</span>
-              </div>
-              <div class="catalog-meta-item">
-                <span class="catalog-meta-label"><span data-lang="es">Resultado</span><span data-lang="en">Outcome</span></span>
-                <span class="catalog-meta-value" id="catalogOutcome">Redes escalables y certificables</span>
-              </div>
-            </div>
-            <div class="catalog-actions">
-              <a href="https://drive.google.com/file/d/1QPjQ9Acu7P5cE2pNSzg5G4SVH9Ak764g/view" target="_blank" rel="noopener" class="btn btn-primary" id="catalogPdf"><span class="ico ico-sm"><svg><use href="#i-doc"/></svg></span><span id="catalogPdfLabel">Ver catálogo</span></a>
-              <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesa%20la%20l%C3%ADnea%20de%20Fibra%20%C3%93ptica" target="_blank" rel="noopener" class="btn btn-wa" id="catalogQuote"><span class="ico ico-sm"><svg><use href="#i-message"/></svg></span><span id="catalogQuoteLabel">Cotizar por WhatsApp</span></a>
-            </div>
+      <button type="button" class="catx-tile" data-cat="fibra" onclick="openCatX('fibra')">
+        <div class="catx-tile-img" style="background-image:url('https://images.unsplash.com/photo-1558346547-4439467bd1d5?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="catx-tile-overlay"></div>
+        <div class="catx-tile-content">
+          <div class="catx-tile-top">
+            <span class="catx-tile-num">01</span>
+            <span class="catx-tile-count">7 grupos</span>
           </div>
-          <div class="catalog-panel">
-            <div class="catalog-panel-title"><span data-lang="es">Productos relacionados</span><span data-lang="en">Related products</span></div>
-            <div class="cat-product-list" id="catalogProducts">
-              <a href="#cta-sec" data-product-name="Cables de fibra óptica"><span>01</span>Cables de fibra óptica</a>
-              <a href="#cta-sec" data-product-name="ODF"><span>02</span>ODF</a>
-              <a href="#cta-sec" data-product-name="Fusionadoras"><span>03</span>Fusionadoras</a>
+          <div class="catx-tile-bottom">
+            <h3 class="catx-tile-title"><span data-lang="es">Fibra Óptica</span><span data-lang="en">Fiber Optic</span></h3>
+            <p class="catx-tile-sub"><span data-lang="es">Cables · ODF · fusionadoras · OTDR</span><span data-lang="en">Cables · ODF · splicers · OTDR</span></p>
+            <div class="catx-tile-brands">
+              <span class="catx-brand-chip">N-TEST</span>
+              <span class="catx-brand-chip">EXFO</span>
+              <span class="catx-brand-chip">Bird</span>
             </div>
           </div>
         </div>
-      </article>
-    </div>
+      </button>
 
-    <div class="prod-grid">
+      <button type="button" class="catx-tile" data-cat="rf" onclick="openCatX('rf')">
+        <div class="catx-tile-img" style="background-image:url('https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="catx-tile-overlay"></div>
+        <div class="catx-tile-content">
+          <div class="catx-tile-top">
+            <span class="catx-tile-num">02</span>
+            <span class="catx-tile-count">6 grupos</span>
+          </div>
+          <div class="catx-tile-bottom">
+            <h3 class="catx-tile-title"><span data-lang="es">RF y Cobertura</span><span data-lang="en">RF & Coverage</span></h3>
+            <p class="catx-tile-sub"><span data-lang="es">Antenas · DAS · jumpers · repetidores</span><span data-lang="en">Antennas · DAS · jumpers · repeaters</span></p>
+            <div class="catx-tile-brands">
+              <span class="catx-brand-chip">CRFS</span>
+              <span class="catx-brand-chip">Bird</span>
+              <span class="catx-brand-chip">PROMAX</span>
+            </div>
+          </div>
+        </div>
+      </button>
 
-      <!-- 1. Soluciones de Fibra Óptica -->
-      <div class="prod-card cat-card rv" data-cat="fibra">
-        <div class="prod-img-wrap">
-          <span class="cat-num-badge">01</span>
-          <span class="cat-cat-badge"><span class="ico ico-sm"><svg><use href="#i-fiber"/></svg></span><span data-lang="es">Fibra Óptica</span><span data-lang="en">Fiber Optic</span></span>
-          <img src="https://images.unsplash.com/photo-1558346547-4439467bd1d5?w=800&auto=format&fit=crop&q=75" alt="Cables y patch cords de fibra óptica" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop&q=75'">
-        </div>
-        <div class="prod-body">
-          <h3><span data-lang="es">Soluciones de Fibra Óptica</span><span data-lang="en">Fiber Optic Solutions</span></h3>
-          <p class="cat-desc"><span data-lang="es">Línea completa de productos para redes de fibra óptica, diseñados para garantizar conectividad de alta velocidad, estabilidad y escalabilidad en proyectos residenciales, comerciales e industriales.</span><span data-lang="en">Full product line for fiber optic networks, designed to guarantee high-speed connectivity, stability and scalability in residential, commercial and industrial projects.</span></p>
-          <div class="cat-includes">
-            <span class="cat-includes-lbl"><span data-lang="es">Incluye</span><span data-lang="en">Includes</span></span>
-            <div class="cat-includes-txt"><span data-lang="es">Cables de fibra óptica · conectores · patch cords · cajas terminales · splitters · ODF · accesorios de instalación · herramientas especializadas (fusionadoras, OTDR, OPM/OLS).</span><span data-lang="en">Fiber optic cables · connectors · patch cords · terminal boxes · splitters · ODF · installation accessories · specialized tools (splicers, OTDR, OPM/OLS).</span></div>
+      <button type="button" class="catx-tile" data-cat="infra" onclick="openCatX('infra')">
+        <div class="catx-tile-img" style="background-image:url('https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="catx-tile-overlay"></div>
+        <div class="catx-tile-content">
+          <div class="catx-tile-top">
+            <span class="catx-tile-num">03</span>
+            <span class="catx-tile-count">5 grupos</span>
           </div>
-          <div class="cat-value">
-            <span class="cat-value-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></span>
-            <span class="cat-value-txt"><span data-lang="es">Infraestructura confiable para redes modernas y en crecimiento.</span><span data-lang="en">Reliable infrastructure for modern, growing networks.</span></span>
-          </div>
-          <div class="cat-actions">
-            <a href="https://drive.google.com/file/d/1QPjQ9Acu7P5cE2pNSzg5G4SVH9Ak764g/view" target="_blank" rel="noopener" class="cat-btn cat-btn-primary"><span class="ico ico-sm"><svg><use href="#i-doc"/></svg></span><span data-lang="es">Ver catálogo</span><span data-lang="en">View catalog</span></a>
-            <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesa%20la%20línea%20de%20Fibra%20Óptica" target="_blank" rel="noopener" class="cat-btn cat-btn-ghost"><span class="ico ico-sm"><svg><use href="#i-message"/></svg></span><span data-lang="es">Cotizar</span><span data-lang="en">Quote</span></a>
+          <div class="catx-tile-bottom">
+            <h3 class="catx-tile-title"><span data-lang="es">Infraestructura Telecom</span><span data-lang="en">Telecom Infrastructure</span></h3>
+            <p class="catx-tile-sub"><span data-lang="es">Torres · gabinetes · racks · canalización</span><span data-lang="en">Towers · cabinets · racks · cable runs</span></p>
+            <div class="catx-tile-brands">
+              <span class="catx-brand-chip">PROSE</span>
+            </div>
           </div>
         </div>
-      </div>
+      </button>
 
-      <!-- 2. Soluciones RF y Cobertura -->
-      <div class="prod-card cat-card rv" data-cat="rf">
-        <div class="prod-img-wrap">
-          <span class="cat-num-badge">02</span>
-          <span class="cat-cat-badge"><span class="ico ico-sm"><svg><use href="#i-signal"/></svg></span>RF</span>
-          <img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=800&auto=format&fit=crop&q=75" alt="Antenas RF y cobertura celular" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=75'">
-        </div>
-        <div class="prod-body">
-          <h3><span data-lang="es">Soluciones RF y Cobertura</span><span data-lang="en">RF & Coverage Solutions</span></h3>
-          <p class="cat-desc"><span data-lang="es">Soluciones para mejorar y expandir la cobertura de señal en interiores y exteriores, adaptadas a las necesidades de operadores, edificios y proyectos especiales.</span><span data-lang="en">Solutions to improve and expand signal coverage indoors and outdoors, tailored to the needs of operators, buildings and special projects.</span></p>
-          <div class="cat-includes">
-            <span class="cat-includes-lbl"><span data-lang="es">Incluye</span><span data-lang="en">Includes</span></span>
-            <div class="cat-includes-txt"><span data-lang="es">Antenas · cables coaxiales · jumpers · conectores · sistemas DAS (activos y pasivos) · repetidores · accesorios RF.</span><span data-lang="en">Antennas · coaxial cables · jumpers · connectors · DAS systems (active and passive) · repeaters · RF accessories.</span></div>
+      <button type="button" class="catx-tile" data-cat="dc" onclick="openCatX('dc')">
+        <div class="catx-tile-img" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="catx-tile-overlay"></div>
+        <div class="catx-tile-content">
+          <div class="catx-tile-top">
+            <span class="catx-tile-num">04</span>
+            <span class="catx-tile-count">6 grupos</span>
           </div>
-          <div class="cat-value">
-            <span class="cat-value-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></span>
-            <span class="cat-value-txt"><span data-lang="es">Mejora de señal, mayor cobertura y rendimiento en redes inalámbricas.</span><span data-lang="en">Improved signal, greater coverage and performance for wireless networks.</span></span>
-          </div>
-          <div class="cat-actions">
-            <a href="#cta-sec" class="cat-btn cat-btn-primary"><span class="ico ico-sm"><svg><use href="#i-doc"/></svg></span><span data-lang="es">Solicitar catálogo</span><span data-lang="en">Request catalog</span></a>
-            <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesa%20la%20línea%20RF%20y%20Cobertura" target="_blank" rel="noopener" class="cat-btn cat-btn-ghost"><span class="ico ico-sm"><svg><use href="#i-message"/></svg></span><span data-lang="es">Cotizar</span><span data-lang="en">Quote</span></a>
+          <div class="catx-tile-bottom">
+            <h3 class="catx-tile-title"><span data-lang="es">Data Centers y Redes</span><span data-lang="en">Data Centers & Networks</span></h3>
+            <p class="catx-tile-sub"><span data-lang="es">KHIPU · cableado estructurado · gestión</span><span data-lang="en">KHIPU · structured cabling · management</span></p>
+            <div class="catx-tile-brands">
+              <span class="catx-brand-chip">KHIPU</span>
+              <span class="catx-brand-chip">PROSE</span>
+            </div>
           </div>
         </div>
-      </div>
+      </button>
 
-      <!-- 3. Infraestructura para Telecomunicaciones -->
-      <div class="prod-card cat-card rv" data-cat="infra">
-        <div class="prod-img-wrap">
-          <span class="cat-num-badge">03</span>
-          <span class="cat-cat-badge"><span class="ico ico-sm"><svg><use href="#i-tower"/></svg></span><span data-lang="es">Infra</span><span data-lang="en">Infra</span></span>
-          <img src="https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?w=800&auto=format&fit=crop&q=75" alt="Torres y gabinetes para infraestructura telecom" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop&q=75'">
-        </div>
-        <div class="prod-body">
-          <h3><span data-lang="es">Infraestructura para Telecomunicaciones</span><span data-lang="en">Telecommunications Infrastructure</span></h3>
-          <p class="cat-desc"><span data-lang="es">Suministramos los componentes necesarios para la instalación y operación de sitios de telecomunicaciones, garantizando seguridad, organización y durabilidad.</span><span data-lang="en">We supply the components needed for the installation and operation of telecommunications sites, ensuring safety, organization and durability.</span></p>
-          <div class="cat-includes">
-            <span class="cat-includes-lbl"><span data-lang="es">Incluye</span><span data-lang="en">Includes</span></span>
-            <div class="cat-includes-txt"><span data-lang="es">Torres · estructuras · gabinetes · racks · ductos · sistemas de canalización · accesorios de instalación. <strong style="color:var(--grn-lt)">Marca aliada: Prose</strong>.</span><span data-lang="en">Towers · structures · cabinets · racks · ducts · cable management systems · installation accessories. <strong style="color:var(--grn-lt)">Allied brand: Prose</strong>.</span></div>
+      <button type="button" class="catx-tile" data-cat="monitor" onclick="openCatX('monitor')">
+        <div class="catx-tile-img" style="background-image:url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="catx-tile-overlay"></div>
+        <div class="catx-tile-content">
+          <div class="catx-tile-top">
+            <span class="catx-tile-num">05</span>
+            <span class="catx-tile-count">5 grupos</span>
           </div>
-          <div class="cat-value">
-            <span class="cat-value-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></span>
-            <span class="cat-value-txt"><span data-lang="es">Proyectos bien estructurados, seguros y listos para operar.</span><span data-lang="en">Well-structured, secure projects ready to operate.</span></span>
-          </div>
-          <div class="cat-actions">
-            <a href="https://drive.google.com/file/d/1h2aDG8XvZlbC_u0uSnzkbX5ByJukNEjU/view" target="_blank" rel="noopener" class="cat-btn cat-btn-primary"><span class="ico ico-sm"><svg><use href="#i-doc"/></svg></span><span data-lang="es">Catálogo Prose</span><span data-lang="en">Prose catalog</span></a>
-            <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesa%20Infraestructura%20Telecom" target="_blank" rel="noopener" class="cat-btn cat-btn-ghost"><span class="ico ico-sm"><svg><use href="#i-message"/></svg></span><span data-lang="es">Cotizar</span><span data-lang="en">Quote</span></a>
+          <div class="catx-tile-bottom">
+            <h3 class="catx-tile-title"><span data-lang="es">Monitoreo de Redes</span><span data-lang="en">Network Monitoring</span></h3>
+            <p class="catx-tile-sub"><span data-lang="es">Plataformas · medición · diagnóstico</span><span data-lang="en">Platforms · measurement · diagnostics</span></p>
+            <div class="catx-tile-brands">
+              <span class="catx-brand-chip">N-TEST</span>
+              <span class="catx-brand-chip">GL Comms</span>
+              <span class="catx-brand-chip">AEM</span>
+            </div>
           </div>
         </div>
-      </div>
+      </button>
 
-      <!-- 4. Data Centers y Redes -->
-      <div class="prod-card cat-card rv" data-cat="dc">
-        <div class="prod-img-wrap">
-          <span class="cat-num-badge">04</span>
-          <span class="cat-cat-badge"><span class="ico ico-sm"><svg><use href="#i-server"/></svg></span>Data Center</span>
-          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=75" alt="Racks y cableado estructurado de Data Center" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1597733336794-12d05021d510?w=800&auto=format&fit=crop&q=75'">
-        </div>
-        <div class="prod-body">
-          <h3><span data-lang="es">Data Centers y Redes</span><span data-lang="en">Data Centers & Networks</span></h3>
-          <p class="cat-desc"><span data-lang="es">Soluciones para la implementación y optimización de centros de datos y redes empresariales, adaptadas a las demandas actuales de conectividad y almacenamiento.</span><span data-lang="en">Solutions for implementing and optimizing data centers and enterprise networks, adapted to current connectivity and storage demands.</span></p>
-          <div class="cat-includes">
-            <span class="cat-includes-lbl"><span data-lang="es">Incluye</span><span data-lang="en">Includes</span></span>
-            <div class="cat-includes-txt"><span data-lang="es">Cableado estructurado · racks · gabinetes · sistemas de gestión de cables · soluciones modulares · equipamiento para Data Centers (KHIPU: Micro DC, Modular, Container, Outdoor). <strong style="color:var(--grn-lt)">Marca aliada: Prose</strong>.</span><span data-lang="en">Structured cabling · racks · cabinets · cable management · modular solutions · Data Center equipment (KHIPU: Micro DC, Modular, Container, Outdoor). <strong style="color:var(--grn-lt)">Allied brand: Prose</strong>.</span></div>
+      <button type="button" class="catx-tile catx-tile-featured" data-cat="energia" onclick="openCatX('energia')">
+        <div class="catx-tile-img" style="background-image:url('https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475');background-size:contain;background-color:#0d3522"></div>
+        <div class="catx-tile-overlay" style="background:linear-gradient(180deg,rgba(13,53,34,.1) 0%,rgba(13,53,34,.92) 85%)"></div>
+        <div class="catx-tile-content">
+          <div class="catx-tile-top">
+            <span class="catx-tile-num">06</span>
+            <span class="catx-tile-badge">Estrella</span>
           </div>
-          <div class="cat-value">
-            <span class="cat-value-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></span>
-            <span class="cat-value-txt"><span data-lang="es">Mayor eficiencia, organización y rendimiento en entornos críticos.</span><span data-lang="en">Greater efficiency, organization and performance in critical environments.</span></span>
-          </div>
-          <div class="cat-actions">
-            <a href="https://drive.google.com/file/d/1GTKGRNG5K_xxnGrjNMtSSk9qVoPnYeQX/view" target="_blank" rel="noopener" class="cat-btn cat-btn-primary"><span class="ico ico-sm"><svg><use href="#i-doc"/></svg></span><span data-lang="es">Catálogo Data Center</span><span data-lang="en">Data Center catalog</span></a>
-            <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesa%20Data%20Centers%20y%20Redes" target="_blank" rel="noopener" class="cat-btn cat-btn-ghost"><span class="ico ico-sm"><svg><use href="#i-message"/></svg></span><span data-lang="es">Cotizar</span><span data-lang="en">Quote</span></a>
+          <div class="catx-tile-bottom">
+            <h3 class="catx-tile-title"><span data-lang="es">Monitoreo Energético</span><span data-lang="en">Energy Monitoring</span></h3>
+            <p class="catx-tile-sub"><span data-lang="es">Vue 3 · Smart Plug · EV Charger · plataforma con IA</span><span data-lang="en">Vue 3 · Smart Plug · EV Charger · AI platform</span></p>
+            <div class="catx-tile-brands">
+              <span class="catx-brand-chip">Emporia</span>
+              <span class="catx-brand-chip">Medidor Inteligente</span>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- 5. Monitoreo y Gestión de Redes -->
-      <div class="prod-card cat-card rv" data-cat="monitor">
-        <div class="prod-img-wrap">
-          <span class="cat-num-badge">05</span>
-          <span class="cat-cat-badge"><span class="ico ico-sm"><svg><use href="#i-chart"/></svg></span>N-Test</span>
-          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop&q=75" alt="Monitoreo y gestión de redes con dashboard" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=75'">
-        </div>
-        <div class="prod-body">
-          <h3><span data-lang="es">Monitoreo y Gestión de Redes</span><span data-lang="en">Network Monitoring & Management</span></h3>
-          <p class="cat-desc"><span data-lang="es">Integramos soluciones tecnológicas para el monitoreo, control y gestión de redes y sistemas, permitiendo una operación más eficiente y segura.</span><span data-lang="en">We integrate technology solutions for monitoring, control and management of networks and systems, enabling more efficient and secure operation.</span></p>
-          <div class="cat-includes">
-            <span class="cat-includes-lbl"><span data-lang="es">Incluye</span><span data-lang="en">Includes</span></span>
-            <div class="cat-includes-txt"><span data-lang="es">Plataformas de monitoreo · equipos de medición · herramientas de diagnóstico · sistemas de control. <strong style="color:var(--grn-lt)">Marca aliada: N-Test</strong>.</span><span data-lang="en">Monitoring platforms · measurement equipment · diagnostic tools · control systems. <strong style="color:var(--grn-lt)">Allied brand: N-Test</strong>.</span></div>
-          </div>
-          <div class="cat-value">
-            <span class="cat-value-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></span>
-            <span class="cat-value-txt"><span data-lang="es">Visibilidad total y toma de decisiones basada en datos.</span><span data-lang="en">Total visibility and data-driven decision making.</span></span>
-          </div>
-          <div class="cat-actions">
-            <a href="https://www.ntestinc.com/" target="_blank" rel="noopener" class="cat-btn cat-btn-primary"><span class="ico ico-sm"><svg><use href="#i-link"/></svg></span>N-Test.com</a>
-            <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesa%20Monitoreo%20y%20Gestión%20de%20Redes" target="_blank" rel="noopener" class="cat-btn cat-btn-ghost"><span class="ico ico-sm"><svg><use href="#i-message"/></svg></span><span data-lang="es">Cotizar</span><span data-lang="en">Quote</span></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. Monitoreo Energético Inteligente -->
-      <div class="prod-card cat-card rv" data-cat="energia">
-        <div class="prod-img-wrap">
-          <span class="cat-num-badge">06</span>
-          <span class="cat-cat-badge"><span class="ico ico-sm"><svg><use href="#i-bolt"/></svg></span>Medidor Inteligente</span>
-          <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&auto=format&fit=crop&q=75" alt="Medidor Inteligente · monitoreo energético en tiempo real" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&auto=format&fit=crop&q=75'">
-        </div>
-        <div class="prod-body">
-          <h3><span data-lang="es">Monitoreo Energético Inteligente</span><span data-lang="en">Smart Energy Monitoring</span></h3>
-          <p class="cat-desc"><span data-lang="es">Soluciones diseñadas para medir, analizar y optimizar el consumo eléctrico en tiempo real en hogares, empresas y proyectos industriales.</span><span data-lang="en">Solutions designed to measure, analyze and optimize electricity consumption in real time at homes, businesses and industrial projects.</span></p>
-          <div class="cat-includes">
-            <span class="cat-includes-lbl"><span data-lang="es">Incluye</span><span data-lang="en">Includes</span></span>
-            <div class="cat-includes-txt"><span data-lang="es">Sensores · sistemas de medición por circuito (Emporia Vue 3) · plataformas de análisis y reportes · Smart Plugs · cargadores EV. <strong style="color:var(--grn-lt)">Plataforma Medidor Inteligente + Emporia Energy</strong>.</span><span data-lang="en">Sensors · per-circuit measurement systems (Emporia Vue 3) · analysis and reporting platforms · Smart Plugs · EV chargers. <strong style="color:var(--grn-lt)">Medidor Inteligente Platform + Emporia Energy</strong>.</span></div>
-          </div>
-          <div class="cat-value">
-            <span class="cat-value-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></span>
-            <span class="cat-value-txt"><span data-lang="es">Reducción de costos y uso eficiente de la energía — hasta 40% menos en factura.</span><span data-lang="en">Cost reduction and efficient energy use — up to 40% lower bill.</span></span>
-          </div>
-          <div class="cat-actions">
-            <a href="#solutions" class="cat-btn cat-btn-primary"><span class="ico ico-sm"><svg><use href="#i-bolt"/></svg></span><span data-lang="es">Ver plataforma</span><span data-lang="en">See platform</span></a>
-            <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesa%20Monitoreo%20Energético" target="_blank" rel="noopener" class="cat-btn cat-btn-ghost"><span class="ico ico-sm"><svg><use href="#i-message"/></svg></span><span data-lang="es">Cotizar</span><span data-lang="en">Quote</span></a>
-          </div>
-        </div>
-      </div>
+      </button>
 
     </div>
-    <div class="prod-cta-wrap">
-      <a href="#cta-sec" class="btn btn-primary"><span data-lang="es">Solicitar catálogo completo →</span><span data-lang="en">Request full catalog →</span></a>
-      <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesa%20información%20sobre%20productos%20y%20equipos" class="btn btn-wa" target="_blank" rel="noopener" style="margin-left:12px"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span> <span data-lang="es">Consultar por WhatsApp</span><span data-lang="en">Ask on WhatsApp</span></a>
+
+    <!-- Mensaje "no resultados" -->
+    <div class="catx-empty" id="catxEmpty" style="display:none">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <p data-lang="es">No encontramos coincidencias. Prueba otro término o <a href="https://wa.me/50766743062?text=Hola%2C%20busco%20un%20producto%20específico" target="_blank" rel="noopener">pregúntanos por WhatsApp</a>.</p>
+      <p data-lang="en">No matches found. Try another term or <a href="https://wa.me/50766743062?text=Hola%2C%20busco%20un%20producto%20espec%C3%ADfico" target="_blank" rel="noopener">ask us on WhatsApp</a>.</p>
+    </div>
+
+    <!-- CTA al final -->
+    <div class="catx-bottom-cta rv">
+      <div class="catx-cta-text">
+        <h4><span data-lang="es">¿No encuentras lo que buscas?</span><span data-lang="en">Can't find what you need?</span></h4>
+        <p><span data-lang="es">Tenemos más de 200 referencias en stock y acceso directo con fabricantes. Cuéntanos qué necesitas.</span><span data-lang="en">We have 200+ references in stock and direct manufacturer access. Tell us what you need.</span></p>
+      </div>
+      <div class="catx-cta-btns">
+        <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesa%20información%20sobre%20productos%20y%20equipos" class="btn btn-wa" target="_blank" rel="noopener"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span> WhatsApp</a>
+        <a href="#cta-sec" class="btn btn-outline"><span data-lang="es">Solicitar catálogo →</span><span data-lang="en">Request catalog →</span></a>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MODAL DE DETALLE — Catálogo
+═══════════════════════════════════════════════════════════ -->
+<div class="catx-modal" id="catxModal" role="dialog" aria-modal="true" aria-labelledby="catxModalTitle" hidden>
+  <div class="catx-modal-overlay" onclick="closeCatX()"></div>
+  <div class="catx-modal-panel">
+    <button type="button" class="catx-modal-close" onclick="closeCatX()" aria-label="Cerrar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <div class="catx-modal-hero">
+      <img id="catxModalImg" src="" alt="" loading="lazy">
+      <div class="catx-modal-hero-grad"></div>
+      <div class="catx-modal-hero-text">
+        <span class="catx-modal-num" id="catxModalNum">01</span>
+        <h2 id="catxModalTitle">Categoría</h2>
+        <p id="catxModalSub" class="catx-modal-sub"></p>
+      </div>
+    </div>
+
+    <div class="catx-modal-body">
+
+      <p class="catx-modal-desc" id="catxModalDesc"></p>
+
+      <div class="catx-modal-brands-row">
+        <span class="catx-modal-section-label" data-lang="es">MARCAS</span>
+        <span class="catx-modal-section-label" data-lang="en">BRANDS</span>
+        <div class="catx-modal-brands" id="catxModalBrands"></div>
+      </div>
+
+      <div class="catx-modal-section">
+        <h4 class="catx-modal-section-title">
+          <span class="ico ico-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
+          <span data-lang="es">Productos incluidos</span><span data-lang="en">Products included</span>
+        </h4>
+        <ul class="catx-modal-products" id="catxModalProducts"></ul>
+      </div>
+
+      <div class="catx-modal-value" id="catxModalValue">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div>
+          <strong data-lang="es">Resultado</strong><strong data-lang="en">Outcome</strong>
+          <p id="catxModalValueText"></p>
+        </div>
+      </div>
+
+      <div class="catx-modal-actions">
+        <a href="#" class="btn btn-primary" id="catxModalPdf" target="_blank" rel="noopener">
+          <span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-doc"/></svg></span>
+          <span data-lang="es">Ver catálogo PDF</span><span data-lang="en">View catalog PDF</span>
+        </a>
+        <a href="#" class="btn btn-wa" id="catxModalWA" target="_blank" rel="noopener">
+          <span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span>
+          <span data-lang="es">Cotizar por WhatsApp</span><span data-lang="en">Quote on WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 
 
@@ -5664,6 +6005,215 @@ window.addEventListener('scroll',()=>{
   const active=hero.querySelector('.slide.active .slide-bg');
   if(active)active.style.transform=`scale(1) translateY(${offset}px)`;
 });
+
+/* ═══════════════════════════════════════════════════════════════
+   CATÁLOGO MODERNO — Bento Grid + Modal
+   ══════════════════════════════════════════════════════════════ */
+const CATX_DATA = {
+  fibra: {
+    num: '01',
+    title: { es: 'Soluciones de Fibra Óptica', en: 'Fiber Optic Solutions' },
+    sub: { es: 'Planta externa e interna · certificación incluida', en: 'Outside & inside plant · certification included' },
+    image: 'https://images.unsplash.com/photo-1558346547-4439467bd1d5?w=1400&auto=format&fit=crop&q=85',
+    desc: {
+      es: 'Línea completa para redes de fibra óptica de alta velocidad. Garantizamos conectividad estable y escalable en proyectos residenciales, comerciales e industriales con instalación certificada en Panamá.',
+      en: 'Complete line for high-speed fiber optic networks. We guarantee stable and scalable connectivity in residential, commercial and industrial projects with certified installation in Panama.'
+    },
+    brands: ['N-TEST', 'EXFO', 'Bird'],
+    products: {
+      es: ['Cables de fibra óptica', 'Conectores y patch cords', 'ODF y cajas terminales', 'Splitters y atenuadores', 'Fusionadoras', 'OTDR (reflectómetro)', 'OPM / OLS / VFL'],
+      en: ['Fiber optic cables', 'Connectors & patch cords', 'ODF & terminal boxes', 'Splitters & attenuators', 'Splicers', 'OTDR (reflectometer)', 'OPM / OLS / VFL']
+    },
+    value: { es: 'Redes escalables y certificables — listas para crecer.', en: 'Scalable, certifiable networks — ready to grow.' },
+    pdf: 'https://drive.google.com/file/d/1QPjQ9Acu7P5cE2pNSzg5G4SVH9Ak764g/view',
+    waText: 'Hola%2C%20me%20interesa%20la%20l%C3%ADnea%20de%20Fibra%20%C3%93ptica'
+  },
+  rf: {
+    num: '02',
+    title: { es: 'RF y Cobertura', en: 'RF & Coverage' },
+    sub: { es: 'Antenas · DAS · cobertura indoor y outdoor', en: 'Antennas · DAS · indoor & outdoor coverage' },
+    image: 'https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=1400&auto=format&fit=crop&q=85',
+    desc: {
+      es: 'Mejora y expansión de cobertura de señal en interiores y exteriores. Ideal para operadores móviles, edificios, hospitales y centros comerciales que necesitan cobertura confiable.',
+      en: 'Improve and expand signal coverage indoors and outdoors. Ideal for mobile operators, buildings, hospitals and shopping centers needing reliable coverage.'
+    },
+    brands: ['CRFS', 'Bird', 'PROMAX'],
+    products: {
+      es: ['Antenas direccionales', 'Antenas omnidireccionales', 'Cables coaxiales · jumpers', 'Sistemas DAS pasivos', 'Sistemas DAS activos', 'Repetidores y amplificadores'],
+      en: ['Directional antennas', 'Omnidirectional antennas', 'Coaxial cables · jumpers', 'Passive DAS systems', 'Active DAS systems', 'Repeaters & amplifiers']
+    },
+    value: { es: 'Mejor señal · mayor cobertura · rendimiento garantizado.', en: 'Better signal · greater coverage · guaranteed performance.' },
+    pdf: '#cta-sec',
+    waText: 'Hola%2C%20me%20interesa%20la%20l%C3%ADnea%20RF%20y%20Cobertura'
+  },
+  infra: {
+    num: '03',
+    title: { es: 'Infraestructura Telecom', en: 'Telecom Infrastructure' },
+    sub: { es: 'Torres · gabinetes · canalización certificada', en: 'Towers · cabinets · certified cable runs' },
+    image: 'https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?w=1400&auto=format&fit=crop&q=85',
+    desc: {
+      es: 'Componentes para instalación y operación de sitios de telecomunicaciones. Estructuras seguras, organizadas y duraderas — distribución oficial PROSE en Panamá.',
+      en: 'Components for installing and operating telecom sites. Safe, organized and durable structures — official PROSE distribution in Panama.'
+    },
+    brands: ['PROSE'],
+    products: {
+      es: ['Torres autosoportadas', 'Estructuras y mástiles', 'Gabinetes outdoor', 'Racks 19" PROSE', 'Sistemas de canalización', 'Accesorios de montaje'],
+      en: ['Self-supporting towers', 'Structures & masts', 'Outdoor cabinets', '19" PROSE racks', 'Cable management systems', 'Mounting accessories']
+    },
+    value: { es: 'Proyectos bien estructurados, seguros y listos para operar.', en: 'Well-structured, secure projects ready to operate.' },
+    pdf: 'https://drive.google.com/file/d/1h2aDG8XvZlbC_u0uSnzkbX5ByJukNEjU/view',
+    waText: 'Hola%2C%20me%20interesa%20Infraestructura%20Telecom'
+  },
+  dc: {
+    num: '04',
+    title: { es: 'Data Centers y Redes', en: 'Data Centers & Networks' },
+    sub: { es: 'KHIPU Micro DC · Modular · Container · Outdoor', en: 'KHIPU Micro DC · Modular · Container · Outdoor' },
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&auto=format&fit=crop&q=85',
+    desc: {
+      es: 'Implementación y optimización de centros de datos y redes empresariales. Soluciones llave en mano con KHIPU para conectividad y almacenamiento crítico.',
+      en: 'Implementation and optimization of data centers and enterprise networks. Turnkey KHIPU solutions for connectivity and critical storage.'
+    },
+    brands: ['KHIPU', 'PROSE'],
+    products: {
+      es: ['KHIPU Micro Data Center', 'KHIPU Modular DC', 'KHIPU Container DC', 'Cableado estructurado', 'Sistemas de gestión de cables', 'PDU y distribución de energía'],
+      en: ['KHIPU Micro Data Center', 'KHIPU Modular DC', 'KHIPU Container DC', 'Structured cabling', 'Cable management systems', 'PDU & power distribution']
+    },
+    value: { es: 'Mayor eficiencia, organización y rendimiento en entornos críticos.', en: 'Greater efficiency, organization and performance in critical environments.' },
+    pdf: 'https://drive.google.com/file/d/1GTKGRNG5K_xxnGrjNMtSSk9qVoPnYeQX/view',
+    waText: 'Hola%2C%20me%20interesa%20Data%20Centers%20y%20Redes'
+  },
+  monitor: {
+    num: '05',
+    title: { es: 'Monitoreo de Redes', en: 'Network Monitoring' },
+    sub: { es: 'Plataformas · medición · diagnóstico · gestión', en: 'Platforms · measurement · diagnostics · management' },
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1400&auto=format&fit=crop&q=85',
+    desc: {
+      es: 'Soluciones tecnológicas para monitoreo, control y gestión de redes y sistemas — operación más eficiente, segura y con visibilidad total.',
+      en: 'Technology solutions for monitoring, control and management of networks and systems — more efficient, secure operation with full visibility.'
+    },
+    brands: ['N-TEST', 'GL Communications', 'AEM Networks'],
+    products: {
+      es: ['Plataformas de monitoreo', 'Equipos de medición', 'Herramientas de diagnóstico', 'Sistemas de control remoto', 'Probadores de red'],
+      en: ['Monitoring platforms', 'Measurement equipment', 'Diagnostic tools', 'Remote control systems', 'Network testers']
+    },
+    value: { es: 'Visibilidad total y decisiones basadas en datos reales.', en: 'Total visibility and decisions based on real data.' },
+    pdf: 'https://www.ntestinc.com/',
+    waText: 'Hola%2C%20me%20interesa%20Monitoreo%20y%20Gesti%C3%B3n%20de%20Redes'
+  },
+  energia: {
+    num: '06',
+    title: { es: 'Monitoreo Energético Inteligente', en: 'Smart Energy Monitoring' },
+    sub: { es: 'Sensores Emporia + plataforma Medidor Inteligente con IA', en: 'Emporia sensors + Medidor Inteligente AI platform' },
+    image: 'https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475',
+    desc: {
+      es: 'Medición, análisis y optimización del consumo eléctrico en tiempo real. Hogares, comercios e industrias en Panamá — hasta 40% menos en factura con recomendaciones priorizadas por IA.',
+      en: 'Real-time measurement, analysis and optimization of electricity consumption. Homes, businesses and industries in Panama — up to 40% lower bill with AI-prioritized recommendations.'
+    },
+    brands: ['Emporia Energy', 'Medidor Inteligente'],
+    products: {
+      es: ['Emporia Vue 3 (16 circuitos)', 'Smart Plug Emporia', 'Cargador EV Emporia 48A', 'Plataforma Medidor Inteligente', 'Informes mensuales con IA', 'Portal cliente público'],
+      en: ['Emporia Vue 3 (16 circuits)', 'Emporia Smart Plug', 'Emporia EV Charger 48A', 'Medidor Inteligente platform', 'Monthly AI reports', 'Public client portal']
+    },
+    value: { es: 'Reducción de costos · uso eficiente · hasta 40% menos en factura.', en: 'Cost reduction · efficient use · up to 40% lower bill.' },
+    pdf: '#solutions',
+    waText: 'Hola%2C%20me%20interesa%20Monitoreo%20Energ%C3%A9tico%20Inteligente'
+  }
+};
+
+function openCatX(cat){
+  const data = CATX_DATA[cat];
+  if(!data) return;
+  const lang = document.body.classList.contains('lang-en') ? 'en' : 'es';
+  const modal = document.getElementById('catxModal');
+
+  // Hero
+  const img = document.getElementById('catxModalImg');
+  img.src = data.image;
+  img.alt = data.title[lang];
+  document.getElementById('catxModalNum').textContent = data.num;
+  document.getElementById('catxModalTitle').textContent = data.title[lang];
+  document.getElementById('catxModalSub').textContent = data.sub[lang];
+
+  // Description
+  document.getElementById('catxModalDesc').textContent = data.desc[lang];
+
+  // Brands
+  const brandsEl = document.getElementById('catxModalBrands');
+  brandsEl.innerHTML = data.brands.map(b => `<span class="catx-brand-chip">${b}</span>`).join('');
+
+  // Products
+  const prodEl = document.getElementById('catxModalProducts');
+  prodEl.innerHTML = data.products[lang].map(p => `<li>${p}</li>`).join('');
+
+  // Value
+  document.getElementById('catxModalValueText').textContent = data.value[lang];
+
+  // Actions
+  document.getElementById('catxModalPdf').href = data.pdf;
+  document.getElementById('catxModalWA').href = `https://wa.me/50766743062?text=${data.waText}`;
+
+  // Show
+  modal.removeAttribute('hidden');
+  requestAnimationFrame(() => modal.classList.add('catx-modal-open'));
+  document.body.classList.add('catx-modal-locked');
+}
+
+function closeCatX(){
+  const modal = document.getElementById('catxModal');
+  modal.classList.remove('catx-modal-open');
+  document.body.classList.remove('catx-modal-locked');
+  setTimeout(() => { modal.setAttribute('hidden',''); }, 300);
+}
+
+// ESC to close modal
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){
+    const modal = document.getElementById('catxModal');
+    if(modal && modal.classList.contains('catx-modal-open')) closeCatX();
+  }
+});
+
+// Live filter de tarjetas
+function catxFilter(query){
+  const q = (query||'').toLowerCase().trim();
+  const tiles = document.querySelectorAll('.catx-tile');
+  const empty = document.getElementById('catxEmpty');
+  const clearBtn = document.getElementById('catxSearchClear');
+  let visible = 0;
+
+  clearBtn.style.display = q ? 'flex' : 'none';
+
+  tiles.forEach(tile => {
+    if(!q){
+      tile.classList.remove('catx-hidden');
+      visible++;
+      return;
+    }
+    const cat = tile.dataset.cat;
+    const data = CATX_DATA[cat];
+    const haystack = [
+      data.title.es, data.title.en,
+      data.sub.es, data.sub.en,
+      ...data.brands,
+      ...data.products.es, ...data.products.en
+    ].join(' ').toLowerCase();
+    if(haystack.includes(q)){
+      tile.classList.remove('catx-hidden');
+      visible++;
+    } else {
+      tile.classList.add('catx-hidden');
+    }
+  });
+
+  empty.style.display = visible === 0 ? 'block' : 'none';
+}
+
+function catxClearSearch(){
+  const input = document.getElementById('catxSearch');
+  input.value = '';
+  catxFilter('');
+  input.focus();
+}
 
 /* ── FAQ ACCORDION ── */
 function toggleFaq(btn){
