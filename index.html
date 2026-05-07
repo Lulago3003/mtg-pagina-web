@@ -2527,6 +2527,88 @@ html{scroll-behavior:smooth}
 .hlb-sub{font-size:.72rem;color:#5eead4;font-weight:600}
 @media(max-width:768px){.hero-live-badge{display:none}}
 
+/* ═══════════════════════════════════════════════════════════════
+   MEJORAS GENERALES — TEMA CLARO COMPLETO
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── FOOTER COMPLETO — tema claro ── */
+footer{
+  background:#f8faff !important;
+  border-top:1px solid rgba(37,99,235,.12) !important;
+}
+footer .f-col h5{color:#0f172a !important;font-family:var(--ff-head) !important;font-size:.82rem !important;font-weight:700 !important;letter-spacing:.8px !important;text-transform:uppercase !important;margin-bottom:14px !important}
+footer .f-col ul li a{color:#64748b !important;font-size:.84rem !important;transition:.2s !important}
+footer .f-col ul li a:hover{color:#2563eb !important}
+footer .f-brand p{color:#64748b !important;font-size:.85rem !important;line-height:1.7 !important}
+footer .f-btm{border-top:1px solid rgba(37,99,235,.10) !important;color:#94a3b8 !important;font-size:.8rem !important}
+footer .f-btm a{color:#2563eb !important;font-weight:600 !important}
+footer .f-btm a:hover{color:#1d4ed8 !important}
+footer .f-soc{color:#64748b !important;border:1px solid rgba(37,99,235,.15) !important;background:#fff !important}
+footer .f-soc:hover{color:#2563eb !important;border-color:rgba(37,99,235,.4) !important;background:#eef3fc !important}
+
+/* ── SERVICIOS — texto h3 visible sobre blanco ── */
+.svc-card h3{color:#0f172a !important;font-size:1rem !important;font-weight:700 !important;letter-spacing:-.02em !important;line-height:1.25 !important}
+.svc-card:hover h3{color:#1d4ed8 !important}
+.svc-num{background:rgba(37,99,235,.08) !important;border:1px solid rgba(37,99,235,.18) !important;color:#2563eb !important}
+.svc-card:hover .svc-num{background:linear-gradient(135deg,#2563eb,#1d4ed8) !important;color:#fff !important;border-color:transparent !important}
+.svc-card::before{background:linear-gradient(90deg,#2563eb,#0ea5e9) !important}
+.svc-card:hover{border-color:rgba(37,99,235,.25) !important;box-shadow:0 18px 48px rgba(37,99,235,.12),0 0 0 1px rgba(37,99,235,.08) !important}
+.svc-list li{color:#475569 !important;font-size:.82rem !important}
+.svc-list li::before{color:#2563eb !important}
+.svc-value{background:rgba(37,99,235,.04) !important;border-left:2px solid #2563eb !important}
+.svc-value strong{color:#2563eb !important}
+.svc-desc{color:#64748b !important;font-size:.86rem !important;line-height:1.65 !important}
+
+/* ── CÓMO FUNCIONA — step circles y cards ── */
+.step-n{background:#eef3fc !important;border:2px solid rgba(37,99,235,.35) !important;color:#2563eb !important}
+.step-n.on{background:linear-gradient(135deg,#2563eb,#0ea5e9) !important;color:#fff !important;border-color:transparent !important;box-shadow:0 0 22px rgba(37,99,235,.35) !important}
+.step-c h3{color:#0f172a !important;font-family:var(--ff-head) !important;font-size:.97rem !important;font-weight:700 !important;letter-spacing:-.02em !important}
+.step-c p{color:#64748b !important;font-size:.84rem !important;line-height:1.65 !important}
+.step-tag{background:rgba(37,99,235,.06) !important;border:1px solid rgba(37,99,235,.15) !important;border-radius:50px !important;padding:5px 12px !important;font-size:.73rem !important;color:#2563eb !important;font-weight:600 !important;display:inline-flex !important;align-items:center !important;gap:6px !important;margin-top:8px !important}
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;gap:16px;align-items:flex-start;padding:22px 20px !important;border-radius:14px !important;transition:.25s !important}
+.step:hover{background:rgba(37,99,235,.03) !important}
+.hw-stat-card{background:#fff !important;border:1px solid rgba(37,99,235,.12) !important;box-shadow:0 8px 32px rgba(15,23,42,.06) !important}
+.hw-big{color:#0f172a !important;font-family:var(--ff-head) !important;font-size:2.8rem !important;font-weight:800 !important;letter-spacing:-.04em !important}
+.hw-lbl{color:#64748b !important;font-size:.85rem !important;line-height:1.5 !important;margin-bottom:16px !important}
+.hw-m .mv{color:#0f172a !important;font-family:var(--ff-head) !important;font-weight:800 !important}
+.hw-m .ml{color:#94a3b8 !important;font-size:.75rem !important}
+.hw-flow{background:#fff !important;border:1px solid rgba(37,99,235,.10) !important;box-shadow:0 4px 16px rgba(15,23,42,.05) !important;border-radius:14px !important;padding:20px !important;display:flex !important;flex-direction:column !important;gap:14px !important}
+.hf{display:flex;align-items:flex-start;gap:12px;padding:10px !important;border-radius:10px !important;transition:.2s !important}
+.hf:hover{background:rgba(37,99,235,.04) !important}
+.hf-ico{width:34px;height:34px;border-radius:9px;background:rgba(37,99,235,.08) !important;display:flex;align-items:center;justify-content:center;color:#2563eb !important;flex-shrink:0}
+.hf h5{color:#0f172a !important;font-size:.85rem !important;font-weight:700 !important;margin-bottom:2px !important}
+.hf p{color:#94a3b8 !important;font-size:.77rem !important;line-height:1.5 !important}
+
+/* ── TESTIMONIOS — hover y estrellas ── */
+.test-card:hover{border-color:rgba(37,99,235,.25) !important;transform:translateY(-4px) !important}
+.test-star .ico svg{fill:#f59e0b !important;stroke:none !important}
+.test-badge{background:rgba(37,99,235,.07) !important;color:#2563eb !important;border:1px solid rgba(37,99,235,.15) !important;font-size:.69rem !important;font-weight:700 !important;letter-spacing:.8px !important;text-transform:uppercase !important;border-radius:50px !important;padding:4px 12px !important;margin-bottom:12px !important;display:inline-block !important}
+.test-text{color:#334155 !important;font-size:.9rem !important;line-height:1.7 !important;font-style:italic !important}
+.test-name{color:#0f172a !important;font-weight:700 !important;font-size:.9rem !important}
+
+/* ── FAQ — hover azul en vez de teal ── */
+.faq-item:hover{border-color:rgba(37,99,235,.25) !important}
+.faq-item.open{border-color:rgba(37,99,235,.3) !important;background:#fafcff !important}
+.faq-q{color:#0f172a !important;padding:18px 20px !important}
+.faq-q:hover{background:rgba(37,99,235,.03) !important}
+.faq-arr{color:#2563eb !important;background:rgba(37,99,235,.08) !important;width:28px !important;height:28px !important;border-radius:50% !important;display:flex !important;align-items:center !important;justify-content:center !important;font-size:.85rem !important;transition:.3s !important}
+.faq-item.open .faq-arr{background:rgba(37,99,235,.15) !important}
+.faq-a-inner{padding:0 20px 18px !important}
+
+/* ── sección How — fondo diferenciado ── */
+#how{background:linear-gradient(180deg,#ffffff 0%,#f4f8ff 100%) !important}
+
+/* ── sección Servicios — fondo diferenciado ── */
+#servicios{background:#ffffff !important}
+#servicios .bg-orb-1,#servicios .bg-orb-3{display:none !important}
+
+/* ── sección Testimonios — fondo diferenciado ── */
+#testimonials{background:linear-gradient(180deg,#f4f8ff 0%,#eef3fc 100%) !important}
+
+/* ── FAQ — fondo ── */
+#faq{background:#ffffff !important}
+
 </style>
 </head>
 <body class="lang-es" id="html-root">
