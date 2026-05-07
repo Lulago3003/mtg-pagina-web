@@ -1997,21 +1997,42 @@ html{scroll-behavior:smooth}
 .s-title,.slide-h1,.cta-h2,.about-h2,.emp-card-name{font-family:var(--ff-head)}
 .s-title span{background:linear-gradient(130deg,var(--grn),var(--cyn));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-/* Navbar — blanco */
-#nav{background:rgba(255,255,255,.97);border-bottom:1px solid rgba(37,99,235,.1)}
-#nav.scrolled{box-shadow:0 2px 24px rgba(15,23,42,.08);border-bottom-color:rgba(37,99,235,.15)}
-.nav-link{color:#1e293b}
-.nav-link:hover,.nav-link.active{color:var(--grn)}
-.nav-cta{background:var(--grn);color:#fff}
-.nav-cta:hover{background:var(--grn-dk)}
-.nl-name{color:#0f172a}
-.nl-tag{color:var(--grn)}
+/* ═════════════════════════════════════════════════════════════
+   NAVBAR — Rediseño limpio tema claro
+   ═════════════════════════════════════════════════════════════ */
+#nav{background:rgba(255,255,255,.96) !important;border-bottom:1px solid rgba(37,99,235,.08) !important;backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px)}
+#nav.scrolled{box-shadow:0 2px 24px rgba(15,23,42,.06) !important;border-bottom-color:rgba(37,99,235,.14) !important}
+.nav-w{height:68px}
+/* Logo */
+.nav-logo-img{filter:none !important}
+.nl-text .lt{color:#0f172a !important;font-size:.92rem;font-weight:800;letter-spacing:-.01em}
+.nl-text .lb{color:#64748b !important;font-size:.56rem;font-weight:600;letter-spacing:1.4px}
+.nav-sep{background:rgba(37,99,235,.12) !important}
+/* Links principales */
+.nav-links > li > a{color:#334155 !important;font-size:.86rem !important;font-weight:600 !important;padding:0 18px !important;letter-spacing:-.005em}
+.nav-links > li > a:hover,.nav-links > li.active > a,.nav-links > li.mm-trigger:hover > a{color:#2563eb !important}
+.nav-links > li > a::after{background:#2563eb !important;height:2.5px;border-radius:2px 2px 0 0}
+.drop-arr{color:#94a3b8 !important;font-size:.62rem !important}
+.nav-links > li:hover .drop-arr{color:#2563eb !important}
+/* Language switcher */
+.lang-btn{background:#f4f7ff !important;border:1px solid rgba(37,99,235,.18) !important;color:#334155 !important;font-weight:600 !important;border-radius:9px !important}
+.lang-btn:hover{background:rgba(37,99,235,.08) !important;border-color:rgba(37,99,235,.35) !important;color:#1e3a8a !important}
+.lang-drop{background:#fff !important;border:1px solid rgba(37,99,235,.12) !important;box-shadow:0 12px 32px rgba(15,23,42,.10) !important;border-radius:10px !important;overflow:hidden}
+.ld-item{color:#334155 !important;font-weight:500}
+.ld-item:hover,.ld-item.active{background:rgba(37,99,235,.06) !important;color:#0f172a !important}
+/* CTA navbar */
+.nav-cta-btn{background:linear-gradient(135deg,#2563eb,#1d4ed8) !important;color:#fff !important;box-shadow:0 4px 14px rgba(37,99,235,.32) !important;padding:11px 22px !important;font-size:.84rem !important;border-radius:9px !important}
+.nav-cta-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(37,99,235,.42) !important}
+/* Hamburger mobile */
+.hamburger span{background:#1e293b !important}
 .mob-toggle span{background:#1e293b}
 .mob-menu{background:#fff;border:1px solid rgba(37,99,235,.12)}
 .mob-nav-link{color:#1e293b}
-/* Logo navbar — texto oscuro sobre fondo blanco */
-.nl-text .lt{color:#0f172a}
-.nl-text .lb{color:#64748b}
+/* legacy */
+.nav-link{color:#334155}
+.nav-link:hover,.nav-link.active{color:#2563eb}
+.nl-name{color:#0f172a}
+.nl-tag{color:#2563eb}
 /* MEGA MENU — tema claro completo */
 .mm-wrap{background:#ffffff !important;border-top:1px solid rgba(37,99,235,.18) !important;box-shadow:0 24px 60px rgba(15,23,42,.12),0 4px 12px rgba(15,23,42,.05) !important;border-radius:0 0 14px 14px}
 .mm-sidebar{background:#f6f9ff !important;border-right:1px solid rgba(37,99,235,.10) !important;padding:18px 0}
