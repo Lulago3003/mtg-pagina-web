@@ -2238,9 +2238,84 @@ html{scroll-behavior:smooth}
 .btn-outline{color:var(--grn);border-color:rgba(37,99,235,.4)}
 .btn-outline:hover{background:rgba(37,99,235,.06);border-color:var(--grn)}
 
-/* Tag chips */
-.tag{background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.2);color:var(--grn)}
-.tag-dot{background:var(--grn)}
+/* Tag chips — refinamiento elegante */
+.tag{background:rgba(37,99,235,.07) !important;border:1px solid rgba(37,99,235,.18) !important;color:#2563eb !important;font-size:.66rem !important;font-weight:700 !important;letter-spacing:1.4px !important;padding:5px 13px !important;border-radius:50px !important;margin-bottom:20px !important}
+.tag-dot{background:#2563eb !important;width:5px !important;height:5px !important;box-shadow:0 0 10px rgba(37,99,235,.5)}
+
+/* Section titles refinados */
+.s-title{font-family:var(--ff-head) !important;font-size:clamp(1.85rem,3vw,2.65rem) !important;font-weight:700 !important;letter-spacing:-.035em !important;line-height:1.1 !important;margin-bottom:16px !important}
+.s-sub{font-size:.95rem !important;line-height:1.7 !important;color:#64748b !important;max-width:580px !important}
+
+/* ── Polish global cards ── */
+/* prod-card en sección con fondo blanco — más limpio */
+#productos .prod-card.cat-card{background:#fff !important;border:1px solid rgba(37,99,235,.10) !important;box-shadow:0 4px 18px rgba(15,23,42,.05) !important;border-radius:16px !important;transition:all .3s ease !important}
+#productos .prod-card.cat-card:hover{transform:translateY(-4px) !important;border-color:rgba(37,99,235,.25) !important;box-shadow:0 16px 40px rgba(37,99,235,.12) !important}
+#productos .prod-card.cat-card h3{color:#0f172a !important;font-family:var(--ff-head) !important;font-size:1.1rem !important;font-weight:700 !important;letter-spacing:-.02em}
+#productos .prod-card.cat-card .cat-desc{color:#475569 !important;font-size:.84rem !important;line-height:1.7 !important}
+#productos .cat-includes{background:#f8faff !important;border:1px solid rgba(37,99,235,.10) !important;border-radius:10px}
+#productos .cat-includes-lbl{color:#2563eb !important;font-size:.62rem !important;letter-spacing:1.2px}
+#productos .cat-includes-txt{color:#475569 !important;font-size:.78rem !important;line-height:1.6}
+#productos .cat-includes-txt strong{color:#2563eb !important}
+#productos .cat-value{background:rgba(37,99,235,.05) !important;border-left:3px solid #2563eb !important;border-radius:0 10px 10px 0}
+#productos .cat-value-ico{color:#2563eb !important}
+#productos .cat-value-txt{color:#334155 !important;font-style:normal !important;font-weight:500;font-size:.8rem !important}
+#productos .cat-num-badge{background:rgba(37,99,235,.92) !important;color:#fff !important;backdrop-filter:blur(8px);font-weight:800;font-size:.78rem;letter-spacing:.5px}
+#productos .cat-cat-badge{background:rgba(255,255,255,.95) !important;color:#2563eb !important;backdrop-filter:blur(8px);font-weight:700}
+#productos .cat-btn-primary{background:linear-gradient(135deg,#2563eb,#1d4ed8) !important;box-shadow:0 4px 12px rgba(37,99,235,.25) !important;color:#fff !important;border-radius:10px !important}
+#productos .cat-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(37,99,235,.35) !important}
+#productos .cat-btn-ghost{background:#f8faff !important;border:1px solid rgba(37,99,235,.18) !important;color:#334155 !important;border-radius:10px !important}
+#productos .cat-btn-ghost:hover{background:#fff !important;border-color:#2563eb !important;color:#2563eb !important}
+
+/* Trustbar — logos más prominentes */
+.tb-eyebrow{font-size:.66rem !important;letter-spacing:2.2px !important;color:#94a3b8 !important;margin-bottom:38px !important;font-weight:700}
+.tb-brand-card{padding:24px 56px !important}
+.tb-brand-card:hover{background:#f4f7ff !important;transform:translateY(-3px) !important;box-shadow:0 8px 24px rgba(37,99,235,.10)}
+.tb-brand-logo{height:56px !important;margin-bottom:14px !important}
+.tb-brand-desc{font-size:.78rem !important;color:#94a3b8 !important;font-weight:500;max-width:200px !important;line-height:1.6 !important}
+
+/* Mock informe — tipografía más profesional */
+.sol-report{box-shadow:0 24px 60px rgba(15,23,42,.14) !important}
+.sr-topbar{padding:11px 18px !important;background:#f8fafc !important}
+.sr-filename{margin-left:14px !important;font-family:'SF Mono',Monaco,Consolas,monospace !important;font-size:.7rem !important;color:#64748b !important;letter-spacing:-.01em}
+.sr-body{padding:24px 28px !important;gap:18px !important}
+.sr-mtg{font-size:.82rem !important;letter-spacing:.6px !important}
+.sr-title-line{font-size:.92rem !important;font-weight:700 !important;letter-spacing:-.01em}
+.sr-score-letter{font-size:1.9rem !important;letter-spacing:-.02em}
+.sr-kv{font-size:.92rem !important;letter-spacing:-.01em}
+
+/* Sol modules — pulido */
+.sol-modules{box-shadow:0 6px 24px rgba(15,23,42,.05) !important}
+.sol-mod{padding:24px 26px !important}
+.sol-mod-name{font-size:.92rem !important;letter-spacing:-.015em}
+.sol-mod-desc{font-size:.78rem !important;line-height:1.55 !important}
+.sol-mod-ico{width:42px !important;height:42px !important;border-radius:11px !important}
+
+/* Sol hero card — espaciado más elegante */
+.sol-hero-card{padding:48px 52px !important;border-radius:22px !important;box-shadow:0 16px 48px rgba(15,23,42,.06) !important;border:1px solid rgba(37,99,235,.08) !important}
+.sol-hero-title{font-size:1.85rem !important;letter-spacing:-.035em !important;line-height:1.15 !important;margin-bottom:16px !important}
+.sol-hero-text{font-size:.92rem !important;line-height:1.75 !important;color:#475569 !important}
+.sol-hero-list li{font-size:.88rem !important;color:#334155 !important;line-height:1.5}
+.sol-hero-badge{font-size:.68rem !important;letter-spacing:1.3px !important;padding:5px 13px !important;border-radius:50px !important}
+
+/* Catalog detail — pulido fino */
+.catalog-breadcrumb{font-size:.76rem !important;color:#94a3b8 !important;letter-spacing:.02em}
+.catalog-kicker{font-size:.66rem !important;letter-spacing:1.6px !important;margin-bottom:10px !important}
+.catalog-summary{font-size:.94rem !important;line-height:1.75 !important;color:#475569 !important}
+.catalog-detail .btn{border-radius:11px !important;font-size:.85rem !important;padding:12px 22px !important}
+.catalog-detail .btn-primary{background:linear-gradient(135deg,#2563eb,#1d4ed8) !important;box-shadow:0 4px 14px rgba(37,99,235,.28) !important}
+.catalog-detail .btn-wa{background:#25d366 !important;box-shadow:0 4px 14px rgba(37,211,102,.28)}
+
+/* Markets section — pulido */
+.mkt-tile{border-radius:16px !important;box-shadow:0 6px 20px rgba(15,23,42,.06)}
+.mkt-tile:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(37,99,235,.15)}
+
+/* About section — refinamiento */
+#about{background:linear-gradient(180deg,#fafbff 0%,#f1f4fc 100%) !important}
+#about .a-card{background:#fff !important;border:1px solid rgba(37,99,235,.10) !important;border-radius:14px !important;box-shadow:0 4px 16px rgba(15,23,42,.05) !important;padding:18px 20px !important;transition:all .25s ease}
+#about .a-card:hover{border-color:rgba(37,99,235,.25) !important;transform:translateX(2px);box-shadow:0 8px 24px rgba(37,99,235,.10)}
+
+/* Botones primary refinados */
+.btn-primary{border-radius:11px !important;font-weight:700 !important;letter-spacing:-.005em}
 
 /* Prog bar */
 #prog{background:linear-gradient(90deg,var(--grn),var(--cyn))}
