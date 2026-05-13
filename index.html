@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="es" id="html-root">
+<!DOCTYPE html>
+<html lang="es" id="html-root" class="lang-es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5">
@@ -10,16 +10,21 @@
 <meta property="og:url" content="https://metatechnologyglobal.com/">
 <meta property="og:title" content="Meta Technology Global · 6 líneas de productos · Telecom & Data Centers · Panamá">
 <meta property="og:description" content="Trayectoria desde 2008. Fibra óptica, RF, Infraestructura Telecom, Data Centers, Monitoreo de Redes y Medidor Inteligente (monitoreo energético con IA). Suministro + instalación + soporte 24/7 en Panamá.">
-<meta property="og:image" content="https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475">
+<meta property="og:image" content="https://lulago3003.github.io/mtg-pagina-web/assets/logo-mtg.png">
 <meta property="og:locale" content="es_PA">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Meta Technology Global · Telecom · Fibra · DC · Medidor Inteligente · Panamá">
 <meta name="twitter:description" content="6 líneas de productos + 7 servicios. Trayectoria desde 2008. Fibra óptica, RF, Infraestructura, Data Centers, Monitoreo de Redes y Medidor Inteligente.">
-<meta name="twitter:image" content="https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475">
+<meta name="twitter:image" content="https://lulago3003.github.io/mtg-pagina-web/assets/logo-mtg.png">
 <meta name="keywords" content="fibra óptica Panamá, RF cobertura, DAS, telecomunicaciones Panamá, Data Center KHIPU, racks Prose, monitoreo redes N-Test, OTDR, fusionadora, Medidor Inteligente, Emporia Vue 3, monitoreo energético, ahorro electricidad, Meta Technology Global, instalación llave en mano">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://metatechnologyglobal.com/">
 <link rel="icon" href="assets/logo-mtg.png" type="image/png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a8a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MTG Panamá">
 <!-- Schema.org JSON-LD -->
 <script type="application/ld+json">
 {
@@ -56,7 +61,33 @@
       "url": "https://metatechnologyglobal.com",
       "name": "Meta Technology Global",
       "potentialAction": {"@type": "SearchAction", "target": "https://metatechnologyglobal.com/?q={search_term_string}", "query-input": "required name=search_term_string"}
-    }
+    },{
+  "@type": "LocalBusiness",
+  "@id": "https://metatechnologyglobal.com/#local",
+  "name": "Meta Technology Global",
+  "description": "Empresa panameña de telecomunicaciones y monitoreo energético con trayectoria desde 2008.",
+  "url": "https://metatechnologyglobal.com",
+  "telephone": "+507-6674-3062",
+  "email": "meta.tecpty@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "PA",
+    "addressLocality": "Ciudad de Panamá",
+    "addressRegion": "Panamá"
+  },
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 08:00-17:00",
+  "sameAs": ["https://www.instagram.com/metatecglobal/", "https://wa.me/50766743062"]
+},
+{
+  "@type": "Service",
+  "@id": "https://metatechnologyglobal.com/#medidor",
+  "name": "Medidor Inteligente — Monitoreo Energético",
+  "provider": {"@id": "https://metatechnologyglobal.com/#org"},
+  "areaServed": {"@type": "Country", "name": "Panama"},
+  "description": "Instalación de sensores Emporia para monitoreo de consumo eléctrico en tiempo real. Reduce tu factura hasta 40%.",
+  "serviceType": "Energy Monitoring Installation"
+}
   ]
 }
 </script>
@@ -65,9 +96,13 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
 <!-- Meta Pixel placeholder (replace with real pixel ID) -->
 <!-- <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID');fbq('track','PageView');</script> -->
+<link rel="preload" as="font" crossorigin href="https://fonts.gstatic.com/s/fraunces/v31/6NUu8FyLNQOQZAnv9bYEvDiIdE9Eqctz.woff2">
+<link rel="preload" as="font" crossorigin href="https://fonts.gstatic.com/s/manrope/v15/xn7gYHE41ni1AdIRggqxSuXd.woff2">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 :root{
   /* ── Grises/blancos — fondo claro ── */
@@ -725,6 +760,15 @@ footer{background:var(--g900);border-top:1px solid var(--bdr);padding:64px 0 28p
 
 /* ═══ CATÁLOGO MEJORADO (referencia Impelsa) ═══════════════ */
 .cat-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 auto 40px;max-width:1000px}
+.cat-filters-wrap{position:relative}
+.cat-filters-wrap::after{
+  content:'';position:absolute;top:0;right:0;bottom:0;
+  width:40px;
+  background:linear-gradient(to left,rgba(255,255,255,.95),transparent);
+  pointer-events:none;z-index:2;border-radius:0 12px 12px 0;
+}
+html.dark .cat-filters-wrap::after{background:linear-gradient(to left,rgba(8,13,25,.95),transparent)}
+@media(min-width:769px){.cat-filters-wrap::after{display:none}}
 .cat-fbtn{padding:9px 18px;background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:50px;font-family:var(--ff);font-size:.78rem;font-weight:600;color:rgba(255,255,255,.7);cursor:pointer;transition:var(--tr);display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 .cat-fbtn:hover{background:rgba(20,184,166,.1);border-color:rgba(20,184,166,.3);color:#fff;transform:translateY(-1px)}
 .cat-fbtn.active{background:linear-gradient(135deg,var(--grn-dk),var(--grn));border-color:transparent;color:#fff;box-shadow:0 4px 16px rgba(20,184,166,.35)}
@@ -810,7 +854,7 @@ footer{background:var(--g900);border-top:1px solid var(--bdr);padding:64px 0 28p
 .svc-list li::before{content:'›';color:var(--grn-lt);font-weight:800;font-size:.95rem;line-height:1.3;flex-shrink:0}
 .svc-value{margin-top:auto;padding:11px 14px;background:rgba(6,196,212,.06);border-left:2px solid var(--cyn);border-radius:0 8px 8px 0;font-size:.76rem;color:var(--txt);line-height:1.55;font-style:italic}
 .svc-value strong{color:var(--cyn-lt);font-style:normal;font-weight:700;display:block;margin-bottom:2px;font-size:.62rem;text-transform:uppercase;letter-spacing:.6px}
-@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1024px){#servicios .svc-grid{grid-template-columns:repeat(2,1fr) !important}#servicios .svc-card:nth-child(7){max-width:100% !important;margin:0 !important;grid-column:auto !important}}
 @media(max-width:600px){.svc-grid{grid-template-columns:1fr;gap:14px}}
 
 /* ═══ ABOUT STATS BAR ════════════════════════════════════════ */
@@ -923,23 +967,72 @@ footer{background:var(--g900);border-top:1px solid var(--bdr);padding:64px 0 28p
 .ep-skip{display:block;margin-top:14px;font-size:.76rem;color:var(--txt2);cursor:pointer;transition:color .2s}
 .ep-skip:hover{color:#fff}
 
-/* ═══ VIDEO SECTION ══════════════════════════════════════════ */
-#video-sec{background:var(--g900);position:relative;overflow:hidden}
-#video-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(20,184,166,.07),transparent 70%);pointer-events:none}
-.video-wrap{position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(20,184,166,.2);box-shadow:0 40px 100px rgba(0,0,0,.5),0 0 0 1px rgba(20,184,166,.08);margin-top:48px;aspect-ratio:16/9;background:var(--g800);display:flex;align-items:center;justify-content:center}
-.video-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px;text-align:center;width:100%;height:100%;min-height:340px}
-.video-play-btn{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--grn-dk),var(--grn));display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--tr);box-shadow:0 8px 32px rgba(20,184,166,.4);font-size:1.8rem;padding-left:6px}
-.video-play-btn:hover{transform:scale(1.1);box-shadow:0 12px 48px rgba(20,184,166,.6)}
-.video-play-pulse{position:absolute;width:80px;height:80px;border-radius:50%;border:2px solid rgba(20,184,166,.4);animation:vPulse 2s ease infinite}
-@keyframes vPulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.8);opacity:0}}
-.vp-title{font-size:1.1rem;font-weight:700;color:#fff}
-.vp-sub{font-size:.8rem;color:var(--txt2)}
-.yt-frame{position:absolute;inset:0;width:100%;height:100%;border:none;display:none}
-.video-selector-tabs{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.video-tab{display:inline-flex;align-items:center;padding:12px 20px;border-radius:12px;background:rgba(20,184,166,.08);border:1px solid rgba(20,184,166,.2);color:var(--txt);font-family:var(--ff);font-size:.9rem;font-weight:600;cursor:pointer;transition:var(--tr);gap:8px}
-.video-tab:hover{background:rgba(20,184,166,.15);border-color:rgba(20,184,166,.4)}
-.video-tab.active{background:linear-gradient(135deg,var(--grn-dk),var(--grn));border-color:var(--grn);color:#fff;box-shadow:0 4px 16px rgba(20,184,166,.3)}
-.video-element{display:block;background:var(--g800);border-radius:20px}
+/* ═══ VIDEO SECTION — Publicidad Rediseño ═══════════════════ */
+#video-sec{
+  background:linear-gradient(135deg,#0a0f1e 0%,#0f1b3d 40%,#1a1042 70%,#0a0f1e 100%);
+  position:relative;overflow:hidden;padding:80px 0
+}
+#video-sec::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 50%,rgba(37,99,235,.18),transparent 65%),
+    radial-gradient(ellipse 50% 70% at 80% 30%,rgba(124,58,237,.15),transparent 60%),
+    radial-gradient(ellipse 40% 40% at 50% 100%,rgba(20,184,166,.1),transparent 70%)
+}
+.vid-ad-wrap{
+  max-width:1200px;margin:0 auto;padding:0 32px;
+  display:grid;grid-template-columns:1fr 1.05fr;
+  gap:60px;align-items:center
+}
+.vid-ad-left{display:flex;flex-direction:column;gap:22px}
+.vid-ad-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.vid-live-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.25);animation:pulse 2s infinite;flex-shrink:0}
+.vid-ad-title{font-family:var(--ff-head);font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:800;line-height:1.12;letter-spacing:-.04em;color:#fff;margin:0}
+.vid-ad-title em{font-style:normal;background:linear-gradient(130deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.vid-ad-sub{font-size:.94rem;color:rgba(255,255,255,.7);line-height:1.75;margin:0}
+.vid-ad-sub strong{color:#60a5fa;font-weight:700}
+.vid-ad-bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.vid-ad-bullets li{display:flex;align-items:center;gap:12px;font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.4}
+.vid-bullet-ico{font-size:1.1rem;flex-shrink:0;width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:9px}
+.vid-ad-stats{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 20px}
+.vid-stat{display:flex;flex-direction:column;gap:3px;align-items:center;flex:1}
+.vid-stat-n{font-family:var(--ff-head);font-size:1.55rem;font-weight:800;color:#fff;line-height:1}
+.vid-stat-l{font-size:.63rem;color:rgba(255,255,255,.5);text-align:center;letter-spacing:.04em;line-height:1.3}
+.vid-stat-sep{width:1px;height:34px;background:rgba(255,255,255,.12);flex-shrink:0}
+.vid-ad-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#25D366,#128c49);color:#fff;font-family:var(--ff);font-weight:700;font-size:.93rem;border:none;border-radius:13px;padding:14px 22px;cursor:pointer;text-decoration:none;box-shadow:0 6px 28px rgba(37,211,102,.35);transition:transform .2s,box-shadow .2s;align-self:flex-start}
+.vid-ad-cta:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(37,211,102,.45)}
+.vid-ad-right{display:flex;flex-direction:column;gap:14px}
+.vid-ep-bar{display:flex;gap:8px}
+.vid-ep-btn{flex:1;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:11px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.65);font-family:var(--ff);font-size:.84rem;font-weight:600;cursor:pointer;transition:all .2s}
+.vid-ep-btn:hover{background:rgba(255,255,255,.12);color:#fff}
+.vid-ep-btn.active{background:linear-gradient(135deg,rgba(37,99,235,.6),rgba(124,58,237,.5));border-color:rgba(99,102,241,.5);color:#fff;box-shadow:0 4px 16px rgba(37,99,235,.3)}
+.vid-ep-num{width:22px;height:22px;border-radius:6px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0}
+.vid-ep-btn.active .vid-ep-num{background:rgba(255,255,255,.25)}
+.vid-player-shell{position:relative;aspect-ratio:9/16;max-height:560px;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.15);box-shadow:0 0 0 1px rgba(99,102,241,.2),0 30px 80px rgba(0,0,0,.6),0 0 80px rgba(37,99,235,.2);background:#000}
+.vid-player-shell video{width:100%;height:100%;object-fit:cover}
+.vid-glow-ring{position:absolute;inset:-2px;border-radius:24px;background:linear-gradient(135deg,rgba(99,102,241,.4),rgba(124,58,237,.3),rgba(37,99,235,.4));z-index:-1;filter:blur(8px);animation:glow-pulse 3s ease-in-out infinite alternate}
+@keyframes glow-pulse{from{opacity:.6;filter:blur(8px)}to{opacity:1;filter:blur(14px)}}
+.vid-badge-row{display:flex;gap:8px;flex-wrap:wrap}
+.vid-badge{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:50px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:.77rem;font-weight:600;color:rgba(255,255,255,.8)}
+.vid-badge-hi{background:linear-gradient(135deg,rgba(37,99,235,.3),rgba(99,102,241,.25));border-color:rgba(99,102,241,.4);color:#c7d2fe}
+@media(max-width:900px){
+  .vid-ad-wrap{grid-template-columns:1fr;gap:36px;padding:0 20px}
+  .vid-player-shell{max-height:420px}
+  .vid-ad-title{font-size:clamp(1.6rem,5.5vw,2.1rem)}
+  .vid-ad-cta{align-self:stretch;justify-content:center}
+  #video-sec{padding:60px 0}
+}
+@media(max-width:480px){
+  .vid-ad-wrap{padding:0 16px;gap:24px}
+  .vid-player-shell{max-height:320px}
+  .vid-ad-bullets li{font-size:.82rem}
+  .vid-badge{font-size:.71rem;padding:6px 10px}
+  .vid-ad-stats{gap:10px;padding:12px 14px}
+  .vid-stat-n{font-size:1.25rem}
+}
+/* Legacy compat */
+.video-wrap,.video-placeholder,.video-play-btn,.video-play-pulse,.vp-title,.vp-sub,.yt-frame,.video-selector-tabs{display:none !important}
+.video-element{display:block;background:#000}
 
 /* ═══ VISUALIZATION SECTION (new) ═══════════════════════════ */
 #visualization{background:linear-gradient(180deg,var(--g950) 0%,var(--g900) 100%);position:relative;overflow:hidden}
@@ -1070,39 +1163,6 @@ footer{background:var(--g900);border-top:1px solid var(--bdr);padding:64px 0 28p
 .czc-tag{font-size:.65rem;padding:2px 9px;background:rgba(20,184,166,.08);border:1px solid rgba(20,184,166,.18);border-radius:50px;color:var(--grn-lt);font-weight:600}
 @media(max-width:900px){.coverage-wrap{grid-template-columns:1fr;gap:32px}}
 
-/* ═══ SIMULATOR ══════════════════════════════════════════════ */
-#simulator{background:var(--g950)}
-.sim-wrap{max-width:680px;margin:48px auto 0}
-.sim-progress{display:flex;gap:0;margin-bottom:40px;position:relative}
-.sim-progress::before{content:'';position:absolute;top:14px;left:0;right:0;height:2px;background:var(--bdr);z-index:0}
-.sim-progress::after{content:'';position:absolute;top:14px;left:0;height:2px;background:var(--grn);z-index:1;transition:width .4s ease;width:var(--prog-w,0%)}
-.sp-step{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;z-index:2}
-.sp-num{width:28px;height:28px;border-radius:50%;background:var(--g700);border:2px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:var(--txt2);transition:var(--tr)}
-.sp-step.done .sp-num{background:var(--grn);border-color:var(--grn);color:#fff}
-.sp-step.active .sp-num{background:var(--g800);border-color:var(--grn);color:var(--grn-lt);box-shadow:0 0 12px rgba(20,184,166,.4)}
-.sp-lbl{font-size:.62rem;color:var(--txt2);text-align:center;white-space:nowrap}
-.sp-step.active .sp-lbl,.sp-step.done .sp-lbl{color:var(--grn-lt)}
-.sim-card{background:var(--g800);border:1px solid rgba(20,184,166,.2);border-radius:20px;padding:36px;min-height:280px;display:flex;flex-direction:column}
-.sim-step{display:none;flex:1;flex-direction:column}
-.sim-step.active{display:flex}
-.sim-q{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:8px}
-.sim-hint{font-size:.8rem;color:var(--txt2);margin-bottom:28px}
-.sim-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.sim-opt{padding:14px 16px;background:var(--g900);border:1.5px solid var(--bdr);border-radius:12px;font-family:var(--ff);font-size:.85rem;color:var(--txt);cursor:pointer;transition:var(--tr);text-align:left;display:flex;align-items:center;gap:10px}
-.sim-opt:hover{border-color:rgba(20,184,166,.4);background:rgba(20,184,166,.05);color:#fff}
-.sim-opt.selected{border-color:var(--grn);background:rgba(20,184,166,.1);color:var(--grn-lt)}
-.sim-opt-ico{font-size:1.2rem;flex-shrink:0}
-.sim-result{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
-.sim-result-ico{font-size:3rem}
-.sim-result h3{font-size:1.3rem;font-weight:800;color:#fff}
-.sim-result p{font-size:.88rem;color:var(--txt2);line-height:1.7;max-width:420px}
-.sim-result-box{background:rgba(20,184,166,.08);border:1px solid rgba(20,184,166,.2);border-radius:14px;padding:18px 24px;width:100%}
-.sim-nav{display:flex;gap:10px;margin-top:auto;padding-top:24px}
-.sim-back{flex:0 0 auto;padding:11px 20px;background:transparent;border:1.5px solid var(--bdr);border-radius:9px;color:var(--txt2);font-family:var(--ff);font-size:.85rem;cursor:pointer;transition:var(--tr)}
-.sim-back:hover{border-color:rgba(20,184,166,.4);color:#fff}
-.sim-next{flex:1;padding:13px;background:linear-gradient(135deg,var(--grn-dk),var(--grn));border:none;border-radius:10px;color:#fff;font-family:var(--ff);font-size:.9rem;font-weight:700;cursor:pointer;transition:var(--tr)}
-.sim-next:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(20,184,166,.4)}
-.sim-next:disabled{opacity:.4;cursor:not-allowed;transform:none}
 
 /* i18n hidden */
 [data-lang]{display:none}
@@ -1309,7 +1369,8 @@ span[data-lang]{display:none}
   .cat-btn{width:100%;padding:12px 14px;font-size:.82rem;min-height:46px;justify-content:center}
 
   /* ── SERVICIOS · CARDS ── */
-  .svc-grid{grid-template-columns:1fr;gap:13px}
+  #servicios .svc-grid{grid-template-columns:1fr !important;gap:13px !important}
+  #servicios .svc-card:nth-child(7){max-width:100% !important;margin:0 !important;grid-column:auto !important}
   .svc-card{padding:22px 20px}
   .svc-head{gap:12px;margin-bottom:12px}
   .svc-num{width:40px;height:40px;border-radius:11px}
@@ -1347,14 +1408,6 @@ span[data-lang]{display:none}
   .wa-wrap{bottom:18px;right:18px}
   .wa-fab-main{width:54px;height:54px;font-size:1.45rem}
 
-  /* simulador */
-  .sim-wrap{margin-top:32px}
-  .sim-card{padding:24px 20px;min-height:auto;border-radius:16px}
-  .sim-q{font-size:1.05rem}
-  .sim-hint{font-size:.78rem;margin-bottom:20px}
-  .sim-opts{grid-template-columns:1fr;gap:8px}
-  .sim-opt{padding:13px 14px;font-size:.84rem;min-height:48px}
-  .sp-lbl{font-size:.58rem}
   .coverage-wrap{grid-template-columns:1fr;gap:22px}
 
   /* gallery */
@@ -1490,6 +1543,7 @@ span[data-lang]{display:none}
 }
 
 /* ── Hero más cinematográfico ── */
+#hero .slide-content{max-width:520px !important}
 #hero .slide-overlay{
   background:linear-gradient(120deg,rgba(11,30,77,.92) 0%,rgba(30,58,138,.78) 45%,rgba(37,99,235,.55) 100%) !important;
 }
@@ -1593,11 +1647,12 @@ span[data-lang]{display:none}
   pointer-events:none;
 }
 #about .container{position:relative;z-index:1}
-#about .s-title span{
+#about .s-title span:not([data-lang]){
   background:var(--grad-warm);
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;
 }
+#about .s-title span[data-lang]{background:none !important;-webkit-text-fill-color:inherit !important;color:inherit !important}
 #about .a-card{
   background:rgba(255,255,255,.9);
   border:1px solid rgba(37,99,235,.12);
@@ -1674,11 +1729,12 @@ span[data-lang]{display:none}
 }
 
 /* ── S-title títulos con gradient highlight ── */
-.s-title span{
+.s-title span:not([data-lang]){
   background:linear-gradient(120deg,#2563eb 0%,#0ea5e9 100%);
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;
 }
+.s-title span[data-lang]{background:none !important;-webkit-text-fill-color:inherit !important;color:inherit !important}
 
 /* ── Cards de productos: hover con tilt sutil ── */
 #productos .prod-card,
@@ -1995,7 +2051,10 @@ html{scroll-behavior:smooth}
 
 /* Headings con Fraunces */
 .s-title,.slide-h1,.cta-h2,.about-h2,.emp-card-name{font-family:var(--ff-head)}
-.s-title span{background:linear-gradient(130deg,var(--grn),var(--cyn));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+/* Resetear data-lang spans — no deben recibir el gradiente de texto */
+.s-title span[data-lang]{background:none !important;-webkit-text-fill-color:inherit !important;color:inherit !important}
+/* Solo los spans internos (no data-lang) reciben el gradiente */
+.s-title span:not([data-lang]){background:linear-gradient(120deg,#2563eb 0%,#0ea5e9 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 
 /* ═════════════════════════════════════════════════════════════
    NAVBAR — Rediseño limpio tema claro
@@ -2071,7 +2130,8 @@ html{scroll-behavior:smooth}
 /* ── SOLUTIONS rediseño ──────────────────────────────────── */
 #solutions{background:#f4f7ff !important}
 #solutions .s-title{color:#0f172a !important}
-#solutions .s-title span{background:linear-gradient(130deg,#2563eb,#0ea5e9) !important;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#solutions .s-title span:not([data-lang]){background:linear-gradient(130deg,#2563eb,#0ea5e9) !important;-webkit-background-clip:text;-webkit-text-fill-color:transparent !important;background-clip:text !important}
+#solutions .s-title span[data-lang]{background:none !important;-webkit-text-fill-color:inherit !important;color:inherit !important}
 #solutions .s-sub{color:#475569 !important}
 #solutions .tag{color:#2563eb !important;background:rgba(37,99,235,.08) !important;border-color:rgba(37,99,235,.15) !important}
 #solutions .tag-dot{background:#2563eb !important}
@@ -2128,8 +2188,10 @@ html{scroll-behavior:smooth}
 
 /* ── CATÁLOGO rediseño tema claro ────────────────────────── */
 #productos{background:#ffffff !important;padding:80px 0 !important}
+#productos .centered{max-width:680px !important;margin-left:auto !important;margin-right:auto !important}
 #productos .s-title{color:#0f172a !important}
-#productos .s-title span{background:linear-gradient(130deg,#2563eb,#0ea5e9) !important;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#productos .s-title span:not([data-lang]){background:linear-gradient(130deg,#2563eb,#0ea5e9) !important;-webkit-background-clip:text;-webkit-text-fill-color:transparent !important;background-clip:text !important}
+#productos .s-title span[data-lang]{background:none !important;-webkit-text-fill-color:inherit !important;color:inherit !important}
 #productos .s-sub{color:#475569 !important}
 #productos .tag{color:#2563eb !important;background:rgba(37,99,235,.08) !important;border-color:rgba(37,99,235,.15) !important}
 #productos .tag-dot{background:#2563eb !important}
@@ -2322,8 +2384,8 @@ html{scroll-behavior:smooth}
 /* Prog bar */
 #prog{background:linear-gradient(90deg,var(--grn),var(--cyn))}
 
-/* Simulator, comparativa, benefits, video sections */
-.sim-card,.ben-card,.vis-card{background:#fff;border:1px solid rgba(37,99,235,.1);box-shadow:var(--sh)}
+/* comparativa, benefits, video sections */
+.ben-card,.vis-card{background:#fff;border:1px solid rgba(37,99,235,.1);box-shadow:var(--sh)}
 .ben-ico{color:var(--grn)}
 .ben-title{color:#0f172a;font-family:var(--ff-head)}
 .ben-body{color:var(--txt2)}
@@ -2545,14 +2607,195 @@ footer .f-brand p{color:#64748b !important;font-size:.85rem !important;line-heig
 footer .f-btm{border-top:1px solid rgba(37,99,235,.10) !important;color:#94a3b8 !important;font-size:.8rem !important}
 footer .f-btm a{color:#2563eb !important;font-weight:600 !important}
 footer .f-btm a:hover{color:#1d4ed8 !important}
-footer .f-soc{color:#64748b !important;border:1px solid rgba(37,99,235,.15) !important;background:#fff !important}
-footer .f-soc:hover{color:#2563eb !important;border-color:rgba(37,99,235,.4) !important;background:#eef3fc !important}
+/* social icons — coloridos por defecto */
+footer .f-soc{border:none !important;background:transparent !important;width:40px !important;height:40px !important;border-radius:12px !important;transition:transform .2s,box-shadow .2s !important}
+footer .f-soc:hover{transform:translateY(-3px) scale(1.08) !important;box-shadow:0 6px 20px rgba(0,0,0,.18) !important}
+/* Instagram gradient */
+footer .f-soc-ig{background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%) !important;color:#fff !important}
+footer .f-soc-ig svg{stroke:#fff !important}
+footer .f-soc-ig:hover{box-shadow:0 6px 20px rgba(220,39,67,.45) !important}
+/* WhatsApp green */
+footer .f-soc-wa{background:#25D366 !important;color:#fff !important}
+footer .f-soc-wa svg,footer .f-soc-wa .ico{color:#fff !important}
+footer .f-soc-wa:hover{box-shadow:0 6px 20px rgba(37,211,102,.45) !important}
+/* Email blue */
+footer .f-soc-em{background:#2563eb !important;color:#fff !important}
+footer .f-soc-em svg,footer .f-soc-em .ico{color:#fff !important}
+footer .f-soc-em:hover{box-shadow:0 6px 20px rgba(37,99,235,.45) !important}
 
-/* ── SERVICIOS — texto h3 visible sobre blanco ── */
-.svc-card h3{color:#0f172a !important;font-size:1rem !important;font-weight:700 !important;letter-spacing:-.02em !important;line-height:1.25 !important}
-.svc-card:hover h3{color:#1d4ed8 !important}
-.svc-num{background:rgba(37,99,235,.08) !important;border:1px solid rgba(37,99,235,.18) !important;color:#2563eb !important}
-.svc-card:hover .svc-num{background:linear-gradient(135deg,#2563eb,#1d4ed8) !important;color:#fff !important;border-color:transparent !important}
+/* ══════════════════════════════════════════════════════════
+   SERVICIOS — Rediseño completo tema claro
+══════════════════════════════════════════════════════════ */
+#servicios{
+  background:linear-gradient(160deg,#f0f6ff 0%,#f8faff 55%,#fff 100%) !important;
+  position:relative !important
+}
+#servicios .s-title{color:#0f172a !important}
+#servicios .s-title span:not([data-lang]){background:linear-gradient(130deg,#2563eb,#7c3aed) !important;-webkit-background-clip:text !important;-webkit-text-fill-color:transparent !important;background-clip:text !important}
+#servicios .s-title span[data-lang]{background:none !important;-webkit-text-fill-color:inherit !important;color:inherit !important}
+#servicios .s-sub{color:#475569 !important}
+#servicios .tag{color:#2563eb !important;background:rgba(37,99,235,.08) !important;border-color:rgba(37,99,235,.15) !important}
+#servicios .tag-dot{background:#2563eb !important}
+
+/* grid — 3 cols desktop, centrado con 7 tarjetas */
+#servicios .svc-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:22px !important;
+  margin-top:52px !important
+}
+
+/* BASE card — blanca con sombra suave */
+.svc-card{
+  background:#fff !important;
+  border:1.5px solid rgba(37,99,235,.09) !important;
+  border-radius:22px !important;
+  padding:28px 26px 26px !important;
+  box-shadow:0 2px 12px rgba(15,23,42,.05),0 1px 3px rgba(15,23,42,.04) !important;
+  transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s,border-color .25s !important;
+  position:relative !important;
+  overflow:hidden !important
+}
+
+/* top accent bar always visible + colored per card */
+.svc-card::before{
+  height:4px !important;
+  transform:scaleX(1) !important;
+  border-radius:4px 4px 0 0 !important;
+  top:0 !important;left:0 !important;
+  background:linear-gradient(90deg,#2563eb,#7c3aed) !important
+}
+.svc-card:hover{
+  transform:translateY(-8px) !important;
+  box-shadow:0 20px 56px rgba(37,99,235,.12),0 4px 16px rgba(15,23,42,.07) !important;
+  border-color:rgba(37,99,235,.22) !important
+}
+
+/* number label top-right */
+.svc-card::after{
+  content:attr(data-n) !important;
+  position:absolute !important;
+  top:16px !important;right:20px !important;
+  font-family:var(--ff-head) !important;
+  font-size:.72rem !important;font-weight:800 !important;
+  color:rgba(37,99,235,.22) !important;
+  letter-spacing:.04em !important
+}
+
+/* icon box */
+.svc-num{
+  width:48px !important;height:48px !important;
+  border-radius:14px !important;
+  background:rgba(37,99,235,.1) !important;
+  border:none !important;
+  color:#2563eb !important;
+  box-shadow:0 4px 12px rgba(37,99,235,.15) !important;
+  flex-shrink:0 !important
+}
+.svc-card:hover .svc-num{
+  background:linear-gradient(135deg,#2563eb,#7c3aed) !important;
+  color:#fff !important;
+  transform:scale(1.1) rotate(-4deg) !important;
+  box-shadow:0 6px 18px rgba(37,99,235,.35) !important;
+  border-color:transparent !important
+}
+
+/* typography */
+.svc-card h3{
+  color:#0f172a !important;font-size:1.05rem !important;
+  font-weight:800 !important;letter-spacing:-.025em !important;
+  line-height:1.25 !important;margin:0 !important;flex:1 !important
+}
+.svc-card:hover h3{color:#2563eb !important}
+.svc-desc{color:#475569 !important;font-size:.86rem !important;line-height:1.7 !important}
+.svc-list li{color:#334155 !important;font-size:.82rem !important}
+.svc-list li::before{color:#2563eb !important;font-weight:900 !important}
+
+/* valor box */
+.svc-value{
+  background:linear-gradient(135deg,rgba(37,99,235,.06),rgba(124,58,237,.04)) !important;
+  border-left:3px solid #2563eb !important;
+  border-radius:0 10px 10px 0 !important;
+  padding:12px 16px !important;
+  color:#475569 !important;font-size:.8rem !important
+}
+.svc-value strong{
+  color:#2563eb !important;font-size:.62rem !important;
+  letter-spacing:.8px !important;text-transform:uppercase !important
+}
+
+/* ── Color único por tarjeta (nth-child) ── */
+/* 1 — Azul (default) */
+#servicios .svc-card:nth-child(1)::before{background:linear-gradient(90deg,#2563eb,#3b82f6) !important}
+#servicios .svc-card:nth-child(1) .svc-num{background:rgba(37,99,235,.1) !important;color:#2563eb !important}
+#servicios .svc-card:nth-child(1):hover .svc-num{background:linear-gradient(135deg,#2563eb,#3b82f6) !important}
+#servicios .svc-card:nth-child(1) .svc-value{border-color:#2563eb !important;background:linear-gradient(135deg,rgba(37,99,235,.07),rgba(59,130,246,.04)) !important}
+#servicios .svc-card:nth-child(1) .svc-value strong{color:#2563eb !important}
+
+/* 2 — Violeta */
+#servicios .svc-card:nth-child(2)::before{background:linear-gradient(90deg,#7c3aed,#a78bfa) !important}
+#servicios .svc-card:nth-child(2) .svc-num{background:rgba(124,58,237,.1) !important;color:#7c3aed !important;box-shadow:0 4px 12px rgba(124,58,237,.15) !important}
+#servicios .svc-card:nth-child(2):hover .svc-num{background:linear-gradient(135deg,#7c3aed,#a78bfa) !important;box-shadow:0 6px 18px rgba(124,58,237,.35) !important}
+#servicios .svc-card:nth-child(2):hover h3{color:#7c3aed !important}
+#servicios .svc-card:nth-child(2):hover{border-color:rgba(124,58,237,.22) !important;box-shadow:0 20px 56px rgba(124,58,237,.1),0 4px 16px rgba(15,23,42,.07) !important}
+#servicios .svc-card:nth-child(2) .svc-list li::before{color:#7c3aed !important}
+#servicios .svc-card:nth-child(2) .svc-value{border-color:#7c3aed !important;background:linear-gradient(135deg,rgba(124,58,237,.07),rgba(167,139,250,.04)) !important}
+#servicios .svc-card:nth-child(2) .svc-value strong{color:#7c3aed !important}
+
+/* 3 — Emerald */
+#servicios .svc-card:nth-child(3)::before{background:linear-gradient(90deg,#059669,#34d399) !important}
+#servicios .svc-card:nth-child(3) .svc-num{background:rgba(5,150,105,.1) !important;color:#059669 !important;box-shadow:0 4px 12px rgba(5,150,105,.15) !important}
+#servicios .svc-card:nth-child(3):hover .svc-num{background:linear-gradient(135deg,#059669,#34d399) !important;box-shadow:0 6px 18px rgba(5,150,105,.35) !important}
+#servicios .svc-card:nth-child(3):hover h3{color:#059669 !important}
+#servicios .svc-card:nth-child(3):hover{border-color:rgba(5,150,105,.22) !important;box-shadow:0 20px 56px rgba(5,150,105,.1),0 4px 16px rgba(15,23,42,.07) !important}
+#servicios .svc-card:nth-child(3) .svc-list li::before{color:#059669 !important}
+#servicios .svc-card:nth-child(3) .svc-value{border-color:#059669 !important;background:linear-gradient(135deg,rgba(5,150,105,.07),rgba(52,211,153,.04)) !important}
+#servicios .svc-card:nth-child(3) .svc-value strong{color:#059669 !important}
+
+/* 4 — Amber */
+#servicios .svc-card:nth-child(4)::before{background:linear-gradient(90deg,#d97706,#fbbf24) !important}
+#servicios .svc-card:nth-child(4) .svc-num{background:rgba(217,119,6,.1) !important;color:#d97706 !important;box-shadow:0 4px 12px rgba(217,119,6,.15) !important}
+#servicios .svc-card:nth-child(4):hover .svc-num{background:linear-gradient(135deg,#d97706,#fbbf24) !important;box-shadow:0 6px 18px rgba(217,119,6,.35) !important}
+#servicios .svc-card:nth-child(4):hover h3{color:#d97706 !important}
+#servicios .svc-card:nth-child(4):hover{border-color:rgba(217,119,6,.22) !important;box-shadow:0 20px 56px rgba(217,119,6,.1),0 4px 16px rgba(15,23,42,.07) !important}
+#servicios .svc-card:nth-child(4) .svc-list li::before{color:#d97706 !important}
+#servicios .svc-card:nth-child(4) .svc-value{border-color:#d97706 !important;background:linear-gradient(135deg,rgba(217,119,6,.07),rgba(251,191,36,.04)) !important}
+#servicios .svc-card:nth-child(4) .svc-value strong{color:#d97706 !important}
+
+/* 5 — Cyan */
+#servicios .svc-card:nth-child(5)::before{background:linear-gradient(90deg,#0891b2,#22d3ee) !important}
+#servicios .svc-card:nth-child(5) .svc-num{background:rgba(8,145,178,.1) !important;color:#0891b2 !important;box-shadow:0 4px 12px rgba(8,145,178,.15) !important}
+#servicios .svc-card:nth-child(5):hover .svc-num{background:linear-gradient(135deg,#0891b2,#22d3ee) !important;box-shadow:0 6px 18px rgba(8,145,178,.35) !important}
+#servicios .svc-card:nth-child(5):hover h3{color:#0891b2 !important}
+#servicios .svc-card:nth-child(5):hover{border-color:rgba(8,145,178,.22) !important;box-shadow:0 20px 56px rgba(8,145,178,.1),0 4px 16px rgba(15,23,42,.07) !important}
+#servicios .svc-card:nth-child(5) .svc-list li::before{color:#0891b2 !important}
+#servicios .svc-card:nth-child(5) .svc-value{border-color:#0891b2 !important;background:linear-gradient(135deg,rgba(8,145,178,.07),rgba(34,211,238,.04)) !important}
+#servicios .svc-card:nth-child(5) .svc-value strong{color:#0891b2 !important}
+
+/* 6 — Rose */
+#servicios .svc-card:nth-child(6)::before{background:linear-gradient(90deg,#e11d48,#fb7185) !important}
+#servicios .svc-card:nth-child(6) .svc-num{background:rgba(225,29,72,.1) !important;color:#e11d48 !important;box-shadow:0 4px 12px rgba(225,29,72,.15) !important}
+#servicios .svc-card:nth-child(6):hover .svc-num{background:linear-gradient(135deg,#e11d48,#fb7185) !important;box-shadow:0 6px 18px rgba(225,29,72,.35) !important}
+#servicios .svc-card:nth-child(6):hover h3{color:#e11d48 !important}
+#servicios .svc-card:nth-child(6):hover{border-color:rgba(225,29,72,.22) !important;box-shadow:0 20px 56px rgba(225,29,72,.1),0 4px 16px rgba(15,23,42,.07) !important}
+#servicios .svc-card:nth-child(6) .svc-list li::before{color:#e11d48 !important}
+#servicios .svc-card:nth-child(6) .svc-value{border-color:#e11d48 !important;background:linear-gradient(135deg,rgba(225,29,72,.07),rgba(251,113,133,.04)) !important}
+#servicios .svc-card:nth-child(6) .svc-value strong{color:#e11d48 !important}
+
+/* 7 — Indigo (span completo en fila de 3 → queda centrado) */
+#servicios .svc-card:nth-child(7){
+  max-width:360px !important;
+  margin:0 auto !important;
+  grid-column:2 !important
+}
+#servicios .svc-card:nth-child(7)::before{background:linear-gradient(90deg,#4338ca,#818cf8) !important}
+#servicios .svc-card:nth-child(7) .svc-num{background:rgba(67,56,202,.1) !important;color:#4338ca !important;box-shadow:0 4px 12px rgba(67,56,202,.15) !important}
+#servicios .svc-card:nth-child(7):hover .svc-num{background:linear-gradient(135deg,#4338ca,#818cf8) !important;box-shadow:0 6px 18px rgba(67,56,202,.35) !important}
+#servicios .svc-card:nth-child(7):hover h3{color:#4338ca !important}
+#servicios .svc-card:nth-child(7):hover{border-color:rgba(67,56,202,.22) !important;box-shadow:0 20px 56px rgba(67,56,202,.1),0 4px 16px rgba(15,23,42,.07) !important}
+#servicios .svc-card:nth-child(7) .svc-list li::before{color:#4338ca !important}
+#servicios .svc-card:nth-child(7) .svc-value{border-color:#4338ca !important;background:linear-gradient(135deg,rgba(67,56,202,.07),rgba(129,140,248,.04)) !important}
+#servicios .svc-card:nth-child(7) .svc-value strong{color:#4338ca !important}
 .svc-card::before{background:linear-gradient(90deg,#2563eb,#0ea5e9) !important}
 .svc-card:hover{border-color:rgba(37,99,235,.25) !important;box-shadow:0 18px 48px rgba(37,99,235,.12),0 0 0 1px rgba(37,99,235,.08) !important}
 .svc-list li{color:#475569 !important;font-size:.82rem !important}
@@ -2564,6 +2807,16 @@ footer .f-soc:hover{color:#2563eb !important;border-color:rgba(37,99,235,.4) !im
 /* ── CÓMO FUNCIONA — step circles y cards ── */
 .step-n{background:#eef3fc !important;border:2px solid rgba(37,99,235,.35) !important;color:#2563eb !important}
 .step-n.on{background:linear-gradient(135deg,#2563eb,#0ea5e9) !important;color:#fff !important;border-color:transparent !important;box-shadow:0 0 22px rgba(37,99,235,.35) !important}
+/* ── Cómo funciona — pasos interactivos ── */
+#how .step{cursor:pointer;border-radius:14px;padding:10px 14px;margin:0 -14px;transition:background .2s,transform .2s}
+#how .step:hover{background:rgba(37,99,235,.06);transform:translateX(3px)}
+#how .step.step-active{background:rgba(37,99,235,.07)}
+#how .step.step-active h3{color:#1d4ed8 !important}
+.how-img-card{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:16/10;background:#dde4f0;margin-bottom:18px}
+.how-img-card img{width:100%;height:100%;object-fit:cover;transition:opacity .25s ease;display:block}
+.how-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.62) 0%,transparent 52%);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;pointer-events:none}
+.how-step-badge{display:inline-flex;align-items:center;background:rgba(255,255,255,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);border-radius:50px;padding:4px 14px;font-size:.68rem;font-weight:700;letter-spacing:.1em;color:#fff;text-transform:uppercase;margin-bottom:8px;width:fit-content}
+.how-step-cap{color:#fff;font-size:.9rem;font-weight:500;line-height:1.45;margin:0;text-shadow:0 1px 4px rgba(0,0,0,.25)}
 .step-c h3{color:#0f172a !important;font-family:var(--ff-head) !important;font-size:.97rem !important;font-weight:700 !important;letter-spacing:-.02em !important}
 .step-c p{color:#64748b !important;font-size:.84rem !important;line-height:1.65 !important}
 .step-tag{background:rgba(37,99,235,.06) !important;border:1px solid rgba(37,99,235,.15) !important;border-radius:50px !important;padding:5px 12px !important;font-size:.73rem !important;color:#2563eb !important;font-weight:600 !important;display:inline-flex !important;align-items:center !important;gap:6px !important;margin-top:8px !important}
@@ -2646,111 +2899,162 @@ footer .f-soc:hover{color:#2563eb !important;border-color:rgba(37,99,235,.4) !im
 }
 .catx-search-clear:hover{background:#e2e8f0;color:#0f172a}
 
-/* ── Bento grid ── */
+/* ── Stats mini-bar ── */
+.catx-stats-bar{
+  display:flex;align-items:stretch;
+  margin:0 auto 28px;max-width:680px;
+  background:#fff;border:1px solid rgba(37,99,235,.1);
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 4px 16px rgba(15,23,42,.05)
+}
+.catx-stat{
+  flex:1;display:flex;flex-direction:column;align-items:center;
+  padding:14px 10px;border-right:1px solid rgba(37,99,235,.08);gap:3px
+}
+.catx-stat:last-child{border-right:none}
+.catx-stat-n{font-family:var(--ff-head);font-size:1.4rem;font-weight:800;color:#0f172a;letter-spacing:-.04em;line-height:1}
+.catx-stat-l{font-size:.6rem;font-weight:700;color:#64748b;letter-spacing:.06em;text-transform:uppercase;text-align:center;line-height:1.3}
+
+/* ── Brand filter chips ── */
+.catx-brand-filter{
+  display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+  justify-content:center;margin-bottom:28px
+}
+.catx-brand-filter-lbl{
+  font-size:.64rem;font-weight:700;color:#94a3b8;
+  letter-spacing:.1em;text-transform:uppercase;flex-shrink:0
+}
+.catx-bfbtn{
+  padding:6px 15px;border:1.5px solid rgba(37,99,235,.14);
+  border-radius:50px;background:#fff;
+  font-family:var(--ff);font-size:.74rem;font-weight:600;color:#475569;
+  cursor:pointer;transition:all .22s;white-space:nowrap;line-height:1
+}
+.catx-bfbtn:hover{border-color:rgba(37,99,235,.35);color:#2563eb;background:#f4f7ff;transform:translateY(-1px)}
+.catx-bfbtn.active{background:linear-gradient(135deg,#2563eb,#1d4ed8);border-color:transparent;color:#fff;box-shadow:0 4px 14px rgba(37,99,235,.32)}
+
+/* ── Bento grid 2.0 ── */
 .catx-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  grid-template-columns:repeat(6,1fr);
+  gap:16px;
   margin-bottom:48px
 }
+/* Row 1: 3 tiles × span-2 */
 .catx-tile{
-  position:relative;
-  display:block;width:100%;
-  aspect-ratio:4/5;
+  grid-column:span 2;
+  position:relative;display:block;width:100%;
+  aspect-ratio:3/4;
   border:none;padding:0;
-  border-radius:20px;overflow:hidden;
-  cursor:pointer;
-  font-family:var(--ff);
-  background:#0f172a;
-  box-shadow:0 6px 24px rgba(15,23,42,.08),0 1px 3px rgba(15,23,42,.06);
-  transition:all .35s cubic-bezier(.4,0,.2,1);
+  border-radius:22px;overflow:hidden;
+  cursor:pointer;font-family:var(--ff);
+  background:#0a0f1e;
+  box-shadow:0 4px 20px rgba(15,23,42,.1),0 1px 4px rgba(15,23,42,.06);
+  transition:all .4s cubic-bezier(.4,0,.2,1);
   text-align:left
 }
+/* Row 2: 2 tiles × span-3 */
+.catx-tile:nth-child(4),.catx-tile:nth-child(5){
+  grid-column:span 3;aspect-ratio:5/3
+}
+.catx-tile:focus-visible{outline:3px solid #2563eb;outline-offset:3px}
+
+/* Category accent colours */
+.catx-tile:nth-child(1){--cat:#f97316;--cat-glow:rgba(249,115,22,.28)}
+.catx-tile:nth-child(2){--cat:#2563eb;--cat-glow:rgba(37,99,235,.28)}
+.catx-tile:nth-child(3){--cat:#64748b;--cat-glow:rgba(100,116,139,.22)}
+.catx-tile:nth-child(4){--cat:#7c3aed;--cat-glow:rgba(124,58,237,.28)}
+.catx-tile:nth-child(5){--cat:#0891b2;--cat-glow:rgba(8,145,178,.28)}
+.catx-tile:nth-child(6){--cat:#16a34a;--cat-glow:rgba(22,163,74,.32)}
+
+/* Hover: lift + colour glow */
 .catx-tile:hover{
-  transform:translateY(-6px);
-  box-shadow:0 22px 56px rgba(15,23,42,.18),0 4px 12px rgba(37,99,235,.15)
+  transform:translateY(-8px) scale(1.015);
+  box-shadow:0 28px 64px rgba(15,23,42,.2),0 4px 16px var(--cat-glow,rgba(37,99,235,.2))
 }
-.catx-tile:focus-visible{
-  outline:3px solid #2563eb;outline-offset:3px
+/* Top accent bar on hover */
+.catx-tile::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--cat,#2563eb);z-index:5;
+  opacity:0;transition:opacity .35s
 }
+.catx-tile:hover::after{opacity:1}
+
+/* Colour wash from bottom */
+.catx-tile::before{
+  content:'';position:absolute;inset:0;z-index:2;
+  background:linear-gradient(to top,color-mix(in srgb,var(--cat,#2563eb) 28%,transparent) 0%,transparent 55%);
+  opacity:0;transition:opacity .4s;pointer-events:none
+}
+.catx-tile:hover::before{opacity:1}
+
+/* Arrow reveal */
+.catx-tile-arrow{
+  position:absolute;bottom:22px;right:20px;z-index:7;
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,.92);
+  display:flex;align-items:center;justify-content:center;
+  color:#0f172a;font-size:1rem;font-weight:700;
+  transform:scale(.5) rotate(-45deg);opacity:0;
+  transition:all .35s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 4px 14px rgba(0,0,0,.18)
+}
+.catx-tile:hover .catx-tile-arrow{opacity:1;transform:scale(1) rotate(0deg)}
+
 .catx-tile-img{
   position:absolute;inset:0;
   background-size:cover;background-position:center;
-  transition:transform .8s cubic-bezier(.4,0,.2,1)
+  transition:transform 1s cubic-bezier(.4,0,.2,1)
 }
-.catx-tile:hover .catx-tile-img{transform:scale(1.08)}
+.catx-tile:hover .catx-tile-img{transform:scale(1.1)}
 .catx-tile-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(15,23,42,.05) 0%,rgba(15,23,42,.4) 45%,rgba(15,23,42,.92) 100%);
+  background:linear-gradient(180deg,rgba(5,10,25,.06) 0%,rgba(5,10,25,.38) 40%,rgba(5,10,25,.94) 100%);
   pointer-events:none
 }
 .catx-tile-content{
   position:absolute;inset:0;
   display:flex;flex-direction:column;justify-content:space-between;
-  padding:20px 22px 24px;
-  color:#fff
+  padding:18px 20px 22px;color:#fff;z-index:3
 }
-.catx-tile-top{
-  display:flex;align-items:center;justify-content:space-between
-}
+.catx-tile-top{display:flex;align-items:center;justify-content:space-between}
 .catx-tile-num{
-  font-family:var(--ff-head);
-  font-size:1rem;font-weight:800;
-  color:rgba(255,255,255,.7);
-  letter-spacing:.02em;
-  background:rgba(255,255,255,.14);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  padding:6px 12px;border-radius:50px;
-  border:1px solid rgba(255,255,255,.18)
+  font-family:var(--ff-head);font-size:.88rem;font-weight:800;
+  color:rgba(255,255,255,.75);letter-spacing:.04em;
+  background:rgba(255,255,255,.12);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  padding:5px 12px;border-radius:50px;border:1px solid rgba(255,255,255,.18)
 }
 .catx-tile-count{
-  font-size:.7rem;font-weight:600;
-  color:rgba(255,255,255,.85);
-  background:rgba(255,255,255,.12);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  padding:5px 10px;border-radius:50px;
-  letter-spacing:.02em
+  font-size:.68rem;font-weight:700;color:rgba(255,255,255,.88);
+  background:rgba(255,255,255,.12);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  padding:5px 10px;border-radius:50px;letter-spacing:.04em
 }
 .catx-tile-badge{
-  font-size:.65rem;font-weight:800;
-  color:#0f172a;
+  font-size:.62rem;font-weight:800;color:#0f172a;
   background:linear-gradient(135deg,#fbbf24,#f59e0b);
-  padding:5px 11px;border-radius:50px;
-  letter-spacing:.06em;text-transform:uppercase;
+  padding:5px 11px;border-radius:50px;letter-spacing:.06em;text-transform:uppercase;
   box-shadow:0 4px 12px rgba(245,158,11,.4)
 }
-.catx-tile-bottom{
-  display:flex;flex-direction:column;gap:10px
-}
+.catx-tile-bottom{display:flex;flex-direction:column;gap:9px}
 .catx-tile-title{
   font-family:var(--ff-head);
-  font-size:1.55rem;font-weight:700;
-  letter-spacing:-.025em;line-height:1.1;
-  color:#fff;margin:0
+  font-size:clamp(1.2rem,2vw,1.65rem);font-weight:700;
+  letter-spacing:-.03em;line-height:1.08;color:#fff;margin:0
 }
-.catx-tile-sub{
-  font-size:.82rem;font-weight:500;
-  color:rgba(255,255,255,.85);
-  margin:0;line-height:1.5
-}
-.catx-tile-brands{
-  display:flex;flex-wrap:wrap;gap:5px;
-  margin-top:4px
-}
+.catx-tile-sub{font-size:.8rem;font-weight:500;color:rgba(255,255,255,.82);margin:0;line-height:1.45}
+.catx-tile-brands{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
 .catx-brand-chip{
-  font-size:.65rem;font-weight:700;
-  color:#fff;
-  background:rgba(255,255,255,.15);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  padding:4px 9px;border-radius:50px;
-  letter-spacing:.04em;
-  border:1px solid rgba(255,255,255,.22)
+  font-size:.62rem;font-weight:700;color:#fff;
+  background:rgba(255,255,255,.14);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  padding:3px 9px;border-radius:50px;letter-spacing:.04em;border:1px solid rgba(255,255,255,.2)
 }
+
+/* Featured tile — Row 3: full width landscape */
 .catx-tile-featured{
-  grid-row:span 1
+  grid-column:1/-1 !important;
+  aspect-ratio:21/7
 }
 
 /* Tile oculto por filtro */
@@ -2805,14 +3109,14 @@ footer .f-soc:hover{color:#2563eb !important;border-color:rgba(37,99,235,.4) !im
 }
 .catx-modal-panel{
   position:relative;
-  width:min(900px,94vw);
+  width:min(960px,94vw);
   max-height:92vh;
   background:#fff;
   border-radius:24px;
   overflow:hidden;
-  box-shadow:0 30px 80px rgba(15,23,42,.4);
-  transform:scale(.94) translateY(20px);
-  transition:transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 40px 100px rgba(15,23,42,.45),0 0 0 1px rgba(15,23,42,.06);
+  transform:scale(.94) translateY(24px);
+  transition:transform .38s cubic-bezier(.4,0,.2,1);
   display:flex;flex-direction:column
 }
 .catx-modal.catx-modal-open .catx-modal-panel{
@@ -2878,10 +3182,19 @@ footer .f-soc:hover{color:#2563eb !important;border-color:rgba(37,99,235,.4) !im
   margin:0;font-weight:500
 }
 .catx-modal-body{
-  padding:28px 32px 32px;
+  padding:28px 32px 20px;
   overflow-y:auto;
-  flex:1
+  flex:1;
+  scroll-behavior:smooth
 }
+/* Sticky action bar at bottom of modal */
+.catx-modal-footer{
+  display:flex;gap:10px;padding:16px 24px;
+  background:#fff;border-top:1px solid rgba(37,99,235,.1);
+  box-shadow:0 -8px 28px rgba(15,23,42,.07);
+  flex-shrink:0
+}
+.catx-modal-footer .btn{flex:1;justify-content:center;min-height:46px}
 .catx-modal-desc{
   font-size:.96rem;color:#475569;
   line-height:1.7;margin:0 0 22px
@@ -2966,29 +3279,377 @@ footer .f-soc:hover{color:#2563eb !important;border-color:rgba(37,99,235,.4) !im
 /* Bloquear scroll del body cuando modal abierto */
 body.catx-modal-locked{overflow:hidden}
 
-/* ── Responsive ── */
-@media(max-width:900px){
-  .catx-grid{grid-template-columns:repeat(2,1fr);gap:14px}
-  .catx-tile{aspect-ratio:1/1.1}
-  .catx-tile-title{font-size:1.3rem}
+/* ── Productos Destacados en modal ── */
+.catx-featured-section{margin:28px 0 0}
+.catx-featured-label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#64748b;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.catx-featured-label::after{content:'';flex:1;height:1px;background:rgba(37,99,235,.12)}
+.catx-featured-row{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.catx-featured-row::-webkit-scrollbar{height:4px}
+.catx-featured-row::-webkit-scrollbar-track{background:#f1f5f9;border-radius:2px}
+.catx-featured-row::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:2px}
+.catx-feat-card{flex:0 0 148px;border-radius:14px;background:#fff;border:1.5px solid rgba(37,99,235,.10);overflow:hidden;scroll-snap-align:start;transition:transform .2s,box-shadow .2s;cursor:default}
+.catx-feat-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(37,99,235,.14)}
+.catx-feat-img-wrap{width:100%;aspect-ratio:1;background:#f8faff;display:flex;align-items:center;justify-content:center;padding:12px}
+.catx-feat-img-wrap img{width:100%;height:100%;object-fit:contain}
+.catx-feat-body{padding:10px 12px 12px}
+.catx-feat-brand{font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2563eb;margin-bottom:3px}
+.catx-feat-name{font-size:.8rem;font-weight:600;color:#0f172a;line-height:1.3}
+.catx-feat-desc{font-size:.7rem;color:#64748b;margin-top:3px;line-height:1.4}
+
+/* ── Visualización interactiva ── */
+.viz-hero{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 20px 60px rgba(37,99,235,.15);margin-bottom:22px}
+.viz-hero img{width:100%;display:block;height:auto}
+.viz-live-pill{position:absolute;top:16px;left:16px;background:rgba(8,20,40,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(37,99,235,.4);border-radius:50px;padding:7px 16px;display:flex;align-items:center;gap:8px;font-size:.7rem;font-weight:700;color:#fff;letter-spacing:.07em;z-index:2}
+.viz-live-dot2{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite;flex-shrink:0}
+.viz-app-row{display:flex;gap:9px;overflow-x:auto;padding:4px 0 10px;scroll-snap-type:x mandatory;margin-bottom:20px}
+.viz-app-row::-webkit-scrollbar{height:3px}
+.viz-app-row::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:2px}
+.viz-app-btn{flex:0 0 auto;display:flex;align-items:center;gap:7px;padding:9px 15px;border-radius:50px;border:1.5px solid rgba(37,99,235,.14);background:#f8faff;cursor:pointer;transition:all .2s;scroll-snap-align:start;white-space:nowrap;font-family:inherit}
+.viz-app-btn:hover{border-color:rgba(37,99,235,.4);background:#eff4ff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(37,99,235,.1)}
+.viz-app-btn.viz-app-active{border-color:rgba(37,99,235,.45);box-shadow:0 4px 18px rgba(37,99,235,.14)}
+.viz-app-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.viz-app-label{font-size:.78rem;font-weight:600;color:#0f172a}
+.viz-app-pct{font-size:.7rem;font-weight:700;background:rgba(37,99,235,.1);color:#2563eb;border-radius:50px;padding:2px 8px}
+.viz-detail-card{background:#fff;border:1.5px solid rgba(37,99,235,.12);border-radius:20px;padding:24px 28px;box-shadow:0 8px 32px rgba(37,99,235,.07);transition:opacity .22s,transform .22s}
+.viz-detail-top{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.viz-detail-emoji{font-size:2.6rem;line-height:1;flex-shrink:0}
+.viz-detail-meta{flex:1;min-width:120px}
+.viz-detail-meta h4{font-size:1.1rem;font-weight:700;color:#0f172a;margin:0 0 3px}
+.viz-detail-sub{font-size:.8rem;color:#64748b;margin:0}
+.viz-detail-costs{margin-left:auto;text-align:right}
+.viz-detail-weekly{font-size:1.5rem;font-weight:800;color:#2563eb;font-family:var(--ff-head);line-height:1}
+.viz-detail-monthly{font-size:.78rem;color:#64748b;margin-top:3px}
+.viz-bar-row{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.viz-bar-wrap{flex:1;height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden}
+.viz-bar-fill{height:100%;border-radius:4px;transition:width .7s cubic-bezier(.4,0,.2,1)}
+.viz-bar-label{font-size:.75rem;color:#64748b;white-space:nowrap}
+.viz-tips-hd{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#64748b;margin-bottom:10px}
+.viz-tips-list{display:flex;flex-direction:column;gap:8px}
+.viz-tip{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1px solid rgba(34,197,94,.18);border-radius:10px}
+.viz-tip-ico{color:#22c55e;font-size:.9rem;flex-shrink:0;margin-top:2px}
+.viz-tip-txt{font-size:.82rem;color:#334155;line-height:1.5;margin:0}
+
+/* ── Responsive catálogo 2.0 ── */
+@media(max-width:1024px){
+  .catx-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+  .catx-tile{grid-column:span 2;aspect-ratio:3/4}
+  .catx-tile:nth-child(4),.catx-tile:nth-child(5){grid-column:span 2;aspect-ratio:4/3}
+  .catx-tile-featured{grid-column:1/-1 !important;aspect-ratio:21/8}
+}
+@media(max-width:768px){
+  .catx-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .catx-tile{grid-column:span 1 !important;aspect-ratio:3/4}
+  .catx-tile:nth-child(4),.catx-tile:nth-child(5){grid-column:span 1 !important;aspect-ratio:3/4}
+  .catx-tile-featured{grid-column:1/-1 !important;aspect-ratio:16/9}
+  .catx-tile-title{font-size:1.15rem}
+  .catx-stats-bar{max-width:100%}
+  .catx-stat-n{font-size:1.15rem}
   .catx-modal-products{grid-template-columns:1fr}
   .catx-bottom-cta{flex-direction:column;text-align:center}
   .catx-cta-btns{justify-content:center;width:100%}
 }
 @media(max-width:560px){
-  .catx-grid{grid-template-columns:1fr;gap:12px}
-  .catx-tile{aspect-ratio:5/4}
-  .catx-tile-title{font-size:1.4rem}
-  .catx-search-bar{margin-bottom:24px}
-  .catx-modal-panel{width:100vw;max-height:100vh;border-radius:0}
+  .catx-grid{grid-template-columns:1fr;gap:10px}
+  .catx-tile{grid-column:span 1 !important;aspect-ratio:5/4}
+  .catx-tile-featured{aspect-ratio:4/3 !important}
+  .catx-tile-title{font-size:1.3rem}
+  .catx-search-bar{margin-bottom:20px}
+  .catx-brand-filter{gap:5px;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+  .catx-bfbtn{flex-shrink:0}
+  .catx-modal-panel{width:100vw;max-height:100dvh;border-radius:0}
   .catx-modal-hero{height:180px}
-  .catx-modal-hero-text{left:20px;right:20px;bottom:16px}
-  .catx-modal-body{padding:20px 20px 24px}
+  .catx-modal-hero-text{left:18px;right:18px;bottom:16px}
+  .catx-modal-hero-text h2{font-size:1.4rem}
+  .catx-modal-body{padding:18px 18px 12px}
+  .catx-modal-footer{padding:12px 18px;gap:8px}
+  .catx-modal-desc{font-size:.9rem}
+  .catx-modal-actions{flex-direction:column;gap:8px}
+  .catx-modal-actions .btn{min-width:unset;width:100%;padding:14px}
+  .catx-featured-row{gap:9px}
+  .catx-feat-card{flex:0 0 128px}
+  .viz-detail-top{gap:12px}
+  .viz-detail-costs{margin-left:0}
+  .viz-detail-weekly{font-size:1.25rem}
+  .viz-detail-card{padding:16px}
+  /* footer social icons — más compactos en mobile */
+  footer .f-soc{width:36px !important;height:36px !important;border-radius:10px !important}
+  footer .f-soc svg{width:16px;height:16px}
+
+  /* video ad — stack en mobile */
+  .vid-ad-wrap{grid-template-columns:1fr !important;gap:28px !important}
+  .vid-ad-left{order:2}
+  .vid-ad-right{order:1}
+  .vid-player-shell{aspect-ratio:16/9 !important;max-height:280px !important}
+  .vid-ep-bar{gap:6px}
+  .vid-ep-btn{font-size:.77rem;padding:8px 10px}
+  .vid-ad-stats{flex-wrap:wrap;gap:8px}
+
+  /* tablet nav improvements */
+  #nav .nav-links{gap:2px}
+  .nav-link{font-size:.82rem;padding:6px 10px}
 }
+
+/* ── iPad / Tablet (768–1024px) ── */
+@media(min-width:769px) and (max-width:1024px){
+  .vid-ad-wrap{grid-template-columns:1fr 0.85fr !important;gap:36px !important}
+  .vid-player-shell{max-height:400px}
+  .svc-grid{grid-template-columns:repeat(2,1fr) !important}
+  #servicios .svc-card:nth-child(7){grid-column:auto !important;max-width:100% !important;margin:0 !important}
+  .test-grid{grid-template-columns:1fr 1fr !important}
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   🌙 DARK MODE — MTG 2026
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Theme toggle button */
+.theme-toggle{
+  display:flex;align-items:center;justify-content:center;
+  width:38px;height:38px;border-radius:9px;
+  background:#f4f7ff;border:1px solid rgba(37,99,235,.18);
+  color:#334155;cursor:pointer;transition:var(--tr);
+  font-size:1.05rem;flex-shrink:0;line-height:1
+}
+.theme-toggle:hover{background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.35);color:#1e3a8a;transform:scale(1.05)}
+html.dark .theme-toggle{background:rgba(255,255,255,.08) !important;border-color:rgba(255,255,255,.14) !important;color:rgba(255,255,255,.8) !important}
+html.dark .theme-toggle:hover{background:rgba(255,255,255,.14) !important;color:#fff !important}
+
+/* Mobile theme toggle */
+.mob-theme{padding:12px 16px}
+.mob-theme-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:11px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-family:var(--ff);font-size:.88rem;font-weight:600;cursor:pointer;transition:var(--tr)}
+.mob-theme-btn:hover{background:rgba(255,255,255,.1);color:#fff}
+html.dark .mob-theme-btn{background:rgba(255,255,255,.07) !important}
+
+/* ── Global ── */
+html.dark body{background:#080d19 !important;color:#cbd5e1 !important}
+html.dark .s-title{color:#f1f5f9 !important}
+html.dark .s-sub{color:#94a3b8 !important}
+html.dark .tag{color:#60a5fa !important;background:rgba(59,130,246,.12) !important;border-color:rgba(59,130,246,.22) !important}
+html.dark .tag-dot{background:#3b82f6 !important}
+
+/* ── Navbar ── */
+html.dark #nav{background:rgba(8,13,25,.97) !important;border-bottom-color:rgba(255,255,255,.07) !important}
+html.dark #nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.5) !important}
+html.dark .nav-link{color:rgba(255,255,255,.7) !important}
+html.dark .nav-link:hover,.html.dark .nav-link.active{color:#fff !important}
+html.dark .nl-text .lt{color:#f1f5f9 !important}
+html.dark .nl-text .lb{color:rgba(255,255,255,.38) !important}
+html.dark .nav-sep{background:rgba(255,255,255,.08) !important}
+html.dark .lang-btn{background:rgba(255,255,255,.07) !important;border-color:rgba(255,255,255,.1) !important;color:rgba(255,255,255,.75) !important}
+html.dark .lang-btn:hover{background:rgba(255,255,255,.13) !important;color:#fff !important}
+html.dark .lang-drop{background:#0b1428 !important;border-color:rgba(255,255,255,.1) !important;box-shadow:0 16px 48px rgba(0,0,0,.7) !important}
+html.dark .ld-item{color:rgba(255,255,255,.65) !important}
+html.dark .ld-item:hover,html.dark .ld-item.active{background:rgba(255,255,255,.07) !important;color:#fff !important}
+
+/* ── Mobile nav ── */
+html.dark .mob-nav{background:#080d19 !important;border-top-color:rgba(255,255,255,.07) !important}
+html.dark .mob-link{color:rgba(255,255,255,.78) !important;border-bottom-color:rgba(255,255,255,.05) !important}
+html.dark .mob-link:hover{background:rgba(255,255,255,.05) !important}
+html.dark .mob-sub-item{color:rgba(255,255,255,.6) !important}
+html.dark .mob-sub-item:hover{background:rgba(255,255,255,.05) !important;color:#60a5fa !important}
+html.dark .mob-div{background:rgba(255,255,255,.07) !important}
+html.dark .mob-lang-btn{background:rgba(255,255,255,.05) !important;border-color:rgba(255,255,255,.08) !important;color:rgba(255,255,255,.55) !important}
+html.dark .mob-lang-btn.active{background:rgba(59,130,246,.18) !important;border-color:rgba(59,130,246,.35) !important;color:#60a5fa !important}
+
+/* ── Dropdown navs ── */
+html.dark .nd-drop{background:#0b1428 !important;border-color:rgba(255,255,255,.08) !important;box-shadow:0 20px 60px rgba(0,0,0,.7) !important}
+html.dark .nd-item-c .nd-title{color:#f1f5f9 !important}
+html.dark .nd-item-c .nd-desc{color:rgba(255,255,255,.5) !important}
+
+/* ── Stats strip ── */
+html.dark .stats-strip{background:#0d1426 !important;border-color:rgba(255,255,255,.06) !important}
+html.dark .ss-item{border-color:rgba(255,255,255,.06) !important}
+html.dark .ss-lbl{color:rgba(255,255,255,.38) !important}
+
+/* ── Partners ── */
+html.dark #partners{background:#0a0f1e !important;border-top-color:rgba(255,255,255,.05) !important;border-bottom-color:rgba(255,255,255,.05) !important}
+html.dark .pt-item{color:rgba(255,255,255,.38) !important;border-right-color:rgba(255,255,255,.06) !important}
+
+/* ── Hero stats ── */
+html.dark .hero-stats{background:rgba(8,13,25,.85) !important;border-top-color:rgba(255,255,255,.07) !important}
+html.dark .hs-lbl{color:rgba(255,255,255,.38) !important}
+
+/* ── About ── */
+html.dark #about{background:#0b1020 !important}
+html.dark #about .s-title{color:#f1f5f9 !important}
+html.dark .about-h2{color:#f1f5f9 !important}
+html.dark .a-card{background:rgba(13,20,38,.95) !important;border-color:rgba(255,255,255,.07) !important;box-shadow:0 4px 20px rgba(0,0,0,.3) !important}
+html.dark .a-card h4{color:#e2e8f0 !important}
+html.dark .a-card p{color:#94a3b8 !important}
+html.dark .about-img-badge{background:rgba(8,13,25,.92) !important;border-color:rgba(255,255,255,.1) !important;color:#e2e8f0 !important}
+html.dark .astat-v{color:#60a5fa !important}
+html.dark .astat-l{color:rgba(255,255,255,.45) !important}
+html.dark .astat{border-right-color:rgba(255,255,255,.06) !important}
+html.dark .about-stats{border-color:rgba(255,255,255,.07) !important}
+
+/* ── Solutions ── */
+html.dark #solutions{background:#080d19 !important}
+html.dark .sol-card{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important;box-shadow:0 4px 20px rgba(0,0,0,.25) !important}
+html.dark .sol-card h3{color:#e2e8f0 !important}
+html.dark .sol-card p{color:#94a3b8 !important}
+html.dark .sol-hero-card{background:rgba(13,20,38,.85) !important;border-color:rgba(255,255,255,.08) !important}
+html.dark .sol-hero-badge{background:rgba(34,197,94,.12) !important}
+
+/* ── Productos / Catálogo ── */
+html.dark #productos{background:#0b1020 !important}
+html.dark .prod-card{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important;box-shadow:0 4px 20px rgba(0,0,0,.25) !important}
+html.dark .prod-card h3{color:#e2e8f0 !important}
+html.dark .prod-body p{color:#94a3b8 !important}
+html.dark .catx-search-bar{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.1) !important}
+html.dark .catx-search-input{background:transparent !important;color:#f1f5f9 !important}
+html.dark .catx-search-input::placeholder{color:rgba(255,255,255,.3) !important}
+html.dark .cat-filters{background:rgba(8,13,25,.95) !important;border-color:rgba(255,255,255,.06) !important}
+html.dark .cat-fbtn{background:rgba(255,255,255,.05) !important;border-color:rgba(255,255,255,.08) !important;color:rgba(255,255,255,.65) !important}
+html.dark .cat-fbtn:hover,html.dark .cat-fbtn.active{background:rgba(37,99,235,.2) !important;border-color:rgba(37,99,235,.4) !important;color:#60a5fa !important}
+html.dark .catx-stats-bar{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.08) !important}
+html.dark .catx-stat{border-right-color:rgba(255,255,255,.06) !important}
+html.dark .catx-stat-n{color:#60a5fa !important}
+html.dark .catx-stat-l{color:#64748b !important}
+html.dark .catx-bfbtn{background:rgba(255,255,255,.05) !important;border-color:rgba(255,255,255,.08) !important;color:rgba(255,255,255,.65) !important}
+html.dark .catx-bfbtn:hover{background:rgba(37,99,235,.15) !important;border-color:rgba(37,99,235,.35) !important;color:#93c5fd !important}
+html.dark .catx-bfbtn.active{background:linear-gradient(135deg,rgba(37,99,235,.8),rgba(29,78,216,.8)) !important;border-color:transparent !important;color:#fff !important}
+html.dark .catx-brand-filter-lbl{color:#64748b !important}
+
+/* ── Servicios ── */
+html.dark #servicios{background:linear-gradient(160deg,#080d19 0%,#0b1020 55%,#0d1426 100%) !important}
+html.dark .svc-card{background:rgba(13,20,38,.95) !important;border-color:rgba(255,255,255,.08) !important;box-shadow:0 4px 20px rgba(0,0,0,.3) !important}
+html.dark .svc-card h3{color:#e2e8f0 !important}
+html.dark .svc-desc{color:#64748b !important}
+html.dark .svc-list li{color:#94a3b8 !important}
+html.dark .svc-value{background:rgba(37,99,235,.08) !important;color:#94a3b8 !important}
+
+/* ── How it works ── */
+html.dark #how{background:#0b1020 !important}
+html.dark .step-n{background:rgba(13,20,38,.9) !important;border-color:rgba(37,99,235,.3) !important;color:#60a5fa !important}
+html.dark #how .step:hover{background:rgba(37,99,235,.08) !important}
+html.dark .step-c h3{color:#e2e8f0 !important}
+html.dark .step-c p{color:#94a3b8 !important}
+html.dark .hw-stat-card{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .hw-big{color:#60a5fa !important}
+html.dark .hw-label{color:#94a3b8 !important}
+
+/* ── Dashboard ── */
+html.dark #dash-sec{background:#080d19 !important}
+html.dark .dbm{background:#0d1426 !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .dbm-topbar{background:rgba(8,13,25,.9) !important;border-bottom-color:rgba(255,255,255,.07) !important}
+html.dark .df{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .df h4{color:#e2e8f0 !important}
+html.dark .df p{color:#94a3b8 !important}
+html.dark .dash-feats{background:transparent !important}
+
+/* ── Benefits ── */
+html.dark #benefits{background:#0b1020 !important}
+html.dark .ben-card{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .ben-card h4{color:#e2e8f0 !important}
+html.dark .ben-card p{color:#94a3b8 !important}
+
+/* ── Comparativa ── */
+html.dark .cmp-wrap{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .cmp-head{background:rgba(8,13,25,.8) !important;color:#e2e8f0 !important}
+html.dark .cmp-row{border-color:rgba(255,255,255,.05) !important}
+html.dark .cmp-cell{color:#94a3b8 !important}
+html.dark .cmp-no{color:rgba(255,255,255,.25) !important}
+
+/* ── Calculator ── */
+html.dark .calc-form{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .calc-result{background:rgba(8,13,25,.9) !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .calc-label{color:#94a3b8 !important}
+html.dark .calc-input{background:rgba(8,13,25,.8) !important;border-color:rgba(255,255,255,.1) !important;color:#f1f5f9 !important}
+
+/* ── Testimonials ── */
+html.dark #testimonials{background:#0b1020 !important}
+html.dark .test-card{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important;box-shadow:0 4px 20px rgba(0,0,0,.25) !important}
+html.dark .test-text{color:#94a3b8 !important}
+html.dark .test-name{color:#e2e8f0 !important}
+html.dark .test-role{color:rgba(255,255,255,.4) !important}
+
+/* ── Brands ── */
+html.dark #brands-sec{background:#080d19 !important}
+html.dark .br-tile{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important}
+
+/* ── Markets ── */
+html.dark #markets{background:#0b1020 !important}
+html.dark .mkt-grid{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .mkt-tiles{border-color:rgba(255,255,255,.07) !important}
+html.dark .mkt-tile{border-color:rgba(255,255,255,.07) !important}
+html.dark .mkt-tile-name{color:#e2e8f0 !important}
+html.dark .mkt-tile-desc{color:rgba(255,255,255,.5) !important}
+
+/* ── FAQ ── */
+html.dark #faq{background:#0b1020 !important}
+html.dark .faq-item{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .faq-q{color:#e2e8f0 !important}
+html.dark .faq-a{color:#94a3b8 !important}
+html.dark .faq-icon{color:rgba(255,255,255,.4) !important}
+
+/* ── CTA section ── */
+html.dark #cta-sec{background:linear-gradient(135deg,#060b18 0%,#0b1e4d 50%,#1e3a8a 100%) !important}
+html.dark .cf-wrap{background:rgba(13,20,38,.95) !important;border-color:rgba(255,255,255,.08) !important}
+html.dark .cf-input,.html.dark select.cf-input{background:rgba(8,13,25,.8) !important;border-color:rgba(255,255,255,.1) !important;color:#f1f5f9 !important}
+html.dark .cf-input::placeholder{color:rgba(255,255,255,.3) !important}
+.cf-input:invalid:not(:placeholder-shown){border-color:#ef4444 !important;box-shadow:0 0 0 3px rgba(239,68,68,.1) !important}
+.cf-input:valid:not(:placeholder-shown){border-color:#22c55e !important}
+html.dark .cf-input:invalid:not(:placeholder-shown){border-color:#ef4444 !important;box-shadow:0 0 0 3px rgba(239,68,68,.12) !important}
+html.dark .cf-input:valid:not(:placeholder-shown){border-color:#22c55e !important}
+html.dark .co{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .co h4{color:#e2e8f0 !important}
+html.dark .co p{color:#94a3b8 !important}
+
+/* ── Bento cards ── */
+html.dark .bento-card{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .bento-title{color:#e2e8f0 !important}
+html.dark .bento-body{color:#94a3b8 !important}
+
+/* ── Footer ── */
+html.dark footer{background:#040810 !important;border-top-color:rgba(255,255,255,.06) !important}
+html.dark .f-col h5{color:rgba(255,255,255,.38) !important}
+html.dark .f-col ul li a{color:rgba(255,255,255,.55) !important}
+html.dark .f-col ul li a:hover{color:#60a5fa !important}
+html.dark .f-bot{color:rgba(255,255,255,.32) !important;border-top-color:rgba(255,255,255,.06) !important}
+html.dark .f-brand p{color:rgba(255,255,255,.45) !important}
+
+/* ── Catálogo modal ── */
+html.dark .catx-modal-wrap{background:rgba(8,13,25,.98) !important;border-color:rgba(255,255,255,.08) !important}
+html.dark .catx-modal-hero-text h2{color:#f1f5f9 !important}
+html.dark .catx-modal-hero-text p{color:#94a3b8 !important}
+html.dark .catx-modal-body{background:#0b1020 !important}
+html.dark .catx-modal-desc{color:#94a3b8 !important}
+html.dark .catx-feat-card{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .catx-modal-footer{background:rgba(8,13,25,.98) !important;border-top-color:rgba(255,255,255,.07) !important}
+html.dark .catx-modal-section-label{color:#64748b !important}
+html.dark .catx-modal-brands-row{border-bottom-color:rgba(255,255,255,.06) !important}
+html.dark .catx-modal-section{border-top-color:rgba(255,255,255,.06) !important}
+html.dark .catx-modal-products li{color:#94a3b8 !important;border-bottom-color:rgba(255,255,255,.04) !important}
+html.dark .catx-modal-products li::before{color:#2563eb !important}
+html.dark .catx-modal-value{background:rgba(37,99,235,.08) !important;border-color:rgba(37,99,235,.2) !important}
+html.dark #catxModalValueText{color:#94a3b8 !important}
+
+/* ── Trust marquee ── */
+html.dark .mq-wrap{background:#0a0f1e !important;border-color:rgba(255,255,255,.05) !important}
+html.dark .mq-item{color:rgba(255,255,255,.45) !important;border-right-color:rgba(255,255,255,.05) !important}
+
+/* ── Chatbot ── */
+html.dark #chatbot{background:rgba(8,13,25,.98) !important;border-color:rgba(255,255,255,.1) !important}
+html.dark .cb-head{background:linear-gradient(135deg,#1e3a8a,#2563eb) !important}
+html.dark .cb-messages{background:#0b1020 !important}
+html.dark .cb-msg.user{background:rgba(37,99,235,.25) !important;color:#e2e8f0 !important}
+html.dark .cb-msg.bot{background:rgba(13,20,38,.9) !important;color:#94a3b8 !important}
+html.dark .cb-opts{background:#0b1020 !important;border-top-color:rgba(255,255,255,.06) !important}
+html.dark .cb-opt{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.08) !important;color:#94a3b8 !important}
+
+/* ── Sticky CTA ── */
+html.dark #sticky-cta{background:rgba(8,13,25,.97) !important;border-top-color:rgba(255,255,255,.07) !important}
+html.dark #sticky-cta p{color:rgba(255,255,255,.8) !important}
+
+/* ── Progress bar stays visible ── */
+html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
+
+/* Smooth transition for theme switching */
+body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben-card,.faq-item,.co,.cf-wrap{transition:background-color .3s ease,color .3s ease,border-color .3s ease !important}
 
 </style>
 </head>
-<body class="lang-es" id="html-root">
+<body>
 
 <!-- Scroll progress bar (conectado al JS existente via id="prog") -->
 <div id="scroll-progress" style="display:none"></div>
@@ -3055,7 +3716,7 @@ body.catx-modal-locked{overflow:hidden}
 <!-- Sticky CTA Bar -->
 <div id="sticky-cta">
   <p><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span> <span data-lang="es">Reducción promedio del 32% en la factura eléctrica</span><span data-lang="en">Average 32% reduction on electricity bills</span></p>
-  <button class="sticky-cta-btn" onclick="document.getElementById('exit-popup').classList.remove('show');document.querySelector('#cta-sec').scrollIntoView({behavior:'smooth'})"><span data-lang="es">Análisis gratuito →</span><span data-lang="en">Free analysis →</span></button>
+  <button class="sticky-cta-btn" onclick="document.getElementById('exit-popup').classList.remove('show');document.querySelector('#cta-sec').scrollIntoView({behavior:'smooth'})"><span data-lang="es">Solicitar análisis →</span><span data-lang="en">Request analysis →</span></button>
   <button class="sticky-cta-close" onclick="document.getElementById('sticky-cta').classList.remove('show');localStorage.setItem('sctahide','1')" aria-label="Cerrar"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-x"/></svg></span></button>
 </div>
 
@@ -3065,10 +3726,11 @@ body.catx-modal-locked{overflow:hidden}
   <div class="ep-box">
     <button class="ep-close" onclick="closeExitPopup()" aria-label="Cerrar"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-x"/></svg></span></button>
     <span class="ep-emoji"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--grn-lt)"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
-    <h3 class="ep-title"><span data-lang="es">Espera — antes de irte</span><span data-lang="en">Wait — before you go</span></h3>
-    <p class="ep-sub"><span data-lang="es">Recibe un análisis gratuito de tu consumo eléctrico. Sin compromiso, respuesta en menos de 2 horas.</span><span data-lang="en">Get a free analysis of your electricity usage. No commitment, response in under 2 hours.</span></p>
+    <h3 class="ep-title"><span data-lang="es">¿Sabes cuánto consume cada circuito de tu propiedad?</span><span data-lang="en">Do you know how much each circuit in your property consumes?</span></h3>
+    <p class="ep-sub"><span data-lang="es">Nuestros clientes ahorran hasta B/.840/año. Recibe un diagnóstico personalizado — sin compromiso, respuesta en menos de 2 horas.</span><span data-lang="en">Our clients save up to B/.840/year. Get a personalized diagnosis — no commitment, response in under 2 hours.</span></p>
+    <div style="font-size:.78rem;color:var(--grn-lt);font-weight:700;margin-bottom:10px;letter-spacing:.05em"><span data-lang="es">Esta oferta expira en</span><span data-lang="en">This offer expires in</span> <span id="ep-countdown" style="font-variant-numeric:tabular-nums;color:#f97316">10:00</span></div>
     <input class="ep-input" type="email" id="ep-email" placeholder="tu@email.com">
-    <button class="ep-btn" onclick="submitExitPopup()"><span data-lang="es">Quiero mi análisis gratuito →</span><span data-lang="en">I want my free analysis →</span></button>
+    <button class="ep-btn" onclick="submitExitPopup()"><span data-lang="es">Quiero saber cuánto ahorro →</span><span data-lang="en">I want to know my savings →</span></button>
     <span class="ep-skip" onclick="closeExitPopup()"><span data-lang="es">No gracias, prefiero seguir pagando más</span><span data-lang="en">No thanks, I'll keep paying more</span></span>
   </div>
 </div>
@@ -3219,7 +3881,6 @@ body.catx-modal-locked{overflow:hidden}
                     <div class="mm-cat">
                       <div class="mm-cat-h"><span data-lang="es">Recursos</span><span data-lang="en">Resources</span></div>
                       <ul class="mm-cat-list">
-                        <li><a href="#simulator"><span data-lang="es">Calcula tu ahorro</span><span data-lang="en">Calculate your savings</span></a></li>
                         <li><a href="#video-sec"><span data-lang="es">Ver demo en video</span><span data-lang="en">Watch demo video</span></a></li>
                         <li><a href="#testimonials"><span data-lang="es">Testimonios reales</span><span data-lang="en">Real testimonials</span></a></li>
                       </ul>
@@ -3412,7 +4073,7 @@ body.catx-modal-locked{overflow:hidden}
                       <div class="mm-panel-title"><span data-lang="es">Calidad de Energía</span><span data-lang="en">Power Quality</span></div>
                       <div class="mm-panel-sub"><span data-lang="es">Auditoría · análisis · optimización · ahorro</span><span data-lang="en">Audit · analysis · optimization · savings</span></div>
                     </div>
-                    <a href="#cta-sec" class="mm-panel-cta"><span data-lang="es">Auditoría gratuita →</span><span data-lang="en">Free audit →</span></a>
+                    <a href="#cta-sec" class="mm-panel-cta"><span data-lang="es">Solicitar auditoría →</span><span data-lang="en">Request audit →</span></a>
                   </div>
                   <div class="mm-cols">
                     <div class="mm-cat">
@@ -3630,8 +4291,11 @@ body.catx-modal-locked{overflow:hidden}
         <li><a href="#cta-sec"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a></li>
       </ul>
 
-      <!-- Right: lang + CTA -->
+      <!-- Right: lang + theme + CTA -->
       <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Cambiar tema" title="Modo oscuro / claro">
+          <span id="themeIcon">🌙</span>
+        </button>
         <div class="lang-sw" id="langSw">
           <div class="lang-btn" onclick="toggleLangDrop()">
             <span class="lang-flag" id="langFlag">🇵🇦</span>
@@ -3691,13 +4355,19 @@ body.catx-modal-locked{overflow:hidden}
   </div>
   <div class="mob-link" onclick="closeMobGo('#cta-sec')"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></div>
   <div class="mob-div"></div>
+  <div class="mob-theme">
+    <button class="mob-theme-btn" onclick="toggleTheme()">
+      <span id="themeIconMob">🌙</span>
+      <span data-lang="es">Modo oscuro</span><span data-lang="en">Dark mode</span>
+    </button>
+  </div>
   <div class="mob-lang">
     <div class="mob-lang-btn active" id="mob-es" onclick="setLang('es')">🇵🇦 ES</div>
     <div class="mob-lang-btn" id="mob-en" onclick="setLang('en')">🇺🇸 EN</div>
   </div>
   <div style="padding:16px">
     <a href="#cta-sec" class="btn btn-primary" style="width:100%;justify-content:center" onclick="closeMob()">
-      <span data-lang="es">Solicitar análisis gratuito →</span><span data-lang="en">Get free analysis →</span>
+      <span data-lang="es">Solicitar análisis →</span><span data-lang="en">Request analysis →</span>
     </a>
   </div>
 </div>
@@ -3711,9 +4381,9 @@ body.catx-modal-locked{overflow:hidden}
     <div class="container">
       <!-- Live badge widget -->
       <div class="hero-live-badge">
-        <div class="hlb-label"><span class="hlb-dot"></span>Monitoreo activo</div>
+        <div class="hlb-label"><span class="hlb-dot"></span><span data-lang="es">Monitoreo activo</span><span data-lang="en">Live monitoring</span></div>
         <div class="hlb-value">38<span style="font-size:.9rem">%</span></div>
-        <div class="hlb-sub">ahorro promedio · clientes MTG</div>
+        <div class="hlb-sub"><span data-lang="es">ahorro promedio · clientes MTG</span><span data-lang="en">avg savings · MTG clients</span></div>
       </div>
       <div class="slide-content">
         <div class="slide-eyebrow"><span class="slide-eyebrow-dot"></span><span data-lang="es">Medidor Inteligente · Panamá</span><span data-lang="en">Medidor Inteligente · Panama</span></div>
@@ -3726,7 +4396,7 @@ body.catx-modal-locked{overflow:hidden}
           <span data-lang="en">Know exactly what every room, every appliance consumes. No guessing.</span>
         </p>
         <div class="slide-btns">
-          <a href="#cta-sec" class="btn btn-primary"><span data-lang="es">Análisis gratuito →</span><span data-lang="en">Free analysis →</span></a>
+          <a href="#cta-sec" class="btn btn-primary"><span data-lang="es">Solicitar análisis →</span><span data-lang="en">Request analysis →</span></a>
           <a href="#how" class="btn btn-outline"><span data-lang="es">Cómo funciona</span><span data-lang="en">How it works</span></a>
         </div>
       </div>
@@ -3813,15 +4483,15 @@ body.catx-modal-locked{overflow:hidden}
   <!-- Stats strip bottom -->
   <div class="hero-stats">
     <div class="hs-item">
-      <div class="hs-num"><span>40%</span></div>
+      <div class="hs-num"><span data-count="40" data-suffix="%">40%</span></div>
       <div class="hs-lbl"><span data-lang="es">Reducción de consumo</span><span data-lang="en">Energy reduction</span></div>
     </div>
     <div class="hs-item">
-      <div class="hs-num"><span>16</span></div>
+      <div class="hs-num"><span data-count="16">16</span></div>
       <div class="hs-lbl"><span data-lang="es">Circuitos monitoreados</span><span data-lang="en">Monitored circuits</span></div>
     </div>
     <div class="hs-item">
-      <div class="hs-num"><span>B/.840</span></div>
+      <div class="hs-num"><span data-count="840" data-prefix="B/.">B/.840</span></div>
       <div class="hs-lbl"><span data-lang="es">Ahorro anual potencial</span><span data-lang="en">Potential annual savings</span></div>
     </div>
     <div class="hs-item">
@@ -3829,7 +4499,7 @@ body.catx-modal-locked{overflow:hidden}
       <div class="hs-lbl"><span data-lang="es">Datos desde el día 1</span><span data-lang="en">Data from day one</span></div>
     </div>
     <div class="hs-item">
-      <div class="hs-num"><span>3</span></div>
+      <div class="hs-num"><span data-count="3">3</span></div>
       <div class="hs-lbl"><span data-lang="es">Líneas de producto</span><span data-lang="en">Product lines</span></div>
     </div>
   </div>
@@ -4039,6 +4709,26 @@ body.catx-modal-locked{overflow:hidden}
       <p class="s-sub"><span data-lang="es">Seis líneas especializadas · 200+ referencias · 9 marcas de clase mundial. Toca cualquier categoría para ver el detalle completo.</span><span data-lang="en">Six specialized lines · 200+ references · 9 world-class brands. Tap any category to see full details.</span></p>
     </div>
 
+    <!-- ── Stats mini-bar ── -->
+    <div class="catx-stats-bar rv">
+      <div class="catx-stat">
+        <span class="catx-stat-n">6</span>
+        <span class="catx-stat-l"><span data-lang="es">Líneas</span><span data-lang="en">Lines</span></span>
+      </div>
+      <div class="catx-stat">
+        <span class="catx-stat-n">200+</span>
+        <span class="catx-stat-l"><span data-lang="es">Referencias</span><span data-lang="en">References</span></span>
+      </div>
+      <div class="catx-stat">
+        <span class="catx-stat-n">9</span>
+        <span class="catx-stat-l"><span data-lang="es">Marcas</span><span data-lang="en">Brands</span></span>
+      </div>
+      <div class="catx-stat">
+        <span class="catx-stat-n">24/7</span>
+        <span class="catx-stat-l"><span data-lang="es">Soporte</span><span data-lang="en">Support</span></span>
+      </div>
+    </div>
+
     <!-- ── Buscador minimalista ── -->
     <div class="catx-search-bar rv">
       <svg class="catx-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -4046,10 +4736,23 @@ body.catx-modal-locked{overflow:hidden}
       <button class="catx-search-clear" id="catxSearchClear" onclick="catxClearSearch()" aria-label="Limpiar" style="display:none">×</button>
     </div>
 
+    <!-- ── Filtro por marca ── -->
+    <div class="catx-brand-filter rv" id="catxBrandFilterRow">
+      <span class="catx-brand-filter-lbl"><span data-lang="es">Marca:</span><span data-lang="en">Brand:</span></span>
+      <button class="catx-bfbtn active" data-brand="all" onclick="catxBrandBtn('all',this)"><span data-lang="es">Todas</span><span data-lang="en">All</span></button>
+      <button class="catx-bfbtn" data-brand="emporia" onclick="catxBrandBtn('emporia',this)">Emporia</button>
+      <button class="catx-bfbtn" data-brand="n-test" onclick="catxBrandBtn('n-test',this)">N-TEST</button>
+      <button class="catx-bfbtn" data-brand="prose" onclick="catxBrandBtn('prose',this)">PROSE</button>
+      <button class="catx-bfbtn" data-brand="khipu" onclick="catxBrandBtn('khipu',this)">KHIPU</button>
+      <button class="catx-bfbtn" data-brand="crfs" onclick="catxBrandBtn('crfs',this)">CRFS</button>
+      <button class="catx-bfbtn" data-brand="bird" onclick="catxBrandBtn('bird',this)">Bird</button>
+      <button class="catx-bfbtn" data-brand="exfo" onclick="catxBrandBtn('exfo',this)">EXFO</button>
+    </div>
+
     <!-- ── Bento grid de 6 categorías ── -->
     <div class="catx-grid rv" id="catxGrid">
 
-      <button type="button" class="catx-tile" data-cat="fibra" onclick="openCatX('fibra')">
+      <button type="button" class="catx-tile" data-cat="fibra" data-brands="n-test exfo bird" onclick="openCatX('fibra')">
         <div class="catx-tile-img" style="background-image:url('https://images.unsplash.com/photo-1558346547-4439467bd1d5?w=900&auto=format&fit=crop&q=80')"></div>
         <div class="catx-tile-overlay"></div>
         <div class="catx-tile-content">
@@ -4067,9 +4770,10 @@ body.catx-modal-locked{overflow:hidden}
             </div>
           </div>
         </div>
+        <div class="catx-tile-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
       </button>
 
-      <button type="button" class="catx-tile" data-cat="rf" onclick="openCatX('rf')">
+      <button type="button" class="catx-tile" data-cat="rf" data-brands="crfs bird promax" onclick="openCatX('rf')">
         <div class="catx-tile-img" style="background-image:url('https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=900&auto=format&fit=crop&q=80')"></div>
         <div class="catx-tile-overlay"></div>
         <div class="catx-tile-content">
@@ -4087,9 +4791,10 @@ body.catx-modal-locked{overflow:hidden}
             </div>
           </div>
         </div>
+        <div class="catx-tile-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
       </button>
 
-      <button type="button" class="catx-tile" data-cat="infra" onclick="openCatX('infra')">
+      <button type="button" class="catx-tile" data-cat="infra" data-brands="prose" onclick="openCatX('infra')">
         <div class="catx-tile-img" style="background-image:url('https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?w=900&auto=format&fit=crop&q=80')"></div>
         <div class="catx-tile-overlay"></div>
         <div class="catx-tile-content">
@@ -4105,9 +4810,10 @@ body.catx-modal-locked{overflow:hidden}
             </div>
           </div>
         </div>
+        <div class="catx-tile-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
       </button>
 
-      <button type="button" class="catx-tile" data-cat="dc" onclick="openCatX('dc')">
+      <button type="button" class="catx-tile" data-cat="dc" data-brands="khipu prose" onclick="openCatX('dc')">
         <div class="catx-tile-img" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&auto=format&fit=crop&q=80')"></div>
         <div class="catx-tile-overlay"></div>
         <div class="catx-tile-content">
@@ -4124,9 +4830,10 @@ body.catx-modal-locked{overflow:hidden}
             </div>
           </div>
         </div>
+        <div class="catx-tile-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
       </button>
 
-      <button type="button" class="catx-tile" data-cat="monitor" onclick="openCatX('monitor')">
+      <button type="button" class="catx-tile" data-cat="monitor" data-brands="n-test gl-comms aem" onclick="openCatX('monitor')">
         <div class="catx-tile-img" style="background-image:url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&auto=format&fit=crop&q=80')"></div>
         <div class="catx-tile-overlay"></div>
         <div class="catx-tile-content">
@@ -4144,9 +4851,10 @@ body.catx-modal-locked{overflow:hidden}
             </div>
           </div>
         </div>
+        <div class="catx-tile-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
       </button>
 
-      <button type="button" class="catx-tile catx-tile-featured" data-cat="energia" onclick="openCatX('energia')">
+      <button type="button" class="catx-tile catx-tile-featured" data-cat="energia" data-brands="emporia" onclick="openCatX('energia')">
         <div class="catx-tile-img" style="background-image:url('https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475');background-size:contain;background-color:#0d3522"></div>
         <div class="catx-tile-overlay" style="background:linear-gradient(180deg,rgba(13,53,34,.1) 0%,rgba(13,53,34,.92) 85%)"></div>
         <div class="catx-tile-content">
@@ -4163,6 +4871,7 @@ body.catx-modal-locked{overflow:hidden}
             </div>
           </div>
         </div>
+        <div class="catx-tile-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
       </button>
 
     </div>
@@ -4226,6 +4935,14 @@ body.catx-modal-locked{overflow:hidden}
         <ul class="catx-modal-products" id="catxModalProducts"></ul>
       </div>
 
+      <!-- Productos Destacados -->
+      <div id="catxModalFeatured" class="catx-featured-section" style="display:none">
+        <div class="catx-featured-label">
+          <span data-lang="es">Productos Destacados</span><span data-lang="en">Featured Products</span>
+        </div>
+        <div id="catxModalFeaturedRow" class="catx-featured-row"></div>
+      </div>
+
       <div class="catx-modal-value" id="catxModalValue">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         <div>
@@ -4234,17 +4951,18 @@ body.catx-modal-locked{overflow:hidden}
         </div>
       </div>
 
-      <div class="catx-modal-actions">
-        <a href="#" class="btn btn-primary" id="catxModalPdf" target="_blank" rel="noopener">
-          <span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-doc"/></svg></span>
-          <span data-lang="es">Ver catálogo PDF</span><span data-lang="en">View catalog PDF</span>
-        </a>
-        <a href="#" class="btn btn-wa" id="catxModalWA" target="_blank" rel="noopener">
-          <span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span>
-          <span data-lang="es">Cotizar por WhatsApp</span><span data-lang="en">Quote on WhatsApp</span>
-        </a>
-      </div>
+    </div><!-- end catx-modal-body -->
 
+    <!-- Sticky action footer -->
+    <div class="catx-modal-footer">
+      <a href="#" class="btn btn-primary" id="catxModalPdf" target="_blank" rel="noopener">
+        <span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-doc"/></svg></span>
+        <span data-lang="es">Ver catálogo PDF</span><span data-lang="en">View catalog PDF</span>
+      </a>
+      <a href="#" class="btn btn-wa" id="catxModalWA" target="_blank" rel="noopener">
+        <span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span>
+        <span data-lang="es">Cotizar por WhatsApp</span><span data-lang="en">Quote on WhatsApp</span>
+      </a>
     </div>
   </div>
 </div>
@@ -4421,15 +5139,15 @@ body.catx-modal-locked{overflow:hidden}
         <h2 class="s-title rv"><span data-lang="es">De la instalación al <span>ahorro</span> en 4 pasos</span><span data-lang="en">From installation to <span>savings</span> in 4 steps</span></h2>
         <p class="s-sub rv"><span data-lang="es">Sin complicaciones. En menos de 48 horas tu propiedad está monitoreada y generando datos accionables.</span><span data-lang="en">No complications. In less than 48 hours your property is monitored and generating actionable data.</span></p>
         <div class="steps">
-          <div class="step rv">
+          <div class="step rv step-active" onclick="howActivate(1)">
             <div class="step-n on">1</div>
             <div class="step-c">
               <h3><span data-lang="es">Instalación del sensor</span><span data-lang="en">Sensor installation</span></h3>
               <p><span data-lang="es">Instalamos el Emporia Energy Vue 3 en tu tablero eléctrico. Toma menos de 2 horas sin corte prolongado de servicio.</span><span data-lang="en">We install the Emporia Energy Vue 3 in your electrical panel. Takes less than 2 hours without extended service cutoff.</span></p>
-              <div class="step-tag"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-wrench"/></svg></span> <span data-lang="es">Hasta 16 circuitos</span><span data-lang="en">🔧 Up to 16 circuits</span></div>
+              <div class="step-tag"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-wrench"/></svg></span> <span data-lang="es">Hasta 16 circuitos</span><span data-lang="en">Up to 16 circuits</span></div>
             </div>
           </div>
-          <div class="step rv">
+          <div class="step rv" onclick="howActivate(2)">
             <div class="step-n">2</div>
             <div class="step-c">
               <h3><span data-lang="es">Conexión a Medidor Inteligente</span><span data-lang="en">Medidor Inteligente connection</span></h3>
@@ -4437,7 +5155,7 @@ body.catx-modal-locked{overflow:hidden}
               <div class="step-tag"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-globe"/></svg></span> <span data-lang="es">Nube segura · 24/7</span><span data-lang="en">Secure cloud · 24/7</span></div>
             </div>
           </div>
-          <div class="step rv">
+          <div class="step rv" onclick="howActivate(3)">
             <div class="step-n">3</div>
             <div class="step-c">
               <h3><span data-lang="es">Análisis con IA</span><span data-lang="en">AI analysis</span></h3>
@@ -4445,7 +5163,7 @@ body.catx-modal-locked{overflow:hidden}
               <div class="step-tag"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-spark"/></svg></span> <span data-lang="es">Anthropic Claude</span><span data-lang="en">Anthropic Claude</span></div>
             </div>
           </div>
-          <div class="step rv">
+          <div class="step rv" onclick="howActivate(4)">
             <div class="step-n">4</div>
             <div class="step-c">
               <h3><span data-lang="es">Recomendaciones y ahorro</span><span data-lang="en">Recommendations & savings</span></h3>
@@ -4456,25 +5174,16 @@ body.catx-modal-locked{overflow:hidden}
         </div>
       </div>
       <div class="how-right">
-        <div class="install-showcase rv" style="grid-template-columns:1fr;padding:0;background:transparent;border:none;margin-top:0;margin-bottom:20px">
-          <div class="install-img-wrap">
-            <div class="viz-badge" style="top:14px;left:14px"><span data-lang="es">CERTIFICADO</span><span data-lang="en">CERTIFIED</span></div>
-            <img class="install-img" src="assets/images/installation.png" alt="Técnico instalando el sensor Emporia Vue 3 en panel eléctrico" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="install-fallback" style="display:none">
-              <span class="ico ico-2xl" style="color:var(--grn-lt)"><svg><use href="#i-wrench"/></svg></span>
-              <span data-lang="es">Instalación Emporia Vue 3</span>
-              <span data-lang="en">Emporia Vue 3 install</span>
+        <!-- Imagen interactiva por paso -->
+        <div class="how-img-card rv">
+          <img id="howStepImg"
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_3DGYrYWYOex4iGeSuPVx1CNCFCj/hf_20260508_221924_90da5148-6da2-479a-b106-ab8c3e5668d1_min.webp"
+            alt="Instalación del sensor en tablero eléctrico" loading="lazy">
+          <div class="how-img-overlay">
+            <div class="how-step-badge">
+              <span data-lang="es">Paso&nbsp;</span><span data-lang="en">Step&nbsp;</span><span id="howStepNum">1</span>
             </div>
-          </div>
-        </div>
-        <div class="hw-stat-card rv">
-          <div class="hw-big" data-count="40" data-suffix="%">0%</div>
-          <div class="hw-lbl"><span data-lang="es">Reducción máxima de consumo documentada</span><span data-lang="en">Maximum documented consumption reduction</span></div>
-          <div class="hw-mini">
-            <div class="hw-m"><div class="mv" data-count="840" data-prefix="B/." data-suffix="">0</div><div class="ml"><span data-lang="es">Ahorro anual potencial</span><span data-lang="en">Potential annual savings</span></div></div>
-            <div class="hw-m"><div class="mv" data-count="24" data-suffix="h">0</div><div class="ml"><span data-lang="es">Horas para primeros datos</span><span data-lang="en">Hours to first data</span></div></div>
-            <div class="hw-m"><div class="mv" data-count="16" data-suffix=" CB">0</div><div class="ml"><span data-lang="es">Breakers simultáneos</span><span data-lang="en">Simultaneous breakers</span></div></div>
-            <div class="hw-m"><div class="mv" data-count="5" data-suffix=" min">0</div><div class="ml"><span data-lang="es">Frecuencia de lectura</span><span data-lang="en">Reading frequency</span></div></div>
+            <p id="howStepCap" class="how-step-cap"><span data-lang="es">Instalamos el Emporia Vue 3 en tu tablero eléctrico</span><span data-lang="en">We install the Emporia Vue 3 in your electrical panel</span></p>
           </div>
         </div>
         <div class="hw-flow rv">
@@ -4736,47 +5445,88 @@ body.catx-modal-locked{overflow:hidden}
 ═══════════════════════════════════════════════════════════ -->
 <section id="visualization" class="sec">
   <div class="container">
-    <div class="centered rv" style="margin-bottom:20px">
+    <div class="centered rv" style="margin-bottom:32px">
       <div class="tag"><span class="tag-dot"></span><span data-lang="es">Visualización inteligente</span><span data-lang="en">Smart visualization</span></div>
       <h2 class="s-title"><span data-lang="es">Mira <span>cada habitación</span> de tu casa en tiempo real</span><span data-lang="en">See <span>every room</span> of your home in real time</span></h2>
-      <p class="s-sub"><span data-lang="es">Medidor Inteligente desglosa tu consumo eléctrico por habitación y aparato. Sabe exactamente dónde se gasta tu plata.</span><span data-lang="en">Medidor Inteligente breaks down your electricity consumption by room and appliance. Know exactly where your money goes.</span></p>
+      <p class="s-sub"><span data-lang="es">Medidor Inteligente desglosa tu consumo eléctrico por aparato. Toca cualquier aparato para ver cuánto gasta y cómo reducirlo.</span><span data-lang="en">Medidor Inteligente breaks down your electricity consumption by appliance. Tap any appliance to see how much it costs and how to reduce it.</span></p>
     </div>
-    <div class="viz-grid rv">
-      <div class="viz-text">
-        <h3 style="font-size:1.6rem;color:#fff;font-weight:800;letter-spacing:-.03em;margin-bottom:14px"><span data-lang="es">Tu hogar como nunca lo habías visto</span><span data-lang="en">Your home like never before</span></h3>
-        <p style="font-size:.95rem;color:var(--txt);line-height:1.7"><span data-lang="es">Cada habitación de tu casa tiene un costo. Con Medidor Inteligente puedes verlo en tiempo real, identificar qué aparatos consumen más y tomar decisiones inteligentes para reducir tu factura.</span><span data-lang="en">Every room in your home has a cost. With Medidor Inteligente you can see it in real time, identify which appliances consume the most and make smart decisions to reduce your bill.</span></p>
-        <div class="viz-features">
-          <div class="viz-feat">
-            <div class="viz-feat-ico"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-home"/></svg></span></div>
-            <div class="viz-feat-c">
-              <h4><span data-lang="es">Por habitación</span><span data-lang="en">By room</span></h4>
-              <p><span data-lang="es">Cocina, sala, dormitorio, baño, lavandería · cada zona muestra su consumo y costo mensual.</span><span data-lang="en">Kitchen, living room, bedroom, bathroom, laundry · each zone shows its consumption and monthly cost.</span></p>
-            </div>
-          </div>
-          <div class="viz-feat">
-            <div class="viz-feat-ico"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span></div>
-            <div class="viz-feat-c">
-              <h4><span data-lang="es">Por aparato</span><span data-lang="en">By appliance</span></h4>
-              <p><span data-lang="es">Aire, refrigerador, lavadora, TV · sabes exactamente cuánto cuesta usar cada uno.</span><span data-lang="en">AC, fridge, washer, TV · know exactly how much each one costs to use.</span></p>
-            </div>
-          </div>
-          <div class="viz-feat">
-            <div class="viz-feat-ico"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-clock"/></svg></span></div>
-            <div class="viz-feat-c">
-              <h4><span data-lang="es">En tiempo real</span><span data-lang="en">Real time</span></h4>
-              <p><span data-lang="es">Datos actualizados al instante · ve picos de consumo apenas suceden y reacciona.</span><span data-lang="en">Instantly updated data · see consumption spikes as they happen and react.</span></p>
-            </div>
-          </div>
+
+    <!-- Imagen principal con overlays integrados -->
+    <div class="viz-hero rv">
+      <div class="viz-live-pill">
+        <span class="viz-live-dot2"></span>
+        <span data-lang="es">EN VIVO</span><span data-lang="en">LIVE</span>
+      </div>
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3DGYrYWYOex4iGeSuPVx1CNCFCj/hf_20260508_214416_d930c62d-c1bc-4f7c-87b6-8a1ca9d5a72e_min.webp"
+        alt="Vista del hogar con consumo eléctrico por aparato en tiempo real" loading="lazy">
+    </div>
+
+    <!-- Selector interactivo de aparatos -->
+    <div class="viz-app-row rv" role="group">
+      <button class="viz-app-btn viz-app-active" onclick="vizSelect(this,'ac')" data-app="ac" style="--ac:#3b82f6">
+        <span class="viz-app-dot" style="background:#3b82f6"></span>
+        <span class="viz-app-label">❄️ <span data-lang="es">Aire AC</span><span data-lang="en">AC Unit</span></span>
+        <span class="viz-app-pct">30%</span>
+      </button>
+      <button class="viz-app-btn" onclick="vizSelect(this,'fridge')" data-app="fridge">
+        <span class="viz-app-dot" style="background:#8b5cf6"></span>
+        <span class="viz-app-label">🧊 <span data-lang="es">Nevera</span><span data-lang="en">Fridge</span></span>
+        <span class="viz-app-pct">20%</span>
+      </button>
+      <button class="viz-app-btn" onclick="vizSelect(this,'stove')" data-app="stove">
+        <span class="viz-app-dot" style="background:#f97316"></span>
+        <span class="viz-app-label">🍳 <span data-lang="es">Estufa/Horno</span><span data-lang="en">Stove/Oven</span></span>
+        <span class="viz-app-pct">15%</span>
+      </button>
+      <button class="viz-app-btn" onclick="vizSelect(this,'dryer')" data-app="dryer">
+        <span class="viz-app-dot" style="background:#ef4444"></span>
+        <span class="viz-app-label">♨️ <span data-lang="es">Secadora</span><span data-lang="en">Dryer</span></span>
+        <span class="viz-app-pct">10%</span>
+      </button>
+      <button class="viz-app-btn" onclick="vizSelect(this,'tv')" data-app="tv">
+        <span class="viz-app-dot" style="background:#a855f7"></span>
+        <span class="viz-app-label">📺 <span data-lang="es">Televisión</span><span data-lang="en">Television</span></span>
+        <span class="viz-app-pct">8%</span>
+      </button>
+      <button class="viz-app-btn" onclick="vizSelect(this,'washer')" data-app="washer">
+        <span class="viz-app-dot" style="background:#06b6d4"></span>
+        <span class="viz-app-label">🫧 <span data-lang="es">Lavadora</span><span data-lang="en">Washer</span></span>
+        <span class="viz-app-pct">7%</span>
+      </button>
+      <button class="viz-app-btn" onclick="vizSelect(this,'fan')" data-app="fan">
+        <span class="viz-app-dot" style="background:#14b8a6"></span>
+        <span class="viz-app-label">🌀 <span data-lang="es">Abanico</span><span data-lang="en">Fan</span></span>
+        <span class="viz-app-pct">5%</span>
+      </button>
+      <button class="viz-app-btn" onclick="vizSelect(this,'lights')" data-app="lights">
+        <span class="viz-app-dot" style="background:#f59e0b"></span>
+        <span class="viz-app-label">💡 <span data-lang="es">Iluminación</span><span data-lang="en">Lighting</span></span>
+        <span class="viz-app-pct">5%</span>
+      </button>
+    </div>
+
+    <!-- Tarjeta de detalle interactiva -->
+    <div class="viz-detail-card rv" id="vizDetailCard">
+      <div class="viz-detail-top">
+        <span class="viz-detail-emoji" id="vizEmoji">❄️</span>
+        <div class="viz-detail-meta">
+          <h4 id="vizName">Aire Acondicionado</h4>
+          <p class="viz-detail-sub" id="vizSub">30% del consumo total · mayor gasto del hogar</p>
+        </div>
+        <div class="viz-detail-costs">
+          <div class="viz-detail-weekly" id="vizWeekly">$12.50<small style="font-size:.65rem;font-weight:600;color:#64748b">/sem</small></div>
+          <div class="viz-detail-monthly" id="vizMonthly">~$54/mes estimado</div>
         </div>
       </div>
-      <div class="viz-image-wrap">
-        <div class="viz-badge"><span data-lang="es">EN VIVO</span><span data-lang="en">LIVE</span></div>
-        <img class="viz-image" src="assets/images/home-iso.png" alt="Vista isométrica del hogar con consumo eléctrico por habitación" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="viz-fallback" style="display:none">
-          <span class="ico ico-2xl" style="color:var(--grn-lt)"><svg><use href="#i-home"/></svg></span>
-          <span data-lang="es">Vista isométrica del hogar</span>
-          <span data-lang="en">Smart home isometric view</span>
-        </div>
+      <div class="viz-bar-row">
+        <div class="viz-bar-wrap"><div class="viz-bar-fill" id="vizBar" style="width:30%;background:#3b82f6"></div></div>
+        <span class="viz-bar-label" id="vizBarLabel">30% del total</span>
+      </div>
+      <div class="viz-tips-hd"><span data-lang="es">💡 Cómo reducir este gasto</span><span data-lang="en">💡 How to reduce this cost</span></div>
+      <div class="viz-tips-list" id="vizTipsList">
+        <div class="viz-tip"><span class="viz-tip-ico">✓</span><p class="viz-tip-txt">Mantén el termostato en 24°C · cada grado menos suma +8% al consumo mensual</p></div>
+        <div class="viz-tip"><span class="viz-tip-ico">✓</span><p class="viz-tip-txt">Activa el modo sleep nocturno · puede ahorrar hasta B/.8 al mes automáticamente</p></div>
+        <div class="viz-tip"><span class="viz-tip-ico">✓</span><p class="viz-tip-txt">Limpia el filtro cada 30 días · el polvo acumulado eleva el consumo hasta un 15%</p></div>
       </div>
     </div>
   </div>
@@ -4831,111 +5581,69 @@ body.catx-modal-locked{overflow:hidden}
 
 
 
-<!-- ═══════════════════════════════════════════════════════════
-     SIMULADOR · Calcula tu ahorro
-═══════════════════════════════════════════════════════════ -->
-<section id="simulator" class="sec">
-  <div class="container">
-    <div class="centered rv">
-      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Simulador interactivo</span><span data-lang="en">Interactive simulator</span></div>
-      <h2 class="s-title"><span data-lang="es">¿Medidor Inteligente es para ti? <span>Descúbrelo en 4 pasos</span></span><span data-lang="en">Is Medidor Inteligente right for you? <span>Find out in 4 steps</span></span></h2>
-    </div>
-    <div class="sim-wrap rv">
-      <!-- Progress -->
-      <div class="sim-progress" id="simProgress">
-        <div class="sp-step active" id="sps-0"><div class="sp-num">1</div><span class="sp-lbl"><span data-lang="es">Tipo</span><span data-lang="en">Type</span></span></div>
-        <div class="sp-step" id="sps-1"><div class="sp-num">2</div><span class="sp-lbl"><span data-lang="es">Consumo</span><span data-lang="en">Usage</span></span></div>
-        <div class="sp-step" id="sps-2"><div class="sp-num">3</div><span class="sp-lbl"><span data-lang="es">Objetivo</span><span data-lang="en">Goal</span></span></div>
-        <div class="sp-step" id="sps-3"><div class="sp-num">4</div><span class="sp-lbl"><span data-lang="es">Resultado</span><span data-lang="en">Result</span></span></div>
-      </div>
-      <div class="sim-card">
-        <!-- Step 1 -->
-        <div class="sim-step active" id="sim-step-0">
-          <div class="sim-q"><span data-lang="es">¿Qué tipo de propiedad tienes?</span><span data-lang="en">What type of property do you have?</span></div>
-          <div class="sim-hint"><span data-lang="es">Elige la que mejor describe tu instalación</span><span data-lang="en">Choose the one that best describes your installation</span></div>
-          <div class="sim-opts">
-            <button class="sim-opt" onclick="simSelect(this,'tipo','residencial')"><span class="sim-opt-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-home"/></svg></span></span><span data-lang="es">Residencia</span><span data-lang="en">Home</span></button>
-            <button class="sim-opt" onclick="simSelect(this,'tipo','comercial')"><span class="sim-opt-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-building"/></svg></span></span><span data-lang="es">Comercio</span><span data-lang="en">Commercial</span></button>
-            <button class="sim-opt" onclick="simSelect(this,'tipo','industrial')"><span class="sim-opt-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-factory"/></svg></span></span><span data-lang="es">Industrial</span><span data-lang="en">Industrial</span></button>
-            <button class="sim-opt" onclick="simSelect(this,'tipo','edificio')"><span class="sim-opt-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-tower"/></svg></span></span><span data-lang="es">Edificio</span><span data-lang="en">Building</span></button>
-          </div>
-          <div class="sim-nav"><button class="sim-next" onclick="simNext(0)" disabled id="simNext0"><span data-lang="es">Siguiente →</span><span data-lang="en">Next →</span></button></div>
-        </div>
-        <!-- Step 2 -->
-        <div class="sim-step" id="sim-step-1">
-          <div class="sim-q"><span data-lang="es">¿Cuánto pagas de electricidad al mes?</span><span data-lang="en">How much do you pay for electricity per month?</span></div>
-          <div class="sim-hint"><span data-lang="es">Factura mensual aproximada en balboas</span><span data-lang="en">Approximate monthly bill in Balboas</span></div>
-          <div class="sim-opts">
-            <button class="sim-opt" onclick="simSelect(this,'factura',80)"><span class="sim-opt-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-spark"/></svg></span></span>B/.50-100</button>
-            <button class="sim-opt" onclick="simSelect(this,'factura',160)"><span class="sim-opt-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span></span>B/.100-200</button>
-            <button class="sim-opt" onclick="simSelect(this,'factura',350)"><span class="sim-opt-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span></span>B/.200-500</button>
-            <button class="sim-opt" onclick="simSelect(this,'factura',800)"><span class="sim-opt-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-factory"/></svg></span></span>B/.500+</button>
-          </div>
-          <div class="sim-nav">
-            <button class="sim-back" onclick="simPrev(1)"><span data-lang="es">← Atrás</span><span data-lang="en">← Back</span></button>
-            <button class="sim-next" onclick="simNext(1)" disabled id="simNext1"><span data-lang="es">Siguiente →</span><span data-lang="en">Next →</span></button>
-          </div>
-        </div>
-        <!-- Step 3 -->
-        <div class="sim-step" id="sim-step-2">
-          <div class="sim-q"><span data-lang="es">¿Cuál es tu objetivo principal?</span><span data-lang="en">What is your main goal?</span></div>
-          <div class="sim-hint"><span data-lang="es">Esto nos ayuda a personalizar tu solución</span><span data-lang="en">This helps us personalize your solution</span></div>
-          <div class="sim-opts">
-            <button class="sim-opt" onclick="simSelect(this,'objetivo','ahorro')"><span class="sim-opt-ico"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-trend"/></svg></span></span><span data-lang="es">Reducir factura</span><span data-lang="en">Cut bill</span></button>
-            <button class="sim-opt" onclick="simSelect(this,'objetivo','sostenibilidad')"><span class="sim-opt-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-check"/></svg></span></span><span data-lang="es">Sostenibilidad</span><span data-lang="en">Sustainability</span></button>
-            <button class="sim-opt" onclick="simSelect(this,'objetivo','visibilidad')"><span class="sim-opt-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-chart"/></svg></span></span><span data-lang="es">Ver datos en tiempo real</span><span data-lang="en">Real-time data</span></button>
-            <button class="sim-opt" onclick="simSelect(this,'objetivo','control')"><span class="sim-opt-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-settings"/></svg></span></span><span data-lang="es">Control total</span><span data-lang="en">Full control</span></button>
-          </div>
-          <div class="sim-nav">
-            <button class="sim-back" onclick="simPrev(2)"><span data-lang="es">← Atrás</span><span data-lang="en">← Back</span></button>
-            <button class="sim-next" onclick="simNext(2)" disabled id="simNext2"><span data-lang="es">Ver resultado →</span><span data-lang="en">See result →</span></button>
-          </div>
-        </div>
-        <!-- Step 4: Result -->
-        <div class="sim-step" id="sim-step-3">
-          <div class="sim-result" id="simResult">
-            <!-- filled by JS -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <!-- ═══════════════════════════════════════════════════════════
-     VIDEO · Plataforma en accion
+     VIDEO · Publicidad Medidor Inteligente
 ═══════════════════════════════════════════════════════════ -->
-<section id="video-sec" class="sec">
-  <div class="container">
-    <div class="centered rv">
-      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Medidor Inteligente en acción</span><span data-lang="en">Medidor Inteligente in action</span></div>
-      <h2 class="s-title"><span data-lang="es">Ve cómo funciona <span>en 2 minutos</span></span><span data-lang="en">See how it works <span>in 2 minutes</span></span></h2>
-      <p class="s-sub"><span data-lang="es">Desde la instalación del sensor hasta el dashboard en tiempo real — así transforma Medidor Inteligente tu consumo eléctrico.</span><span data-lang="en">From sensor installation to the real-time dashboard — this is how Medidor Inteligente transforms your electricity usage.</span></p>
-    </div>
-    <div class="video-selector-tabs rv" style="margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <button class="video-tab active" onclick="switchVideo('promo1','promo1-btn')" id="promo1-btn">
-        <span class="ico ico-md" style="vertical-align:-0.15em;margin-right:8px"><svg><use href="#i-play"/></svg></span>
-        <span data-lang="es">Video 1: Presentación</span><span data-lang="en">Video 1: Overview</span>
-      </button>
-      <button class="video-tab" onclick="switchVideo('promo2','promo2-btn')" id="promo2-btn">
-        <span class="ico ico-md" style="vertical-align:-0.15em;margin-right:8px"><svg><use href="#i-play"/></svg></span>
-        <span data-lang="es">Video 2: Características</span><span data-lang="en">Video 2: Features</span>
-      </button>
-    </div>
-    <div class="video-wrap rv" id="videoWrap">
-      <video id="videoPlayer" class="video-element" controls style="width:100%;height:100%;object-fit:contain;border-radius:20px" controlsList="nodownload">
-        <source src="assets/videos/promo1.mp4" type="video/mp4">
-        <span data-lang="es">Tu navegador no soporta video HTML5</span><span data-lang="en">Your browser does not support HTML5 video</span>
-      </video>
-      <div class="video-placeholder" id="videoPlaceholder" style="display:none">
-        <div style="position:relative;display:flex;align-items:center;justify-content:center">
-          <div class="video-play-pulse"></div>
-          <div class="video-play-btn" onclick="playVideo()">▶</div>
-        </div>
-        <div class="vp-title"><span data-lang="es">Plataforma Medidor Inteligente</span><span data-lang="en">Medidor Inteligente Platform</span></div>
-        <div class="vp-sub"><span data-lang="es">Haz clic para reproducir</span><span data-lang="en">Click to play</span></div>
+<section id="video-sec">
+  <div class="vid-ad-wrap">
+
+    <!-- LEFT — copy publicitario -->
+    <div class="vid-ad-left rv">
+      <div class="vid-ad-eyebrow">
+        <span class="vid-live-dot"></span>
+        <span data-lang="es">Medidor Inteligente · MTG Panamá</span>
+        <span data-lang="en">Medidor Inteligente · MTG Panama</span>
       </div>
+
+      <h2 class="vid-ad-title">
+        <span data-lang="es">¿Aún pagas de más<br><em>sin saber por qué?</em></span>
+        <span data-lang="en">Still overpaying<br><em>without knowing why?</em></span>
+      </h2>
+
+      <p class="vid-ad-sub">
+        <span data-lang="es">Instalamos el sensor que te muestra, en tiempo real, qué circuito te está costando más — y cómo reducirlo hasta un <strong>40%.</strong></span>
+        <span data-lang="en">We install the sensor that shows you, in real time, which circuit is costing you the most — and how to cut it by up to <strong>40%.</strong></span>
+      </p>
+
+      <ul class="vid-ad-bullets">
+        <li><span class="vid-bullet-ico">⚡</span><span data-lang="es">Monitoreo por circuito en tiempo real</span><span data-lang="en">Real-time per-circuit monitoring</span></li>
+        <li><span class="vid-bullet-ico">📱</span><span data-lang="es">Dashboard en tu celular, siempre</span><span data-lang="en">Dashboard on your phone, always</span></li>
+        <li><span class="vid-bullet-ico">🔔</span><span data-lang="es">Alertas cuando algo consume de más</span><span data-lang="en">Alerts when something draws too much</span></li>
+        <li><span class="vid-bullet-ico">📉</span><span data-lang="es">Factura más baja desde el primer mes</span><span data-lang="en">Lower bill from the very first month</span></li>
+      </ul>
+
+      <div class="vid-ad-stats">
+        <div class="vid-stat"><span class="vid-stat-n">40%</span><span class="vid-stat-l"><span data-lang="es">Ahorro máximo</span><span data-lang="en">Max savings</span></span></div>
+        <div class="vid-stat-sep"></div>
+        <div class="vid-stat"><span class="vid-stat-n">16</span><span class="vid-stat-l"><span data-lang="es">Circuitos medidos</span><span data-lang="en">Circuits measured</span></span></div>
+        <div class="vid-stat-sep"></div>
+        <div class="vid-stat"><span class="vid-stat-n">24/7</span><span class="vid-stat-l"><span data-lang="es">Datos en vivo</span><span data-lang="en">Live data</span></span></div>
+      </div>
+
+      <a href="https://wa.me/50766743062?text=Hola%2C%20vi%20el%20video%20de%20Medidor%20Inteligente%20y%20quiero%20información" target="_blank" rel="noopener" class="vid-ad-cta">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        <span data-lang="es">Quiero reducir mi factura</span><span data-lang="en">I want to cut my bill</span>
+      </a>
+    </div>
+
+    <!-- RIGHT — reproductor de video -->
+    <div class="vid-ad-right rv">
+
+      <!-- Dashboard animado en vivo -->
+      <div class="vid-player-shell" id="videoWrap" style="background:#060d1f;border-radius:20px;overflow:hidden;position:relative;min-height:340px;display:flex;align-items:stretch">
+        <div class="vid-glow-ring"></div>
+        <canvas id="miDashCanvas" style="width:100%;height:100%;display:block;border-radius:18px"></canvas>
+      </div>
+
+      <!-- Badges flotantes -->
+      <div class="vid-badge-row">
+        <div class="vid-badge"><span>🛡️</span><span data-lang="es">Instalación incluida</span><span data-lang="en">Installation included</span></div>
+        <div class="vid-badge"><span>📊</span><span data-lang="es">Análisis con IA</span><span data-lang="en">AI-powered analysis</span></div>
+        <div class="vid-badge vid-badge-hi"><span>⚡</span><span data-lang="es">Activo en 1 día</span><span data-lang="en">Live in 1 day</span></div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -4958,7 +5666,7 @@ body.catx-modal-locked{overflow:hidden}
     <div class="svc-grid">
 
       <!-- 1. Instalación y Puesta en Marcha -->
-      <div class="svc-card rv">
+      <div class="svc-card rv" data-n="01">
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-wrench"/></svg></span></div>
           <h3><span data-lang="es">Instalación y Puesta en Marcha</span><span data-lang="en">Installation & Commissioning</span></h3>
@@ -4974,7 +5682,7 @@ body.catx-modal-locked{overflow:hidden}
       </div>
 
       <!-- 2. Soporte Técnico Especializado -->
-      <div class="svc-card rv">
+      <div class="svc-card rv" data-n="02">
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-headset"/></svg></span></div>
           <h3><span data-lang="es">Soporte Técnico Especializado</span><span data-lang="en">Specialized Tech Support</span></h3>
@@ -4990,7 +5698,7 @@ body.catx-modal-locked{overflow:hidden}
       </div>
 
       <!-- 3. Mantenimiento y Optimización -->
-      <div class="svc-card rv">
+      <div class="svc-card rv" data-n="03">
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-settings"/></svg></span></div>
           <h3><span data-lang="es">Mantenimiento y Optimización</span><span data-lang="en">Maintenance & Optimization</span></h3>
@@ -5006,7 +5714,7 @@ body.catx-modal-locked{overflow:hidden}
       </div>
 
       <!-- 4. Calibración y Equipos de Medición -->
-      <div class="svc-card rv">
+      <div class="svc-card rv" data-n="04">
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-ruler"/></svg></span></div>
           <h3><span data-lang="es">Calibración y Equipos de Medición</span><span data-lang="en">Calibration & Measurement</span></h3>
@@ -5022,7 +5730,7 @@ body.catx-modal-locked{overflow:hidden}
       </div>
 
       <!-- 5. Servicios de Campo (Field Services) -->
-      <div class="svc-card rv">
+      <div class="svc-card rv" data-n="05">
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-truck"/></svg></span></div>
           <h3><span data-lang="es">Servicios de Campo</span><span data-lang="en">Field Services</span></h3>
@@ -5038,7 +5746,7 @@ body.catx-modal-locked{overflow:hidden}
       </div>
 
       <!-- 6. Proyectos Llave en Mano -->
-      <div class="svc-card rv">
+      <div class="svc-card rv" data-n="06">
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-key"/></svg></span></div>
           <h3><span data-lang="es">Proyectos Llave en Mano</span><span data-lang="en">Turnkey Projects</span></h3>
@@ -5054,7 +5762,7 @@ body.catx-modal-locked{overflow:hidden}
       </div>
 
       <!-- 7. Integración de Soluciones Tecnológicas -->
-      <div class="svc-card rv" style="grid-column:span 1">
+      <div class="svc-card rv" data-n="07">
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-puzzle"/></svg></span></div>
           <h3><span data-lang="es">Integración de Soluciones Tecnológicas</span><span data-lang="en">Technology Integration</span></h3>
@@ -5097,9 +5805,9 @@ body.catx-modal-locked{overflow:hidden}
         <a href="https://wa.me/50766743062?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20los%20sensores%20Emporia%20para%20mi%20propiedad" target="_blank" rel="noopener" class="btn btn-primary">⚡ <span data-lang="es">Quiero esto en mi propiedad</span><span data-lang="en">I want this in my property</span></a>
       </div>
       <div class="eco-banner-imgs">
-        <img src="https://shop.emporiaenergy.com/cdn/shop/files/emporia-shopify-vue16-1000x1000-0625_1000x.png?v=1750974365" alt="Emporia Vue 3" class="eco-banner-img">
-        <img src="https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475" alt="Emporia Vue instalado" class="eco-banner-img">
-        <img src="https://shop.emporiaenergy.com/cdn/shop/files/AMZ-Plug-2000x2000-PT01-v2_1000x.png" alt="Emporia Smart Plug" class="eco-banner-img">
+        <img src="https://shop.emporiaenergy.com/cdn/shop/files/emporia-shopify-vue16-1000x1000-0625_1000x.png?v=1750974365" alt="Emporia Vue 3" class="eco-banner-img" loading="lazy">
+        <img src="https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475" alt="Emporia Vue instalado" class="eco-banner-img" loading="lazy">
+        <img src="https://shop.emporiaenergy.com/cdn/shop/files/AMZ-Plug-2000x2000-PT01-v2_1000x.png" alt="Emporia Smart Plug" class="eco-banner-img" loading="lazy">
       </div>
     </div>
 
@@ -5110,7 +5818,7 @@ body.catx-modal-locked{overflow:hidden}
       <div class="emp-card rv">
         <div class="emp-card-img">
           <span class="emp-card-badge">Monitor Principal</span>
-          <img src="https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475" alt="Emporia Vue 3">
+          <img src="https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475" alt="Emporia Vue 3" loading="lazy">
         </div>
         <div class="emp-card-body">
           <div class="emp-card-name">Emporia Vue 3</div>
@@ -5158,7 +5866,7 @@ body.catx-modal-locked{overflow:hidden}
       <div class="emp-card rv">
         <div class="emp-card-img">
           <span class="emp-card-badge"><span data-lang="es">Vehículo eléctrico</span><span data-lang="en">Electric vehicle</span></span>
-          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&auto=format&fit=crop&q=80" alt="Emporia EV Charger">
+          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&auto=format&fit=crop&q=80" alt="Emporia EV Charger" loading="lazy">
         </div>
         <div class="emp-card-body">
           <div class="emp-card-name">Cargador EV Emporia</div>
@@ -5188,7 +5896,7 @@ body.catx-modal-locked{overflow:hidden}
       </div>
       <div class="emp-cta-btns">
         <a href="https://wa.me/50766743062?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20los%20equipos%20Emporia%20(Vue%203%2C%20Smart%20Plug%2C%20EV%20Charger)" target="_blank" rel="noopener" class="btn btn-primary">📲 <span data-lang="es">Consultar disponibilidad</span><span data-lang="en">Check availability</span></a>
-        <a href="#simulator" class="btn btn-outline"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-trend"/></svg></span> <span data-lang="es">Calcular mi ahorro</span><span data-lang="en">Calculate my savings</span></a>
+        <a href="#contacto" class="btn btn-outline"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-trend"/></svg></span> <span data-lang="es">Calcular mi ahorro</span><span data-lang="en">Calculate my savings</span></a>
       </div>
     </div>
 
@@ -5211,12 +5919,12 @@ body.catx-modal-locked{overflow:hidden}
       <div class="test-card rv">
         <div class="test-badge">Medidor Inteligente · Residencial</div>
         <div class="test-stars"><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span></div>
-        <p class="test-text"><span data-lang="es">El primer mes ya vi la diferencia. Me identificaron que el A/C del cuarto principal era el culpable del 60% de mi factura. Ahora programo horarios y bajé B/.45 mensual.</span><span data-lang="en">I saw the difference the first month. They identified that the main bedroom A/C was responsible for 60% of my bill. I now schedule hours and dropped B/.45 monthly.</span></p>
+        <p class="test-text"><span data-lang="es">Tenía meses pagando facturas altísimas y no entendía por qué. MTG instaló el sensor y en menos de un día me mostraron en vivo que mi aire acondicionado estaba encendido las 24 horas — incluso de madrugada. Jamás me había dado cuenta. Ver el consumo en tiempo real en el teléfono fue increíble, bajé B/.60 al mes desde el primer ciclo.</span><span data-lang="en">I had been paying sky-high bills for months and couldn't figure out why. MTG installed the sensor and within a day showed me live that my A/C was running 24 hours — even in the middle of the night. I had never noticed. Seeing consumption in real time on my phone was incredible. I saved B/.60/month from the very first billing cycle.</span></p>
         <div class="test-author">
           <div class="test-avatar-letter" style="background:linear-gradient(135deg,#14b8a6,#06b6d4);color:#fff">RM</div>
           <div>
             <div class="test-name">Roberto M.</div>
-            <div class="test-role"><span data-lang="es">San Francisco, Panamá · EDEMET</span><span data-lang="en">San Francisco, Panama · EDEMET</span></div>
+            <div class="test-role"><span data-lang="es">Residencia, San Francisco · EDEMET</span><span data-lang="en">Residence, San Francisco · EDEMET</span></div>
           </div>
         </div>
       </div>
@@ -5264,7 +5972,7 @@ body.catx-modal-locked{overflow:hidden}
           <span class="faq-q-txt"><span data-lang="es">¿Cuánto cuesta la plataforma Medidor Inteligente?</span><span data-lang="en">How much does the Medidor Inteligente platform cost?</span></span>
           <span class="faq-arr">▾</span>
         </div>
-        <div class="faq-a"><div class="faq-a-inner"><span data-lang="es">El costo incluye el sensor Emporia Vue 3, la instalación certificada y el acceso a la plataforma Medidor Inteligente. El precio varía según el número de circuitos y el tipo de propiedad. Contáctanos para una cotización personalizada — el primer análisis es gratuito.</span><span data-lang="en">The cost includes the Emporia Vue 3 sensor, certified installation and access to the Medidor Inteligente platform. Price varies by number of circuits and property type. Contact us for a personalized quote — the first analysis is free.</span></div></div>
+        <div class="faq-a"><div class="faq-a-inner"><span data-lang="es">El costo incluye el sensor Emporia Vue 3, la instalación certificada y el acceso a la plataforma Medidor Inteligente. El precio varía según el número de circuitos y el tipo de propiedad. Contáctanos para una cotización personalizada.</span><span data-lang="en">The cost includes the Emporia Vue 3 sensor, certified installation and access to the Medidor Inteligente platform. Price varies by number of circuits and property type. Contact us for a personalized quote.</span></div></div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
@@ -5321,9 +6029,9 @@ body.catx-modal-locked{overflow:hidden}
   <div class="cta-bg-glow"></div>
   <div class="container">
     <div class="cta-inner rv">
-      <div class="cta-urgency"><span class="cta-urgency-dot"></span><span data-lang="es">Análisis gratuito · sin compromiso · en menos de 48 h</span><span data-lang="en">Free analysis · no commitment · in under 48 h</span></div>
+      <div class="cta-urgency"><span class="cta-urgency-dot"></span><span data-lang="es">Respuesta en menos de 48 h · sin compromiso</span><span data-lang="en">Response in under 48 h · no commitment</span></div>
       <h2 class="cta-h2"><span data-lang="es">¿Listo para saber qué <span>consume tu dinero</span>?</span><span data-lang="en">Ready to know what <span>consumes your money</span>?</span></h2>
-      <p class="cta-p"><span data-lang="es">El primer análisis es gratuito. Instalamos, medimos y entregamos un reporte con los ahorros potenciales concretos — sin compromiso.</span><span data-lang="en">The first analysis is free. We install, measure and deliver a report with concrete potential savings — no commitment.</span></p>
+      <p class="cta-p"><span data-lang="es">Instalamos el sensor, medimos tu consumo circuito por circuito y te entregamos un reporte con los ahorros concretos — sin compromiso.</span><span data-lang="en">We install the sensor, measure your consumption circuit by circuit and deliver a report with concrete savings — no commitment.</span></p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
         <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesa%20Medidor Inteligente" class="btn btn-wa" target="_blank" rel="noopener"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span> WhatsApp</a>
         <a href="mailto:meta.tecpty@gmail.com" class="btn btn-outline">✉️ <span data-lang="es">Enviar correo</span><span data-lang="en">Send email</span></a>
@@ -5340,11 +6048,11 @@ body.catx-modal-locked{overflow:hidden}
           <div class="cf-grid">
             <div class="cf-field">
               <label class="cf-label"><span data-lang="es">Nombre</span><span data-lang="en">Name</span></label>
-              <input type="text" class="cf-input" id="cfNombre" placeholder="Juan García" required>
+              <input type="text" class="cf-input" id="cfNombre" placeholder="Juan García" required minlength="2">
             </div>
             <div class="cf-field">
               <label class="cf-label"><span data-lang="es">Teléfono / WhatsApp</span><span data-lang="en">Phone / WhatsApp</span></label>
-              <input type="tel" class="cf-input" id="cfTel" placeholder="+507 6000-0000">
+              <input type="tel" class="cf-input" id="cfTel" placeholder="+507 6000-0000" pattern="[+\d\s\-()]{7,}">
             </div>
             <div class="cf-field">
               <label class="cf-label">Email</label>
@@ -5390,12 +6098,18 @@ body.catx-modal-locked{overflow:hidden}
   <div class="container">
     <div class="f-top">
       <div class="f-brand">
-        <img src="assets/logo-icon.png" alt="Meta Technology Global" style="height:52px;width:auto">
+        <img src="assets/logo-mtg.png" alt="Meta Technology Global" style="height:56px;width:auto;margin-bottom:14px;display:block" loading="lazy">
         <p><span data-lang="es">Empresa panameña de tecnología: plataforma Medidor Inteligente de eficiencia energética con IA, más suministro e instalación de telecomunicaciones, fibra óptica y Data Centers.</span><span data-lang="en">Panamanian technology company: Medidor Inteligente AI energy efficiency platform, plus supply and installation of telecommunications, fiber optic and Data Centers.</span></p>
-        <div class="f-socials">
-          <a href="https://www.instagram.com/metatecglobal/" target="_blank" rel="noopener" class="f-soc" aria-label="Instagram"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2zM17.5 6.5h.01"/></svg></a>
-          <a href="https://wa.me/50766743062" target="_blank" rel="noopener" class="f-soc" aria-label="WhatsApp"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span></a>
-          <a href="mailto:meta.tecpty@gmail.com" class="f-soc" aria-label="Email"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-mail"/></svg></span></a>
+        <div class="f-socials" style="gap:10px;margin-top:18px">
+          <a href="https://www.instagram.com/metatecglobal/" target="_blank" rel="noopener" class="f-soc f-soc-ig" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2z"/><circle cx="17.5" cy="6.5" r=".5" fill="#fff" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/50766743062" target="_blank" rel="noopener" class="f-soc f-soc-wa" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </a>
+          <a href="mailto:meta.tecpty@gmail.com" class="f-soc f-soc-em" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 7 10-7"/></svg>
+          </a>
         </div>
       </div>
       <div class="f-col">
@@ -5469,7 +6183,7 @@ body.catx-modal-locked{overflow:hidden}
       <div class="wa-opt-btn">📡</div>
     </a>
     <a href="https://wa.me/50766743062?text=Hola%2C%20quisiera%20solicitar%20un%20an%C3%A1lisis%20energ%C3%A9tico%20gratuito%20para%20mi%20propiedad" target="_blank" rel="noopener" class="wa-opt" onclick="closeWaMenu()">
-      <div class="wa-opt-label"><span data-lang="es">Análisis gratuito</span><span data-lang="en">Free analysis</span><small><span data-lang="es">Sin compromiso · Respuesta &lt;2h</span><span data-lang="en">No commitment · Reply &lt;2h</span></small></div>
+      <div class="wa-opt-label"><span data-lang="es">Solicitar análisis</span><span data-lang="en">Request analysis</span><small><span data-lang="es">Sin compromiso · Respuesta &lt;2h</span><span data-lang="en">No commitment · Reply &lt;2h</span></small></div>
       <div class="wa-opt-btn"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-chart"/></svg></span></div>
     </a>
     <a href="https://wa.me/50766743062?text=Hola%2C%20quisiera%20agendar%20una%20demo%20en%20vivo%20de%20la%20plataforma%20Medidor Inteligente" target="_blank" rel="noopener" class="wa-opt" onclick="closeWaMenu()">
@@ -5787,7 +6501,7 @@ const CATALOG_META={
   }
 };
 let currentCatalogKey='fibra';
-function catalogLang(){return document.documentElement.classList.contains('lang-en')||document.body.classList.contains('lang-en')?'en':'es'}
+function catalogLang(){return document.documentElement.classList.contains('lang-en')?'en':'es'}
 function catalogText(value){return typeof value==='string'?value:(value?.[catalogLang()]||value?.es||'')}
 function safeHtml(value){return String(value||'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
 function renderCatalogDetail(filter){
@@ -5882,18 +6596,43 @@ function mmShow(key){
 let currentLang='es';
 function setLang(lang){
   currentLang=lang;
-  document.getElementById('html-root').className='lang-'+lang;
+  // Use classList to preserve 'dark' and other classes
+  const root=document.documentElement;
+  root.classList.remove('lang-es','lang-en');
+  root.classList.add('lang-'+lang);
+  document.documentElement.lang=lang;
   document.getElementById('langFlag').textContent=lang==='es'?'🇵🇦':'🇺🇸';
   document.getElementById('langCode').textContent=lang.toUpperCase();
   document.getElementById('ld-es').classList.toggle('active',lang==='es');
   document.getElementById('ld-en').classList.toggle('active',lang==='en');
   document.getElementById('mob-es').classList.toggle('active',lang==='es');
   document.getElementById('mob-en').classList.toggle('active',lang==='en');
-  document.getElementById('langDrop').classList.remove('open');
+  document.getElementById('langSw').classList.remove('open');
   if(typeof renderCatalogDetail==='function')renderCatalogDetail(currentCatalogKey);
+  localStorage.setItem('mtg-lang',lang);
 }
 function toggleLangDrop(){document.getElementById('langSw').classList.toggle('open')}
 document.addEventListener('click',e=>{if(!e.target.closest('#langSw'))document.getElementById('langSw').classList.remove('open')});
+
+/* ── DARK MODE ── */
+function applyTheme(dark){
+  document.documentElement.classList.toggle('dark',dark);
+  const icon1=document.getElementById('themeIcon');
+  const icon2=document.getElementById('themeIconMob');
+  const ico=dark?'☀️':'🌙';
+  if(icon1)icon1.textContent=ico;
+  if(icon2)icon2.textContent=ico;
+  localStorage.setItem('mtg-theme',dark?'dark':'light');
+}
+function toggleTheme(){applyTheme(!document.documentElement.classList.contains('dark'));}
+// Load saved preferences on init
+(function(){
+  const savedLang=localStorage.getItem('mtg-lang');
+  if(savedLang&&savedLang!=='es')setLang(savedLang);
+  const savedTheme=localStorage.getItem('mtg-theme');
+  const prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(savedTheme==='dark'||(savedTheme===null&&prefersDark));
+})();
 
 /* ── HERO SLIDER ── */
 let slide=0,slideTimer;
@@ -5909,11 +6648,46 @@ function prevSlide(){goSlide((slide-1+slides.length)%slides.length)}
 function startSlider(){slideTimer=setInterval(nextSlide,5500)}
 startSlider();
 
+/* ── HERO SWIPE (iOS/Android) ── */
+(function(){
+  const hero=document.getElementById('hero');
+  if(!hero)return;
+  let startX=0,startY=0,dist=0;
+  hero.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;startY=e.touches[0].clientY;},{passive:true});
+  hero.addEventListener('touchend',e=>{
+    dist=e.changedTouches[0].clientX-startX;
+    const distY=Math.abs(e.changedTouches[0].clientY-startY);
+    if(Math.abs(dist)>45&&distY<60){dist>0?prevSlide():nextSlide();}
+  },{passive:true});
+})();
+
 /* ── SCROLL REVEAL ── */
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');observer.unobserve(e.target)}});
 },{threshold:0.1,rootMargin:'0px 0px -36px 0px'});
 document.querySelectorAll('.rv').forEach(el=>observer.observe(el));
+
+/* ── COUNTER ANIMATION ── */
+function animateCounter(el){
+  const target=parseFloat(el.dataset.count);
+  const isFloat=el.dataset.count.includes('.');
+  const prefix=el.dataset.prefix||'';
+  const suffix=el.dataset.suffix||'';
+  const duration=1800;
+  const start=performance.now();
+  function step(now){
+    const prog=Math.min((now-start)/duration,1);
+    const ease=1-Math.pow(1-prog,3);
+    const val=target*ease;
+    el.textContent=prefix+(isFloat?val.toFixed(1):Math.round(val))+suffix;
+    if(prog<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+const counterObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.counted){e.target.dataset.counted='1';animateCounter(e.target);}});
+},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(el=>counterObs.observe(el));
 
 /* ── HERO CANVAS PARTICLES ── */
 (function(){
@@ -6024,6 +6798,12 @@ const CATX_DATA = {
       es: ['Cables de fibra óptica', 'Conectores y patch cords', 'ODF y cajas terminales', 'Splitters y atenuadores', 'Fusionadoras', 'OTDR (reflectómetro)', 'OPM / OLS / VFL'],
       en: ['Fiber optic cables', 'Connectors & patch cords', 'ODF & terminal boxes', 'Splitters & attenuators', 'Splicers', 'OTDR (reflectometer)', 'OPM / OLS / VFL']
     },
+    featured: [
+      { brand:'N-TEST', name:'FiberWatch RTU', img:'https://images.squarespace-cdn.com/content/v1/6155f627b6968402e918f964/cb1c9eec-a18d-4203-9bbb-e51b5ff7143a/Ntest-FiberWatch-RTU_1500px.png', desc:{ es:'Monitoreo remoto 24/7', en:'Remote monitoring 24/7' } },
+      { brand:'EXFO', name:'MaxTester 715D', img:'https://www.exfo.com/contentassets/947986fb9b324c97a51f1f6cfbadfa29/max-715d_thumb.jpg', desc:{ es:'OTDR último kilómetro', en:'Last-mile OTDR' } },
+      { brand:'EXFO', name:'MaxTester 730D', img:'https://www.exfo.com/contentassets/9da0652c016a42298f1059590c4336e6/max-730d_thumb.jpg', desc:{ es:'OTDR multimodo/singlemode', en:'Multimode/singlemode OTDR' } },
+      { brand:'EXFO', name:'AXS-120', img:'https://www.exfo.com/contentassets/0fe9c6e7d6304347a93e250dc19fad68/axs-120-front_swap-out_connector_5969_2000x1652-2.jpg', desc:{ es:'OTDR compacto FTTH', en:'Compact FTTH OTDR' } }
+    ],
     value: { es: 'Redes escalables y certificables — listas para crecer.', en: 'Scalable, certifiable networks — ready to grow.' },
     pdf: 'https://drive.google.com/file/d/1QPjQ9Acu7P5cE2pNSzg5G4SVH9Ak764g/view',
     waText: 'Hola%2C%20me%20interesa%20la%20l%C3%ADnea%20de%20Fibra%20%C3%93ptica'
@@ -6042,6 +6822,11 @@ const CATX_DATA = {
       es: ['Antenas direccionales', 'Antenas omnidireccionales', 'Cables coaxiales · jumpers', 'Sistemas DAS pasivos', 'Sistemas DAS activos', 'Repetidores y amplificadores'],
       en: ['Directional antennas', 'Omnidirectional antennas', 'Coaxial cables · jumpers', 'Passive DAS systems', 'Active DAS systems', 'Repeaters & amplifiers']
     },
+    featured: [
+      { brand:'CRFS', name:'RFeye Node 100-8', img:'https://www.crfs.com/hs-fs/hubfs/Product%20Images/Node%20100-8%20-%20Front-small.png', desc:{ es:'Monitoreo espectro 9kHz–8GHz', en:'Spectrum monitoring 9kHz–8GHz' } },
+      { brand:'Bird', name:'Modelo 43 Wattmeter', img:'https://birdrf.com/hs-fs/hubfs/modules/hero-images/43-wattmeter_white.png?width=626&height=570&name=43-wattmeter_white.png', desc:{ es:'Medidor de potencia RF', en:'RF power meter' } },
+      { brand:'PROMAX', name:'RANGERNeo+', img:'https://www.promax.es/assets/images/products/sliderProductos/ranger-neo-p/home.jpg', desc:{ es:'Medidor campo TV/Cable/Sat', en:'TV/Cable/Sat field meter' } }
+    ],
     value: { es: 'Mejor señal · mayor cobertura · rendimiento garantizado.', en: 'Better signal · greater coverage · guaranteed performance.' },
     pdf: '#cta-sec',
     waText: 'Hola%2C%20me%20interesa%20la%20l%C3%ADnea%20RF%20y%20Cobertura'
@@ -6060,6 +6845,12 @@ const CATX_DATA = {
       es: ['Torres autosoportadas', 'Estructuras y mástiles', 'Gabinetes outdoor', 'Racks 19" PROSE', 'Sistemas de canalización', 'Accesorios de montaje'],
       en: ['Self-supporting towers', 'Structures & masts', 'Outdoor cabinets', '19" PROSE racks', 'Cable management systems', 'Mounting accessories']
     },
+    featured: [
+      { brand:'PROSE', name:'Antenas BTS', img:'https://nwsnext.com/wp-content/uploads/Prose-BTS-Antennas.png', desc:{ es:'2G/3G/4G/5G · multi-banda', en:'2G/3G/4G/5G multi-band' } },
+      { brand:'PROSE', name:'Sistemas DAS', img:'https://nwsnext.com/wp-content/uploads/PROSE-Network-Systems.png', desc:{ es:'Cobertura in-building', en:'In-building coverage' } },
+      { brand:'PROSE', name:'Camuflaje Arquitectónico', img:'https://nwsnext.com/wp-content/uploads/Prose-Site-Components.png', desc:{ es:'Integración estética del sitio', en:'Aesthetic site integration' } },
+      { brand:'PROSE', name:'Antenas Microondas', img:'https://nwsnext.com/wp-content/uploads/Prose-Microwave-Antennas.png', desc:{ es:'Backhaul punto a punto', en:'Point-to-point backhaul' } }
+    ],
     value: { es: 'Proyectos bien estructurados, seguros y listos para operar.', en: 'Well-structured, secure projects ready to operate.' },
     pdf: 'https://drive.google.com/file/d/1h2aDG8XvZlbC_u0uSnzkbX5ByJukNEjU/view',
     waText: 'Hola%2C%20me%20interesa%20Infraestructura%20Telecom'
@@ -6078,6 +6869,11 @@ const CATX_DATA = {
       es: ['KHIPU Micro Data Center', 'KHIPU Modular DC', 'KHIPU Container DC', 'Cableado estructurado', 'Sistemas de gestión de cables', 'PDU y distribución de energía'],
       en: ['KHIPU Micro Data Center', 'KHIPU Modular DC', 'KHIPU Container DC', 'Structured cabling', 'Cable management systems', 'PDU & power distribution']
     },
+    featured: [
+      { brand:'KHIPU', name:'Micro Data Center', img:'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&auto=format&fit=crop&q=80', desc:{ es:'Modular · pre-ensamblado', en:'Modular · pre-assembled' } },
+      { brand:'KHIPU', name:'Modular DC', img:'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&auto=format&fit=crop&q=80', desc:{ es:'Escalable por módulos', en:'Scalable by module' } },
+      { brand:'PROSE', name:'Site Components', img:'https://nwsnext.com/wp-content/uploads/PROSE-Archer-Site-Accessories.png', desc:{ es:'Racks y accesorios certificados', en:'Certified racks & accessories' } }
+    ],
     value: { es: 'Mayor eficiencia, organización y rendimiento en entornos críticos.', en: 'Greater efficiency, organization and performance in critical environments.' },
     pdf: 'https://drive.google.com/file/d/1GTKGRNG5K_xxnGrjNMtSSk9qVoPnYeQX/view',
     waText: 'Hola%2C%20me%20interesa%20Data%20Centers%20y%20Redes'
@@ -6096,6 +6892,11 @@ const CATX_DATA = {
       es: ['Plataformas de monitoreo', 'Equipos de medición', 'Herramientas de diagnóstico', 'Sistemas de control remoto', 'Probadores de red'],
       en: ['Monitoring platforms', 'Measurement equipment', 'Diagnostic tools', 'Remote control systems', 'Network testers']
     },
+    featured: [
+      { brand:'N-TEST', name:'FiberWatch RTU', img:'https://images.squarespace-cdn.com/content/v1/6155f627b6968402e918f964/cb1c9eec-a18d-4203-9bbb-e51b5ff7143a/Ntest-FiberWatch-RTU_1500px.png', desc:{ es:'Monitoreo fibra óptica 24/7', en:'Fiber optic monitoring 24/7' } },
+      { brand:'GL Communications', name:'tProbe T1/E1', img:'https://www.gl.com/images/tProbe-Datacom-portable-unit.jpg', desc:{ es:'Analizador portátil T1/E1', en:'Portable T1/E1 analyzer' } },
+      { brand:'AEM Networks', name:'TestPro CV100', img:'https://aemnetworks.com/wp-content/uploads/2024/08/RGB_TestPro-1024x1024.png', desc:{ es:'Certificador cobre y fibra', en:'Copper & fiber certifier' } }
+    ],
     value: { es: 'Visibilidad total y decisiones basadas en datos reales.', en: 'Total visibility and decisions based on real data.' },
     pdf: 'https://www.ntestinc.com/',
     waText: 'Hola%2C%20me%20interesa%20Monitoreo%20y%20Gesti%C3%B3n%20de%20Redes'
@@ -6114,6 +6915,11 @@ const CATX_DATA = {
       es: ['Emporia Vue 3 (16 circuitos)', 'Smart Plug Emporia', 'Cargador EV Emporia 48A', 'Plataforma Medidor Inteligente', 'Informes mensuales con IA', 'Portal cliente público'],
       en: ['Emporia Vue 3 (16 circuits)', 'Emporia Smart Plug', 'Emporia EV Charger 48A', 'Medidor Inteligente platform', 'Monthly AI reports', 'Public client portal']
     },
+    featured: [
+      { brand:'Emporia', name:'Vue 3 — 16 circuitos', img:'https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475', desc:{ es:'Sensor principal del panel', en:'Main panel sensor' } },
+      { brand:'Emporia', name:'Smart Plug', img:'https://shop.emporiaenergy.com/cdn/shop/files/AMZ-Plug-2000x2000-PT01-v2_1000x.png', desc:{ es:'Monitoreo por toma individual', en:'Per-outlet monitoring' } },
+      { brand:'Emporia', name:'Cargador EV 48A', img:'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&auto=format&fit=crop&q=80', desc:{ es:'Carga inteligente EV', en:'Smart EV charging' } }
+    ],
     value: { es: 'Reducción de costos · uso eficiente · hasta 40% menos en factura.', en: 'Cost reduction · efficient use · up to 40% lower bill.' },
     pdf: '#solutions',
     waText: 'Hola%2C%20me%20interesa%20Monitoreo%20Energ%C3%A9tico%20Inteligente'
@@ -6123,7 +6929,7 @@ const CATX_DATA = {
 function openCatX(cat){
   const data = CATX_DATA[cat];
   if(!data) return;
-  const lang = document.body.classList.contains('lang-en') ? 'en' : 'es';
+  const lang = document.documentElement.classList.contains('lang-en') ? 'en' : 'es';
   const modal = document.getElementById('catxModal');
 
   // Hero
@@ -6144,6 +6950,26 @@ function openCatX(cat){
   // Products
   const prodEl = document.getElementById('catxModalProducts');
   prodEl.innerHTML = data.products[lang].map(p => `<li>${p}</li>`).join('');
+
+  // Featured products
+  const featSection = document.getElementById('catxModalFeatured');
+  const featRow = document.getElementById('catxModalFeaturedRow');
+  if(data.featured && data.featured.length > 0){
+    featSection.style.display = '';
+    featRow.innerHTML = data.featured.map(f => `
+      <div class="catx-feat-card">
+        <div class="catx-feat-img-wrap">
+          <img src="${f.img}" alt="${f.name}" loading="lazy" onerror="this.parentElement.style.background='#f1f5f9';this.style.display='none'">
+        </div>
+        <div class="catx-feat-body">
+          <div class="catx-feat-brand">${f.brand}</div>
+          <div class="catx-feat-name">${f.name}</div>
+          <div class="catx-feat-desc">${f.desc[lang]}</div>
+        </div>
+      </div>`).join('');
+  } else {
+    featSection.style.display = 'none';
+  }
 
   // Value
   document.getElementById('catxModalValueText').textContent = data.value[lang];
@@ -6215,6 +7041,46 @@ function catxClearSearch(){
   input.focus();
 }
 
+// Brand filter chips
+let _activeBrand = 'all';
+function catxBrandBtn(brand, btn){
+  _activeBrand = brand;
+  document.querySelectorAll('.catx-bfbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const tiles = document.querySelectorAll('.catx-tile');
+  let visible = 0;
+  tiles.forEach(tile => {
+    if(brand === 'all'){
+      tile.classList.remove('catx-hidden');
+      visible++;
+    } else {
+      const tileBrands = (tile.dataset.brands || '').toLowerCase();
+      if(tileBrands.includes(brand)){
+        tile.classList.remove('catx-hidden');
+        visible++;
+      } else {
+        tile.classList.add('catx-hidden');
+      }
+    }
+  });
+  document.getElementById('catxEmpty').style.display = visible === 0 ? 'block' : 'none';
+  // Also clear text search when filtering by brand
+  const input = document.getElementById('catxSearch');
+  if(input) { input.value = ''; document.getElementById('catxSearchClear').style.display='none'; }
+}
+
+// Ctrl+K / Cmd+K focuses catalog search if catalog is in viewport
+document.addEventListener('keydown', e => {
+  if((e.ctrlKey || e.metaKey) && e.key === 'k'){
+    const searchInput = document.getElementById('catxSearch');
+    if(searchInput){
+      e.preventDefault();
+      searchInput.scrollIntoView({behavior:'smooth', block:'center'});
+      setTimeout(()=>searchInput.focus(), 250);
+    }
+  }
+});
+
 /* ── FAQ ACCORDION ── */
 function toggleFaq(btn){
   const item=btn.closest('.faq-item');
@@ -6224,18 +7090,29 @@ function toggleFaq(btn){
 }
 
 /* ── CALCULADORA ── */
+const ETESA_TARIFAS = {
+  edemet: { cargo_fijo: 4.50, cargo_energia: 0.1847, cargo_combustible: 0.0312 }, // EDEMET residencial
+  ensa:   { cargo_fijo: 4.50, cargo_energia: 0.1823, cargo_combustible: 0.0298 }, // ENSA residencial
+  edechi: { cargo_fijo: 4.50, cargo_energia: 0.1756, cargo_combustible: 0.0287 }, // EDECHI residencial
+};
 function calcAhorro(){
   const factura=parseFloat(document.getElementById('calcFactura').value)||120;
   const pct=parseFloat(document.getElementById('calcTipo').value)||0.32;
   const circs=parseInt(document.getElementById('calcCirc').value)||8;
+  const distrib=(document.getElementById('calcDistrib')?.value)||'edemet';
+  const tarifa=ETESA_TARIFAS[distrib]||ETESA_TARIFAS.edemet;
+  // Calcular kWh estimado a partir de la factura usando tarifa ETESA
+  const tarifaTotal=tarifa.cargo_energia+tarifa.cargo_combustible;
+  const kwh=Math.max(0,(factura-tarifa.cargo_fijo)/tarifaTotal);
   // más circuitos = más posibilidad de detección
   const factorCirc=0.85+(circs/16)*0.15;
   const reduccion=Math.min(pct*factorCirc,0.42);
-  const mensual=factura*reduccion;
+  const kwhAhorrado=kwh*reduccion;
+  const mensual=kwhAhorrado*tarifaTotal;
   const anual=mensual*12;
   // ROI: costo estimado instalación B/.350-650 según circuitos
   const costoInst=300+(circs*25);
-  const roi=Math.round(costoInst/mensual);
+  const roi=mensual>0?Math.round(costoInst/mensual):0;
   const co2=Math.round(anual*0.68); // kg CO2 por B/. kWh Panama
   document.getElementById('calcBig').textContent='B/. '+Math.round(anual);
   document.getElementById('calcMens').textContent='B/. '+Math.round(mensual);
@@ -6243,7 +7120,7 @@ function calcAhorro(){
   document.getElementById('calcRoi').innerHTML=roi+' <span style="font-size:.8rem">meses</span>';
   document.getElementById('calcCo2').innerHTML=co2+' <span style="font-size:.7rem">kg</span>';
   // actualizar link WA
-  const msg=encodeURIComponent(`Hola, calculé un ahorro de B/.${Math.round(anual)} anuales con Medidor Inteligente en mi factura de B/.${factura}/mes. Quiero más información.`);
+  const msg=encodeURIComponent(`Hola, calculé un ahorro de B/.${Math.round(anual)} anuales con Medidor Inteligente en mi factura de B/.${factura}/mes (distribuidora: ${distrib.toUpperCase()}). Quiero más información.`);
   document.getElementById('calcWaBtn').href='https://wa.me/50766743062?text='+msg;
 }
 // slider label sync
@@ -6252,7 +7129,105 @@ document.getElementById('calcCirc')?.addEventListener('input',function(){
 });
 document.getElementById('calcFactura')?.addEventListener('input',calcAhorro);
 document.getElementById('calcTipo')?.addEventListener('change',calcAhorro);
+document.getElementById('calcDistrib')?.addEventListener('change',calcAhorro);
 calcAhorro();
+
+/* ── VISUALIZACIÓN — aparatos interactivos ── */
+const VIZ_DATA = {
+  ac:     { emoji:'❄️', color:'#3b82f6', pct:30, weekly:12.50,
+    name:{ es:'Aire Acondicionado', en:'Air Conditioning' },
+    sub:{ es:'30% del consumo · mayor gasto del hogar', en:'30% of consumption · highest home expense' },
+    tips:{ es:['Mantén el termostato en 24°C · cada grado menos = +8% de consumo mensual','Activa el modo sleep nocturno · puede ahorrar hasta B/.8/mes automáticamente','Limpia el filtro cada 30 días · el polvo eleva el consumo hasta un 15%'],
+           en:['Set thermostat to 76°F · each degree lower = +8% monthly consumption','Enable sleep mode at night · saves up to B/.8/month automatically','Clean filter every 30 days · dust increases consumption up to 15%'] } },
+  fridge: { emoji:'🧊', color:'#8b5cf6', pct:20, weekly:8.00,
+    name:{ es:'Nevera', en:'Refrigerator' },
+    sub:{ es:'20% del consumo · funciona 24/7 sin parar', en:'20% of consumption · runs 24/7 non-stop' },
+    tips:{ es:['Revisa los sellos de la puerta · un sello dañado puede subir el consumo 25%','Mantén la temperatura entre 3-4°C · ajustes más fríos no conservan mejor','Deja espacio entre la nevera y la pared para ventilación adecuada'],
+           en:['Check door seals · a damaged seal can increase consumption 25%','Keep temperature between 37-40°F · colder settings don\'t preserve better','Leave space behind fridge for proper ventilation'] } },
+  stove:  { emoji:'🍳', color:'#f97316', pct:15, weekly:6.00,
+    name:{ es:'Estufa / Horno', en:'Stove / Oven' },
+    sub:{ es:'15% del consumo · uso variable según hábitos', en:'15% of consumption · varies by cooking habits' },
+    tips:{ es:['Usa la olla de presión · cocina 70% más rápido y consume mucho menos','Precalienta el horno solo lo necesario · 10-15 min es suficiente para la mayoría','Aprovecha el calor residual apagando 5 min antes de terminar'],
+           en:['Use a pressure cooker · 70% faster cooking and much lower consumption','Preheat oven only as needed · 10-15 min is enough for most dishes','Use residual heat by turning off 5 minutes before done'] } },
+  dryer:  { emoji:'♨️', color:'#ef4444', pct:10, weekly:4.00,
+    name:{ es:'Secadora', en:'Dryer' },
+    sub:{ es:'10% del consumo · alto impacto por ciclo', en:'10% of consumption · high impact per cycle' },
+    tips:{ es:['Usa ciclos de aire frío cuando sea posible · consume hasta 40% menos','No seques cargas pequeñas · espera a tener la máquina llena','Limpia el filtro de pelusa antes de cada uso para máxima eficiencia'],
+           en:['Use cool-air cycles when possible · up to 40% less consumption','Don\'t dry small loads · wait until the machine is full','Clean lint filter before each use for maximum efficiency'] } },
+  tv:     { emoji:'📺', color:'#a855f7', pct:8, weekly:3.00,
+    name:{ es:'Televisión', en:'Television' },
+    sub:{ es:'8% del consumo · standby silencioso que suma', en:'8% of consumption · silent standby that adds up' },
+    tips:{ es:['Activa el apagado automático tras 2 horas de inactividad','Reduce el brillo al 60% · da la misma imagen y consume 20% menos','Desenchufa la TV de noche · el standby suma B/.3-5 al mes sin que te des cuenta'],
+           en:['Enable auto-shutoff after 2 hours of inactivity','Reduce brightness to 60% · same picture quality, 20% less consumption','Unplug TV at night · standby adds B/.3-5/month without you noticing'] } },
+  washer: { emoji:'🫧', color:'#06b6d4', pct:7, weekly:2.80,
+    name:{ es:'Lavadora', en:'Washing Machine' },
+    sub:{ es:'7% del consumo · ciclos de agua caliente son los más caros', en:'7% of consumption · hot water cycles are most expensive' },
+    tips:{ es:['Lava en agua fría siempre que puedas · mismos resultados, mucho menos gasto','Espera a tener la carga completa · una lavada llena vs dos medias ahorra B/.4/mes','Usa el ciclo corto para ropa poco sucia · 30 min vs 60 min = mitad del consumo'],
+           en:['Wash in cold water whenever possible · same results, much less expense','Wait for a full load · one full vs two half loads saves B/.4/month','Use the short cycle for lightly soiled clothes · 30 min vs 60 min = half the consumption'] } },
+  fan:    { emoji:'🌀', color:'#14b8a6', pct:5, weekly:1.20,
+    name:{ es:'Abanico de Techo', en:'Ceiling Fan' },
+    sub:{ es:'5% del consumo · el más eficiente del hogar', en:'5% of consumption · the most efficient appliance' },
+    tips:{ es:['El abanico es 10x más eficiente que el AC · úsalo primero','Gira en sentido horario en verano y antihorario en invierno para mayor eficiencia','Apágalo al salir del cuarto · solo enfría personas, no habitaciones'],
+           en:['Fan is 10x more efficient than AC · use it first','Rotate clockwise in summer, counter-clockwise in winter for max efficiency','Turn it off when leaving the room · it cools people, not rooms'] } },
+  lights: { emoji:'💡', color:'#f59e0b', pct:5, weekly:2.00,
+    name:{ es:'Iluminación', en:'Lighting' },
+    sub:{ es:'5% del consumo · grande potencial si aún tienes incandescentes', en:'5% of consumption · big potential if you still have incandescent bulbs' },
+    tips:{ es:['Cambia a LED si aún no lo has hecho · consumen 80% menos por la misma luz','Instala sensores de movimiento en pasillos y baños para eliminar desperdicio','Aprovecha la luz natural · abre cortinas y ahorra hasta B/.2/mes fácilmente'],
+           en:['Switch to LED if you haven\'t yet · 80% less consumption for the same light','Install motion sensors in hallways and bathrooms to eliminate waste','Use natural light · open curtains and easily save up to B/.2/month'] } }
+};
+function vizSelect(btn, app){
+  const lang = document.documentElement.classList.contains('lang-en') ? 'en' : 'es';
+  const d = VIZ_DATA[app]; if(!d) return;
+  document.querySelectorAll('.viz-app-btn').forEach(b => b.classList.remove('viz-app-active'));
+  btn.classList.add('viz-app-active');
+  const card = document.getElementById('vizDetailCard');
+  card.style.opacity='0'; card.style.transform='translateY(8px)';
+  setTimeout(()=>{
+    document.getElementById('vizEmoji').textContent = d.emoji;
+    document.getElementById('vizName').textContent = d.name[lang];
+    document.getElementById('vizSub').textContent = d.sub[lang];
+    document.getElementById('vizWeekly').innerHTML = `$${d.weekly.toFixed(2)}<small style="font-size:.65rem;font-weight:600;color:#64748b">/sem</small>`;
+    document.getElementById('vizMonthly').textContent = `~$${Math.round(d.weekly*4.3)}/mes estimado`;
+    document.getElementById('vizBar').style.width = d.pct+'%';
+    document.getElementById('vizBar').style.background = d.color;
+    document.getElementById('vizBarLabel').textContent = d.pct+'% del total';
+    document.getElementById('vizTipsList').innerHTML = d.tips[lang].map(t=>`<div class="viz-tip"><span class="viz-tip-ico">✓</span><p class="viz-tip-txt">${t}</p></div>`).join('');
+    card.style.opacity='1'; card.style.transform='translateY(0)';
+  },150);
+}
+
+/* ── CÓMO FUNCIONA — pasos interactivos ── */
+const HOW_STEPS = [
+  null,
+  { img:'https://d8j0ntlcm91z4.cloudfront.net/user_3DGYrYWYOex4iGeSuPVx1CNCFCj/hf_20260508_221924_90da5148-6da2-479a-b106-ab8c3e5668d1_min.webp',
+    cap:{ es:'Instalamos el Emporia Vue 3 en tu tablero eléctrico', en:'We install the Emporia Vue 3 in your electrical panel' } },
+  { img:'https://d8j0ntlcm91z4.cloudfront.net/user_3DGYrYWYOex4iGeSuPVx1CNCFCj/hf_20260508_221929_23f60bd3-495b-4101-aa3a-7e125b2208d7_min.webp',
+    cap:{ es:'Accede al dashboard desde cualquier dispositivo, día 1', en:'Access the dashboard from any device, day 1' } },
+  { img:'https://d8j0ntlcm91z4.cloudfront.net/user_3DGYrYWYOex4iGeSuPVx1CNCFCj/hf_20260508_221944_5b030124-486e-419a-adb1-a7e34e2bba66_min.webp',
+    cap:{ es:'Claude AI detecta ineficiencias y anomalías de consumo', en:'Claude AI detects inefficiencies and consumption anomalies' } },
+  { img:'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80',
+    cap:{ es:'Recomendaciones priorizadas por ahorro real en balboas', en:'Recommendations prioritized by real savings in balboas' } }
+];
+function howActivate(n){
+  const lang = document.documentElement.classList.contains('lang-en') ? 'en' : 'es';
+  document.querySelectorAll('#how .step').forEach((el,i) => {
+    const active = i+1 === n;
+    el.classList.toggle('step-active', active);
+    el.querySelector('.step-n').classList.toggle('on', active);
+  });
+  const imgEl = document.getElementById('howStepImg');
+  const numEl = document.getElementById('howStepNum');
+  const capEl = document.getElementById('howStepCap');
+  if(!imgEl || !HOW_STEPS[n]) return;
+  imgEl.style.opacity = '0';
+  setTimeout(() => {
+    imgEl.src = HOW_STEPS[n].img;
+    imgEl.alt = HOW_STEPS[n].cap[lang];
+    if(numEl) numEl.textContent = n;
+    if(capEl) capEl.innerHTML = `<span data-lang="es">${HOW_STEPS[n].cap.es}</span><span data-lang="en">${HOW_STEPS[n].cap.en}</span>`;
+    imgEl.style.opacity = '1';
+  }, 200);
+}
 
 /* ── CONTACT FORM ── */
 function submitCF(e){
@@ -6320,7 +7295,20 @@ document.querySelectorAll('#benefits,#how,#stats-strip').forEach(s=>cntObs.obser
   document.addEventListener('mouseleave',e=>{
     if(fired||e.clientY>20)return;
     fired=true;
-    setTimeout(()=>document.getElementById('exit-popup').classList.add('show'),300);
+    setTimeout(()=>{document.getElementById('exit-popup').classList.add('show');
+    // Countdown en exit popup
+    (function startCountdown(){
+      const el=document.getElementById('ep-countdown');
+      if(!el)return;
+      let secs=600; // 10 min
+      const t=setInterval(()=>{
+        secs--;
+        const m=Math.floor(secs/60).toString().padStart(2,'0');
+        const s=(secs%60).toString().padStart(2,'0');
+        el.textContent=m+':'+s;
+        if(secs<=0)clearInterval(t);
+      },1000);
+    })();},300);
     localStorage.setItem('exitshown','1');
   });
 })();
@@ -6328,7 +7316,7 @@ function closeExitPopup(){document.getElementById('exit-popup').classList.remove
 function submitExitPopup(){
   const email=document.getElementById('ep-email').value.trim();
   if(!email)return;
-  const msg=encodeURIComponent('Hola, quiero mi análisis gratuito de consumo eléctrico. Mi correo: '+email);
+  const msg=encodeURIComponent('Hola, quiero información sobre Medidor Inteligente. Mi correo: '+email);
   window.open('https://wa.me/50766743062?text='+msg,'_blank');
   closeExitPopup();
 }
@@ -6340,9 +7328,10 @@ function playVideo(){
 }
 function switchVideo(videoId,btnId){
   const player=document.getElementById('videoPlayer');
-  const buttons=document.querySelectorAll('.video-tab');
-  buttons.forEach(b=>b.classList.remove('active'));
-  document.getElementById(btnId).classList.add('active');
+  // support both old .video-tab and new .vid-ep-btn
+  document.querySelectorAll('.video-tab,.vid-ep-btn').forEach(b=>b.classList.remove('active'));
+  const btn=document.getElementById(btnId);
+  if(btn)btn.classList.add('active');
 
   let videoSrc='assets/videos/promo1.mp4';
   if(videoId==='promo2'){
@@ -6450,76 +7439,6 @@ document.querySelectorAll('.cov-zone-card').forEach(card=>{
   card.addEventListener('mouseenter',()=>highlightZone(zone));
 });
 
-/* ── SIMULATOR ── */
-const simData={};
-let simStep=0;
-function simSelect(btn,key,val){
-  simData[key]=val;
-  btn.closest('.sim-opts').querySelectorAll('.sim-opt').forEach(b=>b.classList.remove('selected'));
-  btn.classList.add('selected');
-  const nextBtn=document.getElementById('simNext'+simStep);
-  if(nextBtn)nextBtn.disabled=false;
-}
-function simNext(step){
-  document.getElementById('sim-step-'+step).classList.remove('active');
-  simStep=step+1;
-  if(simStep===3){showSimResult();return}
-  document.getElementById('sim-step-'+simStep).classList.add('active');
-  updateSimProgress();
-}
-function simPrev(step){
-  document.getElementById('sim-step-'+step).classList.remove('active');
-  simStep=step-1;
-  document.getElementById('sim-step-'+simStep).classList.add('active');
-  updateSimProgress();
-}
-function updateSimProgress(){
-  for(let i=0;i<4;i++){
-    const s=document.getElementById('sps-'+i);
-    if(!s)continue;
-    s.classList.remove('active','done');
-    if(i<simStep)s.classList.add('done');
-    else if(i===simStep)s.classList.add('active');
-  }
-  // Progress bar width
-  const bar=document.querySelector('.sim-progress::after');
-  document.getElementById('simProgress').style.setProperty('--prog-w',(simStep/3*100)+'%');
-}
-function showSimResult(){
-  updateSimProgress();
-  document.getElementById('sim-step-3').classList.add('active');
-  const factura=simData.factura||120;
-  const ahorro=Math.round(factura*0.34);
-  const anual=ahorro*12;
-  const tipo=simData.tipo||'residencial';
-  const tipoLabel={residencial:'residencial',comercial:'comercial',industrial:'industrial',edificio:'de edificio'};
-  const plan=factura>500?'Enterprise':factura>200?'Pro':'Básico';
-  const wa=encodeURIComponent(`Hola, completé el simulador Medidor Inteligente. Tengo una propiedad ${tipoLabel[tipo]} con factura de B/.${factura}/mes. Me interesa el plan ${plan}.`);
-  document.getElementById('simResult').innerHTML=`
-    <div class="sim-result-ico">🎉</div>
-    <h3>¡Medidor Inteligente es ideal para ti!</h3>
-    <div class="sim-result-box">
-      <div style="font-size:2rem;font-weight:800;color:#5eead4;margin-bottom:4px">B/. ${anual}<span style="font-size:.9rem;font-weight:500;color:#6b8ab0">/año</span></div>
-      <div style="font-size:.8rem;color:#6b8ab0;margin-bottom:14px">Ahorro estimado con Medidor Inteligente</div>
-      <div style="font-size:.82rem;color:#c8d8f0;line-height:1.6">Plan recomendado: <strong style="color:#5eead4">${plan}</strong><br>Reducción estimada: <strong>~34%</strong> en tu factura mensual</div>
-    </div>
-    <p>Contáctanos hoy y obtén tu análisis gratuito sin compromiso. Te respondemos en menos de 2 horas.</p>
-    <a href="https://wa.me/50766743062?text=${wa}" target="_blank" rel="noopener" class="btn btn-wa" style="width:100%;justify-content:center">📲 Solicitar análisis gratuito</a>
-    <button onclick="resetSim()" style="background:transparent;border:none;color:var(--txt2);font-size:.78rem;cursor:pointer;margin-top:4px;font-family:var(--ff)">↩ Volver a empezar</button>
-  `;
-}
-function resetSim(){
-  simStep=0;
-  Object.keys(simData).forEach(k=>delete simData[k]);
-  document.querySelectorAll('.sim-step').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.sim-opt').forEach(b=>b.classList.remove('selected'));
-  document.querySelectorAll('.sim-next').forEach(b=>b.disabled=true);
-  document.getElementById('sim-step-0').classList.add('active');
-  document.querySelectorAll('.sp-step').forEach((s,i)=>{
-    s.classList.remove('active','done');
-    if(i===0)s.classList.add('active');
-  });
-}
 
 /* ── TYPEWRITER HERO ── */
 (function(){
@@ -6543,6 +7462,284 @@ function resetSim(){
     setTimeout(tick,deleting?55:90);
   }
   setTimeout(tick,2000);
+})();
+
+/* ── CONTACT FORM — EmailJS ── */
+(function(){
+  if(typeof emailjs==='undefined')return;
+  emailjs.init({publicKey:'YOUR_PUBLIC_KEY'}); // <— reemplazar con key real de emailjs.com
+  const form=document.getElementById('cfForm');
+  if(!form)return;
+  const origSubmit=form.onsubmit;
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    const btn=form.querySelector('[type=submit]');
+    const orig=btn.innerHTML;
+    btn.innerHTML='<span style="opacity:.6">Enviando…</span>';
+    btn.disabled=true;
+    try{
+      await emailjs.sendForm('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID',form);
+      btn.innerHTML='✅ ¡Enviado!';
+      btn.style.background='#16a34a';
+      form.style.display='none';
+      document.getElementById('cfSuccess').classList.add('show');
+      setTimeout(()=>{form.reset();btn.innerHTML=orig;btn.style.background='';btn.disabled=false;form.style.display='';document.getElementById('cfSuccess').classList.remove('show');},3000);
+    }catch(err){
+      // Fallback: open WhatsApp if EmailJS fails
+      btn.innerHTML='❌ Error — redirigiendo a WhatsApp…';
+      btn.style.background='#dc2626';
+      const nombre=document.getElementById('cfNombre').value;
+      const tel=document.getElementById('cfTel').value;
+      const email=document.getElementById('cfEmail').value;
+      const tipo=document.getElementById('cfTipo').value;
+      const msg=document.getElementById('cfMsg').value;
+      const wa=`https://wa.me/50766743062?text=${encodeURIComponent(`*Nuevo contacto desde la web*\n👤 ${nombre}\n📧 ${email}\n📞 ${tel}\n🏠 ${tipo}\n💬 ${msg||'Sin mensaje adicional'}`)}`;
+      setTimeout(()=>{window.open(wa,'_blank');btn.innerHTML=orig;btn.style.background='';btn.disabled=false;},1500);
+    }
+  });
+})();
+
+/* ── Medidor Inteligente — Live Dashboard Animation ──────────────────── */
+(function(){
+  const canvas = document.getElementById('miDashCanvas');
+  if(!canvas) return;
+
+  function init(){
+    const W = canvas.offsetWidth  || 520;
+    const H = canvas.offsetHeight || 340;
+    canvas.width  = W * window.devicePixelRatio;
+    canvas.height = H * window.devicePixelRatio;
+    canvas.style.width  = W+'px';
+    canvas.style.height = H+'px';
+    return canvas.getContext('2d');
+  }
+
+  let ctx = init(), t = 0;
+  window.addEventListener('resize', ()=>{ ctx = init(); });
+
+  const BLUE  = '#3b82f6';
+  const CYAN  = '#22d3ee';
+  const GREEN = '#10b981';
+  const DIM   = 'rgba(148,163,184,0.45)';
+  const W = ()=> canvas.width  / window.devicePixelRatio;
+  const H = ()=> canvas.height / window.devicePixelRatio;
+
+  // Circuits
+  const circuits = [
+    {label:'A/C Sala',    pct:0.38, color:'#ef4444', kwh: 483},
+    {label:'A/C Rec.',    pct:0.22, color:'#f97316', kwh: 279},
+    {label:'Calentador', pct:0.12, color:'#eab308', kwh: 152},
+    {label:'Cocina',     pct:0.09, color:BLUE,       kwh: 114},
+    {label:'Otros',      pct:0.19, color:DIM,        kwh: 241},
+  ];
+
+  // Wave history (simulated kWh)
+  const WAVE_POINTS = 48;
+  const waveData = Array.from({length: WAVE_POINTS}, (_,i) =>
+    0.4 + 0.45*Math.sin(i*0.25) + 0.15*Math.random()
+  );
+
+  // Live power counter
+  let livePower = 2.14, livePowerTarget = 2.14;
+
+  function lerp(a,b,t){ return a+(b-a)*t; }
+
+  function draw(){
+    const w = W(), h = H();
+    const r = window.devicePixelRatio;
+    ctx.setTransform(r,0,0,r,0,0);
+
+    // Background
+    const bg = ctx.createLinearGradient(0,0,w,h);
+    bg.addColorStop(0,'#060d1f');
+    bg.addColorStop(1,'#0a1628');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0,0,w,h);
+
+    // ── Grid lines ────────────────────────────────────────────────────────
+    ctx.strokeStyle = 'rgba(59,130,246,0.07)';
+    ctx.lineWidth = 1;
+    for(let i=1;i<5;i++){
+      ctx.beginPath(); ctx.moveTo(0,h*i/5); ctx.lineTo(w,h*i/5); ctx.stroke();
+    }
+
+    // ── TOP BAR ───────────────────────────────────────────────────────────
+    ctx.font = 'bold 11px system-ui';
+    ctx.fillStyle = CYAN;
+    ctx.fillText('MEDIDOR INTELIGENTE', 18, 24);
+
+    // Live dot
+    const dotAlpha = 0.5 + 0.5*Math.sin(t*0.08);
+    ctx.beginPath();
+    ctx.arc(w-18, 18, 5, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(16,185,129,${dotAlpha})`;
+    ctx.fill();
+    ctx.font = '10px system-ui';
+    ctx.fillStyle = GREEN;
+    ctx.fillText('EN VIVO', w-60, 22);
+
+    // ── LIVE kW COUNTER ───────────────────────────────────────────────────
+    livePower = lerp(livePower, livePowerTarget, 0.03);
+    if(Math.random()<0.015) livePowerTarget = 1.6 + Math.random()*1.8;
+
+    const kwStr = livePower.toFixed(2);
+    ctx.font = 'bold 48px system-ui';
+    ctx.fillStyle = '#fff';
+    ctx.fillText(kwStr, 18, 82);
+    ctx.font = '13px system-ui';
+    ctx.fillStyle = DIM;
+    ctx.fillText('kW  ahora mismo', 18, 100);
+
+    // Score badge
+    const scoreX = w-90, scoreY = 55;
+    ctx.fillStyle = 'rgba(16,185,129,0.15)';
+    roundRect(ctx, scoreX, scoreY-26, 74, 38, 10);
+    ctx.fill();
+    ctx.font = 'bold 22px system-ui';
+    ctx.fillStyle = GREEN;
+    ctx.fillText('80', scoreX+10, scoreY);
+    ctx.font = '10px system-ui';
+    ctx.fillStyle = GREEN;
+    ctx.fillText('/100  Score', scoreX+8, scoreY+14);
+
+    // ── WAVE CHART ────────────────────────────────────────────────────────
+    const chartX = 18, chartY = 115, chartW = w-36, chartH = 90;
+
+    // Animated wave update
+    waveData.push(0.35 + 0.5*Math.sin(t*0.04) + 0.15*Math.random());
+    waveData.shift();
+
+    // Fill
+    ctx.beginPath();
+    ctx.moveTo(chartX, chartY+chartH);
+    waveData.forEach((v,i)=>{
+      const x = chartX + (i/(WAVE_POINTS-1))*chartW;
+      const y = chartY + chartH - v*chartH;
+      i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    });
+    ctx.lineTo(chartX+chartW, chartY+chartH);
+    ctx.closePath();
+    const wfill = ctx.createLinearGradient(0, chartY, 0, chartY+chartH);
+    wfill.addColorStop(0,'rgba(59,130,246,0.35)');
+    wfill.addColorStop(1,'rgba(59,130,246,0.02)');
+    ctx.fillStyle = wfill;
+    ctx.fill();
+
+    // Line
+    ctx.beginPath();
+    waveData.forEach((v,i)=>{
+      const x = chartX + (i/(WAVE_POINTS-1))*chartW;
+      const y = chartY + chartH - v*chartH;
+      i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    });
+    ctx.strokeStyle = BLUE;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Moving dot on wave
+    const lastV = waveData[waveData.length-1];
+    const dotX = chartX+chartW, dotY = chartY+chartH - lastV*chartH;
+    ctx.beginPath(); ctx.arc(dotX, dotY, 4, 0, Math.PI*2);
+    ctx.fillStyle = '#fff'; ctx.fill();
+    ctx.beginPath(); ctx.arc(dotX, dotY, 7, 0, Math.PI*2);
+    ctx.strokeStyle = BLUE; ctx.lineWidth=1.5; ctx.stroke();
+
+    ctx.font = '10px system-ui';
+    ctx.fillStyle = DIM;
+    ctx.fillText('Últimas 48 horas', chartX, chartY+chartH+14);
+    ctx.fillStyle = BLUE;
+    ctx.fillText('B/. 0.1597/kWh', chartX+chartW-80, chartY+chartH+14);
+
+    // ── CIRCUIT BARS ──────────────────────────────────────────────────────
+    const barsY = 235, barH = 9, barGap = 19, barMaxW = w*0.55 - 36;
+
+    circuits.forEach((c,i)=>{
+      const y = barsY + i*barGap;
+      // Label
+      ctx.font = '10px system-ui';
+      ctx.fillStyle = '#94a3b8';
+      ctx.fillText(c.label, 18, y+8);
+      // Track
+      ctx.fillStyle = 'rgba(255,255,255,0.06)';
+      roundRect(ctx, 100, y, barMaxW, barH, 4);
+      ctx.fill();
+      // Fill — animate width
+      const animPct = c.pct * (0.85 + 0.15*Math.sin(t*0.04 + i));
+      ctx.fillStyle = c.color;
+      roundRect(ctx, 100, y, barMaxW*animPct, barH, 4);
+      ctx.fill();
+      // pct label
+      ctx.font = 'bold 10px system-ui';
+      ctx.fillStyle = c.color;
+      ctx.fillText(Math.round(c.pct*100)+'%', 100+barMaxW+6, y+8);
+    });
+
+    // ── RIGHT PANEL — monthly summary ─────────────────────────────────────
+    const rpX = w*0.62, rpY = 130;
+    ctx.font = 'bold 11px system-ui';
+    ctx.fillStyle = DIM;
+    ctx.fillText('ESTE MES', rpX, rpY);
+
+    // kWh counter animated
+    const kwhVal = Math.round(847 + 12*Math.sin(t*0.02));
+    ctx.font = 'bold 30px system-ui';
+    ctx.fillStyle = '#fff';
+    ctx.fillText(kwhVal, rpX, rpY+36);
+    ctx.font = '11px system-ui';
+    ctx.fillStyle = DIM;
+    ctx.fillText('kWh consumidos', rpX, rpY+52);
+
+    // Cost
+    const cost = (kwhVal*0.1597).toFixed(2);
+    ctx.font = 'bold 20px system-ui';
+    ctx.fillStyle = CYAN;
+    ctx.fillText('B/. '+cost, rpX, rpY+82);
+    ctx.font = '10px system-ui';
+    ctx.fillStyle = DIM;
+    ctx.fillText('costo proyectado', rpX, rpY+96);
+
+    // Progress bar
+    const prog = Math.min(kwhVal/1271, 1);
+    ctx.fillStyle = 'rgba(255,255,255,0.07)';
+    roundRect(ctx, rpX, rpY+108, w-rpX-18, 8, 4);
+    ctx.fill();
+    const barColor = prog > 0.85 ? '#ef4444' : prog > 0.65 ? '#f97316' : GREEN;
+    ctx.fillStyle = barColor;
+    roundRect(ctx, rpX, rpY+108, (w-rpX-18)*prog, 8, 4);
+    ctx.fill();
+    ctx.font = '9px system-ui';
+    ctx.fillStyle = DIM;
+    ctx.fillText(Math.round(prog*100)+'% del mes', rpX, rpY+130);
+
+    // Savings badge
+    ctx.fillStyle = 'rgba(16,185,129,0.12)';
+    roundRect(ctx, rpX, rpY+144, w-rpX-18, 46, 10);
+    ctx.fill();
+    ctx.font = 'bold 22px system-ui';
+    ctx.fillStyle = GREEN;
+    ctx.fillText('B/. 81', rpX+10, rpY+172);
+    ctx.font = '10px system-ui';
+    ctx.fillStyle = '#10b981';
+    ctx.fillText('ahorro estimado mes', rpX+10, rpY+186);
+
+    t++;
+    requestAnimationFrame(draw);
+  }
+
+  function roundRect(ctx,x,y,w,h,r){
+    if(w<2*r)r=w/2; if(h<2*r)r=h/2;
+    ctx.beginPath();
+    ctx.moveTo(x+r,y);
+    ctx.arcTo(x+w,y,x+w,y+h,r);
+    ctx.arcTo(x+w,y+h,x,y+h,r);
+    ctx.arcTo(x,y+h,x,y,r);
+    ctx.arcTo(x,y,x+w,y,r);
+    ctx.closePath();
+  }
+
+  // Wait for layout
+  setTimeout(draw, 300);
 })();
 </script>
 </body>
