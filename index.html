@@ -3398,6 +3398,74 @@ body.catx-modal-locked{overflow:hidden}
   .test-grid{grid-template-columns:1fr 1fr !important}
 }
 
+/* ── Mobile fixes — texto pegado, overflow, espaciado ─────────────────── */
+@media(max-width:768px){
+  /* Texto no se corta ni se superpone */
+  *{word-break:break-word;overflow-wrap:break-word}
+  h1,h2,h3,h4{letter-spacing:-.02em !important}
+
+  /* Secciones con padding decente */
+  .sec{padding:48px 0 !important}
+  .container{padding-left:16px !important;padding-right:16px !important}
+
+  /* Hero */
+  .slide-h1{font-size:clamp(1.9rem,7vw,2.8rem) !important;line-height:1.1}
+  .slide-sub{font-size:.95rem !important}
+  .hero-ctas{flex-direction:column;gap:10px !important}
+  .hero-ctas .btn{width:100%;justify-content:center}
+
+  /* Video / canvas dashboard */
+  .vid-ad-wrap{display:flex !important;flex-direction:column !important;gap:24px !important;padding:0 !important}
+  .vid-ad-left,.vid-ad-right{width:100%}
+  .vid-ad-right{order:-1}
+  .vid-player-shell{aspect-ratio:16/9 !important;max-height:240px !important;min-height:0 !important}
+  .vid-ad-title{font-size:clamp(1.5rem,5.5vw,2rem) !important}
+  .vid-ad-bullets{gap:8px !important}
+  .vid-stat-n{font-size:1.4rem !important}
+  .vid-badge-row{flex-wrap:wrap;gap:6px !important}
+  .vid-badge{font-size:.7rem !important;padding:5px 10px !important}
+
+  /* Emporia section */
+  .eco-hero-banner{flex-direction:column !important;padding:24px !important;gap:20px !important}
+  .eco-banner-imgs{display:flex;gap:8px;justify-content:center}
+  .eco-banner-img{width:28% !important;height:auto !important}
+  .emp-grid{grid-template-columns:1fr !important}
+
+  /* CTA section */
+  .cta-h2{font-size:clamp(1.6rem,5.5vw,2.2rem) !important}
+  .cta-opts{grid-template-columns:1fr !important}
+  .cf-grid{grid-template-columns:1fr !important}
+  .cta-inner{padding:32px 0 !important}
+
+  /* Footer */
+  .footer-cols{grid-template-columns:1fr 1fr !important;gap:24px !important}
+  .footer-brand{grid-column:1/-1}
+
+  /* Comparativa */
+  .cmp-wrap{grid-template-columns:1fr !important}
+  .cmp-col-bad{display:none !important}
+  .cmp-vs{display:none !important}
+
+  /* Cards generales */
+  .sol-grid,.svc-grid,.prod-grid{grid-template-columns:1fr !important}
+  .mkt-tiles{grid-template-columns:1fr 1fr !important;height:auto !important}
+  .mkt-tile{height:160px !important}
+
+  /* Stats / trust */
+  .stat-grid{grid-template-columns:1fr 1fr !important}
+}
+
+@media(max-width:480px){
+  .slide-h1{font-size:clamp(1.7rem,8vw,2.2rem) !important}
+  .s-title{font-size:clamp(1.5rem,6vw,2rem) !important}
+  .vid-ad-title{font-size:1.4rem !important}
+  .vid-player-shell{max-height:200px !important}
+  nav .nav-links{display:none}
+  .nav-logo-img{height:30px !important}
+  .footer-cols{grid-template-columns:1fr !important}
+  .eco-hero-banner h3{font-size:1rem !important}
+}
+
 /* ═══════════════════════════════════════════════════════════════
    🌙 DARK MODE — MTG 2026
    ═══════════════════════════════════════════════════════════════ */
@@ -5792,9 +5860,7 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 <section id="emporia-eco" class="sec">
   <div class="container">
     <div class="centered rv">
-      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Tecnología Emporia</span><span data-lang="en">Emporia Technology</span></div>
-      <h2 class="s-title"><span data-lang="es">Ve, controla y optimiza <span>cada vatio de tu hogar</span></span><span data-lang="en">See, control and optimize <span>every watt in your home</span></span></h2>
-      <p class="s-sub"><span data-lang="es">Con los sensores Emporia instalados por MTG, tienes visibilidad total de tu consumo eléctrico — por circuito, por aparato, en tiempo real. Nada se esconde.</span><span data-lang="en">With Emporia sensors installed by MTG, you get full visibility of your electricity usage — by circuit, by device, in real time. Nothing is hidden.</span></p>
+      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Tecnología Emporia · instalada por MTG</span><span data-lang="en">Emporia Technology · installed by MTG</span></div>
     </div>
 
     <!-- Banner intro -->
@@ -7505,25 +7571,38 @@ document.querySelectorAll('.cov-zone-card').forEach(card=>{
   const canvas = document.getElementById('miDashCanvas');
   if(!canvas) return;
 
-  function init(){
-    const W = canvas.offsetWidth  || 520;
-    const H = canvas.offsetHeight || 340;
-    canvas.width  = W * window.devicePixelRatio;
-    canvas.height = H * window.devicePixelRatio;
-    canvas.style.width  = W+'px';
-    canvas.style.height = H+'px';
-    return canvas.getContext('2d');
+  // Make canvas fill parent absolutely
+  const shell = canvas.parentElement;
+  canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block;';
+  if(getComputedStyle(shell).position === 'static') shell.style.position = 'relative';
+
+  let ctx = null, t = 0, rafId = null, started = false;
+
+  function resize(){
+    const rect = shell.getBoundingClientRect();
+    const W = Math.round(rect.width)  || 400;
+    const H = Math.round(rect.height) || 560;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    canvas._W = W; canvas._H = H;
   }
 
-  let ctx = init(), t = 0;
-  window.addEventListener('resize', ()=>{ ctx = init(); });
+  // ResizeObserver triggers once the element has real dimensions
+  const ro = new ResizeObserver(() => {
+    resize();
+    if(!started){ started = true; draw(); }
+  });
+  ro.observe(shell);
 
   const BLUE  = '#3b82f6';
   const CYAN  = '#22d3ee';
   const GREEN = '#10b981';
   const DIM   = 'rgba(148,163,184,0.45)';
-  const W = ()=> canvas.width  / window.devicePixelRatio;
-  const H = ()=> canvas.height / window.devicePixelRatio;
+  const W = ()=> canvas._W || 400;
+  const H = ()=> canvas._H || 560;
 
   // Circuits
   const circuits = [
@@ -7546,9 +7625,9 @@ document.querySelectorAll('.cov-zone-card').forEach(card=>{
   function lerp(a,b,t){ return a+(b-a)*t; }
 
   function draw(){
+    if(!ctx) return;
     const w = W(), h = H();
-    const r = window.devicePixelRatio;
-    ctx.setTransform(r,0,0,r,0,0);
+    ctx.setTransform(1,0,0,1,0,0);
 
     // Background
     const bg = ctx.createLinearGradient(0,0,w,h);
@@ -7724,7 +7803,7 @@ document.querySelectorAll('.cov-zone-card').forEach(card=>{
     ctx.fillText('ahorro estimado mes', rpX+10, rpY+186);
 
     t++;
-    requestAnimationFrame(draw);
+    rafId = requestAnimationFrame(draw);
   }
 
   function roundRect(ctx,x,y,w,h,r){
@@ -7738,8 +7817,6 @@ document.querySelectorAll('.cov-zone-card').forEach(card=>{
     ctx.closePath();
   }
 
-  // Wait for layout
-  setTimeout(draw, 300);
 })();
 </script>
 </body>
