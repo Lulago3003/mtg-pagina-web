@@ -2637,10 +2637,9 @@ footer .f-soc-em:hover{box-shadow:0 6px 20px rgba(37,99,235,.45) !important}
 #servicios .tag{color:#2563eb !important;background:rgba(37,99,235,.08) !important;border-color:rgba(37,99,235,.15) !important}
 #servicios .tag-dot{background:#2563eb !important}
 
-/* grid — 3 cols desktop, centrado con 7 tarjetas */
+/* grid — 3 cols desktop, responsive via media queries */
 #servicios .svc-grid{
   display:grid !important;
-  grid-template-columns:repeat(3,1fr) !important;
   gap:22px !important;
   margin-top:52px !important
 }
@@ -3765,6 +3764,16 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 
 /* ═══ COUNTER ANIMATION ═════════════════════════════════════ */
 .count-up{transition:none}
+
+/* ═══ MOBILE GRID FIX (final override) ══════════════════════ */
+@media(max-width:768px){
+  #servicios .svc-grid{grid-template-columns:1fr !important;gap:14px !important}
+  #servicios .svc-card:nth-child(7){grid-column:auto !important;max-width:100% !important;margin:0 !important}
+  .svc-card{width:100% !important;min-width:0 !important;box-sizing:border-box !important}
+}
+@media(max-width:1024px){
+  #servicios .svc-card:nth-child(7){grid-column:auto !important;max-width:100% !important;margin:0 !important}
+}
 
 </style>
 </head>
@@ -7638,6 +7647,9 @@ document.querySelectorAll('.cov-zone-card').forEach(card=>{
   });
 })();
 
+/* end of main script */
+</script>
+<script>
 /* ── Counter Animation (IntersectionObserver) ───────────────────────── */
 (function(){
   const counters = document.querySelectorAll('.count-up');
