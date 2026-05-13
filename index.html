@@ -3719,13 +3719,16 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 .svc-hero-strip::before{content:'';position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1400&auto=format&fit=crop&q=70');background-size:cover;background-position:center;opacity:.12;pointer-events:none}
 .svc-hero-strip::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(12,25,41,.85),rgba(22,42,74,.7));pointer-events:none}
 .svc-hero-strip>*{position:relative;z-index:1}
-.svc-hero-strip .s-title{margin-bottom:12px}
-.svc-hero-strip .s-sub{max-width:640px}
+#servicios .svc-hero-strip .s-title{margin-bottom:12px;color:#fff !important}
+#servicios .svc-hero-strip .s-title span:not([data-lang]){background:linear-gradient(130deg,#60a5fa,#a78bfa) !important;-webkit-background-clip:text !important;-webkit-text-fill-color:transparent !important;background-clip:text !important}
+#servicios .svc-hero-strip .s-sub{max-width:640px;color:rgba(203,213,225,.85) !important}
+#servicios .svc-hero-strip .tag{color:#60a5fa !important;background:rgba(96,165,250,.12) !important;border-color:rgba(96,165,250,.25) !important}
+#servicios .svc-hero-strip .tag-dot{background:#60a5fa !important}
 .svc-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.04);border-radius:16px;overflow:hidden;margin-bottom:48px;border:1px solid var(--bdr)}
 .svc-stats-bar .svc-stat-item{padding:24px 20px;text-align:center;background:rgba(8,20,40,.6);backdrop-filter:blur(8px)}
 .svc-stats-bar .svc-stat-n{display:block;font-size:2rem;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1}
 .svc-stats-bar .svc-stat-n .svc-plus{color:var(--grn)}
-.svc-stats-bar .svc-stat-l{display:block;font-size:.78rem;color:var(--txt2);margin-top:4px;letter-spacing:.3px}
+.svc-stats-bar .svc-stat-l{display:block;font-size:.78rem;color:rgba(148,163,184,.9);margin-top:6px;letter-spacing:.3px;text-transform:uppercase;font-weight:500}
 .svc-card{border-left:3px solid rgba(255,255,255,.06)}
 .svc-card[data-color="blue"]{border-left-color:#3b82f6}
 .svc-card[data-color="blue"] .svc-num{background:rgba(59,130,246,.15);border-color:rgba(59,130,246,.3)}
