@@ -101,7 +101,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 :root{
@@ -120,8 +120,8 @@
   --sh-lg:0 12px 48px rgba(15,23,42,.1),0 2px 8px rgba(15,23,42,.05);
   --glow:0 0 40px rgba(37,99,235,.12);
   --tr:.25s cubic-bezier(.4,0,.2,1);
-  --ff:'Manrope',system-ui,sans-serif;
-  --ff-head:'Fraunces',Georgia,serif;
+  --ff:'Inter',system-ui,-apple-system,sans-serif;
+  --ff-head:'DM Sans','Inter',system-ui,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -1008,7 +1008,7 @@ html.dark .cat-filters-wrap::after{background:linear-gradient(to left,rgba(8,13,
 .vid-ep-btn.active{background:linear-gradient(135deg,rgba(37,99,235,.6),rgba(124,58,237,.5));border-color:rgba(99,102,241,.5);color:#fff;box-shadow:0 4px 16px rgba(37,99,235,.3)}
 .vid-ep-num{width:22px;height:22px;border-radius:6px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0}
 .vid-ep-btn.active .vid-ep-num{background:rgba(255,255,255,.25)}
-.vid-player-shell{position:relative;aspect-ratio:9/16;max-height:560px;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.15);box-shadow:0 0 0 1px rgba(99,102,241,.2),0 30px 80px rgba(0,0,0,.6),0 0 80px rgba(37,99,235,.2);background:#000}
+.vid-player-shell{position:relative;aspect-ratio:9/16;max-height:560px;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.15);box-shadow:0 0 0 1px rgba(99,102,241,.2),0 30px 80px rgba(0,0,0,.6),0 0 80px rgba(37,99,235,.2);background:#060d1f}
 .vid-player-shell video{width:100%;height:100%;object-fit:cover}
 .vid-glow-ring{position:absolute;inset:-2px;border-radius:24px;background:linear-gradient(135deg,rgba(99,102,241,.4),rgba(124,58,237,.3),rgba(37,99,235,.4));z-index:-1;filter:blur(8px);animation:glow-pulse 3s ease-in-out infinite alternate}
 @keyframes glow-pulse{from{opacity:.6;filter:blur(8px)}to{opacity:1;filter:blur(14px)}}
@@ -3715,6 +3715,57 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 /* Smooth transition for theme switching */
 body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben-card,.faq-item,.co,.cf-wrap{transition:background-color .3s ease,color .3s ease,border-color .3s ease !important}
 
+/* ═══ ENHANCED SERVICES SECTION ═════════════════════════════ */
+.svc-hero-strip{position:relative;border-radius:24px;overflow:hidden;padding:56px 48px;margin-bottom:48px;background:linear-gradient(135deg,#0c1929 0%,#162a4a 100%)}
+.svc-hero-strip::before{content:'';position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1400&auto=format&fit=crop&q=70');background-size:cover;background-position:center;opacity:.12;pointer-events:none}
+.svc-hero-strip::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(12,25,41,.85),rgba(22,42,74,.7));pointer-events:none}
+.svc-hero-strip>*{position:relative;z-index:1}
+.svc-hero-strip .s-title{margin-bottom:12px}
+.svc-hero-strip .s-sub{max-width:640px}
+.svc-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.04);border-radius:16px;overflow:hidden;margin-bottom:48px;border:1px solid var(--bdr)}
+.svc-stats-bar .svc-stat-item{padding:24px 20px;text-align:center;background:rgba(8,20,40,.6);backdrop-filter:blur(8px)}
+.svc-stats-bar .svc-stat-n{display:block;font-size:2rem;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1}
+.svc-stats-bar .svc-stat-n .svc-plus{color:var(--grn)}
+.svc-stats-bar .svc-stat-l{display:block;font-size:.78rem;color:var(--txt2);margin-top:4px;letter-spacing:.3px}
+.svc-card{border-left:3px solid rgba(255,255,255,.06)}
+.svc-card[data-color="blue"]{border-left-color:#3b82f6}
+.svc-card[data-color="blue"] .svc-num{background:rgba(59,130,246,.15);border-color:rgba(59,130,246,.3)}
+.svc-card[data-color="blue"]:hover .svc-num{background:linear-gradient(135deg,#2563eb,#3b82f6);border-color:transparent}
+.svc-card[data-color="green"]{border-left-color:#10b981}
+.svc-card[data-color="green"] .svc-num{background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.3)}
+.svc-card[data-color="green"]:hover .svc-num{background:linear-gradient(135deg,#059669,#10b981);border-color:transparent}
+.svc-card[data-color="amber"]{border-left-color:#f59e0b}
+.svc-card[data-color="amber"] .svc-num{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.25)}
+.svc-card[data-color="amber"]:hover .svc-num{background:linear-gradient(135deg,#d97706,#f59e0b);border-color:transparent}
+.svc-card[data-color="purple"]{border-left-color:#8b5cf6}
+.svc-card[data-color="purple"] .svc-num{background:rgba(139,92,246,.12);border-color:rgba(139,92,246,.25)}
+.svc-card[data-color="purple"]:hover .svc-num{background:linear-gradient(135deg,#7c3aed,#8b5cf6);border-color:transparent}
+.svc-card[data-color="rose"]{border-left-color:#f43f5e}
+.svc-card[data-color="rose"] .svc-num{background:rgba(244,63,94,.12);border-color:rgba(244,63,94,.25)}
+.svc-card[data-color="rose"]:hover .svc-num{background:linear-gradient(135deg,#e11d48,#f43f5e);border-color:transparent}
+.svc-card[data-color="cyan"]{border-left-color:#06b6d4}
+.svc-card[data-color="cyan"] .svc-num{background:rgba(6,182,212,.12);border-color:rgba(6,182,212,.25)}
+.svc-card[data-color="cyan"]:hover .svc-num{background:linear-gradient(135deg,#0891b2,#06b6d4);border-color:transparent}
+.svc-card[data-color="indigo"]{border-left-color:#6366f1}
+.svc-card[data-color="indigo"] .svc-num{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.25)}
+.svc-card[data-color="indigo"]:hover .svc-num{background:linear-gradient(135deg,#4f46e5,#6366f1);border-color:transparent}
+.svc-card .svc-img-thumb{position:absolute;top:0;right:0;width:130px;height:100%;background-size:cover;background-position:center;opacity:.06;pointer-events:none;mask-image:linear-gradient(to left,rgba(0,0,0,.6),transparent);-webkit-mask-image:linear-gradient(to left,rgba(0,0,0,.6),transparent)}
+.svc-card:hover .svc-img-thumb{opacity:.12}
+.svc-card .svc-n-watermark{position:absolute;top:8px;right:16px;font-size:4.5rem;font-weight:900;color:rgba(255,255,255,.025);pointer-events:none;line-height:1;letter-spacing:-.05em}
+.svc-value{border-top:1px solid rgba(255,255,255,.06);padding-top:14px;margin-top:auto}
+@media(max-width:768px){
+  .svc-hero-strip{padding:36px 24px;border-radius:16px}
+  .svc-stats-bar{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+  .svc-stats-bar{grid-template-columns:1fr 1fr}
+  .svc-stats-bar .svc-stat-n{font-size:1.5rem}
+  .svc-hero-strip{padding:28px 20px}
+}
+
+/* ═══ COUNTER ANIMATION ═════════════════════════════════════ */
+.count-up{transition:none}
+
 </style>
 </head>
 <body>
@@ -3860,11 +3911,7 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 
       <!-- Logo -->
       <a href="#hero" class="nav-logo">
-        <img src="assets/logo-mtg.png" alt="Meta Technology Global" class="nav-logo-img">
-        <div class="nl-text">
-          <span class="lt"><span style="color:#e53935">M</span>eta <span style="color:#e53935">T</span>echnology <span style="color:#e53935">G</span>lobal</span>
-          <span class="lb">Panamá</span>
-        </div>
+        <img src="assets/logo-mtg.png" alt="Meta Technology Global" class="nav-logo-img" style="height:48px">
       </a>
       <div class="nav-sep"></div>
 
@@ -4923,7 +4970,7 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
       </button>
 
       <button type="button" class="catx-tile catx-tile-featured" data-cat="energia" data-brands="emporia" onclick="openCatX('energia')">
-        <div class="catx-tile-img" style="background-image:url('https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475');background-size:contain;background-color:#0d3522"></div>
+        <div class="catx-tile-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=900&auto=format&fit=crop&q=80');background-size:cover;background-position:center"></div>
         <div class="catx-tile-overlay" style="background:linear-gradient(180deg,rgba(13,53,34,.1) 0%,rgba(13,53,34,.92) 85%)"></div>
         <div class="catx-tile-content">
           <div class="catx-tile-top">
@@ -5700,9 +5747,9 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
     <div class="vid-ad-right rv">
 
       <!-- Dashboard animado en vivo -->
-      <div class="vid-player-shell" id="videoWrap" style="background:#060d1f;border-radius:20px;overflow:hidden;position:relative;min-height:340px;display:flex;align-items:stretch">
+      <div class="vid-player-shell" id="videoWrap" style="background:#060d1f;border-radius:20px;overflow:hidden;position:relative;min-height:340px">
         <div class="vid-glow-ring"></div>
-        <canvas id="miDashCanvas" style="width:100%;height:100%;display:block;border-radius:18px"></canvas>
+        <canvas id="miDashCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block"></canvas>
       </div>
 
       <!-- Badges flotantes -->
@@ -5726,15 +5773,40 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
   <div class="bg-orb bg-orb-1"></div>
   <div class="bg-orb bg-orb-3"></div>
   <div class="container">
-    <div class="centered rv">
+
+    <!-- Hero strip with background image -->
+    <div class="svc-hero-strip rv">
       <div class="tag"><span class="tag-dot"></span><span data-lang="es">Servicios profesionales</span><span data-lang="en">Professional Services</span></div>
-      <h2 class="s-title"><span data-lang="es">Acompañamos cada proyecto <span>de inicio a fin</span></span><span data-lang="en">We support every project <span>from start to finish</span></span></h2>
-      <p class="s-sub"><span data-lang="es">Siete servicios especializados para implementar, mantener y optimizar tus proyectos de telecomunicaciones, fibra óptica, Data Centers y energía en Panamá.</span><span data-lang="en">Seven specialized services to deploy, maintain and optimize your telecommunications, fiber optic, Data Center and energy projects in Panama.</span></p>
+      <h2 class="s-title" style="color:#fff"><span data-lang="es">Acompañamos cada proyecto <span style="color:#22d3ee">de inicio a fin</span></span><span data-lang="en">We support every project <span style="color:#22d3ee">from start to finish</span></span></h2>
+      <p class="s-sub" style="color:rgba(255,255,255,.7)"><span data-lang="es">Siete servicios especializados para implementar, mantener y optimizar tus proyectos de telecomunicaciones, fibra óptica, Data Centers y energía en Panamá.</span><span data-lang="en">Seven specialized services to deploy, maintain and optimize your telecommunications, fiber optic, Data Center and energy projects in Panama.</span></p>
     </div>
+
+    <!-- Stats counter bar -->
+    <div class="svc-stats-bar rv">
+      <div class="svc-stat-item">
+        <span class="svc-stat-n"><span class="count-up" data-target="200">0</span><span class="svc-plus">+</span></span>
+        <span class="svc-stat-l"><span data-lang="es">Proyectos entregados</span><span data-lang="en">Projects delivered</span></span>
+      </div>
+      <div class="svc-stat-item">
+        <span class="svc-stat-n">24<span class="svc-plus">/7</span></span>
+        <span class="svc-stat-l"><span data-lang="es">Soporte disponible</span><span data-lang="en">Support available</span></span>
+      </div>
+      <div class="svc-stat-item">
+        <span class="svc-stat-n"><span class="count-up" data-target="17">0</span><span class="svc-plus">+</span></span>
+        <span class="svc-stat-l"><span data-lang="es">Marcas aliadas</span><span data-lang="en">Partner brands</span></span>
+      </div>
+      <div class="svc-stat-item">
+        <span class="svc-stat-n"><span class="count-up" data-target="3">0</span></span>
+        <span class="svc-stat-l"><span data-lang="es">Industrias cubiertas</span><span data-lang="en">Industries covered</span></span>
+      </div>
+    </div>
+
     <div class="svc-grid">
 
       <!-- 1. Instalación y Puesta en Marcha -->
-      <div class="svc-card rv" data-n="01">
+      <div class="svc-card rv" data-n="01" data-color="blue">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&auto=format&fit=crop&q=60')"></div>
+        <span class="svc-n-watermark">01</span>
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-wrench"/></svg></span></div>
           <h3><span data-lang="es">Instalación y Puesta en Marcha</span><span data-lang="en">Installation & Commissioning</span></h3>
@@ -5750,7 +5822,9 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
       </div>
 
       <!-- 2. Soporte Técnico Especializado -->
-      <div class="svc-card rv" data-n="02">
+      <div class="svc-card rv" data-n="02" data-color="green">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1560264280-88b68371db39?w=400&auto=format&fit=crop&q=60')"></div>
+        <span class="svc-n-watermark">02</span>
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-headset"/></svg></span></div>
           <h3><span data-lang="es">Soporte Técnico Especializado</span><span data-lang="en">Specialized Tech Support</span></h3>
@@ -5766,7 +5840,9 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
       </div>
 
       <!-- 3. Mantenimiento y Optimización -->
-      <div class="svc-card rv" data-n="03">
+      <div class="svc-card rv" data-n="03" data-color="amber">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&auto=format&fit=crop&q=60')"></div>
+        <span class="svc-n-watermark">03</span>
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-settings"/></svg></span></div>
           <h3><span data-lang="es">Mantenimiento y Optimización</span><span data-lang="en">Maintenance & Optimization</span></h3>
@@ -5782,7 +5858,9 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
       </div>
 
       <!-- 4. Calibración y Equipos de Medición -->
-      <div class="svc-card rv" data-n="04">
+      <div class="svc-card rv" data-n="04" data-color="purple">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&auto=format&fit=crop&q=60')"></div>
+        <span class="svc-n-watermark">04</span>
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-ruler"/></svg></span></div>
           <h3><span data-lang="es">Calibración y Equipos de Medición</span><span data-lang="en">Calibration & Measurement</span></h3>
@@ -5797,8 +5875,10 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
         <div class="svc-value"><strong><span data-lang="es">Valor</span><span data-lang="en">Value</span></strong><span data-lang="es">Resultados confiables y cumplimiento de estándares técnicos.</span><span data-lang="en">Reliable results and compliance with technical standards.</span></div>
       </div>
 
-      <!-- 5. Servicios de Campo (Field Services) -->
-      <div class="svc-card rv" data-n="05">
+      <!-- 5. Servicios de Campo -->
+      <div class="svc-card rv" data-n="05" data-color="rose">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&auto=format&fit=crop&q=60')"></div>
+        <span class="svc-n-watermark">05</span>
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-truck"/></svg></span></div>
           <h3><span data-lang="es">Servicios de Campo</span><span data-lang="en">Field Services</span></h3>
@@ -5814,7 +5894,9 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
       </div>
 
       <!-- 6. Proyectos Llave en Mano -->
-      <div class="svc-card rv" data-n="06">
+      <div class="svc-card rv" data-n="06" data-color="cyan">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&auto=format&fit=crop&q=60')"></div>
+        <span class="svc-n-watermark">06</span>
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-key"/></svg></span></div>
           <h3><span data-lang="es">Proyectos Llave en Mano</span><span data-lang="en">Turnkey Projects</span></h3>
@@ -5830,7 +5912,9 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
       </div>
 
       <!-- 7. Integración de Soluciones Tecnológicas -->
-      <div class="svc-card rv" data-n="07">
+      <div class="svc-card rv" data-n="07" data-color="indigo">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&auto=format&fit=crop&q=60')"></div>
+        <span class="svc-n-watermark">07</span>
         <div class="svc-head">
           <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-puzzle"/></svg></span></div>
           <h3><span data-lang="es">Integración de Soluciones Tecnológicas</span><span data-lang="en">Technology Integration</span></h3>
@@ -5846,9 +5930,9 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
       </div>
 
     </div>
-    <div class="prod-cta-wrap" style="margin-top:48px">
+    <div class="prod-cta-wrap" style="margin-top:48px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
       <a href="#cta-sec" class="btn btn-primary"><span data-lang="es">Solicitar propuesta →</span><span data-lang="en">Request a proposal →</span></a>
-      <a href="https://wa.me/50766743062?text=Hola%2C%20necesito%20información%20sobre%20servicios" class="btn btn-wa" target="_blank" rel="noopener" style="margin-left:12px"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span> <span data-lang="es">Hablar con un asesor</span><span data-lang="en">Talk to an advisor</span></a>
+      <a href="https://wa.me/50766743062?text=Hola%2C%20necesito%20información%20sobre%20servicios" class="btn btn-wa" target="_blank" rel="noopener"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span> <span data-lang="es">Hablar con un asesor</span><span data-lang="en">Talk to an advisor</span></a>
     </div>
   </div>
 </section>
@@ -5860,7 +5944,9 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 <section id="emporia-eco" class="sec">
   <div class="container">
     <div class="centered rv">
-      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Tecnología Emporia · instalada por MTG</span><span data-lang="en">Emporia Technology · installed by MTG</span></div>
+      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Monitoreo Energético · Equipos</span><span data-lang="en">Energy Monitoring · Equipment</span></div>
+      <h2 class="s-title"><span data-lang="es">Equipos de <span>Monitoreo Energético</span></span><span data-lang="en"><span>Energy Monitoring</span> Equipment</span></h2>
+      <p class="s-sub"><span data-lang="es">Sensores Emporia instalados y configurados por MTG. Monitoreo por circuito, control inteligente y carga EV.</span><span data-lang="en">Emporia sensors installed and configured by MTG. Per-circuit monitoring, smart control and EV charging.</span></p>
     </div>
 
     <!-- 3 product cards -->
@@ -7552,22 +7638,49 @@ document.querySelectorAll('.cov-zone-card').forEach(card=>{
   });
 })();
 
+/* ── Counter Animation (IntersectionObserver) ───────────────────────── */
+(function(){
+  const counters = document.querySelectorAll('.count-up');
+  if(!counters.length) return;
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.target, 10);
+      const duration = 1800;
+      const start = performance.now();
+      function tick(now){
+        const p = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * ease);
+        if(p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      io.unobserve(el);
+    });
+  }, {threshold: 0.3});
+  counters.forEach(c => io.observe(c));
+})();
+
 /* ── Medidor Inteligente — Live Dashboard Animation ──────────────────── */
 (function(){
   const canvas = document.getElementById('miDashCanvas');
   if(!canvas) return;
 
-  // Make canvas fill parent absolutely
-  const shell = canvas.parentElement;
-  canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block;';
-  if(getComputedStyle(shell).position === 'static') shell.style.position = 'relative';
+  const shell = document.getElementById('videoWrap');
+  if(!shell) return;
+
+  // Position canvas absolutely within shell
+  canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;display:block;z-index:1;';
+  shell.style.position = 'relative';
 
   let ctx = null, t = 0, rafId = null, started = false;
 
   function resize(){
     const rect = shell.getBoundingClientRect();
     const W = Math.round(rect.width)  || 400;
-    const H = Math.round(rect.height) || 560;
+    const H = Math.round(rect.height) || 340;
+    if(W < 10 || H < 10) return; // not yet laid out
     const dpr = window.devicePixelRatio || 1;
     canvas.width  = W * dpr;
     canvas.height = H * dpr;
@@ -7576,12 +7689,21 @@ document.querySelectorAll('.cov-zone-card').forEach(card=>{
     canvas._W = W; canvas._H = H;
   }
 
-  // ResizeObserver triggers once the element has real dimensions
-  const ro = new ResizeObserver(() => {
+  // Use both ResizeObserver and fallback timeout
+  function tryStart(){
     resize();
-    if(!started){ started = true; draw(); }
-  });
-  ro.observe(shell);
+    if(!started && canvas._W > 10){
+      started = true;
+      draw();
+    }
+  }
+  if(typeof ResizeObserver !== 'undefined'){
+    new ResizeObserver(tryStart).observe(shell);
+  }
+  // Fallback for browsers where RO fires too early or not at all
+  setTimeout(tryStart, 200);
+  setTimeout(tryStart, 800);
+  window.addEventListener('load', tryStart);
 
   const BLUE  = '#3b82f6';
   const CYAN  = '#22d3ee';
