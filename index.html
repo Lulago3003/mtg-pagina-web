@@ -7675,17 +7675,16 @@ document.querySelectorAll('.cov-zone-card').forEach(card=>{
   shell.style.position = 'relative';
 
   let ctx = null, t = 0, rafId = null, started = false;
+  const dpr = window.devicePixelRatio || 1;
 
   function resize(){
     const rect = shell.getBoundingClientRect();
     const W = Math.round(rect.width)  || 400;
     const H = Math.round(rect.height) || 340;
     if(W < 10 || H < 10) return; // not yet laid out
-    const dpr = window.devicePixelRatio || 1;
     canvas.width  = W * dpr;
     canvas.height = H * dpr;
     ctx = canvas.getContext('2d');
-    ctx.scale(dpr, dpr);
     canvas._W = W; canvas._H = H;
   }
 
@@ -7735,7 +7734,7 @@ document.querySelectorAll('.cov-zone-card').forEach(card=>{
   function draw(){
     if(!ctx) return;
     const w = W(), h = H();
-    ctx.setTransform(1,0,0,1,0,0);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
 
     // Background
     const bg = ctx.createLinearGradient(0,0,w,h);
