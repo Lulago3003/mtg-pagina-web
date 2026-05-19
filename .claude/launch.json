@@ -2,10 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "PAOER Web",
+      "name": "mtg",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "C:\\Users\\luisl\\Desktop\\ARIA\\PAGINA WEB"],
-      "port": 8080
+      "runtimeArgs": ["-m", "http.server", "8234"],
+      "port": 8234
     }
   ]
 }
