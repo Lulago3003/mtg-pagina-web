@@ -3778,6 +3778,198 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
   #servicios .svc-card:nth-child(7){grid-column:auto !important;max-width:100% !important;margin:0 !important}
 }
 
+/* ═══════════════════════════════════════════════════════════
+   PREMIUM POLISH · Catálogo + Servicios (rediseño 2026)
+═══════════════════════════════════════════════════════════ */
+
+/* ── Catálogo: tiles más visuales y premium ── */
+#productos .catx-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+#productos .catx-tile{
+  position:relative;
+  border-radius:22px !important;
+  overflow:hidden;
+  min-height:300px;
+  border:1px solid rgba(15,23,42,.08) !important;
+  box-shadow:0 4px 18px rgba(15,23,42,.06);
+  transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s cubic-bezier(.16,1,.3,1),border-color .3s ease;
+  cursor:pointer;
+}
+#productos .catx-tile:hover{
+  transform:translateY(-8px);
+  box-shadow:0 28px 60px -18px rgba(11,30,77,.34);
+  border-color:rgba(37,99,235,.35) !important;
+}
+#productos .catx-tile .catx-tile-img{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transform:scale(1.04);
+  transition:transform 1.1s cubic-bezier(.16,1,.3,1),filter .4s ease;
+  filter:saturate(1.05);
+}
+#productos .catx-tile:hover .catx-tile-img{transform:scale(1.13)}
+#productos .catx-tile .catx-tile-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,15,35,.12) 0%,rgba(8,15,35,.55) 52%,rgba(6,12,28,.93) 100%);
+}
+#productos .catx-tile-content{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;height:100%;padding:22px}
+#productos .catx-tile-top{display:flex;align-items:center;justify-content:space-between}
+#productos .catx-tile-num{
+  font-family:var(--ff-head,inherit);font-size:.82rem;font-weight:800;letter-spacing:.16em;
+  color:rgba(255,255,255,.78);background:rgba(255,255,255,.12);
+  backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);
+  padding:5px 11px;border-radius:8px;
+}
+#productos .catx-tile-count,#productos .catx-tile-badge{
+  font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:#fff;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.22);padding:5px 11px;border-radius:50px;
+}
+#productos .catx-tile-badge{background:linear-gradient(135deg,#22c55e,#16a34a);border-color:transparent;box-shadow:0 4px 14px rgba(34,197,94,.4)}
+#productos .catx-tile-title{
+  font-size:1.42rem;font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.15;margin:0 0 7px;
+  text-shadow:0 2px 14px rgba(0,0,0,.4);
+}
+#productos .catx-tile-sub{font-size:.9rem;color:rgba(255,255,255,.82);line-height:1.45;margin:0 0 13px}
+#productos .catx-tile-brands{display:flex;flex-wrap:wrap;gap:6px}
+#productos .catx-brand-chip{
+  font-size:.68rem;font-weight:700;letter-spacing:.04em;color:#fff;
+  background:rgba(255,255,255,.14);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.22);padding:4px 10px;border-radius:7px;
+}
+#productos .catx-tile-arrow{
+  position:absolute;top:20px;right:20px;z-index:3;
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.16);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.28);color:#fff;
+  opacity:0;transform:translate(8px,-8px) scale(.85);
+  transition:opacity .35s ease,transform .35s cubic-bezier(.16,1,.3,1),background .3s ease;
+}
+#productos .catx-tile:hover .catx-tile-arrow{opacity:1;transform:translate(0,0) scale(1);background:linear-gradient(135deg,#2563eb,#3b82f6);border-color:transparent}
+#productos .catx-tile-featured{grid-column:span 1;border:1.5px solid rgba(34,197,94,.4) !important;box-shadow:0 8px 30px -8px rgba(22,163,74,.3)}
+#productos .catx-tile-featured:hover{border-color:rgba(34,197,94,.7) !important;box-shadow:0 28px 60px -16px rgba(22,163,74,.42)}
+@media(max-width:1024px){#productos .catx-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
+@media(max-width:640px){
+  #productos .catx-grid{grid-template-columns:1fr;gap:14px}
+  #productos .catx-tile{min-height:248px}
+  #productos .catx-tile-title{font-size:1.3rem}
+}
+
+/* ── Servicios: tarjetas premium con imagen ── */
+#servicios{background:linear-gradient(180deg,#070d1c 0%,#0a1124 55%,#0c1428 100%);position:relative;overflow:hidden}
+#servicios .svc-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px;
+}
+#servicios .svc-card{
+  position:relative;border-radius:22px !important;overflow:hidden;
+  background:rgba(12,22,44,.62) !important;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(120,160,220,.14) !important;
+  padding:0 !important;display:flex;flex-direction:column;
+  box-shadow:0 8px 30px rgba(0,0,0,.34);
+  transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s ease,border-color .3s ease;
+}
+#servicios .svc-card:hover{
+  transform:translateY(-9px);
+  border-color:rgba(34,211,238,.4) !important;
+  box-shadow:0 34px 64px -20px rgba(8,40,80,.7),0 0 0 1px rgba(34,211,238,.16);
+}
+#servicios .svc-img-thumb{
+  position:relative !important;width:100% !important;height:178px !important;
+  background-size:cover !important;background-position:center !important;
+  border-radius:0 !important;opacity:1 !important;
+  transform:scale(1.03);transition:transform 1.1s cubic-bezier(.16,1,.3,1);
+}
+#servicios .svc-card:hover .svc-img-thumb{transform:scale(1.12)}
+#servicios .svc-img-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,17,36,.15) 0%,rgba(10,17,36,.55) 60%,rgba(12,22,44,.95) 100%)}
+#servicios .svc-n-watermark{
+  position:absolute;top:13px;right:18px;z-index:3;
+  font-family:var(--ff-head,inherit);font-size:2.6rem;font-weight:900;
+  color:rgba(255,255,255,.16);line-height:1;letter-spacing:-.04em;
+}
+#servicios .svc-head{display:flex;align-items:center;gap:13px;padding:0 22px;margin-top:-30px;position:relative;z-index:3}
+#servicios .svc-num{
+  width:54px;height:54px;border-radius:15px;flex:none;
+  display:flex;align-items:center;justify-content:center;color:#fff;
+  background:linear-gradient(135deg,#0891b2,#22d3ee);
+  box-shadow:0 10px 26px rgba(8,145,178,.45);border:2px solid rgba(255,255,255,.12);
+}
+#servicios .svc-card h3{font-size:1.16rem;font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.2;margin:18px 0 0}
+#servicios .svc-desc{padding:0 22px;color:rgba(208,222,245,.78);font-size:.91rem;line-height:1.6;margin:13px 0 0}
+#servicios .svc-list{list-style:none;padding:0 22px;margin:15px 0 0;display:flex;flex-direction:column;gap:9px}
+#servicios .svc-list li{position:relative;padding-left:22px;color:rgba(190,206,232,.82);font-size:.86rem;line-height:1.4}
+#servicios .svc-list li::before{
+  content:'';position:absolute;left:0;top:6px;width:13px;height:13px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#22d3ee,#0891b2);box-shadow:0 0 0 3px rgba(34,211,238,.14);
+}
+#servicios .svc-value{
+  margin:18px 22px 22px;padding:13px 16px;border-radius:13px;
+  background:linear-gradient(135deg,rgba(34,211,238,.1),rgba(8,145,178,.05));
+  border:1px solid rgba(34,211,238,.2);
+  font-size:.84rem;color:rgba(208,222,245,.85);line-height:1.45;
+}
+#servicios .svc-value strong{display:block;color:#22d3ee;font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+#servicios .svc-card-feat{border-color:rgba(34,211,238,.4) !important;box-shadow:0 14px 40px -10px rgba(8,145,178,.4)}
+#servicios .svc-card-feat .svc-num{background:linear-gradient(135deg,#7c3aed,#22d3ee)}
+#servicios .svc-hero-strip{text-align:center;padding:30px 0 8px;margin-bottom:30px}
+#servicios .svc-stats-bar{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(120,160,220,.14);border:1px solid rgba(120,160,220,.14);
+  border-radius:16px;overflow:hidden;margin-bottom:40px;
+}
+#servicios .svc-stat-item{background:rgba(12,22,44,.6);padding:22px 16px;text-align:center}
+#servicios .svc-stat-n{display:block;font-family:var(--ff-head,inherit);font-size:2rem;font-weight:900;letter-spacing:-.02em;background:linear-gradient(135deg,#22d3ee,#7c3aed);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+#servicios .svc-stat-l{display:block;color:rgba(190,206,232,.7);font-size:.78rem;font-weight:600;margin-top:5px}
+@media(max-width:1024px){
+  #servicios .svc-grid{grid-template-columns:repeat(2,1fr) !important;gap:18px}
+  #servicios .svc-stats-bar{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  #servicios .svc-grid{grid-template-columns:1fr !important}
+  #servicios .svc-stats-bar{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ── CTA Gateway: puente al monitoreo energético ── */
+#energia-gateway{
+  position:relative;overflow:hidden;
+  background:linear-gradient(125deg,#0a2540 0%,#0d3b66 45%,#114e8a 100%);
+  padding:clamp(60px,8vw,108px) 0;
+}
+#energia-gateway::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 70% 80% at 78% 20%,rgba(34,211,238,.22),transparent 60%),radial-gradient(ellipse 60% 70% at 12% 90%,rgba(124,58,237,.16),transparent 62%);
+}
+#energia-gateway .container{position:relative;z-index:2}
+.eg-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eg-kicker{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#22d3ee;background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.28);padding:7px 16px;border-radius:50px;margin-bottom:20px}
+.eg-kicker-dot{width:8px;height:8px;border-radius:50%;background:#22d3ee;box-shadow:0 0 12px #22d3ee;animation:egPulse 2s ease-in-out infinite}
+@keyframes egPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.eg-title{font-family:var(--ff-head,inherit);font-size:clamp(2rem,4vw,3.3rem);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1.08;margin:0 0 18px}
+.eg-title em{font-style:normal;background:linear-gradient(120deg,#22d3ee,#67e8f9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.eg-sub{font-size:1.06rem;color:rgba(220,235,255,.82);line-height:1.65;margin:0 0 30px;max-width:520px}
+.eg-btns{display:flex;gap:14px;flex-wrap:wrap}
+.eg-btn-main{display:inline-flex;align-items:center;gap:10px;font-size:1.02rem;font-weight:800;color:#0a2540;background:linear-gradient(135deg,#22d3ee,#67e8f9);padding:17px 34px;border-radius:14px;text-decoration:none;box-shadow:0 16px 40px -10px rgba(34,211,238,.6);transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease}
+.eg-btn-main:hover{transform:translateY(-3px);box-shadow:0 22px 52px -10px rgba(34,211,238,.75)}
+.eg-btn-ghost{display:inline-flex;align-items:center;gap:9px;font-size:1.02rem;font-weight:700;color:#fff;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.28);padding:16px 30px;border-radius:14px;text-decoration:none;transition:background .3s ease,border-color .3s ease}
+.eg-btn-ghost:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.5)}
+.eg-card{background:rgba(255,255,255,.06);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:30px;box-shadow:0 24px 60px -16px rgba(0,0,0,.5)}
+.eg-card-row{display:flex;align-items:center;gap:16px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.eg-card-row:last-child{border-bottom:none}
+.eg-card-ico{width:48px;height:48px;border-radius:13px;flex:none;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(34,211,238,.2),rgba(34,211,238,.08));border:1px solid rgba(34,211,238,.28);color:#22d3ee;font-size:1.3rem}
+.eg-card-txt h4{font-size:1.02rem;font-weight:800;color:#fff;margin:0 0 2px}
+.eg-card-txt p{font-size:.86rem;color:rgba(220,235,255,.7);margin:0;line-height:1.4}
+.eg-card-big{text-align:center;padding:0 0 18px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.1)}
+.eg-card-big .eg-pct{font-family:var(--ff-head,inherit);font-size:3.4rem;font-weight:900;background:linear-gradient(120deg,#22d3ee,#67e8f9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.eg-card-big .eg-pct-l{font-size:.88rem;color:rgba(220,235,255,.75);font-weight:600;margin-top:4px}
+@media(max-width:900px){
+  .eg-wrap{grid-template-columns:1fr;gap:34px}
+  .eg-sub{max-width:none}
+}
+
 </style>
 </head>
 <body>
@@ -4810,6 +5002,157 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
+     SERVICIOS PROFESIONALES (movido antes del catálogo)
+═══════════════════════════════════════════════════════════ -->
+<section id="servicios" class="sec">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-3"></div>
+  <div class="container">
+
+    <div class="svc-hero-strip rv">
+      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Servicios profesionales</span><span data-lang="en">Professional Services</span></div>
+      <h2 class="s-title" style="color:#fff"><span data-lang="es">Ingeniería y servicio técnico <span style="color:#22d3ee">de clase mundial</span></span><span data-lang="en">World-class engineering <span style="color:#22d3ee">and technical service</span></span></h2>
+      <p class="s-sub" style="color:rgba(255,255,255,.72)"><span data-lang="es">Instalación, soporte, mantenimiento y proyectos llave en mano para telecomunicaciones, fibra óptica, Data Centers y energía en toda Panamá.</span><span data-lang="en">Installation, support, maintenance and turnkey projects for telecommunications, fiber optic, Data Centers and energy across Panama.</span></p>
+    </div>
+
+    <div class="svc-stats-bar rv">
+      <div class="svc-stat-item">
+        <span class="svc-stat-n"><span class="count-up" data-target="200">0</span><span class="svc-plus">+</span></span>
+        <span class="svc-stat-l"><span data-lang="es">Proyectos entregados</span><span data-lang="en">Projects delivered</span></span>
+      </div>
+      <div class="svc-stat-item">
+        <span class="svc-stat-n">2h</span>
+        <span class="svc-stat-l"><span data-lang="es">Tiempo de respuesta</span><span data-lang="en">Response time</span></span>
+      </div>
+      <div class="svc-stat-item">
+        <span class="svc-stat-n"><span class="count-up" data-target="17">0</span><span class="svc-plus">+</span></span>
+        <span class="svc-stat-l"><span data-lang="es">Marcas aliadas</span><span data-lang="en">Partner brands</span></span>
+      </div>
+      <div class="svc-stat-item">
+        <span class="svc-stat-n"><span class="count-up" data-target="2008">0</span></span>
+        <span class="svc-stat-l"><span data-lang="es">Trayectoria desde</span><span data-lang="en">Track record since</span></span>
+      </div>
+    </div>
+
+    <div class="svc-grid">
+
+      <!-- 1. Instalación -->
+      <div class="svc-card rv" data-n="01" data-color="blue">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&auto=format&fit=crop&q=80')"></div>
+        <span class="svc-n-watermark">01</span>
+        <div class="svc-head">
+          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-wrench"/></svg></span></div>
+          <h3><span data-lang="es">Instalación</span><span data-lang="en">Installation</span></h3>
+        </div>
+        <p class="svc-desc"><span data-lang="es">Puesta en marcha completa de soluciones tecnológicas, listas para operar desde el primer día.</span><span data-lang="en">Complete commissioning of technology solutions, ready to operate from day one.</span></p>
+        <ul class="svc-list">
+          <li><span data-lang="es">Fibra óptica · empalmes y certificación</span><span data-lang="en">Fiber optic · splicing & certification</span></li>
+          <li><span data-lang="es">Equipos RF · sistemas DAS</span><span data-lang="en">RF equipment · DAS systems</span></li>
+          <li><span data-lang="es">Gabinetes · racks · canalización</span><span data-lang="en">Cabinets · racks · cable runs</span></li>
+          <li><span data-lang="es">Equipos de energía y monitoreo</span><span data-lang="en">Energy & monitoring equipment</span></li>
+        </ul>
+        <div class="svc-value"><strong><span data-lang="es">Puesta en marcha</span><span data-lang="en">Commissioning</span></strong><span data-lang="es">Implementaciones seguras y listas para operar.</span><span data-lang="en">Safe deployments ready to operate.</span></div>
+      </div>
+
+      <!-- 2. Soporte Técnico -->
+      <div class="svc-card rv" data-n="02" data-color="green">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&auto=format&fit=crop&q=80')"></div>
+        <span class="svc-n-watermark">02</span>
+        <div class="svc-head">
+          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-headset"/></svg></span></div>
+          <h3><span data-lang="es">Soporte Técnico</span><span data-lang="en">Tech Support</span></h3>
+        </div>
+        <p class="svc-desc"><span data-lang="es">Asistencia especializada para resolver incidencias y garantizar continuidad operativa.</span><span data-lang="en">Specialized assistance to resolve incidents and ensure operational continuity.</span></p>
+        <ul class="svc-list">
+          <li><span data-lang="es">Soporte remoto especializado</span><span data-lang="en">Specialized remote support</span></li>
+          <li><span data-lang="es">Diagnóstico de fallas</span><span data-lang="en">Fault diagnosis</span></li>
+          <li><span data-lang="es">Acompañamiento técnico</span><span data-lang="en">Technical guidance</span></li>
+          <li><span data-lang="es">Resolución de problemas críticos</span><span data-lang="en">Critical issue resolution</span></li>
+        </ul>
+        <div class="svc-value"><strong><span data-lang="es">Especializado</span><span data-lang="en">Specialized</span></strong><span data-lang="es">Respuesta rápida, menos tiempo de inactividad.</span><span data-lang="en">Fast response, less downtime.</span></div>
+      </div>
+
+      <!-- 3. Mantenimiento -->
+      <div class="svc-card rv" data-n="03" data-color="amber">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&auto=format&fit=crop&q=80')"></div>
+        <span class="svc-n-watermark">03</span>
+        <div class="svc-head">
+          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-settings"/></svg></span></div>
+          <h3><span data-lang="es">Mantenimiento</span><span data-lang="en">Maintenance</span></h3>
+        </div>
+        <p class="svc-desc"><span data-lang="es">Mantenemos los sistemas en óptimas condiciones y extendemos su vida útil.</span><span data-lang="en">We keep systems in optimal condition and extend their useful life.</span></p>
+        <ul class="svc-list">
+          <li><span data-lang="es">Mantenimiento preventivo</span><span data-lang="en">Preventive maintenance</span></li>
+          <li><span data-lang="es">Mantenimiento correctivo</span><span data-lang="en">Corrective maintenance</span></li>
+          <li><span data-lang="es">Limpieza y ajuste de equipos</span><span data-lang="en">Equipment cleaning & tuning</span></li>
+          <li><span data-lang="es">Mejoras de rendimiento</span><span data-lang="en">Performance upgrades</span></li>
+        </ul>
+        <div class="svc-value"><strong><span data-lang="es">Preventivo · correctivo</span><span data-lang="en">Preventive · corrective</span></strong><span data-lang="es">Mayor durabilidad y estabilidad.</span><span data-lang="en">Greater durability and stability.</span></div>
+      </div>
+
+      <!-- 4. Calibración -->
+      <div class="svc-card rv" data-n="04" data-color="purple">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=80')"></div>
+        <span class="svc-n-watermark">04</span>
+        <div class="svc-head">
+          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-ruler"/></svg></span></div>
+          <h3><span data-lang="es">Calibración</span><span data-lang="en">Calibration</span></h3>
+        </div>
+        <p class="svc-desc"><span data-lang="es">Precisión garantizada en equipos de medición para telecomunicaciones.</span><span data-lang="en">Guaranteed precision for telecom measurement equipment.</span></p>
+        <ul class="svc-list">
+          <li><span data-lang="es">Calibración OTDR · OPM · OLS</span><span data-lang="en">OTDR · OPM · OLS calibration</span></li>
+          <li><span data-lang="es">Ajuste técnico de instrumentos</span><span data-lang="en">Instrument technical tuning</span></li>
+          <li><span data-lang="es">Verificación de equipos especializados</span><span data-lang="en">Specialized equipment verification</span></li>
+          <li><span data-lang="es">Trazabilidad documentada</span><span data-lang="en">Documented traceability</span></li>
+        </ul>
+        <div class="svc-value"><strong><span data-lang="es">OTDR · OPM · OLS</span><span data-lang="en">OTDR · OPM · OLS</span></strong><span data-lang="es">Resultados confiables y bajo norma.</span><span data-lang="en">Reliable, standards-compliant results.</span></div>
+      </div>
+
+      <!-- 5. Field Services -->
+      <div class="svc-card rv" data-n="05" data-color="rose">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&auto=format&fit=crop&q=80')"></div>
+        <span class="svc-n-watermark">05</span>
+        <div class="svc-head">
+          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-truck"/></svg></span></div>
+          <h3><span data-lang="es">Field Services</span><span data-lang="en">Field Services</span></h3>
+        </div>
+        <p class="svc-desc"><span data-lang="es">Trabajo técnico en sitio, adaptado a entornos urbanos, rurales o de difícil acceso.</span><span data-lang="en">On-site technical work, adapted to urban, rural or difficult-access environments.</span></p>
+        <ul class="svc-list">
+          <li><span data-lang="es">Site Survey y levantamientos</span><span data-lang="en">Site Survey & assessments</span></li>
+          <li><span data-lang="es">Inspecciones técnicas</span><span data-lang="en">Technical inspections</span></li>
+          <li><span data-lang="es">Mantenimiento de sitios</span><span data-lang="en">Site maintenance</span></li>
+          <li><span data-lang="es">Soporte en campo a operadores</span><span data-lang="en">On-site operator support</span></li>
+        </ul>
+        <div class="svc-value"><strong><span data-lang="es">Site Survey</span><span data-lang="en">Site Survey</span></strong><span data-lang="es">Cobertura operativa donde la necesites.</span><span data-lang="en">Operational coverage wherever you need it.</span></div>
+      </div>
+
+      <!-- 6. Llave en Mano (featured) -->
+      <div class="svc-card svc-card-feat rv" data-n="06" data-color="cyan">
+        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80')"></div>
+        <span class="svc-n-watermark">06</span>
+        <div class="svc-head">
+          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-key"/></svg></span></div>
+          <h3><span data-lang="es">Llave en Mano</span><span data-lang="en">Turnkey</span></h3>
+        </div>
+        <p class="svc-desc"><span data-lang="es">Proyectos completos de extremo a extremo: diseño, suministro, instalación e integración.</span><span data-lang="en">Complete end-to-end projects: design, supply, installation and integration.</span></p>
+        <ul class="svc-list">
+          <li><span data-lang="es">Cámara térmica · vibrómetro · medidores a tierra</span><span data-lang="en">Thermal camera · vibrometer · ground testers</span></li>
+          <li><span data-lang="es">Sistemas DAS · gestión de RF</span><span data-lang="en">DAS systems · RF management</span></li>
+          <li><span data-lang="es">Gestión de fibra óptica</span><span data-lang="en">Fiber optic management</span></li>
+          <li><span data-lang="es">Proyectos llave en mano integrales</span><span data-lang="en">Full turnkey projects</span></li>
+        </ul>
+        <div class="svc-value"><strong><span data-lang="es">Un solo proveedor</span><span data-lang="en">One provider</span></strong><span data-lang="es">Menos riesgos, mayor eficiencia.</span><span data-lang="en">Lower risk, greater efficiency.</span></div>
+      </div>
+
+    </div>
+    <div class="prod-cta-wrap" style="margin-top:48px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+      <a href="#cta-sec" class="btn btn-primary"><span data-lang="es">Solicitar propuesta →</span><span data-lang="en">Request a proposal →</span></a>
+      <a href="https://wa.me/50766743062?text=Hola%2C%20necesito%20información%20sobre%20servicios" class="btn btn-wa" target="_blank" rel="noopener"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span> <span data-lang="es">Hablar con un asesor</span><span data-lang="en">Talk to an advisor</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
      CATALOGO · Buscador de productos
 ═══════════════════════════════════════════════════════════ -->
 <section id="productos" class="sec">
@@ -4835,8 +5178,8 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
         <span class="catx-stat-l"><span data-lang="es">Marcas</span><span data-lang="en">Brands</span></span>
       </div>
       <div class="catx-stat">
-        <span class="catx-stat-n">24/7</span>
-        <span class="catx-stat-l"><span data-lang="es">Soporte</span><span data-lang="en">Support</span></span>
+        <span class="catx-stat-n">2008</span>
+        <span class="catx-stat-l"><span data-lang="es">Desde</span><span data-lang="en">Since</span></span>
       </div>
     </div>
 
@@ -4851,7 +5194,6 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
     <div class="catx-brand-filter rv" id="catxBrandFilterRow">
       <span class="catx-brand-filter-lbl"><span data-lang="es">Marca:</span><span data-lang="en">Brand:</span></span>
       <button class="catx-bfbtn active" data-brand="all" onclick="catxBrandBtn('all',this)"><span data-lang="es">Todas</span><span data-lang="en">All</span></button>
-      <button class="catx-bfbtn" data-brand="emporia" onclick="catxBrandBtn('emporia',this)">Emporia</button>
       <button class="catx-bfbtn" data-brand="n-test" onclick="catxBrandBtn('n-test',this)">N-TEST</button>
       <button class="catx-bfbtn" data-brand="prose" onclick="catxBrandBtn('prose',this)">PROSE</button>
       <button class="catx-bfbtn" data-brand="khipu" onclick="catxBrandBtn('khipu',this)">KHIPU</button>
@@ -4965,7 +5307,7 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
         <div class="catx-tile-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
       </button>
 
-      <button type="button" class="catx-tile catx-tile-featured" data-cat="energia" data-brands="emporia" onclick="openCatX('energia')">
+      <button type="button" class="catx-tile catx-tile-featured" data-cat="energia" data-brands="medidor" onclick="openCatX('energia')">
         <div class="catx-tile-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=900&auto=format&fit=crop&q=80');background-size:cover;background-position:center"></div>
         <div class="catx-tile-overlay" style="background:linear-gradient(180deg,rgba(13,53,34,.1) 0%,rgba(13,53,34,.92) 85%)"></div>
         <div class="catx-tile-content">
@@ -4977,8 +5319,8 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
             <h3 class="catx-tile-title"><span data-lang="es">Monitoreo Energético</span><span data-lang="en">Energy Monitoring</span></h3>
             <p class="catx-tile-sub"><span data-lang="es">Vue 3 · Smart Plug · EV Charger · plataforma con IA</span><span data-lang="en">Vue 3 · Smart Plug · EV Charger · AI platform</span></p>
             <div class="catx-tile-brands">
-              <span class="catx-brand-chip">Emporia</span>
               <span class="catx-brand-chip">Medidor Inteligente</span>
+              <span class="catx-brand-chip">IA</span>
             </div>
           </div>
         </div>
@@ -5080,6 +5422,57 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 
 
 
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA GATEWAY · Puente al Monitoreo Energético
+═══════════════════════════════════════════════════════════ -->
+<section id="energia-gateway">
+  <div class="container">
+    <div class="eg-wrap">
+      <div class="eg-left rv">
+        <span class="eg-kicker"><span class="eg-kicker-dot"></span><span data-lang="es">Para hogares y negocios</span><span data-lang="en">For homes & businesses</span></span>
+        <h2 class="eg-title">
+          <span data-lang="es">¿Quieres <em>reducir tu factura</em> de luz y monitorear tu casa?</span>
+          <span data-lang="en">Want to <em>cut your power bill</em> and monitor your home?</span>
+        </h2>
+        <p class="eg-sub">
+          <span data-lang="es">Instalamos un sensor inteligente en tu tablero eléctrico y descubre exactamente en qué se va tu dinero — circuito por circuito, en tiempo real, con recomendaciones de ahorro por IA.</span>
+          <span data-lang="en">We install a smart sensor in your electrical panel so you see exactly where your money goes — circuit by circuit, in real time, with AI savings recommendations.</span>
+        </p>
+        <div class="eg-btns">
+          <a href="#solutions" class="eg-btn-main">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+            <span data-lang="es">Ver cómo monitoreo mi consumo</span><span data-lang="en">See how to monitor my usage</span>
+          </a>
+          <a href="https://wa.me/50766743062?text=Hola%2C%20quiero%20reducir%20mi%20factura%20de%20luz%20y%20monitorear%20mi%20casa" target="_blank" rel="noopener" class="eg-btn-ghost">
+            <span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span>
+            <span data-lang="es">Hablar por WhatsApp</span><span data-lang="en">Chat on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+      <div class="eg-right rv">
+        <div class="eg-card">
+          <div class="eg-card-big">
+            <div class="eg-pct">−40%</div>
+            <div class="eg-pct-l"><span data-lang="es">reducción de consumo eléctrico</span><span data-lang="en">energy consumption reduction</span></div>
+          </div>
+          <div class="eg-card-row">
+            <div class="eg-card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+            <div class="eg-card-txt"><h4><span data-lang="es">Monitoreo en tiempo real</span><span data-lang="en">Real-time monitoring</span></h4><p><span data-lang="es">Hasta 16 circuitos, actualización cada 5 min</span><span data-lang="en">Up to 16 circuits, 5-min refresh</span></p></div>
+          </div>
+          <div class="eg-card-row">
+            <div class="eg-card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 5 2 7h10c0-2 2-4 2-7a7 7 0 0 0-7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg></div>
+            <div class="eg-card-txt"><h4><span data-lang="es">Recomendaciones con IA</span><span data-lang="en">AI recommendations</span></h4><p><span data-lang="es">Informe mensual con ahorros concretos</span><span data-lang="en">Monthly report with concrete savings</span></p></div>
+          </div>
+          <div class="eg-card-row">
+            <div class="eg-card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg></div>
+            <div class="eg-card-txt"><h4><span data-lang="es">Instalación en menos de 2h</span><span data-lang="en">Installed in under 2h</span></h4><p><span data-lang="es">Técnicos certificados · sin corte de luz</span><span data-lang="en">Certified techs · no power outage</span></p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════════════════════════════════════════════════════
      PLATAFORMA · Medidor Inteligente
@@ -5761,177 +6154,6 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 
 
 
-
-<!-- ═══════════════════════════════════════════════════════════
-     SERVICIOS · Instalacion · Soporte · Mantenimiento
-═══════════════════════════════════════════════════════════ -->
-<section id="servicios" class="sec">
-  <div class="bg-orb bg-orb-1"></div>
-  <div class="bg-orb bg-orb-3"></div>
-  <div class="container">
-
-    <!-- Hero strip with background image -->
-    <div class="svc-hero-strip rv">
-      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Servicios profesionales</span><span data-lang="en">Professional Services</span></div>
-      <h2 class="s-title" style="color:#fff"><span data-lang="es">Acompañamos cada proyecto <span style="color:#22d3ee">de inicio a fin</span></span><span data-lang="en">We support every project <span style="color:#22d3ee">from start to finish</span></span></h2>
-      <p class="s-sub" style="color:rgba(255,255,255,.7)"><span data-lang="es">Siete servicios especializados para implementar, mantener y optimizar tus proyectos de telecomunicaciones, fibra óptica, Data Centers y energía en Panamá.</span><span data-lang="en">Seven specialized services to deploy, maintain and optimize your telecommunications, fiber optic, Data Center and energy projects in Panama.</span></p>
-    </div>
-
-    <!-- Stats counter bar -->
-    <div class="svc-stats-bar rv">
-      <div class="svc-stat-item">
-        <span class="svc-stat-n"><span class="count-up" data-target="200">0</span><span class="svc-plus">+</span></span>
-        <span class="svc-stat-l"><span data-lang="es">Proyectos entregados</span><span data-lang="en">Projects delivered</span></span>
-      </div>
-      <div class="svc-stat-item">
-        <span class="svc-stat-n">2h<span class="svc-plus"></span></span>
-        <span class="svc-stat-l"><span data-lang="es">Tiempo de respuesta</span><span data-lang="en">Response time</span></span>
-      </div>
-      <div class="svc-stat-item">
-        <span class="svc-stat-n"><span class="count-up" data-target="17">0</span><span class="svc-plus">+</span></span>
-        <span class="svc-stat-l"><span data-lang="es">Marcas aliadas</span><span data-lang="en">Partner brands</span></span>
-      </div>
-      <div class="svc-stat-item">
-        <span class="svc-stat-n"><span class="count-up" data-target="3">0</span></span>
-        <span class="svc-stat-l"><span data-lang="es">Industrias cubiertas</span><span data-lang="en">Industries covered</span></span>
-      </div>
-    </div>
-
-    <div class="svc-grid">
-
-      <!-- 1. Instalación y Puesta en Marcha -->
-      <div class="svc-card rv" data-n="01" data-color="blue">
-        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&auto=format&fit=crop&q=60')"></div>
-        <span class="svc-n-watermark">01</span>
-        <div class="svc-head">
-          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-wrench"/></svg></span></div>
-          <h3><span data-lang="es">Instalación y Puesta en Marcha</span><span data-lang="en">Installation & Commissioning</span></h3>
-        </div>
-        <p class="svc-desc"><span data-lang="es">Instalación completa de soluciones tecnológicas, asegurando que cada sistema funcione correctamente desde el primer momento.</span><span data-lang="en">Complete installation of technology solutions, ensuring every system works correctly from day one.</span></p>
-        <ul class="svc-list">
-          <li><span data-lang="es">Fibra óptica · empalmes y certificación</span><span data-lang="en">Fiber optic · splicing & certification</span></li>
-          <li><span data-lang="es">Equipos RF · sistemas DAS</span><span data-lang="en">RF equipment · DAS systems</span></li>
-          <li><span data-lang="es">Gabinetes · racks · canalización</span><span data-lang="en">Cabinets · racks · cable runs</span></li>
-          <li><span data-lang="es">Equipos de energía y monitoreo</span><span data-lang="en">Energy & monitoring equipment</span></li>
-        </ul>
-        <div class="svc-value"><strong><span data-lang="es">Valor</span><span data-lang="en">Value</span></strong><span data-lang="es">Implementaciones seguras, eficientes y listas para operar.</span><span data-lang="en">Safe, efficient deployments ready to operate.</span></div>
-      </div>
-
-      <!-- 2. Soporte Técnico Especializado -->
-      <div class="svc-card rv" data-n="02" data-color="green">
-        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1560264280-88b68371db39?w=400&auto=format&fit=crop&q=60')"></div>
-        <span class="svc-n-watermark">02</span>
-        <div class="svc-head">
-          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-headset"/></svg></span></div>
-          <h3><span data-lang="es">Soporte Técnico Especializado</span><span data-lang="en">Specialized Tech Support</span></h3>
-        </div>
-        <p class="svc-desc"><span data-lang="es">Asistencia técnica para resolver incidencias, optimizar sistemas y garantizar la continuidad operativa de los proyectos.</span><span data-lang="en">Technical assistance to resolve incidents, optimize systems and ensure operational continuity.</span></p>
-        <ul class="svc-list">
-          <li><span data-lang="es">Soporte remoto especializado</span><span data-lang="en">Specialized remote support</span></li>
-          <li><span data-lang="es">Diagnóstico de fallas</span><span data-lang="en">Fault diagnosis</span></li>
-          <li><span data-lang="es">Acompañamiento técnico</span><span data-lang="en">Technical guidance</span></li>
-          <li><span data-lang="es">Resolución de problemas críticos</span><span data-lang="en">Critical issue resolution</span></li>
-        </ul>
-        <div class="svc-value"><strong><span data-lang="es">Valor</span><span data-lang="en">Value</span></strong><span data-lang="es">Respuesta rápida y reducción de tiempos de inactividad.</span><span data-lang="en">Fast response and reduced downtime.</span></div>
-      </div>
-
-      <!-- 3. Mantenimiento y Optimización -->
-      <div class="svc-card rv" data-n="03" data-color="amber">
-        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&auto=format&fit=crop&q=60')"></div>
-        <span class="svc-n-watermark">03</span>
-        <div class="svc-head">
-          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-settings"/></svg></span></div>
-          <h3><span data-lang="es">Mantenimiento y Optimización</span><span data-lang="en">Maintenance & Optimization</span></h3>
-        </div>
-        <p class="svc-desc"><span data-lang="es">Servicios diseñados para mantener los sistemas en óptimas condiciones y extender su vida útil.</span><span data-lang="en">Services designed to keep systems in optimal condition and extend their useful life.</span></p>
-        <ul class="svc-list">
-          <li><span data-lang="es">Mantenimiento preventivo</span><span data-lang="en">Preventive maintenance</span></li>
-          <li><span data-lang="es">Mantenimiento correctivo</span><span data-lang="en">Corrective maintenance</span></li>
-          <li><span data-lang="es">Limpieza de equipos</span><span data-lang="en">Equipment cleaning</span></li>
-          <li><span data-lang="es">Ajustes técnicos y mejoras</span><span data-lang="en">Tuning & performance upgrades</span></li>
-        </ul>
-        <div class="svc-value"><strong><span data-lang="es">Valor</span><span data-lang="en">Value</span></strong><span data-lang="es">Mayor durabilidad, estabilidad y eficiencia de los equipos.</span><span data-lang="en">Greater durability, stability and equipment efficiency.</span></div>
-      </div>
-
-      <!-- 4. Calibración y Equipos de Medición -->
-      <div class="svc-card rv" data-n="04" data-color="purple">
-        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&auto=format&fit=crop&q=60')"></div>
-        <span class="svc-n-watermark">04</span>
-        <div class="svc-head">
-          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-ruler"/></svg></span></div>
-          <h3><span data-lang="es">Calibración y Equipos de Medición</span><span data-lang="en">Calibration & Measurement</span></h3>
-        </div>
-        <p class="svc-desc"><span data-lang="es">Aseguramos la precisión y correcto funcionamiento de equipos de medición utilizados en telecomunicaciones.</span><span data-lang="en">We ensure the precision and proper operation of measurement equipment used in telecommunications.</span></p>
-        <ul class="svc-list">
-          <li><span data-lang="es">Calibración OTDR · OPM · OLS</span><span data-lang="en">OTDR · OPM · OLS calibration</span></li>
-          <li><span data-lang="es">Ajuste técnico</span><span data-lang="en">Technical tuning</span></li>
-          <li><span data-lang="es">Verificación de equipos especializados</span><span data-lang="en">Specialized equipment verification</span></li>
-          <li><span data-lang="es">Trazabilidad documentada</span><span data-lang="en">Documented traceability</span></li>
-        </ul>
-        <div class="svc-value"><strong><span data-lang="es">Valor</span><span data-lang="en">Value</span></strong><span data-lang="es">Resultados confiables y cumplimiento de estándares técnicos.</span><span data-lang="en">Reliable results and compliance with technical standards.</span></div>
-      </div>
-
-      <!-- 5. Servicios de Campo -->
-      <div class="svc-card rv" data-n="05" data-color="rose">
-        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&auto=format&fit=crop&q=60')"></div>
-        <span class="svc-n-watermark">05</span>
-        <div class="svc-head">
-          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-truck"/></svg></span></div>
-          <h3><span data-lang="es">Servicios de Campo</span><span data-lang="en">Field Services</span></h3>
-        </div>
-        <p class="svc-desc"><span data-lang="es">Ejecución de trabajos técnicos directamente en sitio, adaptados a entornos urbanos, rurales o de difícil acceso.</span><span data-lang="en">Execution of technical work directly on-site, adapted to urban, rural or difficult-access environments.</span></p>
-        <ul class="svc-list">
-          <li><span data-lang="es">Site Survey y levantamientos</span><span data-lang="en">Site Survey & assessments</span></li>
-          <li><span data-lang="es">Inspecciones técnicas</span><span data-lang="en">Technical inspections</span></li>
-          <li><span data-lang="es">Mantenimiento de sitios</span><span data-lang="en">Site maintenance</span></li>
-          <li><span data-lang="es">Soporte en campo a operadores</span><span data-lang="en">On-site operator support</span></li>
-        </ul>
-        <div class="svc-value"><strong><span data-lang="es">Valor</span><span data-lang="en">Value</span></strong><span data-lang="es">Cobertura operativa completa donde el cliente lo necesite.</span><span data-lang="en">Full operational coverage wherever the client needs it.</span></div>
-      </div>
-
-      <!-- 6. Proyectos Llave en Mano -->
-      <div class="svc-card rv" data-n="06" data-color="cyan">
-        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&auto=format&fit=crop&q=60')"></div>
-        <span class="svc-n-watermark">06</span>
-        <div class="svc-head">
-          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-key"/></svg></span></div>
-          <h3><span data-lang="es">Proyectos Llave en Mano</span><span data-lang="en">Turnkey Projects</span></h3>
-        </div>
-        <p class="svc-desc"><span data-lang="es">Gestionamos proyectos completos desde la planificación hasta la implementación final.</span><span data-lang="en">We manage complete projects from planning through final implementation.</span></p>
-        <ul class="svc-list">
-          <li><span data-lang="es">Diseño y planificación</span><span data-lang="en">Design & planning</span></li>
-          <li><span data-lang="es">Suministro de equipos</span><span data-lang="en">Equipment supply</span></li>
-          <li><span data-lang="es">Instalación e integración</span><span data-lang="en">Installation & integration</span></li>
-          <li><span data-lang="es">Entrega lista para operar</span><span data-lang="en">Ready-to-operate handover</span></li>
-        </ul>
-        <div class="svc-value"><strong><span data-lang="es">Valor</span><span data-lang="en">Value</span></strong><span data-lang="es">Un solo proveedor, menos riesgos, mayor eficiencia.</span><span data-lang="en">Single supplier, lower risk, greater efficiency.</span></div>
-      </div>
-
-      <!-- 7. Integración de Soluciones Tecnológicas -->
-      <div class="svc-card rv" data-n="07" data-color="indigo">
-        <div class="svc-img-thumb" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&auto=format&fit=crop&q=60')"></div>
-        <span class="svc-n-watermark">07</span>
-        <div class="svc-head">
-          <div class="svc-num"><span class="ico ico-md"><svg><use href="#i-puzzle"/></svg></span></div>
-          <h3><span data-lang="es">Integración de Soluciones Tecnológicas</span><span data-lang="en">Technology Integration</span></h3>
-        </div>
-        <p class="svc-desc"><span data-lang="es">Unimos diferentes tecnologías para crear sistemas completos, funcionales y adaptados a cada cliente.</span><span data-lang="en">We bring different technologies together to build complete, functional systems tailored to each client.</span></p>
-        <ul class="svc-list">
-          <li><span data-lang="es">Integración de redes</span><span data-lang="en">Network integration</span></li>
-          <li><span data-lang="es">Monitoreo + energía</span><span data-lang="en">Monitoring + energy</span></li>
-          <li><span data-lang="es">Telecomunicaciones unificadas</span><span data-lang="en">Unified telecommunications</span></li>
-          <li><span data-lang="es">Plataformas tecnológicas a medida</span><span data-lang="en">Custom tech platforms</span></li>
-        </ul>
-        <div class="svc-value"><strong><span data-lang="es">Valor</span><span data-lang="en">Value</span></strong><span data-lang="es">Soluciones personalizadas y escalables.</span><span data-lang="en">Custom-tailored, scalable solutions.</span></div>
-      </div>
-
-    </div>
-    <div class="prod-cta-wrap" style="margin-top:48px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
-      <a href="#cta-sec" class="btn btn-primary"><span data-lang="es">Solicitar propuesta →</span><span data-lang="en">Request a proposal →</span></a>
-      <a href="https://wa.me/50766743062?text=Hola%2C%20necesito%20información%20sobre%20servicios" class="btn btn-wa" target="_blank" rel="noopener"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span> <span data-lang="es">Hablar con un asesor</span><span data-lang="en">Talk to an advisor</span></a>
-    </div>
-  </div>
-</section>
 
 
 <!-- ═══════════════════════════════════════════════════════════
