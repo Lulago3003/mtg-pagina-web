@@ -3784,15 +3784,29 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 
 /* ── Catálogo: tiles más visuales y premium ── */
 #productos .catx-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  grid-auto-rows:1fr !important;
+  gap:20px !important;
+  margin-bottom:40px !important;
 }
-#productos .catx-tile{
+#productos .catx-tile,
+#productos .catx-tile:nth-child(1),
+#productos .catx-tile:nth-child(2),
+#productos .catx-tile:nth-child(3),
+#productos .catx-tile:nth-child(4),
+#productos .catx-tile:nth-child(5),
+#productos .catx-tile:nth-child(6){
+  grid-column:auto !important;
+  grid-row:auto !important;
+  aspect-ratio:auto !important;
   position:relative;
+  height:300px !important;
+  min-height:0 !important;
+  max-width:none !important;
+  margin:0 !important;
   border-radius:22px !important;
   overflow:hidden;
-  min-height:300px;
   border:1px solid rgba(15,23,42,.08) !important;
   box-shadow:0 4px 18px rgba(15,23,42,.06);
   transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s cubic-bezier(.16,1,.3,1),border-color .3s ease;
@@ -3850,12 +3864,15 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
   transition:opacity .35s ease,transform .35s cubic-bezier(.16,1,.3,1),background .3s ease;
 }
 #productos .catx-tile:hover .catx-tile-arrow{opacity:1;transform:translate(0,0) scale(1);background:linear-gradient(135deg,#2563eb,#3b82f6);border-color:transparent}
-#productos .catx-tile-featured{grid-column:span 1;border:1.5px solid rgba(34,197,94,.4) !important;box-shadow:0 8px 30px -8px rgba(22,163,74,.3)}
+#productos .catx-tile-featured{grid-column:auto !important;aspect-ratio:auto !important;border:1.5px solid rgba(34,197,94,.45) !important;box-shadow:0 8px 30px -8px rgba(22,163,74,.3)}
 #productos .catx-tile-featured:hover{border-color:rgba(34,197,94,.7) !important;box-shadow:0 28px 60px -16px rgba(22,163,74,.42)}
-@media(max-width:1024px){#productos .catx-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
+@media(max-width:1024px){
+  #productos .catx-grid{grid-template-columns:repeat(2,1fr) !important;gap:16px !important}
+  #productos .catx-tile,#productos .catx-tile:nth-child(1),#productos .catx-tile:nth-child(2),#productos .catx-tile:nth-child(3),#productos .catx-tile:nth-child(4),#productos .catx-tile:nth-child(5),#productos .catx-tile:nth-child(6){grid-column:auto !important;aspect-ratio:auto !important;height:280px !important}
+}
 @media(max-width:640px){
-  #productos .catx-grid{grid-template-columns:1fr;gap:14px}
-  #productos .catx-tile{min-height:248px}
+  #productos .catx-grid{grid-template-columns:1fr !important;gap:14px !important}
+  #productos .catx-tile,#productos .catx-tile:nth-child(1),#productos .catx-tile:nth-child(2),#productos .catx-tile:nth-child(3),#productos .catx-tile:nth-child(4),#productos .catx-tile:nth-child(5),#productos .catx-tile:nth-child(6){grid-column:auto !important;aspect-ratio:auto !important;height:240px !important}
   #productos .catx-tile-title{font-size:1.3rem}
 }
 
@@ -3970,6 +3987,34 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 .eg-img-card:hover img{transform:scale(1.08)}
 .eg-img-badge{position:absolute;left:18px;bottom:18px;z-index:2;display:inline-flex;align-items:center;gap:9px;font-size:.82rem;font-weight:700;color:#fff;background:rgba(8,20,40,.72);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:9px 16px;border-radius:50px}
 .eg-img-badge-dot{width:8px;height:8px;border-radius:50%;background:#22d3ee;box-shadow:0 0 10px #22d3ee;animation:egPulse 2s ease-in-out infinite}
+
+/* ── Medidor Inteligente · seccion compacta ── */
+#solutions .med-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:44px}
+#solutions .med-step{position:relative;background:rgba(12,22,44,.6);backdrop-filter:blur(12px);border:1px solid rgba(120,160,220,.16);border-radius:18px;padding:26px 22px}
+#solutions .med-step-n{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-head,inherit);font-size:1.2rem;font-weight:900;color:#0a2540;background:linear-gradient(135deg,#22d3ee,#67e8f9);box-shadow:0 8px 22px rgba(34,211,238,.4);margin-bottom:14px}
+#solutions .med-step h4{font-size:1.06rem;font-weight:800;color:#fff;margin:0 0 7px}
+#solutions .med-step p{font-size:.9rem;color:rgba(190,206,232,.78);line-height:1.55;margin:0}
+#solutions .med-split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-bottom:44px}
+#solutions .med-img-wrap{position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(120,160,220,.18);box-shadow:0 24px 56px -18px rgba(0,0,0,.6);aspect-ratio:3/2}
+#solutions .med-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.1s cubic-bezier(.16,1,.3,1)}
+#solutions .med-img-wrap:hover img{transform:scale(1.07)}
+#solutions .med-img-tag{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;color:#fff;background:rgba(8,20,40,.74);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:8px 14px;border-radius:50px}
+#solutions .med-benefits{display:flex;flex-direction:column;gap:14px}
+#solutions .med-ben{display:flex;align-items:flex-start;gap:14px;background:rgba(12,22,44,.5);border:1px solid rgba(120,160,220,.14);border-radius:14px;padding:16px 18px}
+#solutions .med-ben-ico{width:44px;height:44px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(34,211,238,.2),rgba(34,211,238,.07));border:1px solid rgba(34,211,238,.28);color:#22d3ee}
+#solutions .med-ben h4{font-size:1rem;font-weight:800;color:#fff;margin:0 0 3px}
+#solutions .med-ben p{font-size:.86rem;color:rgba(190,206,232,.74);line-height:1.45;margin:0}
+#solutions .med-equip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+#solutions .med-eq-card{background:rgba(255,255,255,.96);border:1px solid rgba(120,160,220,.16);border-radius:18px;padding:24px 18px;text-align:center;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease}
+#solutions .med-eq-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -16px rgba(0,0,0,.5)}
+#solutions .med-eq-card img{width:100%;height:140px;object-fit:contain;display:block;margin-bottom:14px}
+#solutions .med-eq-name{font-size:1.04rem;font-weight:800;color:#0f172a;margin-bottom:3px}
+#solutions .med-eq-sub{font-size:.84rem;color:#64748b;font-weight:600}
+@media(max-width:900px){
+  #solutions .med-steps{grid-template-columns:1fr;gap:14px}
+  #solutions .med-split{grid-template-columns:1fr;gap:24px}
+  #solutions .med-equip{grid-template-columns:1fr;gap:14px}
+}
 @media(max-width:900px){
   .eg-wrap{grid-template-columns:1fr;gap:34px}
   .eg-sub{max-width:none}
@@ -4136,12 +4181,12 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
                   <span data-lang="es">Residencial</span><span data-lang="en">Residential</span>
                   <span class="mm-unit-arr">›</span>
                 </a>
-                <a class="mm-unit" data-mm="comercial" onmouseover="mmShow('comercial')" href="#markets">
+                <a class="mm-unit" data-mm="comercial" onmouseover="mmShow('comercial')" href="#solutions">
                   <span class="ico"><svg><use href="#i-building"/></svg></span>
                   <span data-lang="es">Comercial</span><span data-lang="en">Commercial</span>
                   <span class="mm-unit-arr">›</span>
                 </a>
-                <a class="mm-unit" data-mm="industrial" onmouseover="mmShow('industrial')" href="#markets">
+                <a class="mm-unit" data-mm="industrial" onmouseover="mmShow('industrial')" href="#solutions">
                   <span class="ico"><svg><use href="#i-factory"/></svg></span>
                   <span data-lang="es">Industrial</span><span data-lang="en">Industrial</span>
                   <span class="mm-unit-arr">›</span>
@@ -4179,8 +4224,8 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
                       <ul class="mm-cat-list">
                         <li><a href="#solutions"><span data-lang="es">Monitoreo por circuito</span><span data-lang="en">Circuit monitoring</span></a></li>
                         <li><a href="#solutions"><span data-lang="es">Reportes de ahorro</span><span data-lang="en">Savings reports</span></a></li>
-                        <li><a href="#dash-sec"><span data-lang="es">Dashboard en tiempo real</span><span data-lang="en">Real-time dashboard</span></a></li>
-                        <li><a href="#dash-sec"><span data-lang="es">App móvil iOS / Android</span><span data-lang="en">iOS / Android app</span></a></li>
+                        <li><a href="#solutions"><span data-lang="es">Dashboard en tiempo real</span><span data-lang="en">Real-time dashboard</span></a></li>
+                        <li><a href="#solutions"><span data-lang="es">App móvil iOS / Android</span><span data-lang="en">iOS / Android app</span></a></li>
                       </ul>
                     </div>
                     <div class="mm-cat">
@@ -4188,7 +4233,7 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
                       <ul class="mm-cat-list">
                         <li><a href="#productos"><span data-lang="es">Sensor Vue 3</span><span data-lang="en">Sensor Vue 3 sensor</span></a></li>
                         <li><a href="#productos"><span data-lang="es">Hasta 16 circuitos</span><span data-lang="en">Up to 16 circuits</span></a></li>
-                        <li><a href="#how"><span data-lang="es">Instalación en 2 horas</span><span data-lang="en">2-hour install</span></a></li>
+                        <li><a href="#solutions"><span data-lang="es">Instalación en 2 horas</span><span data-lang="en">2-hour install</span></a></li>
                         <li><a href="#servicios"><span data-lang="es">Garantía + soporte</span><span data-lang="en">Warranty + support</span></a></li>
                       </ul>
                     </div>
@@ -4203,7 +4248,7 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
                     <div class="mm-cat">
                       <div class="mm-cat-h"><span data-lang="es">Recursos</span><span data-lang="en">Resources</span></div>
                       <ul class="mm-cat-list">
-                        <li><a href="#video-sec"><span data-lang="es">Ver demo en video</span><span data-lang="en">Watch demo video</span></a></li>
+                        <li><a href="#solutions"><span data-lang="es">Ver demo en video</span><span data-lang="en">Watch demo video</span></a></li>
                         <li><a href="#testimonials"><span data-lang="es">Testimonios reales</span><span data-lang="en">Real testimonials</span></a></li>
                       </ul>
                     </div>
@@ -4223,7 +4268,7 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
                       <div class="mm-cat-h"><span data-lang="es">Monitoreo</span><span data-lang="en">Monitoring</span></div>
                       <ul class="mm-cat-list">
                         <li><a href="#solutions"><span data-lang="es">Multi-circuito por área</span><span data-lang="en">Multi-circuit by area</span></a></li>
-                        <li><a href="#dash-sec"><span data-lang="es">Reportes mensuales</span><span data-lang="en">Monthly reports</span></a></li>
+                        <li><a href="#solutions"><span data-lang="es">Reportes mensuales</span><span data-lang="en">Monthly reports</span></a></li>
                         <li><a href="#solutions"><span data-lang="es">Alertas en tiempo real</span><span data-lang="en">Real-time alerts</span></a></li>
                       </ul>
                     </div>
@@ -4268,7 +4313,7 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
                       <ul class="mm-cat-list">
                         <li><a href="#solutions"><span data-lang="es">Por línea de producción</span><span data-lang="en">Per production line</span></a></li>
                         <li><a href="#solutions"><span data-lang="es">Detección de fallas</span><span data-lang="en">Fault detection</span></a></li>
-                        <li><a href="#dash-sec"><span data-lang="es">Indicadores OEE</span><span data-lang="en">OEE indicators</span></a></li>
+                        <li><a href="#solutions"><span data-lang="es">Indicadores OEE</span><span data-lang="en">OEE indicators</span></a></li>
                       </ul>
                     </div>
                     <div class="mm-cat">
@@ -4410,7 +4455,7 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
                       <div class="mm-cat-h"><span data-lang="es">Software</span><span data-lang="en">Software</span></div>
                       <ul class="mm-cat-list">
                         <li><a href="#solutions"><span data-lang="es">Plataforma Medidor Inteligente</span><span data-lang="en">Medidor Inteligente platform</span></a></li>
-                        <li><a href="#dash-sec"><span data-lang="es">Dashboard en vivo</span><span data-lang="en">Live dashboard</span></a></li>
+                        <li><a href="#solutions"><span data-lang="es">Dashboard en vivo</span><span data-lang="en">Live dashboard</span></a></li>
                         <li><a href="#solutions"><span data-lang="es">Reportes con IA</span><span data-lang="en">AI reports</span></a></li>
                       </ul>
                     </div>
@@ -4487,7 +4532,7 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span data-lang="es">Score energético</span><span data-lang="en">Energy score</span></span><div class="nd-bar"></div></div>
               </a>
-              <a href="#dash-sec" class="nd-item">
+              <a href="#solutions" class="nd-item">
                 <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&auto=format&fit=crop&q=70')"></div>
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span data-lang="es">Dashboard en vivo</span><span data-lang="en">Live dashboard</span></span><div class="nd-bar"></div></div>
@@ -4575,6 +4620,11 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-key"/></svg></span> <span data-lang="es">Llave en mano</span><span data-lang="en">Turnkey</span></span><span class="nd-desc"><span data-lang="es">Diseño + entrega</span><span data-lang="en">Design + delivery</span></span><div class="nd-bar"></div></div>
               </a>
+              <a href="#solutions" class="nd-item">
+                <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&auto=format&fit=crop&q=70');filter:hue-rotate(150deg)"></div>
+                <div class="nd-item-ov" style="background:linear-gradient(180deg,rgba(8,40,80,.2),rgba(8,40,80,.92))"></div>
+                <div class="nd-item-c"><span class="nd-title"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span> <span data-lang="es">Medidor Inteligente</span><span data-lang="en">Smart Metering</span></span><span class="nd-desc"><span data-lang="es">Monitoreo · ahorro de energía</span><span data-lang="en">Monitoring · energy savings</span></span><div class="nd-bar"></div></div>
+              </a>
             </div>
           </div>
         </li>
@@ -4584,22 +4634,22 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
           <a><span data-lang="es">Mercados</span><span data-lang="en">Markets</span> <span class="drop-arr">▾</span></a>
           <div class="nav-drop">
             <div class="nd-grid nd-grid-2">
-              <a href="#markets" class="nd-item">
+              <a href="#solutions" class="nd-item">
                 <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&auto=format&fit=crop&q=70')"></div>
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span data-lang="es">Residencial</span><span data-lang="en">Residential</span></span><span class="nd-desc"><span data-lang="es">Hogares · Aptos</span><span data-lang="en">Homes · Apts</span></span><div class="nd-bar"></div></div>
               </a>
-              <a href="#markets" class="nd-item">
+              <a href="#solutions" class="nd-item">
                 <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&auto=format&fit=crop&q=70')"></div>
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span data-lang="es">Comercial</span><span data-lang="en">Commercial</span></span><span class="nd-desc"><span data-lang="es">Oficinas · Locales</span><span data-lang="en">Offices · Stores</span></span><div class="nd-bar"></div></div>
               </a>
-              <a href="#markets" class="nd-item">
+              <a href="#solutions" class="nd-item">
                 <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&auto=format&fit=crop&q=70')"></div>
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span data-lang="es">Industrial</span><span data-lang="en">Industrial</span></span><span class="nd-desc"><span data-lang="es">Talleres · Plantas</span><span data-lang="en">Workshops · Plants</span></span><div class="nd-bar"></div></div>
               </a>
-              <a href="#markets" class="nd-item">
+              <a href="#solutions" class="nd-item">
                 <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&auto=format&fit=crop&q=70')"></div>
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span data-lang="es">Edificios</span><span data-lang="en">Buildings</span></span><span class="nd-desc"><span data-lang="es">Áreas comunes</span><span data-lang="en">Common areas</span></span><div class="nd-bar"></div></div>
@@ -4645,7 +4695,7 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
   <div class="mob-sub" id="sub1">
     <div class="mob-sub-item" onclick="closeMobGo('#solutions')"><span data-lang="es">Monitoreo por circuito</span><span data-lang="en">Circuit monitoring</span></div>
     <div class="mob-sub-item" onclick="closeMobGo('#solutions')"><span data-lang="es">Detección de anomalías</span><span data-lang="en">Anomaly detection</span></div>
-    <div class="mob-sub-item" onclick="closeMobGo('#dash-sec')"><span data-lang="es">Dashboard en vivo</span><span data-lang="en">Live dashboard</span></div>
+    <div class="mob-sub-item" onclick="closeMobGo('#solutions')"><span data-lang="es">Dashboard en vivo</span><span data-lang="en">Live dashboard</span></div>
   </div>
   <div class="mob-link" onclick="toggleMobSub('sub3')"><span data-lang="es">Productos</span><span data-lang="en">Products</span> <span>›</span></div>
   <div class="mob-sub" id="sub3">
@@ -4665,12 +4715,13 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
     <div class="mob-sub-item" onclick="closeMobGo('#servicios')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-truck"/></svg></span> <span data-lang="es">Field Services</span><span data-lang="en">Field Services</span></div>
     <div class="mob-sub-item" onclick="closeMobGo('#servicios')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-key"/></svg></span> <span data-lang="es">Llave en mano</span><span data-lang="en">Turnkey</span></div>
     <div class="mob-sub-item" onclick="closeMobGo('#servicios')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-puzzle"/></svg></span> <span data-lang="es">Integración</span><span data-lang="en">Integration</span></div>
+    <div class="mob-sub-item" onclick="closeMobGo('#solutions')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span> <span data-lang="es">Medidor Inteligente</span><span data-lang="en">Smart Metering</span></div>
   </div>
   <div class="mob-link" onclick="toggleMobSub('sub4')"><span data-lang="es">Mercados</span><span data-lang="en">Markets</span> <span>›</span></div>
   <div class="mob-sub" id="sub4">
-    <div class="mob-sub-item" onclick="closeMobGo('#markets')"><span data-lang="es">Residencial</span><span data-lang="en">Residential</span></div>
-    <div class="mob-sub-item" onclick="closeMobGo('#markets')"><span data-lang="es">Comercial</span><span data-lang="en">Commercial</span></div>
-    <div class="mob-sub-item" onclick="closeMobGo('#markets')"><span data-lang="es">Industrial</span><span data-lang="en">Industrial</span></div>
+    <div class="mob-sub-item" onclick="closeMobGo('#solutions')"><span data-lang="es">Residencial</span><span data-lang="en">Residential</span></div>
+    <div class="mob-sub-item" onclick="closeMobGo('#solutions')"><span data-lang="es">Comercial</span><span data-lang="en">Commercial</span></div>
+    <div class="mob-sub-item" onclick="closeMobGo('#solutions')"><span data-lang="es">Industrial</span><span data-lang="en">Industrial</span></div>
   </div>
   <div class="mob-link" onclick="closeMobGo('#cta-sec')"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></div>
   <div class="mob-div"></div>
@@ -5472,788 +5523,77 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     PLATAFORMA · Medidor Inteligente
-═══════════════════════════════════════════════════════════ -->
-<section id="solutions" class="sec">
-  <div class="container">
-
-    <div class="centered rv" style="margin-bottom:48px">
-      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Plataforma Medidor Inteligente</span><span data-lang="en">Medidor Inteligente Platform</span></div>
-      <h2 class="s-title"><span data-lang="es">Monitoreo continuo.<br><span>Informe mensual. Ahorro real.</span></span><span data-lang="en">Continuous monitoring.<br><span>Monthly report. Real savings.</span></span></h2>
-      <p class="s-sub"><span data-lang="es">Instalamos el sensor, conectamos la plataforma y cada mes recibes un análisis completo con recomendaciones concretas para reducir tu factura.</span><span data-lang="en">We install the sensor, connect the platform and every month you receive a full analysis with concrete recommendations to cut your bill.</span></p>
-    </div>
-
-    <!-- Informe mensual — tarjeta destacada -->
-    <div class="sol-hero-card rv">
-      <div class="sol-hero-left">
-        <div class="sol-hero-badge"><span data-lang="es">Incluido en cada instalación</span><span data-lang="en">Included with every installation</span></div>
-        <h3 class="sol-hero-title"><span data-lang="es">Informe mensual con IA</span><span data-lang="en">Monthly AI Report</span></h3>
-        <p class="sol-hero-text"><span data-lang="es">Cada mes recibes un PDF personalizado con el análisis completo de tu consumo: comparativo vs mes anterior, circuitos con mayor gasto, consumos fantasma detectados, score energético actualizado y recomendaciones de ahorro concretas generadas por inteligencia artificial.</span><span data-lang="en">Every month you receive a personalized PDF with a full consumption analysis: comparison vs previous month, highest-usage circuits, detected phantom loads, updated energy score and concrete savings recommendations generated by AI.</span></p>
-        <ul class="sol-hero-list">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Consumo por circuito y comparativo mensual</span><span data-lang="en">Per-circuit usage and monthly comparison</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Detección de anomalías y consumo fantasma</span><span data-lang="en">Anomaly detection and phantom load</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Score energético A–F con análisis de tendencia</span><span data-lang="en">A–F energy score with trend analysis</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">5 recomendaciones de ahorro personalizadas</span><span data-lang="en">5 personalized savings recommendations</span></li>
-        </ul>
-        <a href="#cta-sec" class="btn btn-primary" style="margin-top:8px"><span data-lang="es">Solicitar mi análisis →</span><span data-lang="en">Request my analysis →</span></a>
-      </div>
-      <div class="sol-hero-right">
-        <!-- Mock informe preview -->
-        <div class="sol-report">
-          <div class="sr-topbar">
-            <div class="sr-dot" style="background:#ef4444"></div>
-            <div class="sr-dot" style="background:#f59e0b"></div>
-            <div class="sr-dot" style="background:#22c55e"></div>
-            <span class="sr-filename"><span data-lang="es">Informe_Mayo_2025.pdf</span><span data-lang="en">Report_May_2025.pdf</span></span>
-          </div>
-          <div class="sr-body">
-            <div class="sr-header-block">
-              <div class="sr-logo-line"><span class="sr-mtg">MTG</span><span class="sr-sep">·</span><span class="sr-mi">Medidor Inteligente</span></div>
-              <div class="sr-title-line"><span data-lang="es">Informe Energético — Mayo 2025</span><span data-lang="en">Energy Report — May 2025</span></div>
-              <div class="sr-client">Casa Familia González · EDEMET</div>
-            </div>
-            <div class="sr-score-row">
-              <div class="sr-score-block">
-                <div class="sr-score-letter">B+</div>
-                <div class="sr-score-lbl">Score energético</div>
-              </div>
-              <div class="sr-kpis">
-                <div class="sr-kpi"><span class="sr-kv">847 kWh</span><span class="sr-kl"><span data-lang="es">Consumo total</span><span data-lang="en">Total usage</span></span></div>
-                <div class="sr-kpi"><span class="sr-kv" style="color:#22c55e">−12%</span><span class="sr-kl"><span data-lang="es">vs mes anterior</span><span data-lang="en">vs prev month</span></span></div>
-                <div class="sr-kpi"><span class="sr-kv">$189.40</span><span class="sr-kl"><span data-lang="es">Factura estimada</span><span data-lang="en">Estimated bill</span></span></div>
-              </div>
-            </div>
-            <div class="sr-bars">
-              <div class="sr-bar-row"><span class="sr-br-lbl">A/C principal</span><div class="sr-bar-track"><div class="sr-bar-fill" style="width:78%;background:#2563eb"></div></div><span class="sr-br-val">312 kWh</span></div>
-              <div class="sr-bar-row"><span class="sr-br-lbl">Cocina</span><div class="sr-bar-track"><div class="sr-bar-fill" style="width:42%;background:#0ea5e9"></div></div><span class="sr-br-val">168 kWh</span></div>
-              <div class="sr-bar-row"><span class="sr-br-lbl">Iluminación</span><div class="sr-bar-track"><div class="sr-bar-fill" style="width:24%;background:#38bdf8"></div></div><span class="sr-br-val">96 kWh</span></div>
-            </div>
-            <div class="sr-rec-block">
-              <div class="sr-rec-title">💡 <span data-lang="es">Recomendación principal</span><span data-lang="en">Top recommendation</span></div>
-              <div class="sr-rec-text"><span data-lang="es">El A/C del cuarto principal opera 6h/día en modo standby. Ajustar el termostato a 24°C puede ahorrar ~38 kWh al mes.</span><span data-lang="en">The main bedroom A/C runs 6h/day in standby. Setting the thermostat to 24°C can save ~38 kWh/month.</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 6 módulos de la plataforma -->
-    <div class="sol-modules rv">
-      <div class="sol-mod">
-        <div class="sol-mod-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
-        <div class="sol-mod-body"><div class="sol-mod-name"><span data-lang="es">Monitoreo por circuito</span><span data-lang="en">Circuit monitoring</span></div><div class="sol-mod-desc"><span data-lang="es">Lecturas cada 5 min, histórico 12 meses</span><span data-lang="en">Readings every 5 min, 12-month history</span></div></div>
-      </div>
-      <div class="sol-mod">
-        <div class="sol-mod-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
-        <div class="sol-mod-body"><div class="sol-mod-name"><span data-lang="es">Detección de anomalías</span><span data-lang="en">Anomaly detection</span></div><div class="sol-mod-desc"><span data-lang="es">Alertas IA con nivel de severidad</span><span data-lang="en">AI alerts with severity level</span></div></div>
-      </div>
-      <div class="sol-mod">
-        <div class="sol-mod-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <div class="sol-mod-body"><div class="sol-mod-name"><span data-lang="es">Consumo fantasma</span><span data-lang="en">Phantom load</span></div><div class="sol-mod-desc"><span data-lang="es">Identifica aparatos en standby oculto</span><span data-lang="en">Identifies hidden standby appliances</span></div></div>
-      </div>
-      <div class="sol-mod">
-        <div class="sol-mod-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <div class="sol-mod-body"><div class="sol-mod-name"><span data-lang="es">Score energético A–F</span><span data-lang="en">Energy score A–F</span></div><div class="sol-mod-desc"><span data-lang="es">Índice compuesto eficiencia + estabilidad</span><span data-lang="en">Composite efficiency + stability index</span></div></div>
-      </div>
-      <div class="sol-mod">
-        <div class="sol-mod-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div class="sol-mod-body"><div class="sol-mod-name"><span data-lang="es">Predicción de factura</span><span data-lang="en">Bill prediction</span></div><div class="sol-mod-desc"><span data-lang="es">Proyección mensual antes del cierre</span><span data-lang="en">Monthly forecast before billing closes</span></div></div>
-      </div>
-      <div class="sol-mod">
-        <div class="sol-mod-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-        <div class="sol-mod-body"><div class="sol-mod-name"><span data-lang="es">Dashboard multi-propiedad</span><span data-lang="en">Multi-property dashboard</span></div><div class="sol-mod-desc"><span data-lang="es">Vista unificada de todos tus proyectos</span><span data-lang="en">Unified view of all your projects</span></div></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 
 <!-- ═══════════════════════════════════════════════════════════
-     MERCADOS · A quien servimos
+     MEDIDOR INTELIGENTE · Seccion compacta consolidada
 ═══════════════════════════════════════════════════════════ -->
-<section id="markets" class="sec">
-  <div class="container">
-    <div class="centered rv">
-      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Mercados</span><span data-lang="en">Markets</span></div>
-      <h2 class="s-title"><span data-lang="es">Solución para cada <span>tipo de propiedad</span></span><span data-lang="en">Solution for every <span>property type</span></span></h2>
-      <p class="s-sub"><span data-lang="es">Medidor Inteligente se adapta a cualquier instalación eléctrica en Panamá.</span><span data-lang="en">Medidor Inteligente adapts to any electrical installation in Panama.</span></p>
-    </div>
-    <div class="mkt-tiles rv">
-      <a href="#cta-sec" class="mkt-tile">
-        <div class="mkt-tile-bg" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&auto=format&fit=crop&q=75')"></div>
-        <div class="mkt-tile-ov"></div>
-        <div class="mkt-tile-c">
-          <span class="mkt-tile-ico ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-home"/></svg></span></span>
-          <div class="mkt-tile-name"><span data-lang="es">Residencial</span><span data-lang="en">Residential</span></div>
-          <div class="mkt-tile-desc"><span data-lang="es">Hogares y apartamentos. Factura más baja desde el primer mes.</span><span data-lang="en">Homes and apartments. Lower bill from month one.</span></div>
-          <div class="mkt-tile-bar"></div>
-          <div class="mkt-tile-tags"><span class="mkt-tile-tag">A/C</span><span class="mkt-tile-tag">Standby</span></div>
-        </div>
-      </a>
-      <a href="#cta-sec" class="mkt-tile">
-        <div class="mkt-tile-bg" style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=700&auto=format&fit=crop&q=75')"></div>
-        <div class="mkt-tile-ov"></div>
-        <div class="mkt-tile-c">
-          <span class="mkt-tile-ico ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-building"/></svg></span></span>
-          <div class="mkt-tile-name"><span data-lang="es">Comercial</span><span data-lang="en">Commercial</span></div>
-          <div class="mkt-tile-desc"><span data-lang="es">Oficinas y locales. Control de consumos fuera de horario.</span><span data-lang="en">Offices and stores. Off-hours consumption control.</span></div>
-          <div class="mkt-tile-bar"></div>
-          <div class="mkt-tile-tags"><span class="mkt-tile-tag"><span data-lang="es">Iluminación</span><span data-lang="en">Lighting</span></span><span class="mkt-tile-tag">HVAC</span></div>
-        </div>
-      </a>
-      <a href="#cta-sec" class="mkt-tile">
-        <div class="mkt-tile-bg" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=700&auto=format&fit=crop&q=75')"></div>
-        <div class="mkt-tile-ov"></div>
-        <div class="mkt-tile-c">
-          <span class="mkt-tile-ico ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-factory"/></svg></span></span>
-          <div class="mkt-tile-name"><span data-lang="es">Industrial</span><span data-lang="en">Industrial</span></div>
-          <div class="mkt-tile-desc"><span data-lang="es">Talleres y plantas. Monitoreo de maquinaria y sobrecargas.</span><span data-lang="en">Workshops and plants. Machinery and overload monitoring.</span></div>
-          <div class="mkt-tile-bar"></div>
-          <div class="mkt-tile-tags"><span class="mkt-tile-tag"><span data-lang="es">Maquinaria</span><span data-lang="en">Machinery</span></span><span class="mkt-tile-tag"><span data-lang="es">Compresores</span><span data-lang="en">Compressors</span></span></div>
-        </div>
-      </a>
-      <a href="#cta-sec" class="mkt-tile">
-        <div class="mkt-tile-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&auto=format&fit=crop&q=75')"></div>
-        <div class="mkt-tile-ov"></div>
-        <div class="mkt-tile-c">
-          <span class="mkt-tile-ico ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-tower"/></svg></span></span>
-          <div class="mkt-tile-name"><span data-lang="es">Edificios</span><span data-lang="en">Buildings</span></div>
-          <div class="mkt-tile-desc"><span data-lang="es">Multi-propiedad. Dashboard consolidado para administradores.</span><span data-lang="en">Multi-property. Consolidated dashboard for managers.</span></div>
-          <div class="mkt-tile-bar"></div>
-          <div class="mkt-tile-tags"><span class="mkt-tile-tag"><span data-lang="es">Áreas comunes</span><span data-lang="en">Common areas</span></span><span class="mkt-tile-tag"><span data-lang="es">Bombas</span><span data-lang="en">Pumps</span></span></div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+<section id="solutions" class="sec" style="background:linear-gradient(180deg,#070d1c 0%,#0a1124 55%,#0c1428 100%);position:relative;overflow:hidden">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-3"></div>
+  <div class="container" style="position:relative;z-index:2">
 
-
-<!-- ═══════════════════════════════════════════════════════════
-     COMO FUNCIONA · 4 pasos de la instalacion al ahorro
-═══════════════════════════════════════════════════════════ -->
-<section id="how" class="sec">
-  <div class="container">
-    <div class="how-grid">
-      <div>
-        <div class="tag rv"><span class="tag-dot"></span><span data-lang="es">Cómo funciona</span><span data-lang="en">How it works</span></div>
-        <h2 class="s-title rv"><span data-lang="es">De la instalación al <span>ahorro</span> en 4 pasos</span><span data-lang="en">From installation to <span>savings</span> in 4 steps</span></h2>
-        <p class="s-sub rv"><span data-lang="es">Sin complicaciones. En menos de 48 horas tu propiedad está monitoreada y generando datos accionables.</span><span data-lang="en">No complications. In less than 48 hours your property is monitored and generating actionable data.</span></p>
-        <div class="steps">
-          <div class="step rv step-active" onclick="howActivate(1)">
-            <div class="step-n on">1</div>
-            <div class="step-c">
-              <h3><span data-lang="es">Instalación del sensor</span><span data-lang="en">Sensor installation</span></h3>
-              <p><span data-lang="es">Instalamos el sensor Vue 3 en tu tablero eléctrico. Toma menos de 2 horas sin corte prolongado de servicio.</span><span data-lang="en">We install the Monitoreo Energético Vue 3 in your electrical panel. Takes less than 2 hours without extended service cutoff.</span></p>
-              <div class="step-tag"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-wrench"/></svg></span> <span data-lang="es">Hasta 16 circuitos</span><span data-lang="en">Up to 16 circuits</span></div>
-            </div>
-          </div>
-          <div class="step rv" onclick="howActivate(2)">
-            <div class="step-n">2</div>
-            <div class="step-c">
-              <h3><span data-lang="es">Conexión a Medidor Inteligente</span><span data-lang="en">Medidor Inteligente connection</span></h3>
-              <p><span data-lang="es">El sensor transmite datos vía Wi-Fi a nuestra nube. Desde el día 1 accedes al dashboard desde cualquier dispositivo.</span><span data-lang="en">The sensor transmits data via Wi-Fi to our cloud. From day 1 you access the dashboard from any device.</span></p>
-              <div class="step-tag"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-globe"/></svg></span> <span data-lang="es">Nube segura</span><span data-lang="en">Secure cloud</span></div>
-            </div>
-          </div>
-          <div class="step rv" onclick="howActivate(3)">
-            <div class="step-n">3</div>
-            <div class="step-c">
-              <h3><span data-lang="es">Análisis con IA</span><span data-lang="en">AI analysis</span></h3>
-              <p><span data-lang="es">Medidor Inteligente procesa los datos con algoritmos y Claude AI para identificar ineficiencias, fantasmas y patrones inusuales.</span><span data-lang="en">Medidor Inteligente processes data with algorithms and Claude AI to identify inefficiencies, phantom loads and unusual patterns.</span></p>
-              <div class="step-tag"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-spark"/></svg></span> <span data-lang="es">Anthropic Claude</span><span data-lang="en">Anthropic Claude</span></div>
-            </div>
-          </div>
-          <div class="step rv" onclick="howActivate(4)">
-            <div class="step-n">4</div>
-            <div class="step-c">
-              <h3><span data-lang="es">Recomendaciones y ahorro</span><span data-lang="en">Recommendations & savings</span></h3>
-              <p><span data-lang="es">Recibes recomendaciones priorizadas por impacto económico en balboas. Tu factura baja desde el primer mes.</span><span data-lang="en">You receive recommendations prioritized by economic impact in balboas. Your bill drops from month one.</span></p>
-              <div class="step-tag"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-trend"/></svg></span> ROI &lt;24 <span data-lang="es">meses</span><span data-lang="en">months</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="how-right">
-        <!-- Imagen interactiva por paso -->
-        <div class="how-img-card rv">
-          <img id="howStepImg"
-            src="assets/instalacion-paso1.jpg"
-            alt="Instalación del sensor en tablero eléctrico" loading="lazy">
-          <div class="how-img-overlay">
-            <div class="how-step-badge">
-              <span data-lang="es">Paso&nbsp;</span><span data-lang="en">Step&nbsp;</span><span id="howStepNum">1</span>
-            </div>
-            <p id="howStepCap" class="how-step-cap"><span data-lang="es">Instalamos el sensor Vue 3 en tu tablero eléctrico</span><span data-lang="en">We install the Sensor Vue 3 in your electrical panel</span></p>
-          </div>
-        </div>
-        <div class="hw-flow rv">
-          <div class="hf"><div class="hf-ico ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span></div><div><h5><span data-lang="es">Sensor → Nube</span><span data-lang="en">Sensor → Cloud</span></h5><p><span data-lang="es">Datos cifrados cada 5 min vía TLS/HTTPS</span><span data-lang="en">Encrypted data every 5 min via TLS/HTTPS</span></p></div></div>
-          <div class="hf"><div class="hf-ico ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-spark"/></svg></span></div><div><h5><span data-lang="es">Nube → IA</span><span data-lang="en">Cloud → AI</span></h5><p><span data-lang="es">El motor con IA detecta anomalías en tiempo real</span><span data-lang="en">AI engine detects anomalies in real time</span></p></div></div>
-          <div class="hf"><div class="hf-ico ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-phone"/></svg></span></div><div><h5><span data-lang="es">IA → Dashboard</span><span data-lang="en">AI → Dashboard</span></h5><p><span data-lang="es">KPIs y alertas actualizadas al instante</span><span data-lang="en">KPIs and alerts updated instantly</span></p></div></div>
-          <div class="hf"><div class="hf-ico ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span></div><div><h5><span data-lang="es">Dashboard → Acción</span><span data-lang="en">Dashboard → Action</span></h5><p><span data-lang="es">Recomendaciones listas para ejecutar</span><span data-lang="en">Recommendations ready to execute</span></p></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     DASHBOARD · Tu instalacion electrica visible al instante
-═══════════════════════════════════════════════════════════ -->
-<section id="dash-sec" class="sec">
-  <div class="container">
-    <div class="centered rv">
-      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Dashboard en vivo</span><span data-lang="en">Live dashboard</span></div>
-      <h2 class="s-title"><span data-lang="es">Tu instalación eléctrica, <span>visible al instante</span></span><span data-lang="en">Your electrical installation, <span>visible instantly</span></span></h2>
-      <p class="s-sub"><span data-lang="es">No solo datos — contexto, alertas y recomendaciones en una sola pantalla.</span><span data-lang="en">Not just data — context, alerts and recommendations on a single screen.</span></p>
-    </div>
-    <!-- ══ DASHBOARD MOCKUP ══ -->
-    <div class="mi-dash-wrap rv">
-      <!-- Browser chrome -->
-      <div class="mi-chrome">
-        <div class="mi-dots"><span style="background:#ef4444"></span><span style="background:#f59e0b"></span><span style="background:#22c55e"></span></div>
-        <div class="mi-url">🔒 app.medidorinteligente.pa · <strong>Residencia González — San Francisco</strong></div>
-        <div class="mi-live"><span class="mi-live-dot"></span>EN VIVO</div>
-      </div>
-      <!-- Dashboard body -->
-      <div class="mi-body">
-
-        <!-- ── SIDEBAR ── -->
-        <nav class="mi-side">
-          <div class="mi-side-logo">MI</div>
-          <div class="mi-side-icon mi-active" title="Inicio">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <div class="mi-side-icon" title="Consumo">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <div class="mi-side-icon" title="Facturas">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          </div>
-          <div class="mi-side-icon mi-alert-badge" title="Alertas">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-            <span class="mi-notif">2</span>
-          </div>
-          <div class="mi-side-icon" title="Ajustes">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-          </div>
-        </nav>
-
-        <!-- ── MAIN CONTENT ── -->
-        <div class="mi-main">
-
-          <!-- Row 1: header -->
-          <div class="mi-header-row">
-            <div>
-              <div class="mi-greeting">Buenos días, Roberto 👋</div>
-              <div class="mi-date">Martes 6 mayo · 10:42 a.m.</div>
-            </div>
-            <div class="mi-alert-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              ⚠ Standby elevado en cocina
-            </div>
-          </div>
-
-          <!-- Row 2: KPI cards -->
-          <div class="mi-kpi-row">
-            <div class="mi-kpi mi-kpi-blue">
-              <div class="mi-kpi-icon">⚡</div>
-              <div class="mi-kpi-val">3.24 <span>kW</span></div>
-              <div class="mi-kpi-lbl">Consumo ahora</div>
-              <div class="mi-kpi-delta up">↑ +12% vs ayer</div>
-            </div>
-            <div class="mi-kpi">
-              <div class="mi-kpi-icon">📅</div>
-              <div class="mi-kpi-val">142 <span>kWh</span></div>
-              <div class="mi-kpi-lbl">Este mes</div>
-              <div class="mi-kpi-delta down">↓ –28% vs mayo ant.</div>
-            </div>
-            <div class="mi-kpi">
-              <div class="mi-kpi-icon">💰</div>
-              <div class="mi-kpi-val">B/.68 <span>/mes</span></div>
-              <div class="mi-kpi-lbl">Proyección factura</div>
-              <div class="mi-kpi-delta down">↓ Ahorras B/.27</div>
-            </div>
-          </div>
-
-          <!-- Row 3: Score + Bars -->
-          <div class="mi-row3">
-
-            <!-- Score gauge -->
-            <div class="mi-score-card">
-              <div class="mi-panel-title">Score Energético</div>
-              <div class="mi-gauge-wrap">
-                <svg class="mi-gauge-svg" viewBox="0 0 160 160">
-                  <defs>
-                    <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stop-color="#2563eb"/>
-                      <stop offset="100%" stop-color="#0ea5e9"/>
-                    </linearGradient>
-                  </defs>
-                  <!-- Track -->
-                  <circle cx="80" cy="80" r="64" fill="none" stroke="#e8effe" stroke-width="12"/>
-                  <!-- Progress — 82/100 → dashoffset = 402.12*(1-0.82) = 72.38 -->
-                  <circle cx="80" cy="80" r="64" fill="none" stroke="url(#gaugeGrad)" stroke-width="12"
-                    stroke-linecap="round" stroke-dasharray="402.12" stroke-dashoffset="72.38"
-                    transform="rotate(-90 80 80)" class="mi-gauge-arc"/>
-                  <!-- Inner ring decoration -->
-                  <circle cx="80" cy="80" r="52" fill="none" stroke="#e8effe" stroke-width="1.5" stroke-dasharray="3 6"/>
-                </svg>
-                <div class="mi-gauge-center">
-                  <div class="mi-gauge-num" id="mi-score-num">82</div>
-                  <div class="mi-gauge-sub">/100</div>
-                  <div class="mi-gauge-grade">Grado A</div>
-                </div>
-              </div>
-              <div class="mi-score-tags">
-                <span class="mi-score-tag green">✓ Eficiente</span>
-                <span class="mi-score-tag blue">✓ Sin picos</span>
-                <span class="mi-score-tag orange">⚡ Standby</span>
-              </div>
-            </div>
-
-            <!-- 7-day bar chart -->
-            <div class="mi-bars-card">
-              <div class="mi-panel-title">Consumo diario — kWh <span class="mi-panel-badge">Esta semana</span></div>
-              <div class="mi-bars-wrap">
-                <div class="mi-bar-col">
-                  <div class="mi-bar-val">18.4</div>
-                  <div class="mi-bar-track"><div class="mi-bar-fill" style="height:52%;background:#c7d9f8"></div></div>
-                  <div class="mi-bar-day">Lun</div>
-                </div>
-                <div class="mi-bar-col">
-                  <div class="mi-bar-val">21.7</div>
-                  <div class="mi-bar-track"><div class="mi-bar-fill" style="height:63%;background:#93c5fd"></div></div>
-                  <div class="mi-bar-day">Mar</div>
-                </div>
-                <div class="mi-bar-col">
-                  <div class="mi-bar-val">15.2</div>
-                  <div class="mi-bar-track"><div class="mi-bar-fill" style="height:43%;background:#c7d9f8"></div></div>
-                  <div class="mi-bar-day">Mié</div>
-                </div>
-                <div class="mi-bar-col">
-                  <div class="mi-bar-val">27.8</div>
-                  <div class="mi-bar-track"><div class="mi-bar-fill" style="height:80%;background:#60a5fa"></div></div>
-                  <div class="mi-bar-day">Jue</div>
-                </div>
-                <div class="mi-bar-col">
-                  <div class="mi-bar-val">19.5</div>
-                  <div class="mi-bar-track"><div class="mi-bar-fill" style="height:56%;background:#93c5fd"></div></div>
-                  <div class="mi-bar-day">Vie</div>
-                </div>
-                <div class="mi-bar-col">
-                  <div class="mi-bar-val">31.2</div>
-                  <div class="mi-bar-track"><div class="mi-bar-fill mi-bar-weekend" style="height:90%"></div></div>
-                  <div class="mi-bar-day mi-bar-day-we">Sáb</div>
-                </div>
-                <div class="mi-bar-col mi-bar-today">
-                  <div class="mi-bar-val mi-bar-today-val">14.1</div>
-                  <div class="mi-bar-track"><div class="mi-bar-fill mi-bar-active" style="height:40%"></div></div>
-                  <div class="mi-bar-day"><strong>Hoy</strong></div>
-                </div>
-              </div>
-              <div class="mi-bar-legend">
-                <span>🟦 Días normales</span>
-                <span style="color:#f59e0b">🟨 Fin de semana (+41%)</span>
-                <span style="color:#2563eb">🔵 Hoy (en curso)</span>
-              </div>
-            </div>
-
-          </div><!-- /row3 -->
-
-          <!-- Row 4: Circuits + Alert -->
-          <div class="mi-row4">
-
-            <!-- Circuit breakdown -->
-            <div class="mi-circuits-card">
-              <div class="mi-panel-title">Por circuito — consumo actual</div>
-              <div class="mi-circ">
-                <div class="mi-circ-icon">❄️</div>
-                <div class="mi-circ-info">
-                  <div class="mi-circ-name">Climatización (A/C)</div>
-                  <div class="mi-circ-bar-w"><div class="mi-circ-bar" style="width:78%;background:linear-gradient(90deg,#f97316,#fb923c)"></div></div>
-                </div>
-                <div class="mi-circ-val">1.84 kW <span class="mi-circ-pct">57%</span></div>
-              </div>
-              <div class="mi-circ">
-                <div class="mi-circ-icon">🍳</div>
-                <div class="mi-circ-info">
-                  <div class="mi-circ-name">Cocina</div>
-                  <div class="mi-circ-bar-w"><div class="mi-circ-bar" style="width:46%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div>
-                </div>
-                <div class="mi-circ-val">0.92 kW <span class="mi-circ-pct">28%</span></div>
-              </div>
-              <div class="mi-circ">
-                <div class="mi-circ-icon">💡</div>
-                <div class="mi-circ-info">
-                  <div class="mi-circ-name">Iluminación</div>
-                  <div class="mi-circ-bar-w"><div class="mi-circ-bar" style="width:18%;background:linear-gradient(90deg,#60a5fa,#93c5fd)"></div></div>
-                </div>
-                <div class="mi-circ-val">0.24 kW <span class="mi-circ-pct">7%</span></div>
-              </div>
-              <div class="mi-circ mi-circ-alert">
-                <div class="mi-circ-icon">⚠️</div>
-                <div class="mi-circ-info">
-                  <div class="mi-circ-name">Standby <span class="mi-circ-warning">Consumo anómalo</span></div>
-                  <div class="mi-circ-bar-w"><div class="mi-circ-bar" style="width:26%;background:linear-gradient(90deg,#ef4444,#f87171)"></div></div>
-                </div>
-                <div class="mi-circ-val">0.24 kW <span class="mi-circ-pct" style="color:#ef4444">8%</span></div>
-              </div>
-            </div>
-
-            <!-- Alert card + savings -->
-            <div class="mi-right-col">
-              <div class="mi-alert-card">
-                <div class="mi-alert-head">
-                  <span class="mi-alert-dot"></span>
-                  <strong>Alerta detectada</strong>
-                </div>
-                <p class="mi-alert-body">El circuito de cocina lleva <strong>6 horas</strong> activo con consumo continuo. Posible refrigerador con puerta abierta o fuga térmica.</p>
-                <div class="mi-alert-actions">
-                  <button class="mi-btn-primary">Ver circuito</button>
-                  <button class="mi-btn-ghost">Ignorar</button>
-                </div>
-              </div>
-              <div class="mi-savings-card">
-                <div class="mi-savings-icon">💚</div>
-                <div class="mi-savings-info">
-                  <div class="mi-savings-val">B/.27.40</div>
-                  <div class="mi-savings-lbl">ahorrados este mes vs. mes anterior</div>
-                </div>
-                <div class="mi-savings-badge">–28%</div>
-              </div>
-            </div>
-
-          </div><!-- /row4 -->
-
-        </div><!-- /mi-main -->
-      </div><!-- /mi-body -->
-    </div><!-- /mi-dash-wrap -->
-    <div class="dash-feats">
-      <div class="df rv"><div class="df-ico ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-signal"/></svg></span></div><h4><span data-lang="es">Tiempo real</span><span data-lang="en">Real time</span></h4><p><span data-lang="es">Datos actualizados cada 5 min desde cada circuito.</span><span data-lang="en">Data updated every 5 min from each circuit.</span></p></div>
-      <div class="df rv"><div class="df-ico ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></div><h4><span data-lang="es">Alertas inteligentes</span><span data-lang="en">Smart alerts</span></h4><p><span data-lang="es">Notificaciones inmediatas ante consumos anómalos.</span><span data-lang="en">Immediate notifications for abnormal consumption.</span></p></div>
-      <div class="df rv"><div class="df-ico ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-doc"/></svg></span></div><h4><span data-lang="es">Historial facturas</span><span data-lang="en">Bill history</span></h4><p><span data-lang="es">Carga y compara facturas mes a mes con análisis IA.</span><span data-lang="en">Upload and compare bills month to month with AI.</span></p></div>
-      <div class="df rv"><div class="df-ico ico ico-lg"><span class="ico ico-lg" style="vertical-align:-0.15em"><svg><use href="#i-phone"/></svg></span></div><h4><span data-lang="es">Desde cualquier lugar</span><span data-lang="en">From anywhere</span></h4><p><span data-lang="es">Dashboard web responsive. PC, tablet o móvil.</span><span data-lang="en">Responsive web dashboard. PC, tablet or mobile.</span></p></div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     QUE HACE · Visualizacion del consumo por habitacion
-═══════════════════════════════════════════════════════════ -->
-<section id="visualization" class="sec">
-  <div class="container">
-    <div class="centered rv" style="margin-bottom:32px">
-      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Visualización inteligente</span><span data-lang="en">Smart visualization</span></div>
-      <h2 class="s-title"><span data-lang="es">Mira <span>cada habitación</span> de tu casa en tiempo real</span><span data-lang="en">See <span>every room</span> of your home in real time</span></h2>
-      <p class="s-sub"><span data-lang="es">Medidor Inteligente desglosa tu consumo eléctrico por aparato. Toca cualquier aparato para ver cuánto gasta y cómo reducirlo.</span><span data-lang="en">Medidor Inteligente breaks down your electricity consumption by appliance. Tap any appliance to see how much it costs and how to reduce it.</span></p>
+    <div class="centered rv" style="text-align:center;margin-bottom:42px">
+      <div class="tag" style="margin:0 auto"><span class="tag-dot"></span><span data-lang="es">Medidor Inteligente &middot; Hogar y negocio</span><span data-lang="en">Medidor Inteligente &middot; Home &amp; business</span></div>
+      <h2 class="s-title" style="color:#fff"><span data-lang="es">Monitorea tu energia. <span style="background:linear-gradient(120deg,#22d3ee,#67e8f9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Reduce hasta 40% tu factura.</span></span><span data-lang="en">Monitor your energy. <span style="background:linear-gradient(120deg,#22d3ee,#67e8f9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Cut your bill up to 40%.</span></span></h2>
+      <p class="s-sub" style="color:rgba(208,222,245,.78);max-width:640px;margin:14px auto 0"><span data-lang="es">Instalamos un sensor en tu tablero electrico y ves exactamente cuanto consume cada circuito, en tiempo real, con recomendaciones de ahorro por IA.</span><span data-lang="en">We install a sensor in your panel and you see exactly what each circuit consumes, in real time, with AI savings recommendations.</span></p>
     </div>
 
-    <!-- Imagen principal con overlays integrados -->
-    <div class="viz-hero rv">
-      <div class="viz-live-pill">
-        <span class="viz-live-dot2"></span>
-        <span data-lang="es">EN VIVO</span><span data-lang="en">LIVE</span>
+    <!-- Como funciona: 3 pasos -->
+    <div class="med-steps rv">
+      <div class="med-step">
+        <div class="med-step-n">1</div>
+        <h4><span data-lang="es">Instalamos el sensor</span><span data-lang="en">We install the sensor</span></h4>
+        <p><span data-lang="es">Tecnico certificado en tu tablero electrico. Menos de 2 horas, sin corte de luz.</span><span data-lang="en">Certified technician at your panel. Under 2 hours, no power outage.</span></p>
       </div>
-      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3DGYrYWYOex4iGeSuPVx1CNCFCj/hf_20260508_214416_d930c62d-c1bc-4f7c-87b6-8a1ca9d5a72e_min.webp"
-        alt="Vista del hogar con consumo eléctrico por aparato en tiempo real" loading="lazy">
-    </div>
-
-    <!-- Selector interactivo de aparatos -->
-    <div class="viz-app-row rv" role="group">
-      <button class="viz-app-btn viz-app-active" onclick="vizSelect(this,'ac')" data-app="ac" style="--ac:#3b82f6">
-        <span class="viz-app-dot" style="background:#3b82f6"></span>
-        <span class="viz-app-label">❄️ <span data-lang="es">Aire AC</span><span data-lang="en">AC Unit</span></span>
-        <span class="viz-app-pct">30%</span>
-      </button>
-      <button class="viz-app-btn" onclick="vizSelect(this,'fridge')" data-app="fridge">
-        <span class="viz-app-dot" style="background:#8b5cf6"></span>
-        <span class="viz-app-label">🧊 <span data-lang="es">Nevera</span><span data-lang="en">Fridge</span></span>
-        <span class="viz-app-pct">20%</span>
-      </button>
-      <button class="viz-app-btn" onclick="vizSelect(this,'stove')" data-app="stove">
-        <span class="viz-app-dot" style="background:#f97316"></span>
-        <span class="viz-app-label">🍳 <span data-lang="es">Estufa/Horno</span><span data-lang="en">Stove/Oven</span></span>
-        <span class="viz-app-pct">15%</span>
-      </button>
-      <button class="viz-app-btn" onclick="vizSelect(this,'dryer')" data-app="dryer">
-        <span class="viz-app-dot" style="background:#ef4444"></span>
-        <span class="viz-app-label">♨️ <span data-lang="es">Secadora</span><span data-lang="en">Dryer</span></span>
-        <span class="viz-app-pct">10%</span>
-      </button>
-      <button class="viz-app-btn" onclick="vizSelect(this,'tv')" data-app="tv">
-        <span class="viz-app-dot" style="background:#a855f7"></span>
-        <span class="viz-app-label">📺 <span data-lang="es">Televisión</span><span data-lang="en">Television</span></span>
-        <span class="viz-app-pct">8%</span>
-      </button>
-      <button class="viz-app-btn" onclick="vizSelect(this,'washer')" data-app="washer">
-        <span class="viz-app-dot" style="background:#06b6d4"></span>
-        <span class="viz-app-label">🫧 <span data-lang="es">Lavadora</span><span data-lang="en">Washer</span></span>
-        <span class="viz-app-pct">7%</span>
-      </button>
-      <button class="viz-app-btn" onclick="vizSelect(this,'fan')" data-app="fan">
-        <span class="viz-app-dot" style="background:#14b8a6"></span>
-        <span class="viz-app-label">🌀 <span data-lang="es">Abanico</span><span data-lang="en">Fan</span></span>
-        <span class="viz-app-pct">5%</span>
-      </button>
-      <button class="viz-app-btn" onclick="vizSelect(this,'lights')" data-app="lights">
-        <span class="viz-app-dot" style="background:#f59e0b"></span>
-        <span class="viz-app-label">💡 <span data-lang="es">Iluminación</span><span data-lang="en">Lighting</span></span>
-        <span class="viz-app-pct">5%</span>
-      </button>
-    </div>
-
-    <!-- Tarjeta de detalle interactiva -->
-    <div class="viz-detail-card rv" id="vizDetailCard">
-      <div class="viz-detail-top">
-        <span class="viz-detail-emoji" id="vizEmoji">❄️</span>
-        <div class="viz-detail-meta">
-          <h4 id="vizName">Aire Acondicionado</h4>
-          <p class="viz-detail-sub" id="vizSub">30% del consumo total · mayor gasto del hogar</p>
-        </div>
-        <div class="viz-detail-costs">
-          <div class="viz-detail-weekly" id="vizWeekly">$12.50<small style="font-size:.65rem;font-weight:600;color:#64748b">/sem</small></div>
-          <div class="viz-detail-monthly" id="vizMonthly">~$54/mes estimado</div>
-        </div>
+      <div class="med-step">
+        <div class="med-step-n">2</div>
+        <h4><span data-lang="es">Conecta a la nube</span><span data-lang="en">Connects to the cloud</span></h4>
+        <p><span data-lang="es">Datos en vivo desde el dia 1, hasta 16 circuitos, actualizacion cada 5 minutos.</span><span data-lang="en">Live data from day 1, up to 16 circuits, 5-min refresh.</span></p>
       </div>
-      <div class="viz-bar-row">
-        <div class="viz-bar-wrap"><div class="viz-bar-fill" id="vizBar" style="width:30%;background:#3b82f6"></div></div>
-        <span class="viz-bar-label" id="vizBarLabel">30% del total</span>
-      </div>
-      <div class="viz-tips-hd"><span data-lang="es">💡 Cómo reducir este gasto</span><span data-lang="en">💡 How to reduce this cost</span></div>
-      <div class="viz-tips-list" id="vizTipsList">
-        <div class="viz-tip"><span class="viz-tip-ico">✓</span><p class="viz-tip-txt">Mantén el termostato en 24°C · cada grado menos suma +8% al consumo mensual</p></div>
-        <div class="viz-tip"><span class="viz-tip-ico">✓</span><p class="viz-tip-txt">Activa el modo sleep nocturno · puede ahorrar hasta B/.8 al mes automáticamente</p></div>
-        <div class="viz-tip"><span class="viz-tip-ico">✓</span><p class="viz-tip-txt">Limpia el filtro cada 30 días · el polvo acumulado eleva el consumo hasta un 15%</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     COMPARATIVA · vs alternativas
-═══════════════════════════════════════════════════════════ -->
-<section id="comparativa" class="sec">
-  <div class="container">
-    <div class="centered rv">
-      <div class="tag"><span class="tag-dot"></span><span data-lang="es">¿Por qué Medidor Inteligente?</span><span data-lang="en">Why Medidor Inteligente?</span></div>
-      <h2 class="s-title"><span data-lang="es">Con Medidor Inteligente vs <span>sin Medidor Inteligente</span></span><span data-lang="en">With Medidor Inteligente vs <span>without Medidor Inteligente</span></span></h2>
-      <p class="s-sub"><span data-lang="es">La diferencia es clara — y se mide en balboas al final de cada mes.</span><span data-lang="en">The difference is clear — measured in balboas at the end of each month.</span></p>
-    </div>
-    <div class="cmp-wrap rv">
-      <!-- SIN Medidor Inteligente -->
-      <div class="cmp-col">
-        <div class="cmp-head cmp-head-bad"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-x"/></svg></span> <span data-lang="es">Sin Medidor Inteligente</span><span data-lang="en">Without Medidor Inteligente</span></div>
-        <div class="cmp-row cmp-row-bad"><span class="cmp-ico-bad ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-x"/></svg></span></span><span data-lang="es">Factura alta sin saber por qué</span><span data-lang="en">High bill with no idea why</span></div>
-        <div class="cmp-row cmp-row-bad"><span class="cmp-ico-bad ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-x"/></svg></span></span><span data-lang="es">Sin visibilidad por circuito</span><span data-lang="en">No per-circuit visibility</span></div>
-        <div class="cmp-row cmp-row-bad"><span class="cmp-ico-bad ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-x"/></svg></span></span><span data-lang="es">Detectas problemas cuando ya es tarde</span><span data-lang="en">You notice problems when it's too late</span></div>
-        <div class="cmp-row cmp-row-bad"><span class="cmp-ico-bad ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-x"/></svg></span></span><span data-lang="es">Aparatos en standby desperdiciando dinero</span><span data-lang="en">Appliances in standby wasting money</span></div>
-        <div class="cmp-row cmp-row-bad"><span class="cmp-ico-bad ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-x"/></svg></span></span><span data-lang="es">Sin proyección de factura mensual</span><span data-lang="en">No monthly bill forecast</span></div>
-        <div class="cmp-row cmp-row-bad"><span class="cmp-ico-bad ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-x"/></svg></span></span><span data-lang="es">Asesor externo costoso y esporádico</span><span data-lang="en">Expensive sporadic external consultant</span></div>
-      </div>
-      <!-- VS -->
-      <div class="cmp-col">
-        <div class="cmp-mid-head" style="font-size:1.1rem;font-weight:900;color:var(--txt2)">VS</div>
-        <div class="cmp-mid-row">→</div>
-        <div class="cmp-mid-row">→</div>
-        <div class="cmp-mid-row">→</div>
-        <div class="cmp-mid-row">→</div>
-        <div class="cmp-mid-row">→</div>
-        <div class="cmp-mid-row">→</div>
-      </div>
-      <!-- CON Medidor Inteligente -->
-      <div class="cmp-col">
-        <div class="cmp-head cmp-head-good"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-check"/></svg></span> <span data-lang="es">Con Medidor Inteligente</span><span data-lang="en">With Medidor Inteligente</span></div>
-        <div class="cmp-row cmp-row-good"><span class="cmp-ico-good ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-check"/></svg></span></span><span data-lang="es">Sabes exactamente qué consume más</span><span data-lang="en">You know exactly what consumes most</span></div>
-        <div class="cmp-row cmp-row-good"><span class="cmp-ico-good ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-check"/></svg></span></span><span data-lang="es">Lectura en tiempo real por circuito</span><span data-lang="en">Real-time per-circuit readings</span></div>
-        <div class="cmp-row cmp-row-good"><span class="cmp-ico-good ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-check"/></svg></span></span><span data-lang="es">Alertas automáticas antes de que escalen</span><span data-lang="en">Automatic alerts before they escalate</span></div>
-        <div class="cmp-row cmp-row-good"><span class="cmp-ico-good ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-check"/></svg></span></span><span data-lang="es">Detecta consumo fantasma al instante</span><span data-lang="en">Detects phantom load instantly</span></div>
-        <div class="cmp-row cmp-row-good"><span class="cmp-ico-good ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-check"/></svg></span></span><span data-lang="es">Proyección de factura en tiempo real</span><span data-lang="en">Real-time bill forecast</span></div>
-        <div class="cmp-row cmp-row-good"><span class="cmp-ico-good ico ico-sm"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-check"/></svg></span></span><span data-lang="es">IA con recomendaciones personalizadas</span><span data-lang="en">AI with personalized recommendations</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     VIDEO · Publicidad Medidor Inteligente
-═══════════════════════════════════════════════════════════ -->
-<section id="video-sec">
-  <div class="vid-ad-wrap">
-
-    <!-- LEFT — copy publicitario -->
-    <div class="vid-ad-left rv">
-      <div class="vid-ad-eyebrow">
-        <span class="vid-live-dot"></span>
-        <span data-lang="es">Medidor Inteligente · MTG Panamá</span>
-        <span data-lang="en">Medidor Inteligente · MTG Panama</span>
-      </div>
-
-      <h2 class="vid-ad-title">
-        <span data-lang="es">¿Aún pagas de más<br><em>sin saber por qué?</em></span>
-        <span data-lang="en">Still overpaying<br><em>without knowing why?</em></span>
-      </h2>
-
-      <p class="vid-ad-sub">
-        <span data-lang="es">Instalamos el sensor que te muestra, en tiempo real, qué circuito te está costando más — y cómo reducirlo hasta un <strong>40%.</strong></span>
-        <span data-lang="en">We install the sensor that shows you, in real time, which circuit is costing you the most — and how to cut it by up to <strong>40%.</strong></span>
-      </p>
-
-      <ul class="vid-ad-bullets">
-        <li><span class="vid-bullet-ico">⚡</span><span data-lang="es">Monitoreo por circuito en tiempo real</span><span data-lang="en">Real-time per-circuit monitoring</span></li>
-        <li><span class="vid-bullet-ico">📱</span><span data-lang="es">Dashboard en tu celular, siempre</span><span data-lang="en">Dashboard on your phone, always</span></li>
-        <li><span class="vid-bullet-ico">🔔</span><span data-lang="es">Alertas cuando algo consume de más</span><span data-lang="en">Alerts when something draws too much</span></li>
-        <li><span class="vid-bullet-ico">📉</span><span data-lang="es">Factura más baja desde el primer mes</span><span data-lang="en">Lower bill from the very first month</span></li>
-      </ul>
-
-      <div class="vid-ad-stats">
-        <div class="vid-stat"><span class="vid-stat-n">40%</span><span class="vid-stat-l"><span data-lang="es">Ahorro máximo</span><span data-lang="en">Max savings</span></span></div>
-        <div class="vid-stat-sep"></div>
-        <div class="vid-stat"><span class="vid-stat-n">16</span><span class="vid-stat-l"><span data-lang="es">Circuitos medidos</span><span data-lang="en">Circuits measured</span></span></div>
-        <div class="vid-stat-sep"></div>
-        <div class="vid-stat"><span class="vid-stat-n">5min</span><span class="vid-stat-l"><span data-lang="es">Datos en vivo</span><span data-lang="en">Live data</span></span></div>
-      </div>
-
-      <a href="https://wa.me/50766743062?text=Hola%2C%20vi%20el%20video%20de%20Medidor%20Inteligente%20y%20quiero%20información" target="_blank" rel="noopener" class="vid-ad-cta">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-        <span data-lang="es">Quiero reducir mi factura</span><span data-lang="en">I want to cut my bill</span>
-      </a>
-    </div>
-
-    <!-- RIGHT — reproductor de video -->
-    <div class="vid-ad-right rv">
-
-      <!-- Dashboard animado en vivo -->
-      <div class="vid-player-shell" id="videoWrap" style="background:#060d1f;border-radius:20px;overflow:hidden;position:relative;min-height:340px">
-        <div class="vid-glow-ring"></div>
-        <canvas id="miDashCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block"></canvas>
-      </div>
-
-      <!-- Badges flotantes -->
-      <div class="vid-badge-row">
-        <div class="vid-badge"><span>🛡️</span><span data-lang="es">Instalación incluida</span><span data-lang="en">Installation included</span></div>
-        <div class="vid-badge"><span>📊</span><span data-lang="es">Análisis con IA</span><span data-lang="en">AI-powered analysis</span></div>
-        <div class="vid-badge vid-badge-hi"><span>⚡</span><span data-lang="es">Activo en 1 día</span><span data-lang="en">Live in 1 day</span></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     ECOSISTEMA · Monitoreo Energético
-═══════════════════════════════════════════════════════════ -->
-<section id="emporia-eco" class="sec">
-  <div class="container">
-    <div class="centered rv">
-      <div class="tag"><span class="tag-dot"></span><span data-lang="es">Monitoreo Energético · Equipos</span><span data-lang="en">Energy Monitoring · Equipment</span></div>
-      <h2 class="s-title"><span data-lang="es">Equipos de <span>Monitoreo Energético</span></span><span data-lang="en"><span>Energy Monitoring</span> Equipment</span></h2>
-      <p class="s-sub"><span data-lang="es">Sensores instalados y configurados por MTG. Monitoreo por circuito, control inteligente y carga EV.</span><span data-lang="en">Sensors installed and configured by MTG. Per-circuit monitoring, smart control and EV charging.</span></p>
-    </div>
-
-    <!-- 3 product cards -->
-    <div class="emp-grid">
-
-      <!-- Vue 3 -->
-      <div class="emp-card rv">
-        <div class="emp-card-img">
-          <span class="emp-card-badge">Monitor Principal</span>
-          <img src="https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475" alt="Sensor Vue 3" loading="lazy">
-        </div>
-        <div class="emp-card-body">
-          <div class="emp-card-name">Sensor Vue 3</div>
-          <div class="emp-card-sub"><span data-lang="es">⚡ Monitor de circuitos completo</span><span data-lang="en">⚡ Full circuit monitor</span></div>
-          <div class="emp-card-desc"><span data-lang="es">Se instala en tu tablero eléctrico y mide <strong>hasta 16 circuitos en tiempo real</strong>. Ves exactamente qué consume el A/C, el calentador, la lavadora — cada uno por separado.</span><span data-lang="en">Installs in your electrical panel and measures <strong>up to 16 circuits in real time</strong>. See exactly what your AC, water heater, washer consume — each one separately.</span></div>
-          <div class="emp-uses">
-            <div class="emp-use"><div class="emp-use-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-home"/></svg></span></div><span data-lang="es">Detecta qué circuito consume de más y cuándo</span><span data-lang="en">Detect which circuit uses the most and when</span></div>
-            <div class="emp-use"><div class="emp-use-ico">📱</div><span data-lang="es">Dashboard en tu teléfono con datos al instante</span><span data-lang="en">Dashboard on your phone with instant data</span></div>
-            <div class="emp-use"><div class="emp-use-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-spark"/></svg></span></div><span data-lang="es">Compatible con solar — ve cuánto exportas a la red</span><span data-lang="en">Solar compatible — see how much you export to grid</span></div>
-            <div class="emp-use"><div class="emp-use-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></div><span data-lang="es">Alertas automáticas si algo consume de más</span><span data-lang="en">Automatic alerts if something draws too much</span></div>
-          </div>
-          <div class="emp-stats">
-            <div class="emp-stat"><div class="emp-stat-val">16</div><div class="emp-stat-lbl"><span data-lang="es">Circuitos</span><span data-lang="en">Circuits</span></div></div>
-            <div class="emp-stat"><div class="emp-stat-val">RT</div><div class="emp-stat-lbl"><span data-lang="es">Tiempo real</span><span data-lang="en">Real-time</span></div></div>
-            <div class="emp-stat"><div class="emp-stat-val">40%</div><div class="emp-stat-lbl"><span data-lang="es">Ahorro máx.</span><span data-lang="en">Max savings</span></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Smart Plug -->
-      <div class="emp-card rv">
-        <div class="emp-card-img">
-          <span class="emp-card-badge"><span data-lang="es">Por aparato</span><span data-lang="en">Per device</span></span>
-          <img src="https://shop.emporiaenergy.com/cdn/shop/files/emporia-shopify-smart-plug-1pk-1000x1000-0625_66c488bb-000b-4cee-a28d-b61e665eb212_1000x.png" alt="Emporia Smart Plug" loading="lazy">
-        </div>
-        <div class="emp-card-body">
-          <div class="emp-card-name">Smart Plug</div>
-          <div class="emp-card-sub"><span data-lang="es">🔌 Control inteligente por enchufe</span><span data-lang="en">🔌 Smart control per outlet</span></div>
-          <div class="emp-card-desc"><span data-lang="es">Conecta cualquier aparato y sabrás al centavo cuánto te está costando al mes. Prográmalo para que se apague solo, o apágalo desde donde estés.</span><span data-lang="en">Plug in any appliance and you'll know to the cent how much it's costing you monthly. Program it to shut off automatically, or turn it off from anywhere.</span></div>
-          <div class="emp-uses">
-            <div class="emp-use"><div class="emp-use-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-check"/></svg></span></div><span data-lang="es">¿Cuánto gasta tu nevera vieja? Ahora lo sabrás</span><span data-lang="en">How much does your old fridge cost? Now you'll know</span></div>
-            <div class="emp-use"><div class="emp-use-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-clock"/></svg></span></div><span data-lang="es">Programa horarios — apaga el calentador de noche</span><span data-lang="en">Set schedules — turn off water heater at night</span></div>
-            <div class="emp-use"><div class="emp-use-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-phone"/></svg></span></div><span data-lang="es">Control remoto desde cualquier lugar del mundo</span><span data-lang="en">Remote control from anywhere in the world</span></div>
-            <div class="emp-use"><div class="emp-use-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-spark"/></svg></span></div><span data-lang="es">Te dice exactamente cuánto B/. ahorraste este mes</span><span data-lang="en">Tells you exactly how many B/. you saved this month</span></div>
-          </div>
-          <div class="emp-stats">
-            <div class="emp-stat"><div class="emp-stat-val">∞</div><div class="emp-stat-lbl"><span data-lang="es">Aparatos</span><span data-lang="en">Devices</span></div></div>
-            <div class="emp-stat"><div class="emp-stat-val">5min</div><div class="emp-stat-lbl"><span data-lang="es">Actualización</span><span data-lang="en">Update rate</span></div></div>
-            <div class="emp-stat"><div class="emp-stat-val">B/.0</div><div class="emp-stat-lbl"><span data-lang="es">Sorpresas</span><span data-lang="en">Surprises</span></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- EV Charger -->
-      <div class="emp-card rv">
-        <div class="emp-card-img">
-          <span class="emp-card-badge"><span data-lang="es">Vehículo eléctrico</span><span data-lang="en">Electric vehicle</span></span>
-          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&auto=format&fit=crop&q=80" alt="Emporia EV Charger" loading="lazy">
-        </div>
-        <div class="emp-card-body">
-          <div class="emp-card-name">Cargador EV</div>
-          <div class="emp-card-sub"><span data-lang="es">🚗 Carga inteligente para tu carro eléctrico</span><span data-lang="en">🚗 Smart charging for your EV</span></div>
-          <div class="emp-card-desc"><span data-lang="es">Carga tu vehículo eléctrico cuando la electricidad es más barata — de madrugada — y evita sobrecargar tu panel. Ahorra hasta 30% en el costo de carga.</span><span data-lang="en">Charge your EV when electricity is cheapest — overnight — and avoid overloading your panel. Save up to 30% on charging costs.</span></div>
-          <div class="emp-uses">
-            <div class="emp-use"><div class="emp-use-ico">🌙</div><span data-lang="es">Programa la carga en horas valle para pagar menos</span><span data-lang="en">Schedule charging in off-peak hours to pay less</span></div>
-            <div class="emp-use"><div class="emp-use-ico">⚡</div><span data-lang="es">Previene que tu carro y el A/C enciendan a la vez</span><span data-lang="en">Prevents your car and AC from running simultaneously</span></div>
-            <div class="emp-use"><div class="emp-use-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-spark"/></svg></span></div><span data-lang="es">Con solar, carga gratis cuando el sol produce de más</span><span data-lang="en">With solar, charge free when sun produces excess</span></div>
-            <div class="emp-use"><div class="emp-use-ico ico ico-md"><span class="ico ico-md" style="vertical-align:-0.15em"><svg><use href="#i-chart"/></svg></span></div><span data-lang="es">Reporte mensual del costo exacto de cargar tu carro</span><span data-lang="en">Monthly report of exact cost to charge your car</span></div>
-          </div>
-          <div class="emp-stats">
-            <div class="emp-stat"><div class="emp-stat-val">30%</div><div class="emp-stat-lbl"><span data-lang="es">Ahorro carga</span><span data-lang="en">Charge savings</span></div></div>
-            <div class="emp-stat"><div class="emp-stat-val">48A</div><div class="emp-stat-lbl"><span data-lang="es">Potencia máx.</span><span data-lang="en">Max power</span></div></div>
-            <div class="emp-stat"><div class="emp-stat-val">WiFi</div><div class="emp-stat-lbl">Smart control</div></div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /emp-grid -->
-
-    <!-- Bottom CTA -->
-    <div class="emp-cta-row rv">
-      <div class="emp-cta-txt">
-        <h4><span data-lang="es">¿Tienes vehículo eléctrico, solar o quieres controlar tu consumo?</span><span data-lang="en">Have an EV, solar, or want to control your consumption?</span></h4>
-        <p><span data-lang="es">MTG instala, configura y conecta todo el ecosistema de Monitoreo Energético con Medidor Inteligente. Un solo proveedor, todo integrado.</span><span data-lang="en">MTG installs, configures and connects the entire Energy Monitoring ecosystem with Medidor Inteligente. One provider, fully integrated.</span></p>
-      </div>
-      <div class="emp-cta-btns">
-        <a href="https://wa.me/50766743062?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20los%20equipos%20Emporia%20(Vue%203%2C%20Smart%20Plug%2C%20EV%20Charger)" target="_blank" rel="noopener" class="btn btn-primary">📲 <span data-lang="es">Consultar disponibilidad</span><span data-lang="en">Check availability</span></a>
-        <a href="#contacto" class="btn btn-outline"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-trend"/></svg></span> <span data-lang="es">Calcular mi ahorro</span><span data-lang="en">Calculate my savings</span></a>
+      <div class="med-step">
+        <div class="med-step-n">3</div>
+        <h4><span data-lang="es">IA + ahorro real</span><span data-lang="en">AI + real savings</span></h4>
+        <p><span data-lang="es">Informe mensual con recomendaciones concretas. Tu factura baja desde el primer mes.</span><span data-lang="en">Monthly report with concrete recommendations. Your bill drops from month one.</span></p>
       </div>
     </div>
 
+    <!-- Beneficios + imagen -->
+    <div class="med-split rv">
+      <div class="med-img-wrap">
+        <img src="assets/medidor-hogar.jpg" alt="Consumo electrico por zona del hogar en tiempo real" loading="lazy">
+        <div class="med-img-tag"><span class="eg-img-badge-dot"></span><span data-lang="es">Consumo en tiempo real por zona</span><span data-lang="en">Real-time consumption by zone</span></div>
+      </div>
+      <div class="med-benefits">
+        <div class="med-ben"><div class="med-ben-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><div><h4><span data-lang="es">Monitoreo por circuito</span><span data-lang="en">Per-circuit monitoring</span></h4><p><span data-lang="es">Sabes que aparato gasta mas, sin adivinar.</span><span data-lang="en">Know which appliance spends the most.</span></p></div></div>
+        <div class="med-ben"><div class="med-ben-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 5 2 7h10c0-2 2-4 2-7a7 7 0 0 0-7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg></div><div><h4><span data-lang="es">Recomendaciones con IA</span><span data-lang="en">AI recommendations</span></h4><p><span data-lang="es">Claude AI detecta consumos fantasma y anomalias.</span><span data-lang="en">Claude AI detects phantom loads and anomalies.</span></p></div></div>
+        <div class="med-ben"><div class="med-ben-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg></div><div><h4><span data-lang="es">Informe mensual</span><span data-lang="en">Monthly report</span></h4><p><span data-lang="es">PDF con score energetico y ahorros concretos.</span><span data-lang="en">PDF with energy score and concrete savings.</span></p></div></div>
+        <div class="med-ben"><div class="med-ben-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4><span data-lang="es">Compatible en Panama</span><span data-lang="en">Works in Panama</span></h4><p><span data-lang="es">EDEMET, ENSA y EDECHI. ROI en menos de 24 meses.</span><span data-lang="en">EDEMET, ENSA, EDECHI. ROI under 24 months.</span></p></div></div>
+      </div>
+    </div>
+
+    <!-- Equipos -->
+    <div class="med-equip rv">
+      <div class="med-eq-card">
+        <img src="https://shop.emporiaenergy.com/cdn/shop/files/Vue_3_Product_Heros-08_1000x.png?v=1741807475" alt="Sensor Vue 3" loading="lazy">
+        <div class="med-eq-name">Sensor Vue 3</div>
+        <div class="med-eq-sub"><span data-lang="es">Hasta 16 circuitos</span><span data-lang="en">Up to 16 circuits</span></div>
+      </div>
+      <div class="med-eq-card">
+        <img src="https://shop.emporiaenergy.com/cdn/shop/files/emporia-shopify-smart-plug-1pk-1000x1000-0625_66c488bb-000b-4cee-a28d-b61e665eb212_1000x.png" alt="Smart Plug" loading="lazy">
+        <div class="med-eq-name">Smart Plug</div>
+        <div class="med-eq-sub"><span data-lang="es">Control por toma</span><span data-lang="en">Per-outlet control</span></div>
+      </div>
+      <div class="med-eq-card">
+        <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&auto=format&fit=crop&q=80" alt="Cargador EV" loading="lazy">
+        <div class="med-eq-name">Cargador EV</div>
+        <div class="med-eq-sub"><span data-lang="es">Carga inteligente</span><span data-lang="en">Smart charging</span></div>
+      </div>
+    </div>
+
+    <div class="prod-cta-wrap" style="margin-top:42px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+      <a href="#cta-sec" class="eg-btn-main"><span data-lang="es">Solicitar mi analisis &rarr;</span><span data-lang="en">Request my analysis &rarr;</span></a>
+      <a href="https://wa.me/50766743062?text=Hola%2C%20quiero%20reducir%20mi%20factura%20con%20el%20Medidor%20Inteligente" target="_blank" rel="noopener" class="eg-btn-ghost"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span> <span data-lang="es">Hablar por WhatsApp</span><span data-lang="en">Chat on WhatsApp</span></a>
+    </div>
   </div>
 </section>
 <!-- ═══════════════════════════════════════════════════════════
@@ -6470,7 +5810,7 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
           <li><a href="#solutions"><span data-lang="es">Detección de anomalías</span><span data-lang="en">Anomaly detection</span></a></li>
           <li><a href="#solutions"><span data-lang="es">Consumo fantasma</span><span data-lang="en">Phantom load</span></a></li>
           <li><a href="#solutions"><span data-lang="es">Score energético</span><span data-lang="en">Energy score</span></a></li>
-          <li><a href="#dash-sec">Dashboard</a></li>
+          <li><a href="#solutions">Dashboard</a></li>
         </ul>
       </div>
       <div class="f-col">
