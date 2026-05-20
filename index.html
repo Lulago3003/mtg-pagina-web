@@ -4069,8 +4069,30 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 #prose .prose-cta-txt h4{font-size:1.06rem;font-weight:800;color:#0f172a;margin:0 0 4px}
 #prose .prose-cta-txt p{font-size:.9rem;color:#475569;margin:0;line-height:1.45}
 #prose .prose-cta-btns{display:flex;gap:10px;flex-wrap:wrap}
-@media(max-width:1024px){#prose .prose-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
-@media(max-width:600px){#prose .prose-grid{grid-template-columns:1fr;gap:14px}#prose .prose-card-img{aspect-ratio:3/2}#prose .prose-cta{flex-direction:column;align-items:stretch;text-align:center}}
+#prose .prose-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px}
+#prose .prose-step{background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:18px;padding:24px 22px;box-shadow:0 4px 14px rgba(15,23,42,.04);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease}
+#prose .prose-step:hover{transform:translateY(-4px);box-shadow:0 18px 38px -12px rgba(37,99,235,.18)}
+#prose .prose-step-n{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-head,inherit);font-size:1.18rem;font-weight:900;color:#fff;background:linear-gradient(135deg,#2563eb,#7c3aed);box-shadow:0 8px 22px rgba(37,99,235,.35);margin-bottom:14px}
+#prose .prose-step h4{font-size:1.05rem;font-weight:800;color:#0f172a;margin:0 0 6px}
+#prose .prose-step p{font-size:.9rem;color:#475569;line-height:1.55;margin:0}
+#prose .prose-bens{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:44px}
+#prose .prose-ben{display:flex;align-items:flex-start;gap:13px;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:14px;padding:16px 18px;box-shadow:0 2px 10px rgba(15,23,42,.04)}
+#prose .prose-ben-ico{width:42px;height:42px;border-radius:11px;flex:none;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(37,99,235,.13),rgba(124,58,237,.07));border:1px solid rgba(37,99,235,.22);color:#2563eb}
+#prose .prose-ben h4{font-size:.96rem;font-weight:800;color:#0f172a;margin:0 0 3px}
+#prose .prose-ben p{font-size:.83rem;color:#475569;line-height:1.45;margin:0}
+#prose .prose-section-h{font-size:1.18rem;font-weight:800;color:#0f172a;margin:0 0 18px;letter-spacing:-.015em}
+#prose .prose-uses{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 40px}
+#prose .prose-use{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:13px;padding:15px 18px}
+#prose .prose-use-ico{font-size:1.6rem;line-height:1}
+#prose .prose-use strong{display:block;font-size:.96rem;color:#0f172a;font-weight:800;margin-bottom:2px}
+#prose .prose-use span{font-size:.85rem;color:#475569;display:block;line-height:1.4}
+@media(max-width:1024px){#prose .prose-grid{grid-template-columns:repeat(2,1fr);gap:16px}#prose .prose-steps{grid-template-columns:1fr;gap:14px}#prose .prose-bens{grid-template-columns:repeat(2,1fr)}#prose .prose-uses{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){#prose .prose-grid{grid-template-columns:1fr;gap:14px}#prose .prose-card-img{aspect-ratio:3/2}#prose .prose-cta{flex-direction:column;align-items:stretch;text-align:center}#prose .prose-bens{grid-template-columns:1fr}#prose .prose-uses{grid-template-columns:1fr}}
+
+/* ── Enlarged energia-gateway image ── */
+.eg-wrap{grid-template-columns:.92fr 1.08fr !important;gap:42px !important}
+.eg-img-card{aspect-ratio:5/4 !important}
+@media(max-width:900px){.eg-wrap{grid-template-columns:1fr !important;gap:30px !important}.eg-img-card{aspect-ratio:4/3 !important}}
 
 /* ── Single-page view switching (estilo YouTube tabs) ── */
 html.vw section[data-view]{display:none !important}
@@ -4638,6 +4660,11 @@ html:not(.vw) section[data-view]{display:revert}
                 <div class="nd-item-bg" style="background-image:url('https://shop.emporiaenergy.com/cdn/shop/files/emporia-shopify-vue16-1000x1000-0625_1000x.png?v=1750974365');background-color:#0d1117"></div>
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span> <span data-lang="es">Monitoreo Energético</span><span data-lang="en">Energy Monitoring</span></span><span class="nd-desc">Medidor Inteligente · Sensor Vue 3</span><div class="nd-bar"></div></div>
+              </a>
+              <a href="#prose" class="nd-item">
+                <div class="nd-item-bg" style="background-image:url('assets/prose-cylinder.jpg');background-color:#0a1430"></div>
+                <div class="nd-item-ov" style="background:linear-gradient(180deg,rgba(8,20,55,.2),rgba(8,20,55,.92))"></div>
+                <div class="nd-item-c"><span class="nd-title"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-signal"/></svg></span> <span data-lang="es">PROSE · Antenas &amp; Camuflaje</span><span data-lang="en">PROSE · Antennas &amp; Camouflage</span></span><span class="nd-desc"><span data-lang="es">Sistemas DAS · cobertura urbana</span><span data-lang="en">DAS systems · urban coverage</span></span><div class="nd-bar"></div></div>
               </a>
             </div>
           </div>
@@ -5584,7 +5611,7 @@ html:not(.vw) section[data-view]{display:revert}
 <!-- ═══════════════════════════════════════════════════════════
      PROSE Technologies · Antenas y Camuflaje
 ═══════════════════════════════════════════════════════════ -->
-<section id="prose" data-view="home" class="sec" style="background:linear-gradient(180deg,#fafbff 0%,#eef2fa 100%);position:relative;overflow:hidden">
+<section id="prose" data-view="prose" class="sec" style="background:linear-gradient(180deg,#fafbff 0%,#eef2fa 100%);position:relative;overflow:hidden">
   <div class="container">
     <div class="centered rv" style="text-align:center;margin-bottom:42px">
       <div class="tag" style="margin:0 auto"><span class="tag-dot"></span><span data-lang="es">PROSE Technologies · Distribuidor oficial</span><span data-lang="en">PROSE Technologies · Official distributor</span></div>
@@ -5592,6 +5619,46 @@ html:not(.vw) section[data-view]{display:revert}
       <p class="s-sub" style="max-width:640px;margin:14px auto 0"><span data-lang="es">Soluciones de antenas de telecomunicaciones desde 2008. Integramos antenas, cables, postes y equipos en sitios más estéticos y de menor impacto visual. CDMA, GSM, DCS, UMTS y LTE.</span><span data-lang="en">Telecommunications antenna solutions since 2008. We integrate antennas, cables, poles and equipment into more aesthetic, low-visual-impact sites. CDMA, GSM, DCS, UMTS and LTE.</span></p>
     </div>
 
+    <!-- Qué podemos hacer con PROSE: 3 pasos / use cases -->
+    <div class="prose-steps rv">
+      <div class="prose-step">
+        <div class="prose-step-n">1</div>
+        <h4><span data-lang="es">Cobertura sin impacto visual</span><span data-lang="en">Coverage without visual impact</span></h4>
+        <p><span data-lang="es">Antenas camufladas como tubo de escape, AC, columna o piedra. Ideal para zonas turísticas, históricas o residenciales premium.</span><span data-lang="en">Antennas camouflaged as exhaust pipes, AC units, columns or rocks. Ideal for tourist, historic or premium residential zones.</span></p>
+      </div>
+      <div class="prose-step">
+        <div class="prose-step-n">2</div>
+        <h4><span data-lang="es">Sistemas DAS indoor</span><span data-lang="en">Indoor DAS systems</span></h4>
+        <p><span data-lang="es">Cobertura celular dentro de hoteles, hospitales, malls y edificios corporativos. Multi-operador, multi-banda.</span><span data-lang="en">Cellular coverage inside hotels, hospitals, malls and corporate buildings. Multi-carrier, multi-band.</span></p>
+      </div>
+      <div class="prose-step">
+        <div class="prose-step-n">3</div>
+        <h4><span data-lang="es">Estaciones base celulares</span><span data-lang="en">Cellular base stations</span></h4>
+        <p><span data-lang="es">Antenas cluster, jaula y comunitarias para operadores. Estructuras llave en mano con diseño integrado.</span><span data-lang="en">Cluster, cage and community antennas for operators. Turnkey structures with integrated design.</span></p>
+      </div>
+    </div>
+
+    <!-- Benefits row -->
+    <div class="prose-bens rv">
+      <div class="prose-ben">
+        <div class="prose-ben-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
+        <div><h4><span data-lang="es">Diseño integrado</span><span data-lang="en">Integrated design</span></h4><p><span data-lang="es">Antena + soportes + cables en un solo paquete.</span><span data-lang="en">Antenna + supports + cables in a single package.</span></p></div>
+      </div>
+      <div class="prose-ben">
+        <div class="prose-ben-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></div>
+        <div><h4><span data-lang="es">Multi-tecnología</span><span data-lang="en">Multi-technology</span></h4><p><span data-lang="es">CDMA, GSM, DCS, UMTS, LTE. BTS, repetidor e indoor.</span><span data-lang="en">CDMA, GSM, DCS, UMTS, LTE. BTS, repeater &amp; indoor.</span></p></div>
+      </div>
+      <div class="prose-ben">
+        <div class="prose-ben-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div><h4><span data-lang="es">Down-tilt eléctrico</span><span data-lang="en">Electric down-tilt</span></h4><p><span data-lang="es">Ajuste remoto del ángulo. Sin escalada al sitio.</span><span data-lang="en">Remote angle adjustment. No site climbs.</span></p></div>
+      </div>
+      <div class="prose-ben">
+        <div class="prose-ben-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div><h4><span data-lang="es">Mantenimiento accesible</span><span data-lang="en">Easy maintenance</span></h4><p><span data-lang="es">Puerta de servicio integrada en cada modelo.</span><span data-lang="en">Built-in maintenance door on every model.</span></p></div>
+      </div>
+    </div>
+
+    <h3 class="prose-section-h"><span data-lang="es">Modelos disponibles</span><span data-lang="en">Available models</span></h3>
     <div class="prose-grid rv">
       <div class="prose-card">
         <div class="prose-card-img"><img src="assets/prose-pole.jpg" alt="Antena tipo poste / cluster PROSE" loading="lazy"></div>
@@ -5625,6 +5692,16 @@ html:not(.vw) section[data-view]{display:revert}
           <p><span data-lang="es">Se integra al entorno como piedra, arbusto o elemento del paisaje. Cobertura indoor y community.</span><span data-lang="en">Blends into the environment as rock, bush or landscape element. Indoor and community coverage.</span></p>
         </div>
       </div>
+    </div>
+
+    <h3 class="prose-section-h"><span data-lang="es">Dónde se aplica</span><span data-lang="en">Where it's used</span></h3>
+    <div class="prose-uses rv">
+      <div class="prose-use"><span class="prose-use-ico">🏢</span><div><strong><span data-lang="es">Edificios corporativos</span><span data-lang="en">Corporate buildings</span></strong><span><span data-lang="es">DAS indoor para señal celular</span><span data-lang="en">Indoor DAS for cellular signal</span></span></div></div>
+      <div class="prose-use"><span class="prose-use-ico">🏥</span><div><strong><span data-lang="es">Hospitales y clínicas</span><span data-lang="en">Hospitals &amp; clinics</span></strong><span><span data-lang="es">Cobertura crítica indoor</span><span data-lang="en">Critical indoor coverage</span></span></div></div>
+      <div class="prose-use"><span class="prose-use-ico">🏨</span><div><strong><span data-lang="es">Hoteles y centros comerciales</span><span data-lang="en">Hotels &amp; malls</span></strong><span><span data-lang="es">Alta densidad de usuarios</span><span data-lang="en">High user density</span></span></div></div>
+      <div class="prose-use"><span class="prose-use-ico">🌳</span><div><strong><span data-lang="es">Zonas turísticas / patrimonio</span><span data-lang="en">Tourist / heritage zones</span></strong><span><span data-lang="es">Camuflaje estricto · sin impacto</span><span data-lang="en">Strict camouflage · no impact</span></span></div></div>
+      <div class="prose-use"><span class="prose-use-ico">🏙️</span><div><strong><span data-lang="es">Áreas residenciales premium</span><span data-lang="en">Premium residential</span></strong><span><span data-lang="es">Estética sin sacrificar cobertura</span><span data-lang="en">Aesthetics without losing coverage</span></span></div></div>
+      <div class="prose-use"><span class="prose-use-ico">📡</span><div><strong><span data-lang="es">Operadores móviles</span><span data-lang="en">Mobile operators</span></strong><span><span data-lang="es">BTS y estaciones base llave en mano</span><span data-lang="en">Turnkey BTS &amp; base stations</span></span></div></div>
     </div>
 
     <div class="prose-cta">
@@ -6724,7 +6801,7 @@ html:not(.vw) section[data-view]{display:revert}
 <script>
 /* ═══ ROUTER DE VISTAS — una sola página, estilo YouTube tabs ═══ */
 document.documentElement.classList.add('vw');
-window.VIEW_OF={hero:'home',about:'home',trustbar:'home','energia-gateway':'home',testimonials:'home',faq:'home','cta-sec':'home',contacto:'home',servicios:'servicios',productos:'catalogo',catalogo:'catalogo',solutions:'medidor',markets:'medidor',how:'medidor','dash-sec':'medidor',visualization:'medidor',comparativa:'medidor','video-sec':'medidor','emporia-eco':'medidor',medidor:'medidor'};
+window.VIEW_OF={hero:'home',about:'home',trustbar:'home','energia-gateway':'home',testimonials:'home',faq:'home','cta-sec':'home',contacto:'home',servicios:'servicios',productos:'catalogo',catalogo:'catalogo',prose:'prose',solutions:'medidor',markets:'medidor',how:'medidor','dash-sec':'medidor',visualization:'medidor',comparativa:'medidor','video-sec':'medidor','emporia-eco':'medidor',medidor:'medidor'};
 window.showView=function(v){
   document.querySelectorAll('section[data-view]').forEach(function(s){ s.classList.toggle('vw-active', s.dataset.view===v); });
   try{ window.scrollTo({top:0,behavior:'auto'}); }catch(e){ window.scrollTo(0,0); }
