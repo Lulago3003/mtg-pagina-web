@@ -4090,6 +4090,10 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 @media(max-width:600px){:is(#prose,#prose-home) .prose-grid{grid-template-columns:1fr;gap:14px}:is(#prose,#prose-home) .prose-card-img{aspect-ratio:3/2}:is(#prose,#prose-home) .prose-cta{flex-direction:column;align-items:stretch;text-align:center}:is(#prose,#prose-home) .prose-bens{grid-template-columns:1fr}:is(#prose,#prose-home) .prose-uses{grid-template-columns:1fr}}
 :is(#prose,#prose-home) a.prose-card-link{text-decoration:none;cursor:pointer;color:inherit;display:flex;flex-direction:column}
 :is(#prose,#prose-home) a.prose-card-link:hover{border-color:rgba(37,99,235,.4) !important}
+:is(#prose,#prose-home) .prose-logo-block{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:20px}
+:is(#prose,#prose-home) .prose-logo-img{height:48px;width:auto;display:block;filter:drop-shadow(0 4px 14px rgba(11,30,77,.15))}
+:is(#prose,#prose-home) .prose-logo-cap{font-size:.72rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#2563eb;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);padding:5px 14px;border-radius:50px}
+@media(max-width:600px){:is(#prose,#prose-home) .prose-logo-img{height:38px}}
 
 /* ── Enlarged energia-gateway image ── */
 .eg-wrap{grid-template-columns:.92fr 1.08fr !important;gap:42px !important}
@@ -5616,7 +5620,10 @@ html:not(.vw) section[data-view]{display:revert}
 <section id="prose-home" data-view="home" class="sec" style="background:linear-gradient(180deg,#fafbff 0%,#eef2fa 100%);position:relative;overflow:hidden">
   <div class="container">
     <div class="centered rv" style="text-align:center;margin-bottom:34px">
-      <div class="tag" style="margin:0 auto"><span class="tag-dot"></span><span data-lang="es">PROSE Technologies · Distribuidor oficial</span><span data-lang="en">PROSE Technologies · Official distributor</span></div>
+      <div class="prose-logo-block">
+        <img src="assets/prose-logo.png" alt="PROSE Technologies" class="prose-logo-img">
+        <div class="prose-logo-cap"><span data-lang="es">Distribuidor Oficial</span><span data-lang="en">Official Distributor</span></div>
+      </div>
       <h2 class="s-title"><span data-lang="es">Antenas, Sistemas DAS y <span>Camuflaje</span></span><span data-lang="en">Antennas, DAS systems and <span>Camouflage</span></span></h2>
       <p class="s-sub" style="max-width:620px;margin:14px auto 0"><span data-lang="es">Soluciones de antenas camufladas como tubos de escape, AC, columnas o piedras. Cobertura sin impacto visual.</span><span data-lang="en">Antennas camouflaged as exhaust pipes, AC units, columns or rocks. Coverage without visual impact.</span></p>
     </div>
@@ -5675,7 +5682,10 @@ html:not(.vw) section[data-view]{display:revert}
 <section id="prose" data-view="prose" class="sec" style="background:linear-gradient(180deg,#fafbff 0%,#eef2fa 100%);position:relative;overflow:hidden">
   <div class="container">
     <div class="centered rv" style="text-align:center;margin-bottom:42px">
-      <div class="tag" style="margin:0 auto"><span class="tag-dot"></span><span data-lang="es">PROSE Technologies · Distribuidor oficial</span><span data-lang="en">PROSE Technologies · Official distributor</span></div>
+      <div class="prose-logo-block">
+        <img src="assets/prose-logo.png" alt="PROSE Technologies" class="prose-logo-img">
+        <div class="prose-logo-cap"><span data-lang="es">Distribuidor Oficial</span><span data-lang="en">Official Distributor</span></div>
+      </div>
       <h2 class="s-title"><span data-lang="es">Antenas, Sistemas DAS y <span>Camuflaje</span></span><span data-lang="en">Antennas, DAS systems and <span>Camouflage</span></span></h2>
       <p class="s-sub" style="max-width:640px;margin:14px auto 0"><span data-lang="es">Soluciones de antenas de telecomunicaciones desde 2008. Integramos antenas, cables, postes y equipos en sitios más estéticos y de menor impacto visual. CDMA, GSM, DCS, UMTS y LTE.</span><span data-lang="en">Telecommunications antenna solutions since 2008. We integrate antennas, cables, poles and equipment into more aesthetic, low-visual-impact sites. CDMA, GSM, DCS, UMTS and LTE.</span></p>
     </div>
