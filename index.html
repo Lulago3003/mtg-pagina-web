@@ -4049,45 +4049,47 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 }
 
 /* ── PROSE Technologies section ── */
-#prose .s-title{color:#0f172a !important;-webkit-text-fill-color:#0f172a}
-#prose .s-title span[data-lang]{background:none !important;-webkit-text-fill-color:inherit !important;color:inherit !important}
-#prose .s-title span:not([data-lang]){background:linear-gradient(120deg,#2563eb,#7c3aed) !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent !important}
-#prose .s-sub{color:#475569 !important}
-#prose .tag{color:#2563eb !important;background:rgba(37,99,235,.08) !important;border-color:rgba(37,99,235,.15) !important}
-#prose .tag-dot{background:#2563eb !important}
-#prose .prose-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:36px}
-#prose .prose-card{background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(15,23,42,.05);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease,border-color .3s ease;display:flex;flex-direction:column}
-#prose .prose-card:hover{transform:translateY(-8px);box-shadow:0 26px 56px -16px rgba(37,99,235,.22),0 4px 14px rgba(15,23,42,.07);border-color:rgba(37,99,235,.3)}
-#prose .prose-card-img{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#0a1430}
-#prose .prose-card-img img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);transition:transform 1.1s cubic-bezier(.16,1,.3,1);filter:saturate(1.05)}
-#prose .prose-card:hover .prose-card-img img{transform:scale(1.1)}
-#prose .prose-card-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:6px}
-#prose .prose-card-cat{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#2563eb;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.18);padding:4px 10px;border-radius:50px;width:fit-content;margin-bottom:2px}
-#prose .prose-card h3{font-size:1.05rem;font-weight:800;color:#0f172a;letter-spacing:-.015em;line-height:1.2;margin:0}
-#prose .prose-card p{font-size:.86rem;color:#475569;line-height:1.5;margin:4px 0 0}
-#prose .prose-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:#fff;border:1px solid rgba(37,99,235,.16);border-radius:18px;padding:22px 26px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
-#prose .prose-cta-txt h4{font-size:1.06rem;font-weight:800;color:#0f172a;margin:0 0 4px}
-#prose .prose-cta-txt p{font-size:.9rem;color:#475569;margin:0;line-height:1.45}
-#prose .prose-cta-btns{display:flex;gap:10px;flex-wrap:wrap}
-#prose .prose-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px}
-#prose .prose-step{background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:18px;padding:24px 22px;box-shadow:0 4px 14px rgba(15,23,42,.04);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease}
-#prose .prose-step:hover{transform:translateY(-4px);box-shadow:0 18px 38px -12px rgba(37,99,235,.18)}
-#prose .prose-step-n{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-head,inherit);font-size:1.18rem;font-weight:900;color:#fff;background:linear-gradient(135deg,#2563eb,#7c3aed);box-shadow:0 8px 22px rgba(37,99,235,.35);margin-bottom:14px}
-#prose .prose-step h4{font-size:1.05rem;font-weight:800;color:#0f172a;margin:0 0 6px}
-#prose .prose-step p{font-size:.9rem;color:#475569;line-height:1.55;margin:0}
-#prose .prose-bens{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:44px}
-#prose .prose-ben{display:flex;align-items:flex-start;gap:13px;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:14px;padding:16px 18px;box-shadow:0 2px 10px rgba(15,23,42,.04)}
-#prose .prose-ben-ico{width:42px;height:42px;border-radius:11px;flex:none;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(37,99,235,.13),rgba(124,58,237,.07));border:1px solid rgba(37,99,235,.22);color:#2563eb}
-#prose .prose-ben h4{font-size:.96rem;font-weight:800;color:#0f172a;margin:0 0 3px}
-#prose .prose-ben p{font-size:.83rem;color:#475569;line-height:1.45;margin:0}
-#prose .prose-section-h{font-size:1.18rem;font-weight:800;color:#0f172a;margin:0 0 18px;letter-spacing:-.015em}
-#prose .prose-uses{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 40px}
-#prose .prose-use{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:13px;padding:15px 18px}
-#prose .prose-use-ico{font-size:1.6rem;line-height:1}
-#prose .prose-use strong{display:block;font-size:.96rem;color:#0f172a;font-weight:800;margin-bottom:2px}
-#prose .prose-use span{font-size:.85rem;color:#475569;display:block;line-height:1.4}
-@media(max-width:1024px){#prose .prose-grid{grid-template-columns:repeat(2,1fr);gap:16px}#prose .prose-steps{grid-template-columns:1fr;gap:14px}#prose .prose-bens{grid-template-columns:repeat(2,1fr)}#prose .prose-uses{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){#prose .prose-grid{grid-template-columns:1fr;gap:14px}#prose .prose-card-img{aspect-ratio:3/2}#prose .prose-cta{flex-direction:column;align-items:stretch;text-align:center}#prose .prose-bens{grid-template-columns:1fr}#prose .prose-uses{grid-template-columns:1fr}}
+:is(#prose,#prose-home) .s-title{color:#0f172a !important;-webkit-text-fill-color:#0f172a}
+:is(#prose,#prose-home) .s-title span[data-lang]{background:none !important;-webkit-text-fill-color:inherit !important;color:inherit !important}
+:is(#prose,#prose-home) .s-title span:not([data-lang]){background:linear-gradient(120deg,#2563eb,#7c3aed) !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent !important}
+:is(#prose,#prose-home) .s-sub{color:#475569 !important}
+:is(#prose,#prose-home) .tag{color:#2563eb !important;background:rgba(37,99,235,.08) !important;border-color:rgba(37,99,235,.15) !important}
+:is(#prose,#prose-home) .tag-dot{background:#2563eb !important}
+:is(#prose,#prose-home) .prose-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:36px}
+:is(#prose,#prose-home) .prose-card{background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(15,23,42,.05);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease,border-color .3s ease;display:flex;flex-direction:column}
+:is(#prose,#prose-home) .prose-card:hover{transform:translateY(-8px);box-shadow:0 26px 56px -16px rgba(37,99,235,.22),0 4px 14px rgba(15,23,42,.07);border-color:rgba(37,99,235,.3)}
+:is(#prose,#prose-home) .prose-card-img{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#0a1430}
+:is(#prose,#prose-home) .prose-card-img img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);transition:transform 1.1s cubic-bezier(.16,1,.3,1);filter:saturate(1.05)}
+:is(#prose,#prose-home) .prose-card:hover .prose-card-img img{transform:scale(1.1)}
+:is(#prose,#prose-home) .prose-card-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:6px}
+:is(#prose,#prose-home) .prose-card-cat{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#2563eb;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.18);padding:4px 10px;border-radius:50px;width:fit-content;margin-bottom:2px}
+:is(#prose,#prose-home) .prose-card h3{font-size:1.05rem;font-weight:800;color:#0f172a;letter-spacing:-.015em;line-height:1.2;margin:0}
+:is(#prose,#prose-home) .prose-card p{font-size:.86rem;color:#475569;line-height:1.5;margin:4px 0 0}
+:is(#prose,#prose-home) .prose-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:#fff;border:1px solid rgba(37,99,235,.16);border-radius:18px;padding:22px 26px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+:is(#prose,#prose-home) .prose-cta-txt h4{font-size:1.06rem;font-weight:800;color:#0f172a;margin:0 0 4px}
+:is(#prose,#prose-home) .prose-cta-txt p{font-size:.9rem;color:#475569;margin:0;line-height:1.45}
+:is(#prose,#prose-home) .prose-cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+:is(#prose,#prose-home) .prose-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px}
+:is(#prose,#prose-home) .prose-step{background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:18px;padding:24px 22px;box-shadow:0 4px 14px rgba(15,23,42,.04);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease}
+:is(#prose,#prose-home) .prose-step:hover{transform:translateY(-4px);box-shadow:0 18px 38px -12px rgba(37,99,235,.18)}
+:is(#prose,#prose-home) .prose-step-n{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-head,inherit);font-size:1.18rem;font-weight:900;color:#fff;background:linear-gradient(135deg,#2563eb,#7c3aed);box-shadow:0 8px 22px rgba(37,99,235,.35);margin-bottom:14px}
+:is(#prose,#prose-home) .prose-step h4{font-size:1.05rem;font-weight:800;color:#0f172a;margin:0 0 6px}
+:is(#prose,#prose-home) .prose-step p{font-size:.9rem;color:#475569;line-height:1.55;margin:0}
+:is(#prose,#prose-home) .prose-bens{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:44px}
+:is(#prose,#prose-home) .prose-ben{display:flex;align-items:flex-start;gap:13px;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:14px;padding:16px 18px;box-shadow:0 2px 10px rgba(15,23,42,.04)}
+:is(#prose,#prose-home) .prose-ben-ico{width:42px;height:42px;border-radius:11px;flex:none;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(37,99,235,.13),rgba(124,58,237,.07));border:1px solid rgba(37,99,235,.22);color:#2563eb}
+:is(#prose,#prose-home) .prose-ben h4{font-size:.96rem;font-weight:800;color:#0f172a;margin:0 0 3px}
+:is(#prose,#prose-home) .prose-ben p{font-size:.83rem;color:#475569;line-height:1.45;margin:0}
+:is(#prose,#prose-home) .prose-section-h{font-size:1.18rem;font-weight:800;color:#0f172a;margin:0 0 18px;letter-spacing:-.015em}
+:is(#prose,#prose-home) .prose-uses{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 40px}
+:is(#prose,#prose-home) .prose-use{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:13px;padding:15px 18px}
+:is(#prose,#prose-home) .prose-use-ico{font-size:1.6rem;line-height:1}
+:is(#prose,#prose-home) .prose-use strong{display:block;font-size:.96rem;color:#0f172a;font-weight:800;margin-bottom:2px}
+:is(#prose,#prose-home) .prose-use span{font-size:.85rem;color:#475569;display:block;line-height:1.4}
+@media(max-width:1024px){:is(#prose,#prose-home) .prose-grid{grid-template-columns:repeat(2,1fr);gap:16px}:is(#prose,#prose-home) .prose-steps{grid-template-columns:1fr;gap:14px}:is(#prose,#prose-home) .prose-bens{grid-template-columns:repeat(2,1fr)}:is(#prose,#prose-home) .prose-uses{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){:is(#prose,#prose-home) .prose-grid{grid-template-columns:1fr;gap:14px}:is(#prose,#prose-home) .prose-card-img{aspect-ratio:3/2}:is(#prose,#prose-home) .prose-cta{flex-direction:column;align-items:stretch;text-align:center}:is(#prose,#prose-home) .prose-bens{grid-template-columns:1fr}:is(#prose,#prose-home) .prose-uses{grid-template-columns:1fr}}
+:is(#prose,#prose-home) a.prose-card-link{text-decoration:none;cursor:pointer;color:inherit;display:flex;flex-direction:column}
+:is(#prose,#prose-home) a.prose-card-link:hover{border-color:rgba(37,99,235,.4) !important}
 
 /* ── Enlarged energia-gateway image ── */
 .eg-wrap{grid-template-columns:.92fr 1.08fr !important;gap:42px !important}
@@ -5609,7 +5611,66 @@ html:not(.vw) section[data-view]{display:revert}
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     PROSE Technologies · Antenas y Camuflaje
+     PROSE Teaser (vista principal) — enlace a vista completa
+═══════════════════════════════════════════════════════════ -->
+<section id="prose-home" data-view="home" class="sec" style="background:linear-gradient(180deg,#fafbff 0%,#eef2fa 100%);position:relative;overflow:hidden">
+  <div class="container">
+    <div class="centered rv" style="text-align:center;margin-bottom:34px">
+      <div class="tag" style="margin:0 auto"><span class="tag-dot"></span><span data-lang="es">PROSE Technologies · Distribuidor oficial</span><span data-lang="en">PROSE Technologies · Official distributor</span></div>
+      <h2 class="s-title"><span data-lang="es">Antenas, Sistemas DAS y <span>Camuflaje</span></span><span data-lang="en">Antennas, DAS systems and <span>Camouflage</span></span></h2>
+      <p class="s-sub" style="max-width:620px;margin:14px auto 0"><span data-lang="es">Soluciones de antenas camufladas como tubos de escape, AC, columnas o piedras. Cobertura sin impacto visual.</span><span data-lang="en">Antennas camouflaged as exhaust pipes, AC units, columns or rocks. Coverage without visual impact.</span></p>
+    </div>
+
+    <div class="prose-grid rv">
+      <a href="#prose" class="prose-card prose-card-link">
+        <div class="prose-card-img"><img src="assets/prose-pole.jpg" alt="Antena tipo poste / cluster PROSE" loading="lazy"></div>
+        <div class="prose-card-body">
+          <span class="prose-card-cat"><span data-lang="es">Estación base</span><span data-lang="en">Base station</span></span>
+          <h3><span data-lang="es">Antena Cluster · Poste</span><span data-lang="en">Cluster · Pole Antenna</span></h3>
+          <p><span data-lang="es">Una estructura, tres sectores con antenas independientes.</span><span data-lang="en">One structure, three sectors with independent antennas.</span></p>
+        </div>
+      </a>
+      <a href="#prose" class="prose-card prose-card-link">
+        <div class="prose-card-img"><img src="assets/prose-cylinder.jpg" alt="Antena tipo cilindro PROSE" loading="lazy"></div>
+        <div class="prose-card-body">
+          <span class="prose-card-cat"><span data-lang="es">Camuflaje</span><span data-lang="en">Camouflage</span></span>
+          <h3><span data-lang="es">Cilindro · Tubo de Escape</span><span data-lang="en">Cylinder · Exhaust Pipe</span></h3>
+          <p><span data-lang="es">Perfil bajo, alta ocultación. Para techos de edificios.</span><span data-lang="en">Low profile, high concealment. For rooftops.</span></p>
+        </div>
+      </a>
+      <a href="#prose" class="prose-card prose-card-link">
+        <div class="prose-card-img"><img src="assets/prose-ac.jpg" alt="Antena camuflada como aire acondicionado PROSE" loading="lazy"></div>
+        <div class="prose-card-body">
+          <span class="prose-card-cat"><span data-lang="es">Camuflaje urbano</span><span data-lang="en">Urban camouflage</span></span>
+          <h3><span data-lang="es">Aire Acondicionado</span><span data-lang="en">Air Conditioning</span></h3>
+          <p><span data-lang="es">Camuflada como unidad civil de AC. Para terrazas.</span><span data-lang="en">Camouflaged as civil AC unit. For terraces.</span></p>
+        </div>
+      </a>
+      <a href="#prose" class="prose-card prose-card-link">
+        <div class="prose-card-img"><img src="assets/prose-rock.jpg" alt="Antena PROSE camuflaje comunitario" loading="lazy"></div>
+        <div class="prose-card-body">
+          <span class="prose-card-cat"><span data-lang="es">Comunitaria</span><span data-lang="en">Community</span></span>
+          <h3><span data-lang="es">Camuflaje Ambiental</span><span data-lang="en">Environmental Camouflage</span></h3>
+          <p><span data-lang="es">Se integra como piedra, arbusto o elemento del paisaje.</span><span data-lang="en">Blends as rock, bush or landscape element.</span></p>
+        </div>
+      </a>
+    </div>
+
+    <div class="prose-cta">
+      <div class="prose-cta-txt">
+        <h4><span data-lang="es">¿Quieres ver todo sobre PROSE?</span><span data-lang="en">Want to see everything about PROSE?</span></h4>
+        <p><span data-lang="es">Tipos de cobertura, beneficios técnicos y dónde se aplica — toda la información en una sección dedicada.</span><span data-lang="en">Coverage types, technical benefits and applications — everything in a dedicated section.</span></p>
+      </div>
+      <div class="prose-cta-btns">
+        <a href="#prose" class="btn btn-primary"><span data-lang="es">Ver más de PROSE →</span><span data-lang="en">Explore PROSE →</span></a>
+        <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesan%20las%20antenas%20PROSE%20%28camuflaje%20%2F%20DAS%29" target="_blank" rel="noopener" class="btn btn-wa"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span> <span data-lang="es">Cotizar</span><span data-lang="en">Quote</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PROSE Technologies · Antenas y Camuflaje (vista completa)
 ═══════════════════════════════════════════════════════════ -->
 <section id="prose" data-view="prose" class="sec" style="background:linear-gradient(180deg,#fafbff 0%,#eef2fa 100%);position:relative;overflow:hidden">
   <div class="container">
