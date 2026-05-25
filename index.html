@@ -3724,70 +3724,209 @@ html.dark #sticky-cta p{color:rgba(255,255,255,.8) !important}
 /* ── Progress bar stays visible ── */
 html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 
-/* ── Relojes GPS & Seguridad Personal ── */
-.wch-hero{background:linear-gradient(135deg,#1a0533 0%,#2d1057 40%,#0f172a 100%);padding:80px 0 56px;position:relative;overflow:hidden}
-.wch-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(168,85,247,.18) 0%,transparent 70%);pointer-events:none}
-.wch-hero-inner{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
-.wch-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(168,85,247,.15);border:1px solid rgba(168,85,247,.35);border-radius:50px;font-size:.69rem;font-weight:700;color:#c084fc;letter-spacing:.8px;text-transform:uppercase}
-.wch-tag-dot{width:6px;height:6px;border-radius:50%;background:#a855f7;animation:pulse 2s infinite}
-.wch-hero-title{font-family:var(--ff-head);font-size:clamp(2rem,4vw,2.9rem);font-weight:800;color:#fff;line-height:1.08;letter-spacing:-.03em}
-.wch-hero-title span{background:linear-gradient(130deg,#c084fc,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.wch-hero-sub{font-size:.97rem;color:rgba(255,255,255,.62);max-width:560px;line-height:1.75}
-.wch-hero-stats{display:flex;gap:28px;margin-top:8px;flex-wrap:wrap}
-.wch-stat{display:flex;flex-direction:column;align-items:flex-start}
-.wch-stat-n{font-size:1.5rem;font-weight:800;color:#c084fc;line-height:1;font-family:var(--ff-head)}
-.wch-stat-l{font-size:.72rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
-.wch-hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
-.wch-grid-section{padding:72px 0 96px;background:var(--g950)}
-.wch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
-.wch-card{background:var(--card);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;position:relative}
-.wch-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:rgba(168,85,247,.28)}
-.wch-card-img{height:220px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.wch-card-img img{height:190px;width:auto;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 12px 32px rgba(0,0,0,.28));transition:transform .35s ease}
-.wch-card:hover .wch-card-img img{transform:scale(1.06) translateY(-4px)}
-.wch-card-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1;gap:14px}
+/* ══════════════════════════════════════════════════════════════
+   RELOJES GPS & SEGURIDAD PERSONAL · v2 mega-upgrade
+══════════════════════════════════════════════════════════════ */
+
+/* ── Animation keyframes ── */
+@keyframes wchFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(-1.5deg)}}
+@keyframes wchFloatAlt{0%,100%{transform:translateY(-6px) rotate(1deg)}50%{transform:translateY(8px) rotate(-1deg)}}
+@keyframes wchPulseRing{0%{transform:scale(.6);opacity:.9}80%{transform:scale(2.4);opacity:0}100%{transform:scale(2.4);opacity:0}}
+@keyframes wchGlow{0%,100%{box-shadow:0 0 0 0 rgba(168,85,247,.55),0 0 32px rgba(168,85,247,.25)}50%{box-shadow:0 0 0 12px rgba(168,85,247,0),0 0 64px rgba(168,85,247,.45)}}
+@keyframes wchShine{0%{transform:translateX(-150%) skewX(-22deg)}100%{transform:translateX(280%) skewX(-22deg)}}
+@keyframes wchGrid{0%{background-position:0 0}100%{background-position:60px 60px}}
+@keyframes wchStaggerIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes wchOrbit{from{transform:rotate(0deg) translateX(160px) rotate(0deg)}to{transform:rotate(360deg) translateX(160px) rotate(-360deg)}}
+@keyframes wchBlink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes wchSignal{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+
+/* ── HERO con grid animado + glow + particle orbits ── */
+.wch-hero{background:radial-gradient(ellipse 90% 70% at 70% 30%,#3b1078 0%,#1a0533 45%,#080012 100%);padding:96px 0 80px;position:relative;overflow:hidden;min-height:520px}
+.wch-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(168,85,247,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(168,85,247,.06) 1px,transparent 1px);background-size:60px 60px;animation:wchGrid 20s linear infinite;pointer-events:none;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,#000 30%,transparent 80%)}
+.wch-hero::after{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.35) 0%,transparent 60%);filter:blur(30px);pointer-events:none;animation:wchFloatAlt 8s ease-in-out infinite}
+.wch-hero-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;position:relative;z-index:2}
+.wch-hero-left{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.wch-tag{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(168,85,247,.15);border:1px solid rgba(168,85,247,.45);border-radius:50px;font-size:.7rem;font-weight:700;color:#d8b4fe;letter-spacing:.9px;text-transform:uppercase;backdrop-filter:blur(8px)}
+.wch-tag-dot{width:7px;height:7px;border-radius:50%;background:#a855f7;box-shadow:0 0 12px #a855f7;animation:pulse 2s infinite}
+.wch-hero-title{font-family:var(--ff-head);font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.035em}
+.wch-hero-title span{background:linear-gradient(130deg,#c084fc,#818cf8 50%,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block}
+.wch-hero-sub{font-size:1.02rem;color:rgba(255,255,255,.7);max-width:540px;line-height:1.7}
+.wch-sim-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;background:linear-gradient(135deg,rgba(34,211,238,.18),rgba(168,85,247,.18));border:1px solid rgba(34,211,238,.4);border-radius:14px;color:#67e8f9;font-size:.78rem;font-weight:700;backdrop-filter:blur(10px);position:relative;overflow:hidden}
+.wch-sim-badge::before{content:'';position:absolute;top:0;left:0;height:100%;width:60px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);animation:wchShine 3.5s ease-in-out infinite}
+.wch-sim-icon{width:20px;height:14px;background:linear-gradient(135deg,#fbbf24,#f59e0b);border-radius:2px;position:relative;flex-shrink:0}
+.wch-sim-icon::after{content:'';position:absolute;inset:2px 2px 2px 6px;background:#1a0533;border-radius:1px}
+.wch-hero-stats{display:flex;gap:36px;margin-top:14px;flex-wrap:wrap}
+.wch-stat{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+.wch-stat-n{font-size:1.7rem;font-weight:800;color:#fff;line-height:1;font-family:var(--ff-head);background:linear-gradient(135deg,#c084fc,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.wch-stat-l{font-size:.7rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.7px;font-weight:600}
+.wch-hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
+.wch-hero-btns .btn-primary{background:linear-gradient(135deg,#a855f7,#7c3aed)!important;box-shadow:0 8px 28px rgba(168,85,247,.4)!important;position:relative;overflow:hidden}
+.wch-hero-btns .btn-primary::before{content:'';position:absolute;top:0;left:0;height:100%;width:80px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:wchShine 2.5s ease-in-out infinite}
+
+/* Hero visual: reloj flotante + anillos + orbit dots */
+.wch-hero-visual{position:relative;height:420px;display:flex;align-items:center;justify-content:center}
+.wch-hero-watch{position:relative;width:280px;height:280px;display:flex;align-items:center;justify-content:center;animation:wchFloat 5s ease-in-out infinite}
+.wch-hero-watch img{width:240px;height:auto;filter:drop-shadow(0 28px 64px rgba(168,85,247,.55))}
+.wch-hero-ring{position:absolute;inset:0;border:2px solid rgba(168,85,247,.25);border-radius:50%;animation:wchPulseRing 3.6s cubic-bezier(.4,0,.2,1) infinite}
+.wch-hero-ring:nth-child(2){animation-delay:1.2s}
+.wch-hero-ring:nth-child(3){animation-delay:2.4s}
+.wch-hero-orbit{position:absolute;width:100%;height:100%;top:0;left:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.wch-hero-orbit-dot{position:absolute;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#c084fc,#22d3ee);box-shadow:0 0 18px rgba(168,85,247,.7);animation:wchOrbit 12s linear infinite}
+.wch-hero-orbit-dot:nth-child(2){animation-delay:-3s;animation-duration:14s;background:linear-gradient(135deg,#22d3ee,#10b981)}
+.wch-hero-orbit-dot:nth-child(3){animation-delay:-6s;animation-duration:16s;background:linear-gradient(135deg,#f59e0b,#ec4899)}
+.wch-hero-orbit-dot:nth-child(4){animation-delay:-9s;animation-duration:18s;background:linear-gradient(135deg,#ec4899,#a855f7)}
+
+/* ── FEATURES STRIP (6 features con iconos) ── */
+.wch-features-strip{padding:48px 0;background:linear-gradient(180deg,#080012 0%,#0a0518 100%);position:relative;overflow:hidden}
+.wch-features-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 50% 0%,rgba(168,85,247,.15),transparent 70%);pointer-events:none}
+.wch-fstrip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px;position:relative;z-index:2}
+.wch-fstrip-item{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:20px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:14px;transition:transform .3s ease,border-color .3s ease,background .3s ease}
+.wch-fstrip-item:hover{transform:translateY(-4px);border-color:rgba(168,85,247,.35);background:rgba(168,85,247,.05)}
+.wch-fstrip-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:11px;background:linear-gradient(135deg,rgba(168,85,247,.18),rgba(34,211,238,.12));border:1px solid rgba(168,85,247,.3);color:#c084fc;font-size:1.3rem}
+.wch-fstrip-title{font-size:.88rem;font-weight:700;color:#fff;letter-spacing:-.01em}
+.wch-fstrip-desc{font-size:.74rem;color:rgba(255,255,255,.55);line-height:1.5}
+
+/* ── GRID DE PERFILES (con lifestyle photos de fondo) ── */
+.wch-grid-section{padding:88px 0 96px;background:linear-gradient(180deg,#0a0518 0%,#080012 100%);position:relative}
+.wch-grid-section .centered .s-title{color:#fff!important}
+.wch-grid-section .centered .s-title span{background:linear-gradient(130deg,#c084fc,#22d3ee)!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important}
+.wch-grid-section .centered .s-sub{color:rgba(255,255,255,.6)!important}
+.wch-grid-section .centered .tag{color:#c084fc!important;background:rgba(168,85,247,.12)!important;border-color:rgba(168,85,247,.3)!important}
+.wch-grid-section .centered .tag-dot{background:#a855f7!important;box-shadow:0 0 10px #a855f7}
+.wch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:28px}
+.wch-card{background:linear-gradient(180deg,#0f0825 0%,#070110 100%);border:1px solid rgba(255,255,255,.07);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;position:relative;opacity:0;animation:wchStaggerIn .7s cubic-bezier(.16,1,.3,1) forwards}
+.wch-card:nth-child(1){animation-delay:.05s}
+.wch-card:nth-child(2){animation-delay:.15s}
+.wch-card:nth-child(3){animation-delay:.25s}
+.wch-card:nth-child(4){animation-delay:.35s}
+.wch-card:nth-child(5){animation-delay:.45s}
+.wch-card::before{content:'';position:absolute;inset:-1px;border-radius:23px;padding:1px;background:linear-gradient(135deg,transparent 0%,rgba(168,85,247,.3) 50%,transparent 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s}
+.wch-card:hover{transform:translateY(-10px);box-shadow:0 30px 60px -15px rgba(168,85,247,.35),0 0 0 1px rgba(168,85,247,.2)}
+.wch-card:hover::before{opacity:1}
+.wch-card-img{height:260px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#000}
+.wch-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(.8) brightness(.55);transform:scale(1.05);transition:transform 1s ease,filter .5s ease}
+.wch-card:hover .wch-card-bg{transform:scale(1.12);filter:saturate(1) brightness(.65)}
+.wch-card-vignette{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,0,18,.3) 0%,rgba(8,0,18,.55) 60%,rgba(8,0,18,.9) 100%);z-index:1}
+.wch-card-bg-glow{position:absolute;width:200px;height:200px;border-radius:50%;filter:blur(60px);opacity:.7;z-index:1;animation:wchFloatAlt 6s ease-in-out infinite}
+.wch-card-watch{position:relative;z-index:2;animation:wchFloat 4.5s ease-in-out infinite;transition:transform .4s ease}
+.wch-card-watch img{height:210px;width:auto;object-fit:contain;filter:drop-shadow(0 18px 36px rgba(0,0,0,.55))}
+.wch-card:hover .wch-card-watch{transform:scale(1.08) translateY(-6px)}
+.wch-sim-corner{position:absolute;top:14px;right:14px;z-index:3;display:inline-flex;align-items:center;gap:6px;padding:5px 11px;background:rgba(0,0,0,.5);border:1px solid rgba(34,211,238,.5);border-radius:50px;font-size:.62rem;font-weight:700;color:#67e8f9;letter-spacing:.5px;text-transform:uppercase;backdrop-filter:blur(6px)}
+.wch-sim-corner-icon{width:12px;height:9px;background:linear-gradient(135deg,#fbbf24,#f59e0b);border-radius:1.5px;position:relative}
+.wch-sim-corner-icon::after{content:'';position:absolute;inset:1px 1px 1px 4px;background:rgba(0,0,0,.7);border-radius:1px}
+.wch-live-dot{position:absolute;top:14px;left:14px;z-index:3;display:inline-flex;align-items:center;gap:6px;padding:5px 11px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.15);border-radius:50px;font-size:.62rem;font-weight:700;color:#fff;letter-spacing:.5px;text-transform:uppercase;backdrop-filter:blur(6px)}
+.wch-live-dot::before{content:'';width:6px;height:6px;border-radius:50%;background:#ef4444;box-shadow:0 0 10px #ef4444;animation:wchBlink 1.4s infinite}
+.wch-card-body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1;gap:14px;position:relative}
 .wch-card-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.wch-card-cat{font-size:.63rem;font-weight:700;letter-spacing:.7px;text-transform:uppercase;padding:4px 10px;border-radius:50px;border:1px solid;white-space:nowrap}
-.wch-card-code{font-size:.7rem;font-weight:700;color:var(--txt2);font-family:monospace;margin-left:auto;background:var(--g900);padding:3px 8px;border-radius:6px;border:1px solid var(--bdr)}
-.wch-card-name{font-size:1.05rem;font-weight:700;color:var(--txt);font-family:var(--ff-head);line-height:1.25;letter-spacing:-.015em}
-.wch-card-sub{font-size:.82rem;color:var(--txt2);line-height:1.55;margin-top:-4px}
-.wch-features{list-style:none;display:flex;flex-direction:column;gap:7px}
-.wch-features li{display:flex;align-items:flex-start;gap:8px;font-size:.8rem;color:var(--txt2);line-height:1.45}
-.wch-features li::before{content:'✓';font-size:.72rem;font-weight:800;flex-shrink:0;margin-top:.1em}
-.wch-card-footer{margin-top:auto;padding-top:4px}
-.wch-card-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px 16px;border-radius:11px;font-size:.83rem;font-weight:700;color:#fff;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s,filter .2s;text-decoration:none}
-.wch-card-cta:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.wch-card-cat{font-size:.63rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:5px 12px;border-radius:50px;border:1px solid;white-space:nowrap}
+.wch-card-name{font-size:1.18rem;font-weight:800;color:#fff;font-family:var(--ff-head);line-height:1.2;letter-spacing:-.02em}
+.wch-card-sub{font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.55;margin-top:-2px}
+.wch-features{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:2px}
+.wch-features li{display:flex;align-items:flex-start;gap:10px;font-size:.81rem;color:rgba(255,255,255,.72);line-height:1.5}
+.wch-features li::before{content:'';width:16px;height:16px;flex-shrink:0;margin-top:.15em;border-radius:50%;background:linear-gradient(135deg,currentColor,currentColor) padding-box,linear-gradient(135deg,currentColor,transparent) border-box;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.6rem;font-weight:800;line-height:1}
+.wch-features li::before{content:'✓';background:rgba(255,255,255,.06);border:1px solid;font-size:.65rem}
+.wch-card-footer{margin-top:auto;padding-top:6px}
+.wch-card-cta{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:14px 18px;border-radius:12px;font-size:.86rem;font-weight:700;color:#fff;border:none;cursor:pointer;transition:transform .25s,box-shadow .25s,filter .25s;text-decoration:none;position:relative;overflow:hidden}
+.wch-card-cta::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transition:left .6s ease}
+.wch-card-cta:hover::before{left:120%}
+.wch-card-cta:hover{transform:translateY(-2px);filter:brightness(1.12);box-shadow:0 10px 28px rgba(0,0,0,.4)}
+
 /* Per-card color accents */
-.wch-img-amber{background:linear-gradient(145deg,#1c1208 0%,#3d2a04 100%)}
-.wch-feat-amber li::before{color:#f59e0b}
-.wch-cat-amber{color:#f59e0b;background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.22)}
-.wch-cta-amber{background:linear-gradient(135deg,#b45309,#d97706)}
-.wch-img-teal{background:linear-gradient(145deg,#061a16 0%,#083d2f 100%)}
-.wch-feat-teal li::before{color:#14b8a6}
-.wch-cat-teal{color:#14b8a6;background:rgba(20,184,166,.08);border-color:rgba(20,184,166,.22)}
+.wch-img-amber .wch-card-bg-glow{background:#f59e0b;left:-50px;bottom:-50px}
+.wch-feat-amber li::before{color:#fbbf24;border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.1)}
+.wch-cat-amber{color:#fbbf24;background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.3)}
+.wch-cta-amber{background:linear-gradient(135deg,#b45309,#f59e0b)}
+
+.wch-img-teal .wch-card-bg-glow{background:#14b8a6;right:-50px;top:-50px}
+.wch-feat-teal li::before{color:#2dd4bf;border-color:rgba(45,212,191,.4);background:rgba(45,212,191,.1)}
+.wch-cat-teal{color:#2dd4bf;background:rgba(45,212,191,.12);border-color:rgba(45,212,191,.3)}
 .wch-cta-teal{background:linear-gradient(135deg,#0f766e,#14b8a6)}
-.wch-img-blue{background:linear-gradient(145deg,#040c1e 0%,#0c2050 100%)}
-.wch-feat-blue li::before{color:#60a5fa}
-.wch-cat-blue{color:#60a5fa;background:rgba(96,165,250,.08);border-color:rgba(96,165,250,.22)}
-.wch-cta-blue{background:linear-gradient(135deg,#1d4ed8,#2563eb)}
-.wch-img-violet{background:linear-gradient(145deg,#0d0520 0%,#2d1057 100%)}
-.wch-feat-violet li::before{color:#c084fc}
-.wch-cat-violet{color:#c084fc;background:rgba(192,132,252,.08);border-color:rgba(192,132,252,.22)}
+
+.wch-img-blue .wch-card-bg-glow{background:#3b82f6;left:-50px;top:-50px}
+.wch-feat-blue li::before{color:#60a5fa;border-color:rgba(96,165,250,.4);background:rgba(96,165,250,.1)}
+.wch-cat-blue{color:#60a5fa;background:rgba(96,165,250,.12);border-color:rgba(96,165,250,.3)}
+.wch-cta-blue{background:linear-gradient(135deg,#1d4ed8,#3b82f6)}
+
+.wch-img-violet .wch-card-bg-glow{background:#a855f7;right:-50px;bottom:-50px}
+.wch-feat-violet li::before{color:#c084fc;border-color:rgba(192,132,252,.4);background:rgba(192,132,252,.1)}
+.wch-cat-violet{color:#c084fc;background:rgba(192,132,252,.12);border-color:rgba(192,132,252,.3)}
 .wch-cta-violet{background:linear-gradient(135deg,#7c3aed,#a855f7)}
-.wch-img-rose{background:linear-gradient(145deg,#1a0408 0%,#3d0a10 100%)}
-.wch-feat-rose li::before{color:#fb7185}
-.wch-cat-rose{color:#fb7185;background:rgba(251,113,133,.08);border-color:rgba(251,113,133,.22)}
+
+.wch-img-rose .wch-card-bg-glow{background:#f43f5e;left:-50px;bottom:-50px}
+.wch-feat-rose li::before{color:#fb7185;border-color:rgba(251,113,133,.4);background:rgba(251,113,133,.1)}
+.wch-cat-rose{color:#fb7185;background:rgba(251,113,133,.12);border-color:rgba(251,113,133,.3)}
 .wch-cta-rose{background:linear-gradient(135deg,#be123c,#f43f5e)}
-/* Dark mode overrides */
-html.dark .wch-grid-section{background:#080d19 !important}
-html.dark .wch-card{background:#0b1225 !important;border-color:rgba(255,255,255,.07) !important}
-html.dark .wch-card:hover{border-color:rgba(168,85,247,.35) !important}
-html.dark .wch-card-name{color:#f1f5f9 !important}
-html.dark .wch-card-sub{color:#94a3b8 !important}
-html.dark .wch-features li{color:#94a3b8 !important}
-html.dark .wch-card-code{background:rgba(255,255,255,.06) !important;color:rgba(255,255,255,.5) !important;border-color:rgba(255,255,255,.08) !important}
-@media(max-width:900px){.wch-hero{padding:64px 0 44px}}
-@media(max-width:600px){.wch-grid{grid-template-columns:1fr;gap:20px}.wch-card-img{height:180px}.wch-card-img img{height:150px}}
+
+/* ── CÓMO FUNCIONA · 4 pasos ── */
+.wch-how{padding:88px 0;background:#080012;position:relative;overflow:hidden}
+.wch-how::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 25% 30%,rgba(168,85,247,.12),transparent 50%),radial-gradient(circle at 75% 70%,rgba(34,211,238,.1),transparent 50%);pointer-events:none}
+.wch-how-inner{position:relative;z-index:2}
+.wch-how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:48px}
+.wch-how-step{position:relative;padding:30px 24px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:18px;transition:transform .3s,border-color .3s}
+.wch-how-step:hover{transform:translateY(-6px);border-color:rgba(168,85,247,.35)}
+.wch-how-num{position:absolute;top:-18px;left:24px;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#a855f7,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;color:#fff;font-family:var(--ff-head);box-shadow:0 8px 24px rgba(168,85,247,.5);transform:rotate(-4deg)}
+.wch-how-icon{width:54px;height:54px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.25);color:#c084fc;margin-bottom:18px;margin-top:12px}
+.wch-how-title{font-size:1.05rem;font-weight:700;color:#fff;font-family:var(--ff-head);letter-spacing:-.01em;margin-bottom:8px}
+.wch-how-desc{font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.6}
+
+/* ── DEMO MAP MOCKUP ── */
+.wch-demo{padding:88px 0;background:linear-gradient(180deg,#080012 0%,#0a0518 100%);position:relative}
+.wch-demo-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+.wch-demo-text h3{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;color:#fff;font-family:var(--ff-head);line-height:1.15;letter-spacing:-.025em;margin-bottom:14px}
+.wch-demo-text h3 span{background:linear-gradient(130deg,#c084fc,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.wch-demo-text p{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:24px;max-width:480px}
+.wch-demo-features{list-style:none;display:flex;flex-direction:column;gap:14px}
+.wch-demo-features li{display:flex;align-items:flex-start;gap:14px;font-size:.88rem;color:rgba(255,255,255,.72);line-height:1.5}
+.wch-demo-features li svg{flex-shrink:0;color:#c084fc;margin-top:.15em}
+.wch-demo-map{position:relative;aspect-ratio:4/3;border-radius:22px;overflow:hidden;background:#0a0a1a;border:1px solid rgba(168,85,247,.25);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.wch-demo-map-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1a1a3a 0%,#0a0a1a 100%)}
+.wch-demo-map-bg::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(168,85,247,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(168,85,247,.1) 1px,transparent 1px);background-size:30px 30px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 30%,transparent 90%)}
+.wch-demo-map-bg::after{content:'';position:absolute;top:30%;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,rgba(168,85,247,.6),transparent);box-shadow:0 0 20px rgba(168,85,247,.4)}
+.wch-demo-pin{position:absolute;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#7c3aed);box-shadow:0 0 30px rgba(168,85,247,.7);animation:wchGlow 2.4s infinite;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.7rem;border:3px solid #fff}
+.wch-demo-pin::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(168,85,247,.5);animation:wchPulseRing 2.4s infinite}
+.wch-demo-pin-1{top:25%;left:25%}
+.wch-demo-pin-2{top:55%;left:60%;background:linear-gradient(135deg,#22d3ee,#0891b2);box-shadow:0 0 30px rgba(34,211,238,.7)}
+.wch-demo-pin-2::before{border-color:rgba(34,211,238,.5)}
+.wch-demo-pin-3{top:70%;left:35%;background:linear-gradient(135deg,#f59e0b,#d97706);box-shadow:0 0 30px rgba(245,158,11,.7)}
+.wch-demo-pin-3::before{border-color:rgba(245,158,11,.5)}
+.wch-demo-route{position:absolute;top:30%;left:25%;width:35%;height:30%;border-top:2px dashed rgba(168,85,247,.5);border-right:2px dashed rgba(168,85,247,.5);border-radius:0 22px 0 0;animation:wchBlink 2s infinite}
+.wch-demo-panel{position:absolute;bottom:16px;left:16px;right:16px;padding:14px 18px;background:rgba(8,0,18,.85);backdrop-filter:blur(12px);border:1px solid rgba(168,85,247,.3);border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.wch-demo-panel-l{display:flex;flex-direction:column;gap:2px}
+.wch-demo-panel-label{font-size:.64rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.6px;font-weight:600}
+.wch-demo-panel-val{font-size:.92rem;color:#fff;font-weight:700}
+.wch-demo-panel-signal{display:flex;align-items:flex-end;gap:3px;height:18px}
+.wch-demo-panel-signal span{width:4px;background:#22d3ee;border-radius:1px;animation:wchSignal 1.5s ease-in-out infinite;transform-origin:bottom}
+.wch-demo-panel-signal span:nth-child(1){height:30%;animation-delay:0s}
+.wch-demo-panel-signal span:nth-child(2){height:55%;animation-delay:.15s}
+.wch-demo-panel-signal span:nth-child(3){height:80%;animation-delay:.3s}
+.wch-demo-panel-signal span:nth-child(4){height:100%;animation-delay:.45s}
+
+/* ── BOTTOM CTA STRIP ── */
+.wch-final-cta{padding:64px 0 96px;background:#080012;text-align:center;position:relative}
+.wch-final-cta p{font-size:1rem;color:rgba(255,255,255,.65);max-width:560px;margin:0 auto 24px;line-height:1.6}
+.wch-final-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.wch-final-cta .btn-primary{background:linear-gradient(135deg,#a855f7,#7c3aed)!important;box-shadow:0 12px 36px rgba(168,85,247,.45)!important;position:relative;overflow:hidden;padding:14px 28px!important}
+.wch-final-cta .btn-primary::before{content:'';position:absolute;top:0;left:0;height:100%;width:80px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:wchShine 3s ease-in-out infinite}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .wch-hero{padding:64px 0 56px;min-height:auto}
+  .wch-hero-inner{grid-template-columns:1fr;gap:32px}
+  .wch-hero-visual{height:320px}
+  .wch-hero-watch{width:220px;height:220px}
+  .wch-hero-watch img{width:190px}
+  .wch-demo-wrap{grid-template-columns:1fr;gap:36px}
+}
+@media(max-width:600px){
+  .wch-grid{grid-template-columns:1fr;gap:22px}
+  .wch-card-img{height:220px}
+  .wch-card-watch img{height:170px}
+  .wch-hero-stats{gap:24px}
+  .wch-fstrip-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(prefers-reduced-motion:reduce){
+  .wch-card,.wch-hero-watch,.wch-card-watch,.wch-card-bg-glow,.wch-hero-orbit-dot,.wch-hero-ring,.wch-demo-pin::before,.wch-sim-badge::before,.wch-card-cta::before,.wch-final-cta .btn-primary::before,.wch-hero-btns .btn-primary::before,.wch-demo-route{animation:none!important}
+}
 
 /* Smooth transition for theme switching */
 body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben-card,.faq-item,.co,.cf-wrap{transition:background-color .3s ease,color .3s ease,border-color .3s ease !important}
@@ -5713,216 +5852,422 @@ html:not(.vw) section[data-view]{display:revert}
 
 
 <!-- ═══════════════════════════════════════════════════════════
-     RELOJES GPS & SEGURIDAD PERSONAL
+     RELOJES GPS & SEGURIDAD PERSONAL · v2 mega-upgrade
 ═══════════════════════════════════════════════════════════ -->
 <section id="relojes" data-view="relojes">
 
-  <!-- Hero header -->
+  <!-- ───── HERO con grid animado + reloj flotante ───── -->
   <div class="wch-hero">
     <div class="container">
       <div class="wch-hero-inner">
-        <div class="wch-tag"><div class="wch-tag-dot"></div><span data-lang="es">GPS · Seguridad Personal</span><span data-lang="en">GPS · Personal Security</span></div>
-        <h1 class="wch-hero-title">
-          <span data-lang="es">Relojes GPS &amp; <span>Rastreo Inteligente</span></span>
-          <span data-lang="en">GPS Watches &amp; <span>Smart Tracking</span></span>
-        </h1>
-        <p class="wch-hero-sub">
-          <span data-lang="es">Soluciones de localización y seguridad personal para adultos mayores, niños, deportistas y activos empresariales. Conectividad 4G · GPS en tiempo real · SOS instantáneo.</span>
-          <span data-lang="en">Location and personal security solutions for seniors, children, athletes and business assets. 4G connectivity · Real-time GPS · Instant SOS.</span>
-        </p>
-        <div class="wch-hero-stats">
-          <div class="wch-stat"><span class="wch-stat-n">5</span><span class="wch-stat-l"><span data-lang="es">Modelos</span><span data-lang="en">Models</span></span></div>
-          <div class="wch-stat"><span class="wch-stat-n">4G</span><span class="wch-stat-l">LTE / GPS</span></div>
-          <div class="wch-stat"><span class="wch-stat-n">SOS</span><span class="wch-stat-l"><span data-lang="es">Pánico</span><span data-lang="en">Panic</span></span></div>
-          <div class="wch-stat"><span class="wch-stat-n">24/7</span><span class="wch-stat-l"><span data-lang="es">Soporte</span><span data-lang="en">Support</span></span></div>
+
+        <!-- Left: copy -->
+        <div class="wch-hero-left">
+          <div class="wch-tag"><div class="wch-tag-dot"></div><span data-lang="es">GPS · Seguridad Personal · Panamá</span><span data-lang="en">GPS · Personal Security · Panama</span></div>
+          <h1 class="wch-hero-title">
+            <span data-lang="es">Localización en vivo <span>donde sea, cuando sea.</span></span>
+            <span data-lang="en">Live tracking <span>anywhere, anytime.</span></span>
+          </h1>
+          <p class="wch-hero-sub">
+            <span data-lang="es">Relojes inteligentes con GPS y conectividad celular para proteger a tu familia, monitorear deportistas y rastrear flotas. Instalación, configuración y soporte en español.</span>
+            <span data-lang="en">Smart watches with GPS and cellular connectivity to protect your family, monitor athletes and track fleets. Installation, setup and support in Spanish.</span>
+          </p>
+
+          <div class="wch-sim-badge">
+            <span class="wch-sim-icon"></span>
+            <span data-lang="es">SIM card incluida · Lista para usar</span><span data-lang="en">SIM card included · Ready to use</span>
+          </div>
+
+          <div class="wch-hero-stats">
+            <div class="wch-stat"><span class="wch-stat-n">5</span><span class="wch-stat-l"><span data-lang="es">Perfiles</span><span data-lang="en">Profiles</span></span></div>
+            <div class="wch-stat"><span class="wch-stat-n">4G</span><span class="wch-stat-l">LTE · GPS</span></div>
+            <div class="wch-stat"><span class="wch-stat-n">SOS</span><span class="wch-stat-l"><span data-lang="es">Pánico</span><span data-lang="en">Panic</span></span></div>
+            <div class="wch-stat"><span class="wch-stat-n">24/7</span><span class="wch-stat-l"><span data-lang="es">Soporte</span><span data-lang="en">Support</span></span></div>
+          </div>
+
+          <div class="wch-hero-btns">
+            <a href="https://wa.me/50766743062?text=Hola%2C+me+interesan+los+relojes+GPS%2C+%C2%BFqu%C3%A9+opciones+tienen+disponibles%3F" class="btn btn-primary" target="_blank" rel="noopener">
+              <span data-lang="es">Hablar por WhatsApp →</span><span data-lang="en">Chat on WhatsApp →</span>
+            </a>
+            <a href="#wch-perfiles" class="btn btn-outline" style="color:#d8b4fe;border-color:rgba(216,180,254,.45)">
+              <span data-lang="es">Ver perfiles ↓</span><span data-lang="en">See profiles ↓</span>
+            </a>
+          </div>
         </div>
-        <div class="wch-hero-btns">
-          <a href="https://wa.me/50766743062?text=Hola%2C+me+interesan+los+relojes+GPS+%C2%BFqu%C3%A9+modelos+tienen+disponibles%3F" class="btn btn-primary" target="_blank" rel="noopener">
-            <span data-lang="es">Cotizar por WhatsApp →</span><span data-lang="en">Quote on WhatsApp →</span>
-          </a>
-          <a href="#cta-sec" class="btn btn-outline" style="color:#c084fc;border-color:rgba(192,132,252,.45)">
-            <span data-lang="es">Solicitar asesoría</span><span data-lang="en">Request advice</span>
-          </a>
+
+        <!-- Right: reloj flotante con anillos + orbit dots -->
+        <div class="wch-hero-visual" aria-hidden="true">
+          <div class="wch-hero-watch">
+            <div class="wch-hero-ring"></div>
+            <div class="wch-hero-ring"></div>
+            <div class="wch-hero-ring"></div>
+            <img src="assets/e-v28c-cutout.png" alt="">
+          </div>
+          <div class="wch-hero-orbit">
+            <div class="wch-hero-orbit-dot"></div>
+            <div class="wch-hero-orbit-dot"></div>
+            <div class="wch-hero-orbit-dot"></div>
+            <div class="wch-hero-orbit-dot"></div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
 
-  <!-- Product grid -->
-  <div class="wch-grid-section">
+  <!-- ───── FEATURES STRIP ───── -->
+  <div class="wch-features-strip">
+    <div class="container">
+      <div class="wch-fstrip-grid">
+
+        <div class="wch-fstrip-item rv">
+          <div class="wch-fstrip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M14 6v12M14 9h6M14 13h6"/></svg>
+          </div>
+          <div class="wch-fstrip-title"><span data-lang="es">SIM Incluida</span><span data-lang="en">SIM Included</span></div>
+          <div class="wch-fstrip-desc"><span data-lang="es">Llega activada y lista para conectar.</span><span data-lang="en">Arrives activated and ready to connect.</span></div>
+        </div>
+
+        <div class="wch-fstrip-item rv">
+          <div class="wch-fstrip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+          </div>
+          <div class="wch-fstrip-title">4G LTE Global</div>
+          <div class="wch-fstrip-desc"><span data-lang="es">Cobertura celular en toda Panamá.</span><span data-lang="en">Cellular coverage across all of Panama.</span></div>
+        </div>
+
+        <div class="wch-fstrip-item rv">
+          <div class="wch-fstrip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="wch-fstrip-title"><span data-lang="es">GPS + WiFi + LBS</span><span data-lang="en">GPS + WiFi + LBS</span></div>
+          <div class="wch-fstrip-desc"><span data-lang="es">Triple sistema de localización preciso.</span><span data-lang="en">Triple location system for accuracy.</span></div>
+        </div>
+
+        <div class="wch-fstrip-item rv">
+          <div class="wch-fstrip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="wch-fstrip-title"><span data-lang="es">Botón SOS</span><span data-lang="en">SOS Button</span></div>
+          <div class="wch-fstrip-desc"><span data-lang="es">Alerta de pánico con un toque.</span><span data-lang="en">Panic alert at the touch of a button.</span></div>
+        </div>
+
+        <div class="wch-fstrip-item rv">
+          <div class="wch-fstrip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+          </div>
+          <div class="wch-fstrip-title"><span data-lang="es">Geofence Inteligente</span><span data-lang="en">Smart Geofence</span></div>
+          <div class="wch-fstrip-desc"><span data-lang="es">Define zonas seguras y recibe alertas.</span><span data-lang="en">Define safe zones and get alerts.</span></div>
+        </div>
+
+        <div class="wch-fstrip-item rv">
+          <div class="wch-fstrip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <div class="wch-fstrip-title"><span data-lang="es">App Móvil iOS/Android</span><span data-lang="en">iOS/Android Mobile App</span></div>
+          <div class="wch-fstrip-desc"><span data-lang="es">Monitorea todo desde tu celular.</span><span data-lang="en">Monitor everything from your phone.</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ───── GRID DE PERFILES ───── -->
+  <div class="wch-grid-section" id="wch-perfiles">
     <div class="container">
 
-      <!-- Intro label -->
-      <div class="centered rv" style="margin-bottom:48px">
-        <div class="tag"><span class="tag-dot"></span><span data-lang="es">Línea completa · 5 modelos</span><span data-lang="en">Full line · 5 models</span></div>
-        <h2 class="s-title"><span data-lang="es">Elige el reloj <span>para cada perfil</span></span><span data-lang="en">Choose the watch <span>for every profile</span></span></h2>
-        <p class="s-sub"><span data-lang="es">Cada modelo está diseñado para un uso específico. Todos incluyen GPS en tiempo real, conectividad celular y botón SOS.</span><span data-lang="en">Each model is designed for a specific use. All include real-time GPS, cellular connectivity and SOS button.</span></p>
+      <div class="centered rv" style="margin-bottom:56px">
+        <div class="tag"><span class="tag-dot"></span><span data-lang="es">5 perfiles · una solución para cada necesidad</span><span data-lang="en">5 profiles · a solution for every need</span></div>
+        <h2 class="s-title"><span data-lang="es">Diseñados <span>para cada estilo de vida</span></span><span data-lang="en">Designed <span>for every lifestyle</span></span></h2>
+        <p class="s-sub"><span data-lang="es">Cada perfil está pensado para una necesidad específica. Todos incluyen SIM card activada, GPS en tiempo real, conectividad celular y soporte técnico local.</span><span data-lang="en">Each profile is built for a specific need. All include activated SIM card, real-time GPS, cellular connectivity and local technical support.</span></p>
       </div>
 
       <div class="wch-grid">
 
-        <!-- ── E-D17 · Adultos Mayores ── -->
+        <!-- ── PERFIL 1 · Adultos Mayores ── -->
         <div class="wch-card">
           <div class="wch-card-img wch-img-amber">
-            <img src="assets/e-d17-cutout.png" alt="Reloj GPS Senior E-D17 para adultos mayores" loading="lazy" width="200" height="190">
+            <div class="wch-card-bg" style="background-image:url('https://images.unsplash.com/photo-1559963110-71b394e7494d?w=800&auto=format&fit=crop&q=80')"></div>
+            <div class="wch-card-bg-glow"></div>
+            <div class="wch-card-vignette"></div>
+            <span class="wch-live-dot"><span data-lang="es">En vivo</span><span data-lang="en">Live</span></span>
+            <span class="wch-sim-corner"><span class="wch-sim-corner-icon"></span>SIM</span>
+            <div class="wch-card-watch">
+              <img src="assets/e-d17-cutout.png" alt="Reloj GPS para adultos mayores" loading="lazy" width="200" height="210">
+            </div>
           </div>
           <div class="wch-card-body">
             <div class="wch-card-top">
-              <span class="wch-card-cat wch-cat-amber"><span data-lang="es">Senior · Adultos Mayores</span><span data-lang="en">Senior · Elderly</span></span>
-              <span class="wch-card-code">E-D17</span>
+              <span class="wch-card-cat wch-cat-amber"><span data-lang="es">Adultos Mayores</span><span data-lang="en">Seniors</span></span>
             </div>
             <div>
-              <div class="wch-card-name"><span data-lang="es">Reloj de Seguridad Senior</span><span data-lang="en">Senior Security Watch</span></div>
-              <div class="wch-card-sub"><span data-lang="es">Cuidado inteligente para adultos mayores con GPS, SOS y monitoreo de salud</span><span data-lang="en">Smart care for seniors with GPS, SOS and health monitoring</span></div>
+              <div class="wch-card-name"><span data-lang="es">Tranquilidad para los abuelitos</span><span data-lang="en">Peace of mind for elders</span></div>
+              <div class="wch-card-sub"><span data-lang="es">Cuidado inteligente con SOS de emergencia, GPS y llamadas integradas. Para vivir tranquilo cuando ellos salen.</span><span data-lang="en">Smart care with emergency SOS, GPS and built-in calls. Live worry-free when they go out.</span></div>
             </div>
             <ul class="wch-features wch-feat-amber">
-              <li><span data-lang="es">GPS en tiempo real con geofence de zona segura</span><span data-lang="en">Real-time GPS with safe zone geofence</span></li>
-              <li><span data-lang="es">Botón SOS de pánico con llamada instantánea</span><span data-lang="en">SOS panic button with instant call</span></li>
-              <li><span data-lang="es">Llamadas bidireccionales integradas</span><span data-lang="en">Built-in two-way calls</span></li>
+              <li><span data-lang="es">Botón SOS con llamada automática a familiares</span><span data-lang="en">SOS button with auto-call to family</span></li>
+              <li><span data-lang="es">Zona segura: alerta si sale del perímetro</span><span data-lang="en">Safe zone: alerts if they leave the perimeter</span></li>
+              <li><span data-lang="es">Llamadas bidireccionales sin tocar el celular</span><span data-lang="en">Two-way calls without touching a phone</span></li>
               <li><span data-lang="es">Monitor de pasos y actividad diaria</span><span data-lang="en">Step counter and daily activity monitor</span></li>
             </ul>
             <div class="wch-card-footer">
-              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+reloj+GPS+Senior+E-D17+%C2%BFqu%C3%A9+precio+tiene%3F" class="wch-card-cta wch-cta-amber" target="_blank" rel="noopener">
+              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+reloj+GPS+para+adultos+mayores+%28con+SIM+incluida%29" class="wch-card-cta wch-cta-amber" target="_blank" rel="noopener">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-                <span data-lang="es">Cotizar E-D17</span><span data-lang="en">Quote E-D17</span>
+                <span data-lang="es">Pedir info por WhatsApp</span><span data-lang="en">Request info on WhatsApp</span>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- ── K-FA103 · Niños ── -->
+        <!-- ── PERFIL 2 · Niños ── -->
         <div class="wch-card">
           <div class="wch-card-img wch-img-teal">
-            <img src="assets/k-fa103-cutout.png" alt="Reloj GPS Infantil K-FA103 para niños" loading="lazy" width="200" height="190">
+            <div class="wch-card-bg" style="background-image:url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop&q=80')"></div>
+            <div class="wch-card-bg-glow"></div>
+            <div class="wch-card-vignette"></div>
+            <span class="wch-live-dot"><span data-lang="es">En vivo</span><span data-lang="en">Live</span></span>
+            <span class="wch-sim-corner"><span class="wch-sim-corner-icon"></span>SIM</span>
+            <div class="wch-card-watch">
+              <img src="assets/k-fa103-cutout.png" alt="Reloj GPS para niños" loading="lazy" width="200" height="210">
+            </div>
           </div>
           <div class="wch-card-body">
             <div class="wch-card-top">
-              <span class="wch-card-cat wch-cat-teal"><span data-lang="es">Infantil · Niños</span><span data-lang="en">Kids · Children</span></span>
-              <span class="wch-card-code">K-FA103</span>
+              <span class="wch-card-cat wch-cat-teal"><span data-lang="es">Niños</span><span data-lang="en">Kids</span></span>
             </div>
             <div>
-              <div class="wch-card-name"><span data-lang="es">Reloj Infantil con GPS</span><span data-lang="en">Kids GPS Watch</span></div>
-              <div class="wch-card-sub"><span data-lang="es">Seguridad y localización para niños con control parental desde el celular</span><span data-lang="en">Safety and location for children with parental control from the phone</span></div>
+              <div class="wch-card-name"><span data-lang="es">Saber dónde están en todo momento</span><span data-lang="en">Know where they are at all times</span></div>
+              <div class="wch-card-sub"><span data-lang="es">Control parental desde tu celular: ubicación en vivo, llamadas a contactos seguros y SOS de emergencia.</span><span data-lang="en">Parental control from your phone: live location, calls to trusted contacts and emergency SOS.</span></div>
             </div>
             <ul class="wch-features wch-feat-teal">
-              <li><span data-lang="es">GPS + WiFi + LBS para máxima precisión</span><span data-lang="en">GPS + WiFi + LBS for maximum accuracy</span></li>
-              <li><span data-lang="es">Llamadas a contactos seguros únicamente</span><span data-lang="en">Calls to trusted contacts only</span></li>
-              <li><span data-lang="es">SOS de emergencia y alerta a padres</span><span data-lang="en">Emergency SOS and parent alert</span></li>
-              <li><span data-lang="es">Modo clase: silencia el reloj en horario escolar</span><span data-lang="en">School mode: silences during class hours</span></li>
+              <li><span data-lang="es">Triple localización GPS + WiFi + LBS</span><span data-lang="en">Triple GPS + WiFi + LBS location</span></li>
+              <li><span data-lang="es">Solo recibe llamadas de contactos autorizados</span><span data-lang="en">Only accepts calls from authorized contacts</span></li>
+              <li><span data-lang="es">Botón SOS con alerta inmediata a padres</span><span data-lang="en">SOS button with instant alert to parents</span></li>
+              <li><span data-lang="es">Modo clase: silencia el reloj en la escuela</span><span data-lang="en">School mode: silences the watch in class</span></li>
             </ul>
             <div class="wch-card-footer">
-              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+reloj+GPS+Infantil+K-FA103+%C2%BFqu%C3%A9+precio+tiene%3F" class="wch-card-cta wch-cta-teal" target="_blank" rel="noopener">
+              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+reloj+GPS+para+ni%C3%B1os+%28con+SIM+incluida%29" class="wch-card-cta wch-cta-teal" target="_blank" rel="noopener">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-                <span data-lang="es">Cotizar K-FA103</span><span data-lang="en">Quote K-FA103</span>
+                <span data-lang="es">Pedir info por WhatsApp</span><span data-lang="en">Request info on WhatsApp</span>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- ── V-28C · Deportivo ── -->
+        <!-- ── PERFIL 3 · Deportistas ── -->
         <div class="wch-card">
           <div class="wch-card-img wch-img-blue">
-            <img src="assets/e-v28c-cutout.png" alt="Reloj GPS Deportivo V-28C para deportistas" loading="lazy" width="200" height="190">
+            <div class="wch-card-bg" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop&q=80')"></div>
+            <div class="wch-card-bg-glow"></div>
+            <div class="wch-card-vignette"></div>
+            <span class="wch-live-dot"><span data-lang="es">En vivo</span><span data-lang="en">Live</span></span>
+            <span class="wch-sim-corner"><span class="wch-sim-corner-icon"></span>SIM</span>
+            <div class="wch-card-watch">
+              <img src="assets/e-v28c-cutout.png" alt="Reloj GPS deportivo" loading="lazy" width="200" height="210">
+            </div>
           </div>
           <div class="wch-card-body">
             <div class="wch-card-top">
-              <span class="wch-card-cat wch-cat-blue"><span data-lang="es">Deportivo · Profesional</span><span data-lang="en">Sports · Professional</span></span>
-              <span class="wch-card-code">V-28C</span>
+              <span class="wch-card-cat wch-cat-blue"><span data-lang="es">Deportistas</span><span data-lang="en">Athletes</span></span>
             </div>
             <div>
-              <div class="wch-card-name"><span data-lang="es">Reloj Deportivo GPS</span><span data-lang="en">Sports GPS Watch</span></div>
-              <div class="wch-card-sub"><span data-lang="es">Rendimiento y monitoreo avanzado para deportistas y profesionales activos</span><span data-lang="en">Advanced performance and monitoring for athletes and active professionals</span></div>
+              <div class="wch-card-name"><span data-lang="es">Cada ruta, cada latido, medido</span><span data-lang="en">Every route, every heartbeat, tracked</span></div>
+              <div class="wch-card-sub"><span data-lang="es">Diseñado para profesionales activos: GPS preciso, frecuencia cardíaca continua y resistencia para cualquier deporte.</span><span data-lang="en">Built for active pros: precise GPS, continuous heart rate and durability for any sport.</span></div>
             </div>
             <ul class="wch-features wch-feat-blue">
-              <li><span data-lang="es">GPS integrado con mapa de ruta en tiempo real</span><span data-lang="en">Built-in GPS with real-time route map</span></li>
+              <li><span data-lang="es">GPS preciso con mapa de ruta en tiempo real</span><span data-lang="en">Precise GPS with real-time route map</span></li>
               <li><span data-lang="es">Monitor de frecuencia cardíaca continuo</span><span data-lang="en">Continuous heart rate monitor</span></li>
               <li><span data-lang="es">Resistente al agua IP67 · multideporte</span><span data-lang="en">IP67 water resistant · multisport</span></li>
-              <li><span data-lang="es">Batería de hasta 7 días en modo normal</span><span data-lang="en">Battery up to 7 days in normal mode</span></li>
+              <li><span data-lang="es">Batería de hasta 7 días en uso normal</span><span data-lang="en">Battery up to 7 days in normal use</span></li>
             </ul>
             <div class="wch-card-footer">
-              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+reloj+Deportivo+GPS+V-28C+%C2%BFqu%C3%A9+precio+tiene%3F" class="wch-card-cta wch-cta-blue" target="_blank" rel="noopener">
+              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+reloj+GPS+deportivo+%28con+SIM+incluida%29" class="wch-card-cta wch-cta-blue" target="_blank" rel="noopener">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-                <span data-lang="es">Cotizar V-28C</span><span data-lang="en">Quote V-28C</span>
+                <span data-lang="es">Pedir info por WhatsApp</span><span data-lang="en">Request info on WhatsApp</span>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- ── P-FA58P · Tracker Vehículos ── -->
+        <!-- ── PERFIL 4 · Flotas / Vehículos ── -->
         <div class="wch-card">
           <div class="wch-card-img wch-img-violet">
-            <img src="assets/p-fa58p-cutout.png" alt="Tracker GPS Vehículos P-FA58P" loading="lazy" width="200" height="190">
+            <div class="wch-card-bg" style="background-image:url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&auto=format&fit=crop&q=80')"></div>
+            <div class="wch-card-bg-glow"></div>
+            <div class="wch-card-vignette"></div>
+            <span class="wch-live-dot"><span data-lang="es">En vivo</span><span data-lang="en">Live</span></span>
+            <span class="wch-sim-corner"><span class="wch-sim-corner-icon"></span>SIM</span>
+            <div class="wch-card-watch">
+              <img src="assets/p-fa58p-cutout.png" alt="Tracker GPS para vehículos" loading="lazy" width="200" height="210">
+            </div>
           </div>
           <div class="wch-card-body">
             <div class="wch-card-top">
-              <span class="wch-card-cat wch-cat-violet"><span data-lang="es">Rastreo · Activos</span><span data-lang="en">Tracking · Assets</span></span>
-              <span class="wch-card-code">P-FA58P</span>
+              <span class="wch-card-cat wch-cat-violet"><span data-lang="es">Flota · Vehículos</span><span data-lang="en">Fleet · Vehicles</span></span>
             </div>
             <div>
-              <div class="wch-card-name"><span data-lang="es">Tracker GPS Vehículos</span><span data-lang="en">Vehicle GPS Tracker</span></div>
-              <div class="wch-card-sub"><span data-lang="es">Rastreo y protección de activos vehiculares para flotas y empresas</span><span data-lang="en">Vehicle asset tracking and protection for fleets and businesses</span></div>
+              <div class="wch-card-name"><span data-lang="es">Tu flota siempre bajo control</span><span data-lang="en">Your fleet always under control</span></div>
+              <div class="wch-card-sub"><span data-lang="es">Rastreo y protección para vehículos personales y empresariales. Ideal para taxis, deliveries, alquileres y flotas.</span><span data-lang="en">Tracking and protection for personal and corporate vehicles. Ideal for taxis, deliveries, rentals and fleets.</span></div>
             </div>
             <ul class="wch-features wch-feat-violet">
-              <li><span data-lang="es">Ubicación GPS en tiempo real con historial de ruta</span><span data-lang="en">Real-time GPS location with route history</span></li>
-              <li><span data-lang="es">Alertas de velocidad y salida de zona</span><span data-lang="en">Speed and zone exit alerts</span></li>
-              <li><span data-lang="es">Geofence configurable por área o zona segura</span><span data-lang="en">Configurable geofence by area or safe zone</span></li>
-              <li><span data-lang="es">Batería de larga duración · instalación oculta</span><span data-lang="en">Long battery life · hidden installation</span></li>
+              <li><span data-lang="es">Ubicación en tiempo real + historial de ruta</span><span data-lang="en">Real-time location + route history</span></li>
+              <li><span data-lang="es">Alertas de exceso de velocidad y salida de zona</span><span data-lang="en">Speeding alerts and zone-exit warnings</span></li>
+              <li><span data-lang="es">Geofence configurable por área protegida</span><span data-lang="en">Configurable geofence per protected area</span></li>
+              <li><span data-lang="es">Instalación oculta · batería de larga duración</span><span data-lang="en">Hidden install · long battery life</span></li>
             </ul>
             <div class="wch-card-footer">
-              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+Tracker+GPS+P-FA58P+para+veh%C3%ADculos+%C2%BFqu%C3%A9+precio+tiene%3F" class="wch-card-cta wch-cta-violet" target="_blank" rel="noopener">
+              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+tracker+GPS+para+veh%C3%ADculos+%28con+SIM+incluida%29" class="wch-card-cta wch-cta-violet" target="_blank" rel="noopener">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-                <span data-lang="es">Cotizar P-FA58P</span><span data-lang="en">Quote P-FA58P</span>
+                <span data-lang="es">Pedir info por WhatsApp</span><span data-lang="en">Request info on WhatsApp</span>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- ── K-FA81 · Cámara / Campo ── -->
+        <!-- ── PERFIL 5 · Seguridad / Personal en campo ── -->
         <div class="wch-card">
           <div class="wch-card-img wch-img-rose">
-            <img src="assets/e-fa81-cutout.png" alt="Reloj GPS con Cámara K-FA81 para personal de campo" loading="lazy" width="200" height="190">
+            <div class="wch-card-bg" style="background-image:url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&auto=format&fit=crop&q=80')"></div>
+            <div class="wch-card-bg-glow"></div>
+            <div class="wch-card-vignette"></div>
+            <span class="wch-live-dot"><span data-lang="es">En vivo</span><span data-lang="en">Live</span></span>
+            <span class="wch-sim-corner"><span class="wch-sim-corner-icon"></span>SIM</span>
+            <div class="wch-card-watch">
+              <img src="assets/e-fa81-cutout.png" alt="Reloj GPS con cámara para personal de campo" loading="lazy" width="200" height="210">
+            </div>
           </div>
           <div class="wch-card-body">
             <div class="wch-card-top">
               <span class="wch-card-cat wch-cat-rose"><span data-lang="es">Seguridad · Campo</span><span data-lang="en">Security · Field</span></span>
-              <span class="wch-card-code">K-FA81</span>
             </div>
             <div>
-              <div class="wch-card-name"><span data-lang="es">Reloj con Cámara GPS</span><span data-lang="en">GPS Camera Watch</span></div>
-              <div class="wch-card-sub"><span data-lang="es">Seguridad con visión para personal en campo y guardias de seguridad</span><span data-lang="en">Visual security for field staff and security guards</span></div>
+              <div class="wch-card-name"><span data-lang="es">Seguridad con visión y respaldo</span><span data-lang="en">Security with vision and backup</span></div>
+              <div class="wch-card-sub"><span data-lang="es">Para guardias, técnicos y personal de campo: cámara integrada, GPS continuo y SOS directo a central.</span><span data-lang="en">For guards, technicians and field staff: integrated camera, continuous GPS and direct SOS to control room.</span></div>
             </div>
             <ul class="wch-features wch-feat-rose">
-              <li><span data-lang="es">Cámara integrada para fotos y video en campo</span><span data-lang="en">Integrated camera for field photos and video</span></li>
-              <li><span data-lang="es">GPS en tiempo real + historial de movimientos</span><span data-lang="en">Real-time GPS + movement history</span></li>
-              <li><span data-lang="es">SOS de emergencia con alerta a central</span><span data-lang="en">Emergency SOS with control room alert</span></li>
-              <li><span data-lang="es">Comunicación bidireccional resistente a impactos</span><span data-lang="en">Two-way communication, impact resistant</span></li>
+              <li><span data-lang="es">Cámara integrada para evidencia en campo</span><span data-lang="en">Integrated camera for field evidence</span></li>
+              <li><span data-lang="es">GPS continuo + historial de movimientos</span><span data-lang="en">Continuous GPS + movement history</span></li>
+              <li><span data-lang="es">SOS de emergencia directo a central</span><span data-lang="en">Emergency SOS direct to control room</span></li>
+              <li><span data-lang="es">Comunicación bidireccional resistente a impactos</span><span data-lang="en">Two-way communication, impact-resistant</span></li>
             </ul>
             <div class="wch-card-footer">
-              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+reloj+con+c%C3%A1mara+K-FA81+%C2%BFqu%C3%A9+precio+tiene%3F" class="wch-card-cta wch-cta-rose" target="_blank" rel="noopener">
+              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+reloj+con+c%C3%A1mara+para+personal+de+campo+%28con+SIM+incluida%29" class="wch-card-cta wch-cta-rose" target="_blank" rel="noopener">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-                <span data-lang="es">Cotizar K-FA81</span><span data-lang="en">Quote K-FA81</span>
+                <span data-lang="es">Pedir info por WhatsApp</span><span data-lang="en">Request info on WhatsApp</span>
               </a>
             </div>
           </div>
         </div>
 
       </div><!-- /wch-grid -->
+    </div>
+  </div>
 
-      <!-- Bottom CTA strip -->
-      <div class="rv" style="margin-top:64px;text-align:center">
-        <p style="font-size:.92rem;color:var(--txt2);margin-bottom:20px"><span data-lang="es">¿No encuentras el modelo que necesitas? Tenemos más referencias disponibles.</span><span data-lang="en">Can't find the model you need? We have more references available.</span></p>
-        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-          <a href="https://wa.me/50766743062?text=Hola%2C+busco+un+reloj+GPS+%C2%BFqu%C3%A9+modelos+tienen+disponibles%3F" class="btn btn-primary" target="_blank" rel="noopener">
-            <span data-lang="es">Ver todos los modelos →</span><span data-lang="en">See all models →</span>
+  <!-- ───── CÓMO FUNCIONA · 4 pasos ───── -->
+  <div class="wch-how">
+    <div class="container wch-how-inner">
+      <div class="centered rv" style="margin-bottom:24px">
+        <div class="tag" style="color:#c084fc!important;background:rgba(168,85,247,.12)!important;border-color:rgba(168,85,247,.3)!important"><span class="tag-dot" style="background:#a855f7!important;box-shadow:0 0 10px #a855f7"></span><span data-lang="es">Sin complicaciones</span><span data-lang="en">No hassle</span></div>
+        <h2 class="s-title" style="color:#fff!important"><span data-lang="es">En 4 pasos <span style="background:linear-gradient(130deg,#c084fc,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent">lo tienes funcionando</span></span><span data-lang="en">In 4 steps <span style="background:linear-gradient(130deg,#c084fc,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent">it's up and running</span></span></h2>
+        <p class="s-sub" style="color:rgba(255,255,255,.6)!important"><span data-lang="es">Te entregamos el reloj con la SIM ya activada. Solo descarga la app, vincula el dispositivo y empieza a monitorear.</span><span data-lang="en">We deliver the watch with the SIM already activated. Just download the app, link the device and start monitoring.</span></p>
+      </div>
+
+      <div class="wch-how-grid">
+        <div class="wch-how-step rv">
+          <div class="wch-how-num">1</div>
+          <div class="wch-how-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div class="wch-how-title"><span data-lang="es">1. Cuéntanos qué necesitas</span><span data-lang="en">1. Tell us what you need</span></div>
+          <div class="wch-how-desc"><span data-lang="es">Escríbenos por WhatsApp el perfil que buscas: adultos mayores, niños, deportistas, flota o seguridad.</span><span data-lang="en">Message us on WhatsApp with the profile you need: seniors, kids, athletes, fleet or security.</span></div>
+        </div>
+
+        <div class="wch-how-step rv">
+          <div class="wch-how-num">2</div>
+          <div class="wch-how-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M14 6v12M14 9h6M14 13h6"/></svg>
+          </div>
+          <div class="wch-how-title"><span data-lang="es">2. Lo recibes con SIM activa</span><span data-lang="en">2. Get it with active SIM</span></div>
+          <div class="wch-how-desc"><span data-lang="es">El reloj llega cargado, configurado y con la SIM card ya activada. Listo para usar al sacarlo de la caja.</span><span data-lang="en">The watch arrives charged, configured and with the SIM card already activated. Ready to use out of the box.</span></div>
+        </div>
+
+        <div class="wch-how-step rv">
+          <div class="wch-how-num">3</div>
+          <div class="wch-how-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <div class="wch-how-title"><span data-lang="es">3. Descarga la app móvil</span><span data-lang="en">3. Download the mobile app</span></div>
+          <div class="wch-how-desc"><span data-lang="es">App disponible para iOS y Android. Vincula el reloj con un código QR y empieza a configurar zonas seguras y contactos.</span><span data-lang="en">App available for iOS and Android. Link the watch via QR code and start configuring safe zones and contacts.</span></div>
+        </div>
+
+        <div class="wch-how-step rv">
+          <div class="wch-how-num">4</div>
+          <div class="wch-how-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="wch-how-title"><span data-lang="es">4. Monitorea en tiempo real</span><span data-lang="en">4. Monitor in real time</span></div>
+          <div class="wch-how-desc"><span data-lang="es">Ubicación en vivo, recorridos, alertas y comunicación bidireccional desde tu celular en cualquier momento.</span><span data-lang="en">Live location, routes, alerts and two-way communication from your phone anytime.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───── DEMO MAP MOCKUP ───── -->
+  <div class="wch-demo">
+    <div class="container">
+      <div class="wch-demo-wrap">
+
+        <div class="wch-demo-text rv">
+          <div class="tag" style="color:#22d3ee!important;background:rgba(34,211,238,.1)!important;border-color:rgba(34,211,238,.28)!important;margin-bottom:18px"><span class="tag-dot" style="background:#22d3ee!important;box-shadow:0 0 10px #22d3ee"></span><span data-lang="es">Dashboard en vivo</span><span data-lang="en">Live dashboard</span></div>
+          <h3><span data-lang="es">Todo lo que necesitas, <span>en una sola pantalla.</span></span><span data-lang="en">Everything you need, <span>in a single screen.</span></span></h3>
+          <p><span data-lang="es">Visualiza la ubicación en tiempo real, recibe alertas inteligentes y revisa el historial completo desde la app móvil o el portal web.</span><span data-lang="en">View real-time location, receive smart alerts and review the full history from the mobile app or web portal.</span></p>
+          <ul class="wch-demo-features">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Ubicación GPS actualizada cada 30 segundos</span><span data-lang="en">GPS location refreshed every 30 seconds</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Historial de rutas hasta 90 días atrás</span><span data-lang="en">Route history up to 90 days back</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Notificaciones push de SOS, geofence y batería</span><span data-lang="en">Push notifications for SOS, geofence and battery</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Acceso multiusuario para toda la familia o equipo</span><span data-lang="en">Multi-user access for the whole family or team</span></li>
+          </ul>
+        </div>
+
+        <div class="wch-demo-map rv" aria-hidden="true">
+          <div class="wch-demo-map-bg"></div>
+          <div class="wch-demo-route"></div>
+          <div class="wch-demo-pin wch-demo-pin-1">A</div>
+          <div class="wch-demo-pin wch-demo-pin-2">B</div>
+          <div class="wch-demo-pin wch-demo-pin-3">C</div>
+          <div class="wch-demo-panel">
+            <div class="wch-demo-panel-l">
+              <div class="wch-demo-panel-label"><span data-lang="es">Última señal</span><span data-lang="en">Last signal</span></div>
+              <div class="wch-demo-panel-val">Ciudad de Panamá · Hace 12s</div>
+            </div>
+            <div class="wch-demo-panel-signal">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ───── FINAL CTA ───── -->
+  <div class="wch-final-cta">
+    <div class="container">
+      <div class="rv">
+        <p><span data-lang="es">¿Listo para empezar? Te ayudamos a elegir el modelo ideal según tu necesidad. Te respondemos en menos de 15 minutos por WhatsApp.</span><span data-lang="en">Ready to start? We help you choose the ideal model for your need. We reply in less than 15 minutes on WhatsApp.</span></p>
+        <div class="wch-final-cta-btns">
+          <a href="https://wa.me/50766743062?text=Hola%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre+los+relojes+GPS+con+SIM+incluida" class="btn btn-primary" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            <span data-lang="es">Hablar con un asesor →</span><span data-lang="en">Talk to an advisor →</span>
           </a>
-          <a href="#cta-sec" class="btn btn-outline">
+          <a href="#cta-sec" class="btn btn-outline" style="color:#d8b4fe;border-color:rgba(216,180,254,.4)">
             <span data-lang="es">Solicitar catálogo completo</span><span data-lang="en">Request full catalog</span>
           </a>
         </div>
       </div>
-
     </div>
   </div>
+
 </section>
 
 
