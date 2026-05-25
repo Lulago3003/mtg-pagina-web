@@ -4351,6 +4351,39 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 .swt-app-txt{font-size:.92rem;font-weight:600;color:#fff;line-height:1.3}
 
 /* Final CTA */
+/* ── Ventajas vs Desventajas ── */
+.swt-pros{padding:88px 0;background:#0d0504;position:relative;overflow:hidden}
+.swt-pros::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 70% at 20% 50%,rgba(34,197,94,.08),transparent 60%),radial-gradient(ellipse 50% 70% at 80% 50%,rgba(251,146,60,.08),transparent 60%);pointer-events:none}
+.swt-pros-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;position:relative;z-index:2}
+.swt-pros-col{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:32px 28px;position:relative;overflow:hidden}
+.swt-pros-col.is-pro{border-color:rgba(34,197,94,.22)}
+.swt-pros-col.is-pro::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#22c55e,transparent);box-shadow:0 0 14px rgba(34,197,94,.6)}
+.swt-pros-col.is-con{border-color:rgba(251,146,60,.22)}
+.swt-pros-col.is-con::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#fb923c,transparent);box-shadow:0 0 14px rgba(251,146,60,.6)}
+.swt-pros-head{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.06)}
+.swt-pros-head-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.swt-pros-col.is-pro .swt-pros-head-icon{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#4ade80;box-shadow:0 0 20px rgba(34,197,94,.2)}
+.swt-pros-col.is-con .swt-pros-head-icon{background:rgba(251,146,60,.12);border:1px solid rgba(251,146,60,.3);color:#fb923c;box-shadow:0 0 20px rgba(251,146,60,.2)}
+.swt-pros-head-txt{display:flex;flex-direction:column;gap:4px}
+.swt-pros-head-label{font-size:.66rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-family:'JetBrains Mono','Consolas',monospace}
+.swt-pros-col.is-pro .swt-pros-head-label{color:#22c55e}
+.swt-pros-col.is-con .swt-pros-head-label{color:#fb923c}
+.swt-pros-head-title{font-size:1.4rem;font-weight:800;color:#fff;font-family:var(--ff-head);letter-spacing:-.015em;line-height:1.1}
+.swt-pros-list{display:flex;flex-direction:column;gap:14px;list-style:none}
+.swt-pros-item{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05);border-radius:12px;transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.swt-pros-col.is-pro .swt-pros-item:hover{transform:translateX(4px);border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.05)}
+.swt-pros-col.is-con .swt-pros-item:hover{transform:translateX(4px);border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.05)}
+.swt-pros-item-mark{width:24px;height:24px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:900;font-size:.78rem;line-height:1;margin-top:1px}
+.swt-pros-col.is-pro .swt-pros-item-mark{background:rgba(34,197,94,.18);color:#4ade80;border:1px solid rgba(34,197,94,.35)}
+.swt-pros-col.is-con .swt-pros-item-mark{background:rgba(251,146,60,.18);color:#fb923c;border:1px solid rgba(251,146,60,.35)}
+.swt-pros-item-txt{flex:1}
+.swt-pros-item-title{font-size:.92rem;font-weight:700;color:#fff;margin-bottom:3px;line-height:1.3}
+.swt-pros-item-desc{font-size:.78rem;color:rgba(255,220,200,.62);line-height:1.5}
+.swt-pros-note{margin-top:32px;padding:18px 22px;background:linear-gradient(135deg,rgba(34,197,94,.06),rgba(251,146,60,.06));border:1px solid rgba(251,146,60,.18);border-radius:14px;display:flex;align-items:center;gap:14px;font-size:.85rem;color:rgba(255,220,200,.78);line-height:1.5;position:relative;z-index:2}
+.swt-pros-note svg{flex-shrink:0;color:#fbbf24}
+.swt-pros-note strong{color:#fff;font-weight:800}
+@media(max-width:760px){.swt-pros-grid{grid-template-columns:1fr;gap:24px}.swt-pros-col{padding:26px 22px}.swt-pros-head-title{font-size:1.2rem}}
+
 .swt-final{padding:88px 0;background:linear-gradient(180deg,#1a0908 0%,#0d0504 100%);text-align:center;border-top:1px solid rgba(251,146,60,.15)}
 .swt-final p{font-size:1rem;color:rgba(255,220,200,.65);max-width:580px;margin:0 auto 28px;line-height:1.6}
 .swt-final-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
@@ -7141,6 +7174,151 @@ html:not(.vw) section[data-view]{display:revert}
         <div class="swt-app rv">
           <div class="swt-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
           <div class="swt-app-txt"><span data-lang="es">E-commerce & retail</span><span data-lang="en">E-commerce & retail</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───── VENTAJAS vs DESVENTAJAS ───── -->
+  <div class="swt-pros">
+    <div class="container">
+      <div class="centered rv" style="margin-bottom:24px">
+        <div class="tag" style="color:#fdba74!important;background:rgba(251,146,60,.12)!important;border-color:rgba(251,146,60,.3)!important;font-family:'JetBrains Mono','Consolas',monospace;letter-spacing:.2em"><span class="tag-dot" style="background:#fb923c!important;box-shadow:0 0 10px #fb923c"></span><span data-lang="es">// Análisis honesto</span><span data-lang="en">// Honest analysis</span></div>
+        <h2 class="s-title" style="color:#fff!important"><span data-lang="es">Ventajas y <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">limitaciones</span></span><span data-lang="en">Pros and <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">limitations</span></span></h2>
+        <p class="s-sub" style="color:rgba(255,220,200,.7)!important;max-width:620px;margin:14px auto 0"><span data-lang="es">Te decimos exactamente qué resuelve este sistema — y qué no — para que tomes la decisión correcta para tu operación.</span><span data-lang="en">We tell you exactly what this system solves — and what it doesn't — so you make the right call for your operation.</span></p>
+      </div>
+
+      <div class="swt-pros-grid">
+
+        <!-- ── VENTAJAS ── -->
+        <div class="swt-pros-col is-pro rv">
+          <div class="swt-pros-head">
+            <div class="swt-pros-head-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="swt-pros-head-txt">
+              <div class="swt-pros-head-label"><span data-lang="es">// Ventajas</span><span data-lang="en">// Pros</span></div>
+              <div class="swt-pros-head-title"><span data-lang="es">Lo que sí resuelve</span><span data-lang="en">What it does solve</span></div>
+            </div>
+          </div>
+          <ul class="swt-pros-list">
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">✓</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">Sin pilas ni electrónica</span><span data-lang="en">No batteries or electronics</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">Mecanismo 100% pasivo. No falla, no se descarga, no requiere configuración ni apps.</span><span data-lang="en">100% passive mechanism. Doesn't fail, doesn't run out of battery, no setup or apps needed.</span></div>
+              </div>
+            </li>
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">✓</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">Indicador irreversible</span><span data-lang="en">Irreversible indicator</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">Una vez activado no se puede revertir ni manipular. Evidencia indiscutible para reclamos.</span><span data-lang="en">Once triggered it cannot be reset or tampered with. Indisputable evidence for claims.</span></div>
+              </div>
+            </li>
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">✓</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">Instalación en segundos</span><span data-lang="en">Install in seconds</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">Despegar y pegar. Sin herramientas, sin capacitación, sin tiempo de operación.</span><span data-lang="en">Peel and stick. No tools, no training, no operational downtime.</span></div>
+              </div>
+            </li>
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">✓</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">7 niveles de sensibilidad</span><span data-lang="en">7 sensitivity levels</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">5G a 100G — eliges el umbral según la fragilidad de la carga: médico, electrónica, industrial.</span><span data-lang="en">5G to 100G — pick the threshold based on cargo fragility: medical, electronics, industrial.</span></div>
+              </div>
+            </li>
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">✓</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">Efecto disuasivo visible</span><span data-lang="en">Visible deterrent effect</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">Los transportistas manejan con más cuidado cuando ven la etiqueta. Previene daños antes de que ocurran.</span><span data-lang="en">Handlers move packages more carefully when they see the label. Prevents damage before it happens.</span></div>
+              </div>
+            </li>
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">✓</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">Económico por unidad</span><span data-lang="en">Low cost per unit</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">Costo muy bajo comparado con las pérdidas evitables. ROI inmediato en el primer reclamo validado.</span><span data-lang="en">Very low cost vs preventable losses. Immediate ROI on the first validated claim.</span></div>
+              </div>
+            </li>
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">✓</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">Reconocido por aseguradoras</span><span data-lang="en">Insurer-recognized</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">Estándar en logística internacional. Las aseguradoras lo aceptan como prueba para procesar reclamos.</span><span data-lang="en">Standard in international logistics. Insurers accept it as proof for processing claims.</span></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── DESVENTAJAS / LIMITACIONES ── -->
+        <div class="swt-pros-col is-con rv">
+          <div class="swt-pros-head">
+            <div class="swt-pros-head-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+            </div>
+            <div class="swt-pros-head-txt">
+              <div class="swt-pros-head-label"><span data-lang="es">// Limitaciones</span><span data-lang="en">// Limitations</span></div>
+              <div class="swt-pros-head-title"><span data-lang="es">Lo que tienes que considerar</span><span data-lang="en">What you need to consider</span></div>
+            </div>
+          </div>
+          <ul class="swt-pros-list">
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">!</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">Solo detecta impactos</span><span data-lang="en">Only detects impacts</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">No monitorea temperatura, humedad ni inclinación. Si necesitas eso, requieres dispositivos adicionales.</span><span data-lang="en">Doesn't monitor temperature, humidity or tilt. For those metrics you need additional devices.</span></div>
+              </div>
+            </li>
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">!</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">Uso único</span><span data-lang="en">Single-use</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">Una vez activado no se puede reutilizar. Cada envío requiere una etiqueta nueva.</span><span data-lang="en">Once triggered it can't be reused. Each shipment needs a fresh label.</span></div>
+              </div>
+            </li>
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">!</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">No identifica al responsable</span><span data-lang="en">Doesn't identify who caused it</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">Detecta que hubo un impacto pero no quién, cuándo ni dónde exactamente ocurrió.</span><span data-lang="en">Detects that an impact happened but not who, when or where exactly it occurred.</span></div>
+              </div>
+            </li>
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">!</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">Requiere elegir el nivel G correcto</span><span data-lang="en">Requires the right G level</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">Un umbral muy bajo se activa con vibraciones normales (falsa alarma). Uno muy alto no detecta daños reales.</span><span data-lang="en">A threshold too low activates with normal vibrations (false alarms). Too high misses real damage.</span></div>
+              </div>
+            </li>
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">!</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">El receptor debe revisar antes de firmar</span><span data-lang="en">Receiver must check before signing</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">Si el destinatario firma sin verificar la etiqueta, pierde valor probatorio frente al transportista.</span><span data-lang="en">If the receiver signs without checking the label, it loses evidentiary value against the carrier.</span></div>
+              </div>
+            </li>
+            <li class="swt-pros-item">
+              <div class="swt-pros-item-mark">!</div>
+              <div class="swt-pros-item-txt">
+                <div class="swt-pros-item-title"><span data-lang="es">No reemplaza el seguro</span><span data-lang="en">Doesn't replace insurance</span></div>
+                <div class="swt-pros-item-desc"><span data-lang="es">Es evidencia para hacer válido el reclamo, pero no cubre el costo del daño por sí mismo.</span><span data-lang="en">It's evidence to validate a claim, but doesn't cover the damage cost by itself.</span></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Honest note -->
+      <div class="swt-pros-note rv">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <div>
+          <strong data-lang="es">Nuestra recomendación:</strong><strong data-lang="en">Our recommendation:</strong>
+          <span data-lang="es"> el detector de impacto es la herramienta correcta cuando lo que importa es <em>tener prueba visible</em> de mal manejo. Si necesitas datos completos de viaje (GPS, temperatura, hora exacta), pregúntanos por nuestros loggers electrónicos como complemento.</span>
+          <span data-lang="en"> impact detectors are the right tool when what matters is <em>having visible proof</em> of mishandling. If you need full trip data (GPS, temperature, exact timestamp), ask us about our electronic loggers as a complement.</span>
         </div>
       </div>
     </div>
