@@ -4231,6 +4231,48 @@ body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben
 .eg-img-card img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
 .eg-img-card:hover img{transform:scale(1.08)}
 .eg-img-badge{position:absolute;left:18px;bottom:18px;z-index:2;display:inline-flex;align-items:center;gap:9px;font-size:.82rem;font-weight:700;color:#fff;background:rgba(8,20,40,.72);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:9px 16px;border-radius:50px}
+
+/* ── RELOJES Gateway (home teaser) ── */
+#relojes-gateway{position:relative;overflow:hidden;background:linear-gradient(135deg,#1a0533 0%,#2d1057 50%,#3b1078 100%);padding:clamp(60px,8vw,108px) 0}
+#relojes-gateway::before{content:'';position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 70% 80% at 78% 20%,rgba(168,85,247,.28),transparent 60%),radial-gradient(ellipse 60% 70% at 12% 90%,rgba(34,211,238,.18),transparent 62%)}
+#relojes-gateway::after{content:'';position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 30%,transparent 80%);pointer-events:none}
+#relojes-gateway .container{position:relative;z-index:2}
+.rg-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.rg-kicker{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#d8b4fe;background:rgba(168,85,247,.14);border:1px solid rgba(168,85,247,.32);padding:7px 16px;border-radius:50px;margin-bottom:20px;backdrop-filter:blur(8px)}
+.rg-kicker-dot{width:8px;height:8px;border-radius:50%;background:#a855f7;box-shadow:0 0 12px #a855f7;animation:egPulse 2s ease-in-out infinite}
+.rg-title{font-family:var(--ff-head,inherit);font-size:clamp(2rem,4vw,3.3rem);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1.08;margin:0 0 18px}
+.rg-title em{font-style:normal;background:linear-gradient(120deg,#c084fc,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.rg-sub{font-size:1.06rem;color:rgba(220,210,255,.78);line-height:1.65;margin:0 0 24px;max-width:540px}
+.rg-sim-mini{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;background:linear-gradient(135deg,rgba(34,211,238,.15),rgba(168,85,247,.15));border:1px solid rgba(34,211,238,.35);border-radius:12px;color:#67e8f9;font-size:.78rem;font-weight:700;margin-bottom:24px}
+.rg-sim-mini-icon{width:18px;height:13px;background:linear-gradient(135deg,#fbbf24,#f59e0b);border-radius:2px;position:relative;flex-shrink:0}
+.rg-sim-mini-icon::after{content:'';position:absolute;inset:2px 2px 2px 6px;background:#1a0533;border-radius:1px}
+.rg-btns{display:flex;gap:14px;flex-wrap:wrap}
+.rg-btn-main{display:inline-flex;align-items:center;gap:10px;font-size:1rem;font-weight:800;color:#1a0533;background:linear-gradient(135deg,#c084fc,#a855f7);padding:17px 32px;border-radius:14px;text-decoration:none;box-shadow:0 16px 40px -10px rgba(168,85,247,.65);transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease;position:relative;overflow:hidden}
+.rg-btn-main::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transition:left .7s ease}
+.rg-btn-main:hover::before{left:130%}
+.rg-btn-main:hover{transform:translateY(-3px);box-shadow:0 22px 52px -10px rgba(168,85,247,.85)}
+.rg-btn-ghost{display:inline-flex;align-items:center;gap:9px;font-size:1rem;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.28);padding:16px 28px;border-radius:14px;text-decoration:none;transition:background .3s ease,border-color .3s ease}
+.rg-btn-ghost:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.5)}
+.rg-profiles-row{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
+.rg-profile-chip{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:600;color:rgba(255,255,255,.7);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:6px 12px;border-radius:50px}
+.rg-profile-chip::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.5}
+/* Right: watch visual */
+.rg-visual{position:relative;aspect-ratio:1/1;max-width:480px;margin-left:auto;display:flex;align-items:center;justify-content:center}
+.rg-visual-bg{position:absolute;inset:10%;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.5) 0%,rgba(168,85,247,.1) 60%,transparent 100%);filter:blur(40px);animation:wchFloatAlt 7s ease-in-out infinite}
+.rg-watch-wrap{position:relative;width:78%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;animation:wchFloat 5s ease-in-out infinite}
+.rg-watch-wrap img{width:75%;height:auto;filter:drop-shadow(0 30px 60px rgba(168,85,247,.55))}
+.rg-watch-ring{position:absolute;inset:0;border:2px solid rgba(168,85,247,.3);border-radius:50%;animation:wchPulseRing 3.6s cubic-bezier(.4,0,.2,1) infinite}
+.rg-watch-ring:nth-child(2){animation-delay:1.2s;border-color:rgba(34,211,238,.3)}
+.rg-watch-ring:nth-child(3){animation-delay:2.4s;border-color:rgba(168,85,247,.2)}
+/* Floating badges around the watch */
+.rg-fbadge{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(8,0,18,.75);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.16);border-radius:14px;color:#fff;font-size:.78rem;font-weight:700;z-index:3;box-shadow:0 12px 32px rgba(0,0,0,.4)}
+.rg-fbadge svg{flex-shrink:0}
+.rg-fbadge-1{top:8%;left:-4%;animation:wchFloat 4s ease-in-out infinite;animation-delay:0s;color:#c084fc;border-color:rgba(192,132,252,.35)}
+.rg-fbadge-2{top:42%;right:-6%;animation:wchFloatAlt 4.5s ease-in-out infinite;animation-delay:.5s;color:#22d3ee;border-color:rgba(34,211,238,.35)}
+.rg-fbadge-3{bottom:10%;left:5%;animation:wchFloat 5s ease-in-out infinite;animation-delay:1s;color:#fbbf24;border-color:rgba(251,191,36,.35)}
+.rg-fbadge-dot{width:8px;height:8px;border-radius:50%;background:#ef4444;box-shadow:0 0 10px #ef4444;animation:wchBlink 1.4s infinite}
+@media(max-width:900px){.rg-wrap{grid-template-columns:1fr;gap:36px}.rg-visual{margin:0 auto;max-width:360px}}
+@media(max-width:600px){.rg-fbadge{font-size:.7rem;padding:8px 12px}.rg-fbadge-1{left:-2%}.rg-fbadge-2{right:-2%}}
 .eg-img-badge-dot{width:8px;height:8px;border-radius:50%;background:#22d3ee;box-shadow:0 0 10px #22d3ee;animation:egPulse 2s ease-in-out infinite}
 
 /* ── Medidor Inteligente · seccion compacta ── */
@@ -6312,6 +6354,77 @@ html:not(.vw) section[data-view]{display:revert}
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
+     RELOJES GATEWAY (home teaser) — puente a la vista #relojes
+═══════════════════════════════════════════════════════════ -->
+<section id="relojes-gateway" data-view="home">
+  <div class="container">
+    <div class="rg-wrap">
+
+      <!-- Left: copy + CTAs -->
+      <div class="rg-left rv">
+        <span class="rg-kicker"><span class="rg-kicker-dot"></span><span data-lang="es">Para familia, empresas y flotas</span><span data-lang="en">For family, business & fleets</span></span>
+        <h2 class="rg-title">
+          <span data-lang="es">¿Quieres saber <em>dónde está</em> lo que más te importa?</span>
+          <span data-lang="en">Want to know <em>where</em> what matters most to you is?</span>
+        </h2>
+        <p class="rg-sub">
+          <span data-lang="es">Relojes inteligentes con GPS en vivo y SOS de emergencia para adultos mayores, niños, deportistas, vehículos y personal de campo. Te entregamos todo activado y listo para usar.</span>
+          <span data-lang="en">Smart watches with live GPS and emergency SOS for seniors, children, athletes, vehicles and field staff. We deliver everything activated and ready to use.</span>
+        </p>
+
+        <div class="rg-sim-mini">
+          <span class="rg-sim-mini-icon"></span>
+          <span data-lang="es">SIM card incluida · Lista para usar</span><span data-lang="en">SIM card included · Ready to use</span>
+        </div>
+
+        <div class="rg-btns">
+          <a href="#relojes" class="rg-btn-main">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-lang="es">Ver los relojes GPS →</span><span data-lang="en">See the GPS watches →</span>
+          </a>
+          <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesan%20los%20relojes%20GPS%20con%20SIM%20incluida" target="_blank" rel="noopener" class="rg-btn-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            <span data-lang="es">Hablar por WhatsApp</span><span data-lang="en">Chat on WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="rg-profiles-row">
+          <span class="rg-profile-chip" style="color:#fbbf24"><span data-lang="es">Adultos Mayores</span><span data-lang="en">Seniors</span></span>
+          <span class="rg-profile-chip" style="color:#2dd4bf"><span data-lang="es">Niños</span><span data-lang="en">Kids</span></span>
+          <span class="rg-profile-chip" style="color:#60a5fa"><span data-lang="es">Deportistas</span><span data-lang="en">Athletes</span></span>
+          <span class="rg-profile-chip" style="color:#c084fc"><span data-lang="es">Flotas</span><span data-lang="en">Fleets</span></span>
+          <span class="rg-profile-chip" style="color:#fb7185"><span data-lang="es">Seguridad</span><span data-lang="en">Security</span></span>
+        </div>
+      </div>
+
+      <!-- Right: floating watch visual -->
+      <div class="rg-visual rv" aria-hidden="true">
+        <div class="rg-visual-bg"></div>
+        <div class="rg-watch-wrap">
+          <div class="rg-watch-ring"></div>
+          <div class="rg-watch-ring"></div>
+          <div class="rg-watch-ring"></div>
+          <img src="assets/e-v28c-cutout.png" alt="">
+        </div>
+        <div class="rg-fbadge rg-fbadge-1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-lang="es">GPS en vivo</span><span data-lang="en">Live GPS</span>
+        </div>
+        <div class="rg-fbadge rg-fbadge-2">
+          <span class="rg-fbadge-dot"></span>
+          <span data-lang="es">SOS instantáneo</span><span data-lang="en">Instant SOS</span>
+        </div>
+        <div class="rg-fbadge rg-fbadge-3">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M14 6v12"/></svg>
+          <span data-lang="es">SIM activa</span><span data-lang="en">Active SIM</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
      PROSE Teaser (vista principal) — enlace a vista completa
 ═══════════════════════════════════════════════════════════ -->
 <section id="prose-home" data-view="home" class="sec" style="background:linear-gradient(180deg,#fafbff 0%,#eef2fa 100%);position:relative;overflow:hidden">
@@ -7640,7 +7753,7 @@ html:not(.vw) section[data-view]{display:revert}
 <script>
 /* ═══ ROUTER DE VISTAS — una sola página, estilo YouTube tabs ═══ */
 document.documentElement.classList.add('vw');
-window.VIEW_OF={hero:'home',about:'home',trustbar:'home','energia-gateway':'home',testimonials:'home',faq:'home','cta-sec':'home',contacto:'home',servicios:'servicios',productos:'catalogo',catalogo:'catalogo',prose:'prose',casos:'casos',solutions:'medidor',markets:'medidor',how:'medidor','dash-sec':'medidor',visualization:'medidor',comparativa:'medidor','video-sec':'medidor','emporia-eco':'medidor',medidor:'medidor',relojes:'relojes'};
+window.VIEW_OF={hero:'home',about:'home',trustbar:'home','energia-gateway':'home','relojes-gateway':'home','prose-home':'home',testimonials:'home',faq:'home','cta-sec':'home',contacto:'home',servicios:'servicios',productos:'catalogo',catalogo:'catalogo',prose:'prose',casos:'casos',solutions:'medidor',markets:'medidor',how:'medidor','dash-sec':'medidor',visualization:'medidor',comparativa:'medidor','video-sec':'medidor','emporia-eco':'medidor',medidor:'medidor',relojes:'relojes'};
 window.showView=function(v){
   document.querySelectorAll('section[data-view]').forEach(function(s){ s.classList.toggle('vw-active', s.dataset.view===v); });
   try{ window.scrollTo({top:0,behavior:'auto'}); }catch(e){ window.scrollTo(0,0); }
