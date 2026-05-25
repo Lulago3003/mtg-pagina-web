@@ -4024,11 +4024,16 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
   30%{transform:translate(-3%,-9%) rotate(-2deg)}
   37%{transform:translate(3%,-11%) rotate(2deg)}
   44%{transform:translate(-2%,-10%) rotate(-1deg)}
-  50%{transform:translate(0,-10%) rotate(0deg)}
-  55%{transform:translate(0,28%) rotate(3deg)}
-  58%{transform:translate(-1%,30%) rotate(-2deg)}
-  62%{transform:translate(0,28%) rotate(1deg)}
-  100%{transform:translate(0,28%) rotate(1deg)}
+  50%{transform:translate(0,-10%) rotate(0deg) scaleY(1)}
+  52%{transform:translate(0,-14%) rotate(-6deg) scaleY(1)}
+  53%{transform:translate(0,-12%) rotate(-4deg) scaleY(1)}
+  55%{transform:translate(0,30%) rotate(4deg) scaleY(.85)}
+  56%{transform:translate(0,28%) rotate(2deg) scaleY(1)}
+  58%{transform:translate(0,18%) rotate(-3deg) scaleY(1.02)}
+  60%{transform:translate(0,29%) rotate(1deg) scaleY(.95)}
+  62%{transform:translate(0,25%) rotate(-1deg) scaleY(1)}
+  64%{transform:translate(0,28%) rotate(2deg) scaleY(1)}
+  100%{transform:translate(0,28%) rotate(2deg) scaleY(1)}
 }
 @keyframes swtLabelDescend{
   0%,7%{transform:translate(80%,-180%) rotate(-15deg);opacity:0}
@@ -4100,6 +4105,36 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 @keyframes swtPhaseDot3{0%,53%{background:rgba(255,255,255,.18);box-shadow:none;transform:scale(1)}57%,68%{background:#fbbf24;box-shadow:0 0 12px #fbbf24;transform:scale(1.3)}72%,100%{background:rgba(255,255,255,.18);box-shadow:none;transform:scale(1)}}
 @keyframes swtPhaseDot4{0%,72%{background:rgba(255,255,255,.18);box-shadow:none;transform:scale(1)}76%,100%{background:#ef4444;box-shadow:0 0 12px #ef4444;transform:scale(1.3)}}
 
+/* G-meter that spikes during impact */
+@keyframes swtGmeterShow{0%,48%{opacity:0;transform:translate(0,8px) scale(.9)}52%,90%{opacity:1;transform:translate(0,0) scale(1)}95%,100%{opacity:0;transform:translate(0,-4px) scale(1)}}
+@keyframes swtGmeterNeedle{0%,53%{transform:rotate(-90deg)}55%{transform:rotate(45deg)}57%{transform:rotate(20deg)}59%{transform:rotate(38deg)}62%,100%{transform:rotate(32deg)}}
+@keyframes swtGmeterBg{0%,53%{background:conic-gradient(from -90deg,#22c55e 0deg,#22c55e 0deg,rgba(255,255,255,.08) 0deg 180deg)}55%{background:conic-gradient(from -90deg,#22c55e 0deg,#fbbf24 60deg,#ef4444 120deg,rgba(255,255,255,.08) 130deg 180deg)}62%,100%{background:conic-gradient(from -90deg,#22c55e 0deg,#fbbf24 60deg,#ef4444 120deg,rgba(255,255,255,.08) 122deg 180deg)}}
+@keyframes swtGmeterValue{
+  0%,53%{content:"0 G"}
+  54%{content:"12 G"}
+  55%{content:"28 G"}
+  56%{content:"34 G"}
+  57%{content:"31 G"}
+  59%{content:"35 G"}
+  62%,100%{content:"32 G"}
+}
+
+/* Ground crack lines on impact */
+@keyframes swtCrack{0%,54%{opacity:0;transform:translate(-50%,0) scale(.3)}57%{opacity:.9;transform:translate(-50%,0) scale(1)}80%{opacity:.5;transform:translate(-50%,0) scale(1)}100%{opacity:.4;transform:translate(-50%,0) scale(1)}}
+
+/* Warning beacon rays from label (rotate continuously while red) */
+@keyframes swtBeaconRays{0%,72%{opacity:0;transform:translate(-50%,-50%) rotate(0deg)}76%,100%{opacity:1;transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes swtBeaconFade{0%,72%{opacity:0}76%,100%{opacity:.55}}
+
+/* Ambient floating dust */
+@keyframes swtAmbientDust{0%{transform:translate(0,0);opacity:0}10%{opacity:.4}90%{opacity:.4}100%{transform:translate(var(--ax,30px),var(--ay,-200px));opacity:0}}
+
+/* Truck exhaust puffs */
+@keyframes swtExhaust{0%,28%{opacity:0;transform:scale(.3)}32%{opacity:.7;transform:scale(.8)}45%{opacity:.4;transform:scale(1.4) translateX(-10px)}52%{opacity:0;transform:scale(2) translateX(-30px)}100%{opacity:0}}
+
+/* Hand/cursor pointer during application phase */
+@keyframes swtHand{0%,4%{opacity:0;transform:translate(60%,-160%) rotate(-20deg)}8%{opacity:.9;transform:translate(60%,-160%) rotate(-20deg)}15%{opacity:.9;transform:translate(0,-60%) rotate(-10deg)}20%{opacity:.9;transform:translate(0,-30%) rotate(0deg)}23%{opacity:0;transform:translate(0,-30%) rotate(0deg)}100%{opacity:0}}
+
 .swt-demo-video{padding:88px 0;background:linear-gradient(180deg,#0d0504 0%,#1a0908 100%);position:relative;overflow:hidden}
 .swt-demo-video::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(251,146,60,.12),transparent 70%);pointer-events:none}
 .swt-demo-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center;position:relative;z-index:2;margin-top:48px}
@@ -4133,6 +4168,44 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 /* Green check that pops when label lands successfully */
 .swt-demo-check{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);z-index:7;width:44px;height:44px;border-radius:50%;background:#22c55e;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 0 30px rgba(34,197,94,.8);opacity:0;animation:swtCheckPop 10s ease-out infinite;pointer-events:none}
 .swt-demo-check svg{width:24px;height:24px}
+
+/* G-meter (gauge that spikes during impact) */
+.swt-demo-gmeter{position:absolute;top:18px;right:18px;z-index:6;width:78px;background:rgba(0,0,0,.78);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:10px 8px 8px;text-align:center;opacity:0;animation:swtGmeterShow 10s ease-in-out infinite;color:#fff;font-family:var(--ff-head)}
+.swt-demo-gmeter-label{font-size:.55rem;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+.swt-demo-gmeter-dial{position:relative;width:54px;height:30px;margin:0 auto;border-radius:54px 54px 0 0;background:conic-gradient(from -90deg,#22c55e 0deg,#fbbf24 60deg,#ef4444 120deg,rgba(255,255,255,.08) 122deg 180deg);overflow:hidden;animation:swtGmeterBg 10s ease-in-out infinite}
+.swt-demo-gmeter-dial::after{content:'';position:absolute;left:4px;right:4px;top:4px;bottom:0;border-radius:50px 50px 0 0;background:rgba(0,0,0,.85)}
+.swt-demo-gmeter-needle{position:absolute;left:50%;bottom:0;width:2px;height:22px;background:#fff;border-radius:1px;transform-origin:bottom center;transform:rotate(-90deg);animation:swtGmeterNeedle 10s cubic-bezier(.34,1.5,.64,1) infinite;z-index:2;box-shadow:0 0 6px rgba(255,255,255,.6)}
+.swt-demo-gmeter-needle::after{content:'';position:absolute;bottom:-3px;left:-2px;width:6px;height:6px;border-radius:50%;background:#fff}
+.swt-demo-gmeter-val{font-size:.82rem;font-weight:900;color:#fff;margin-top:4px;letter-spacing:-.02em;line-height:1}
+.swt-demo-gmeter-val::after{content:"0 G";animation:swtGmeterValue 10s steps(1,end) infinite}
+
+/* Ground crack lines (SVG-style fanning out from impact) */
+.swt-demo-crack{position:absolute;bottom:13%;left:50%;transform:translate(-50%,0) scale(.3);width:46%;height:24px;z-index:1;opacity:0;animation:swtCrack 10s ease-out infinite;pointer-events:none}
+.swt-demo-crack::before,.swt-demo-crack::after{content:'';position:absolute;top:0;background:linear-gradient(180deg,rgba(251,191,36,.7),transparent);width:2px;height:100%;transform-origin:top center}
+.swt-demo-crack::before{left:30%;transform:rotate(-22deg);box-shadow:8px 0 0 -0.5px rgba(251,146,60,.6),16px 2px 0 -0.5px rgba(239,68,68,.5),-8px 0 0 -0.5px rgba(251,146,60,.5),-16px 2px 0 -0.5px rgba(239,68,68,.4)}
+.swt-demo-crack::after{left:70%;transform:rotate(22deg);box-shadow:6px 0 0 -0.5px rgba(251,146,60,.6),12px 2px 0 -0.5px rgba(239,68,68,.5),-6px 0 0 -0.5px rgba(251,146,60,.5)}
+
+/* Warning beacon rays rotating from label after activation */
+.swt-demo-beacon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:300px;z-index:2;pointer-events:none;opacity:0;animation:swtBeaconFade 10s ease-in-out infinite}
+.swt-demo-beacon::before{content:'';position:absolute;inset:0;background:conic-gradient(from 0deg,transparent 0deg,rgba(239,68,68,.18) 15deg,transparent 30deg,transparent 90deg,rgba(239,68,68,.12) 105deg,transparent 120deg,transparent 180deg,rgba(239,68,68,.18) 195deg,transparent 210deg,transparent 270deg,rgba(239,68,68,.12) 285deg,transparent 300deg);border-radius:50%;animation:swtBeaconRays 10s linear infinite;mask-image:radial-gradient(circle,transparent 18%,#000 22%,#000 80%,transparent 100%)}
+
+/* Ambient floating dust particles in background */
+.swt-demo-ambient{position:absolute;width:3px;height:3px;border-radius:50%;background:rgba(251,146,60,.4);box-shadow:0 0 4px rgba(251,146,60,.5);z-index:1;animation:swtAmbientDust 6s ease-in-out infinite;pointer-events:none}
+.swt-demo-ambient:nth-child(1){left:15%;bottom:20%;--ax:20px;--ay:-180px;animation-delay:0s}
+.swt-demo-ambient:nth-child(2){left:75%;bottom:30%;--ax:-30px;--ay:-220px;animation-delay:.8s;background:rgba(96,165,250,.4);box-shadow:0 0 4px rgba(96,165,250,.5)}
+.swt-demo-ambient:nth-child(3){left:35%;bottom:25%;--ax:25px;--ay:-200px;animation-delay:1.6s}
+.swt-demo-ambient:nth-child(4){left:60%;bottom:18%;--ax:-15px;--ay:-190px;animation-delay:2.4s;background:rgba(251,191,36,.4);box-shadow:0 0 4px rgba(251,191,36,.5)}
+.swt-demo-ambient:nth-child(5){left:85%;bottom:22%;--ax:-25px;--ay:-210px;animation-delay:3.2s}
+.swt-demo-ambient:nth-child(6){left:10%;bottom:30%;--ax:30px;--ay:-180px;animation-delay:4s}
+
+/* Truck exhaust puffs */
+.swt-demo-exhaust{position:absolute;bottom:30%;left:-5%;width:24px;height:24px;border-radius:50%;background:radial-gradient(circle,rgba(160,160,160,.6) 0%,transparent 70%);opacity:0;z-index:1;animation:swtExhaust 10s ease-out infinite;filter:blur(2px)}
+.swt-demo-exhaust:nth-of-type(2){animation-delay:.3s;left:-7%}
+.swt-demo-exhaust:nth-of-type(3){animation-delay:.6s;left:-9%}
+
+/* Hand/cursor pointer during application phase */
+.swt-demo-hand{position:absolute;top:18%;left:50%;margin-left:-13%;width:26%;aspect-ratio:1/1;z-index:4;opacity:0;animation:swtHand 10s cubic-bezier(.4,0,.6,1) infinite;pointer-events:none;display:flex;align-items:flex-end;justify-content:center}
+.swt-demo-hand svg{width:54%;height:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));margin-bottom:-30%}
 
 /* Timeline progress bar at bottom */
 .swt-demo-timeline{position:absolute;bottom:0;left:0;right:0;height:6px;background:rgba(0,0,0,.5);z-index:6;display:flex;align-items:center;padding:0}
@@ -6719,8 +6792,33 @@ html:not(.vw) section[data-view]{display:revert}
             </svg>
           </div>
 
+          <!-- Truck exhaust puffs (timed with truck) -->
+          <div class="swt-demo-exhaust"></div>
+          <div class="swt-demo-exhaust"></div>
+          <div class="swt-demo-exhaust"></div>
+
+          <!-- Ambient floating dust particles (always subtle bg motion) -->
+          <div class="swt-demo-ambient"></div>
+          <div class="swt-demo-ambient"></div>
+          <div class="swt-demo-ambient"></div>
+          <div class="swt-demo-ambient"></div>
+          <div class="swt-demo-ambient"></div>
+          <div class="swt-demo-ambient"></div>
+
+          <!-- Warning beacon rays from label (only visible in phase 4) -->
+          <div class="swt-demo-beacon"></div>
+
           <!-- Top-left simulation badge (constant) -->
           <div class="swt-demo-badge"><span data-lang="es">Simulación</span><span data-lang="en">Simulation</span></div>
+
+          <!-- G-meter top-right that spikes during impact -->
+          <div class="swt-demo-gmeter">
+            <div class="swt-demo-gmeter-label">G-Force</div>
+            <div class="swt-demo-gmeter-dial">
+              <div class="swt-demo-gmeter-needle"></div>
+            </div>
+            <div class="swt-demo-gmeter-val"></div>
+          </div>
 
           <!-- Phase badges (top center, swap in sync) -->
           <div class="swt-demo-phase swt-demo-phase-transit">
@@ -6736,9 +6834,10 @@ html:not(.vw) section[data-view]{display:revert}
             <span data-lang="es">Indicador rojo permanente</span><span data-lang="en">Permanent red indicator</span>
           </div>
 
-          <!-- Ground + dynamic box shadow -->
+          <!-- Ground + dynamic box shadow + impact cracks -->
           <div class="swt-demo-ground"></div>
           <div class="swt-demo-box-shadow"></div>
+          <div class="swt-demo-crack"></div>
 
           <!-- Impact waves -->
           <div class="swt-demo-wave"></div>
@@ -6771,6 +6870,15 @@ html:not(.vw) section[data-view]{display:revert}
               <div class="swt-demo-label-dot"></div>
               <div class="swt-demo-label-foot">Inspect if red</div>
             </div>
+          </div>
+
+          <!-- Hand cursor pointing the label down during application -->
+          <div class="swt-demo-hand">
+            <svg viewBox="0 0 32 40" fill="none">
+              <path d="M14 2v18M14 20l-3-4M14 20l3-4" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 14c0-3 2-6 6-6s6 3 6 6v12c0 6-4 12-12 12-2 0-4-1-4-3v-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="rgba(255,255,255,.1)"/>
+              <circle cx="14" cy="14" r="1.5" fill="#fbbf24"/>
+            </svg>
           </div>
 
           <!-- Green check that pops briefly when label lands successfully -->
