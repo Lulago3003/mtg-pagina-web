@@ -4008,19 +4008,14 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 .swt-how-desc{font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.6}
 
 /* Niveles G (catálogo de sensibilidades) */
-/* ── DEMO ANIMADO (sin marca) — explainer en 4 fases · 10s loop ── */
-/* TIMELINE (10s total):
-   0%   - Caja sola, sin etiqueta, ligero hover
-   8%   - Etiqueta aparece desde arriba (con backing/cinta de protección)
-   15%  - Etiqueta baja a la caja
-   20%  - Backing se despega (peel effect) y desaparece
-   25%  - Etiqueta queda fija en la caja
-   30%  - Empieza tránsito (caja se balancea suavemente)
-   45%  - Sigue en tránsito
-   55%  - Caja cae bruscamente (impacto)
-   58%  - Ondas de impacto + shake
-   62%  - Etiqueta se vuelve roja (irreversible)
-   100% - Estado rojo permanente
+/* ══════════════════════════════════════════════════════════════
+   DEMO ANIMADO v2 — cinematográfico, 4 fases, 10s loop, sin marca
+   ══════════════════════════════════════════════════════════════
+   TIMELINE:
+   0-25%  · Phase 1 (APPLY)    — label descends, peel backing, stick
+   25-55% · Phase 2 (TRANSIT)  — sway + speed lines + truck pass
+   55-72% · Phase 3 (IMPACT)   — drop + stage shake + dust particles
+   72-100%· Phase 4 (RED HOLD) — label red permanent + warning glow
 */
 
 @keyframes swtBoxIdle{
@@ -4081,11 +4076,73 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 @keyframes swtStep3{0%,53%{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);color:rgba(255,255,255,.5);transform:translateX(0)}57%,68%{background:rgba(251,146,60,.2);border-color:rgba(251,146,60,.55);color:#fff;transform:translateX(8px)}73%,100%{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);color:rgba(255,255,255,.5);transform:translateX(0)}}
 @keyframes swtStep4{0%,72%{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);color:rgba(255,255,255,.5);transform:translateX(0)}76%,100%{background:rgba(239,68,68,.28);border-color:rgba(239,68,68,.6);color:#fff;transform:translateX(8px)}}
 
+/* Cinematic enhancements */
+@keyframes swtStageShake{0%,53%{transform:translate(0,0)}55%{transform:translate(-4px,2px)}57%{transform:translate(5px,-3px)}59%{transform:translate(-3px,1px)}61%{transform:translate(2px,-1px)}63%,100%{transform:translate(0,0)}}
+@keyframes swtBgPulse{
+  0%,8%{background:linear-gradient(180deg,#1a0a04 0%,#0d0504 60%,#000 100%)}
+  20%,28%{background:linear-gradient(180deg,#1a0a04 0%,#0d0504 60%,#000 100%)}
+  32%,52%{background:linear-gradient(180deg,#04101a 0%,#020812 60%,#000 100%)}
+  55%,57%{background:linear-gradient(180deg,#3d0a08 0%,#1a0404 60%,#000 100%)}
+  62%,100%{background:linear-gradient(180deg,#1a0404 0%,#0d0202 60%,#000 100%)}
+}
+@keyframes swtSpeedlines{0%,28%{opacity:0;background-position:0 0}32%,52%{opacity:.6;background-position:-240px 0}55%,100%{opacity:0;background-position:-240px 0}}
+@keyframes swtSpeedlinesMove{0%{background-position:200px 0}100%{background-position:-200px 0}}
+@keyframes swtTruckPass{0%,28%{transform:translateX(140%);opacity:0}32%{transform:translateX(140%);opacity:.55}45%{transform:translateX(-30%);opacity:.55}52%{transform:translateX(-140%);opacity:0}100%{opacity:0}}
+@keyframes swtBoxShadow{0%,5%{transform:translate(-50%,0) scaleX(.4);opacity:.15}25%{transform:translate(-50%,0) scaleX(.5);opacity:.25}30%,52%{transform:translate(-50%,0) scaleX(.5);opacity:.25}55%{transform:translate(-50%,0) scaleX(1);opacity:.65}100%{transform:translate(-50%,0) scaleX(1);opacity:.55}}
+@keyframes swtDustParticle{0%,52%{transform:translate(var(--dx,0),var(--dy,0)) scale(0);opacity:0}55%{transform:translate(0,0) scale(.5);opacity:1}80%{transform:translate(var(--dx,40px),var(--dy,-30px)) scale(1);opacity:0}100%{opacity:0}}
+@keyframes swtLabelLandFlash{0%,18%{box-shadow:0 4px 12px rgba(0,0,0,.4)}22%{box-shadow:0 4px 12px rgba(0,0,0,.4),0 0 0 4px rgba(34,197,94,.7),0 0 30px rgba(34,197,94,.6)}28%{box-shadow:0 4px 12px rgba(0,0,0,.4),0 0 0 0 rgba(34,197,94,0),0 0 0 rgba(34,197,94,0)}100%{box-shadow:0 4px 12px rgba(0,0,0,.4)}}
+@keyframes swtLabelPulseRed{0%,72%{filter:none}76%,82%{filter:drop-shadow(0 0 20px rgba(239,68,68,.85))}90%,100%{filter:drop-shadow(0 0 12px rgba(239,68,68,.55))}}
+@keyframes swtCheckPop{0%,17%{transform:translate(-50%,-50%) scale(0);opacity:0}22%{transform:translate(-50%,-50%) scale(1.3);opacity:1}26%{transform:translate(-50%,-50%) scale(1);opacity:1}29%,100%{transform:translate(-50%,-50%) scale(.8);opacity:0}}
+@keyframes swtImpactFlash{0%,53%{opacity:0}55%{opacity:.55}60%,100%{opacity:0}}
+@keyframes swtTimelineFill{0%{width:0}100%{width:100%}}
+@keyframes swtPhaseDot1{0%,22%{background:#fb923c;box-shadow:0 0 12px #fb923c;transform:scale(1.3)}25%,100%{background:rgba(255,255,255,.18);box-shadow:none;transform:scale(1)}}
+@keyframes swtPhaseDot2{0%,28%{background:rgba(255,255,255,.18);box-shadow:none;transform:scale(1)}32%,52%{background:#60a5fa;box-shadow:0 0 12px #60a5fa;transform:scale(1.3)}55%,100%{background:rgba(255,255,255,.18);box-shadow:none;transform:scale(1)}}
+@keyframes swtPhaseDot3{0%,53%{background:rgba(255,255,255,.18);box-shadow:none;transform:scale(1)}57%,68%{background:#fbbf24;box-shadow:0 0 12px #fbbf24;transform:scale(1.3)}72%,100%{background:rgba(255,255,255,.18);box-shadow:none;transform:scale(1)}}
+@keyframes swtPhaseDot4{0%,72%{background:rgba(255,255,255,.18);box-shadow:none;transform:scale(1)}76%,100%{background:#ef4444;box-shadow:0 0 12px #ef4444;transform:scale(1.3)}}
+
 .swt-demo-video{padding:88px 0;background:linear-gradient(180deg,#0d0504 0%,#1a0908 100%);position:relative;overflow:hidden}
 .swt-demo-video::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(251,146,60,.12),transparent 70%);pointer-events:none}
 .swt-demo-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center;position:relative;z-index:2;margin-top:48px}
-.swt-demo-stage{position:relative;aspect-ratio:1/1;max-width:480px;border-radius:24px;background:linear-gradient(180deg,#1a0a04 0%,#0d0504 60%,#000 100%);border:1px solid rgba(251,146,60,.18);box-shadow:0 30px 80px rgba(0,0,0,.5);overflow:hidden}
-.swt-demo-stage::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(251,146,60,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(251,146,60,.05) 1px,transparent 1px);background-size:30px 30px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 30%,transparent 90%)}
+.swt-demo-stage{position:relative;aspect-ratio:1/1;max-width:480px;border-radius:24px;background:linear-gradient(180deg,#1a0a04 0%,#0d0504 60%,#000 100%);border:1px solid rgba(251,146,60,.18);box-shadow:0 30px 80px rgba(0,0,0,.5);overflow:hidden;animation:swtStageShake 10s cubic-bezier(.4,0,.6,1) infinite,swtBgPulse 10s ease-in-out infinite}
+.swt-demo-stage::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(251,146,60,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(251,146,60,.05) 1px,transparent 1px);background-size:30px 30px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 30%,transparent 90%);pointer-events:none}
+
+/* Speed lines during transit phase */
+.swt-demo-speedlines{position:absolute;inset:25% 0 25% 0;z-index:1;background:repeating-linear-gradient(90deg,transparent 0,transparent 40px,rgba(96,165,250,.3) 40px,rgba(96,165,250,.3) 42px,transparent 42px,transparent 80px,rgba(34,211,238,.2) 80px,rgba(34,211,238,.2) 81px);opacity:0;animation:swtSpeedlines 10s ease-in-out infinite,swtSpeedlinesMove .8s linear infinite;mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);pointer-events:none}
+
+/* Truck silhouette that passes during transit */
+.swt-demo-truck{position:absolute;bottom:18%;left:0;width:24%;aspect-ratio:1.6/1;z-index:1;opacity:0;animation:swtTruckPass 10s ease-in-out infinite;pointer-events:none}
+.swt-demo-truck svg{width:100%;height:100%;display:block;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6))}
+
+/* Impact flash overlay */
+.swt-demo-flash{position:absolute;inset:0;z-index:4;background:radial-gradient(circle at 50% 80%,rgba(255,255,255,.5) 0%,rgba(251,191,36,.3) 30%,transparent 70%);opacity:0;animation:swtImpactFlash 10s ease-out infinite;pointer-events:none}
+
+/* Dynamic box shadow on the ground */
+.swt-demo-box-shadow{position:absolute;bottom:13%;left:50%;width:38%;height:14px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.85) 0%,transparent 70%);transform:translate(-50%,0) scaleX(.4);opacity:.15;z-index:1;animation:swtBoxShadow 10s cubic-bezier(.4,0,.6,1) infinite;pointer-events:none;filter:blur(6px)}
+
+/* Dust particles dispersing on impact */
+.swt-demo-dust{position:absolute;bottom:14%;left:50%;width:2px;height:2px;border-radius:50%;background:#fbbf24;box-shadow:0 0 4px #fbbf24;opacity:0;z-index:3;animation:swtDustParticle 10s ease-out infinite;pointer-events:none}
+.swt-demo-dust-1{--dx:-50px;--dy:-40px;background:#fbbf24;box-shadow:0 0 6px #fbbf24}
+.swt-demo-dust-2{--dx:45px;--dy:-50px;background:#fb923c;box-shadow:0 0 6px #fb923c}
+.swt-demo-dust-3{--dx:-30px;--dy:-65px;background:#fde047;box-shadow:0 0 5px #fde047}
+.swt-demo-dust-4{--dx:55px;--dy:-30px;background:#fef3c7;box-shadow:0 0 5px #fef3c7}
+.swt-demo-dust-5{--dx:-65px;--dy:-25px;background:#fb923c;box-shadow:0 0 5px #fb923c}
+.swt-demo-dust-6{--dx:35px;--dy:-70px;background:#fef3c7;box-shadow:0 0 5px #fef3c7}
+.swt-demo-dust-7{--dx:-20px;--dy:-55px;background:#fbbf24;box-shadow:0 0 4px #fbbf24}
+.swt-demo-dust-8{--dx:60px;--dy:-45px;background:#fde047;box-shadow:0 0 5px #fde047}
+
+/* Green check that pops when label lands successfully */
+.swt-demo-check{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);z-index:7;width:44px;height:44px;border-radius:50%;background:#22c55e;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 0 30px rgba(34,197,94,.8);opacity:0;animation:swtCheckPop 10s ease-out infinite;pointer-events:none}
+.swt-demo-check svg{width:24px;height:24px}
+
+/* Timeline progress bar at bottom */
+.swt-demo-timeline{position:absolute;bottom:0;left:0;right:0;height:6px;background:rgba(0,0,0,.5);z-index:6;display:flex;align-items:center;padding:0}
+.swt-demo-timeline-fill{height:100%;background:linear-gradient(90deg,#fb923c,#ef4444);width:0;animation:swtTimelineFill 10s linear infinite;border-radius:0 3px 3px 0;box-shadow:0 0 12px rgba(251,146,60,.6)}
+.swt-demo-phase-dots{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:space-around;padding:0 22%;z-index:6}
+.swt-demo-phase-dots span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.18);transition:all .3s ease}
+.swt-demo-phase-dots span:nth-child(1){animation:swtPhaseDot1 10s ease-in-out infinite}
+.swt-demo-phase-dots span:nth-child(2){animation:swtPhaseDot2 10s ease-in-out infinite}
+.swt-demo-phase-dots span:nth-child(3){animation:swtPhaseDot3 10s ease-in-out infinite}
+.swt-demo-phase-dots span:nth-child(4){animation:swtPhaseDot4 10s ease-in-out infinite}
 .swt-demo-ground{position:absolute;bottom:14%;left:8%;right:8%;height:3px;background:linear-gradient(90deg,transparent,rgba(251,146,60,.5),transparent);box-shadow:0 0 20px rgba(251,146,60,.4)}
 .swt-demo-ground::after{content:'';position:absolute;top:-2px;left:0;right:0;height:7px;background:repeating-linear-gradient(135deg,transparent 0 8px,rgba(251,146,60,.15) 8px 12px)}
 
@@ -4096,8 +4153,8 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 .swt-demo-tape{position:absolute;top:36%;left:-2%;right:-2%;height:14%;background:linear-gradient(180deg,#d9b994,#bf9d78);opacity:.92;box-shadow:0 1px 0 rgba(0,0,0,.15) inset,0 -1px 0 rgba(0,0,0,.15) inset}
 
 /* Label: descends from above, lands, peels backing, then turns red on impact */
-.swt-demo-label-wrap{position:absolute;top:18%;left:50%;margin-left:-13%;width:26%;aspect-ratio:1/1;z-index:3;animation:swtLabelDescend 10s cubic-bezier(.34,1.3,.64,1) infinite}
-.swt-demo-label{position:relative;width:100%;height:100%;background:#fff;clip-path:polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%);display:grid;grid-template-rows:auto 1fr auto;align-items:center;justify-items:center;padding:7% 8%;text-align:center;font-family:Arial,Helvetica,sans-serif;animation:swtLabelToRed 10s cubic-bezier(.4,0,.6,1) infinite;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.swt-demo-label-wrap{position:absolute;top:18%;left:50%;margin-left:-13%;width:26%;aspect-ratio:1/1;z-index:3;animation:swtLabelDescend 10s cubic-bezier(.34,1.3,.64,1) infinite,swtLabelPulseRed 10s ease-in-out infinite}
+.swt-demo-label{position:relative;width:100%;height:100%;background:#fff;clip-path:polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%);display:grid;grid-template-rows:auto 1fr auto;align-items:center;justify-items:center;padding:7% 8%;text-align:center;font-family:Arial,Helvetica,sans-serif;animation:swtLabelToRed 10s cubic-bezier(.4,0,.6,1) infinite,swtLabelLandFlash 10s ease-in-out infinite;box-shadow:0 4px 12px rgba(0,0,0,.4)}
 .swt-demo-label-band{width:100%;font-size:.55rem;font-weight:900;color:#fff;letter-spacing:.5px;padding:2px 0;background:#1a1a1a;border-radius:2px;margin-bottom:6%}
 .swt-demo-label-dot{width:58%;aspect-ratio:1;border-radius:50%;border:3px solid #1a1a1a;background:transparent}
 .swt-demo-label-foot{font-size:.4rem;font-weight:800;color:#1a1a1a;letter-spacing:.2px;text-transform:uppercase;margin-top:4%}
@@ -6645,11 +6702,27 @@ html:not(.vw) section[data-view]{display:revert}
       </div>
 
       <div class="swt-demo-wrap">
-        <!-- LEFT: Animation stage — 4-fase loop -->
+        <!-- LEFT: Animation stage — cinematic 4-fase loop -->
         <div class="swt-demo-stage rv" aria-hidden="true">
+
+          <!-- Atmospheric layers (back) -->
+          <div class="swt-demo-speedlines"></div>
+          <div class="swt-demo-truck">
+            <svg viewBox="0 0 100 60" fill="none">
+              <rect x="2" y="20" width="55" height="28" rx="2" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+              <path d="M57 28 L70 28 L82 35 L82 48 L57 48 Z" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+              <rect x="62" y="32" width="14" height="9" fill="#60a5fa" opacity=".5"/>
+              <circle cx="15" cy="50" r="6" fill="#0a0a0f" stroke="#60a5fa" stroke-width="1.5"/>
+              <circle cx="44" cy="50" r="6" fill="#0a0a0f" stroke="#60a5fa" stroke-width="1.5"/>
+              <circle cx="72" cy="50" r="6" fill="#0a0a0f" stroke="#60a5fa" stroke-width="1.5"/>
+              <line x1="6" y1="25" x2="54" y2="25" stroke="#60a5fa" stroke-width=".5" opacity=".5"/>
+            </svg>
+          </div>
+
+          <!-- Top-left simulation badge (constant) -->
           <div class="swt-demo-badge"><span data-lang="es">Simulación</span><span data-lang="en">Simulation</span></div>
 
-          <!-- Phase badges that swap in sync with the animation -->
+          <!-- Phase badges (top center, swap in sync) -->
           <div class="swt-demo-phase swt-demo-phase-transit">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             <span data-lang="es">En tránsito</span><span data-lang="en">In transit</span>
@@ -6663,12 +6736,29 @@ html:not(.vw) section[data-view]{display:revert}
             <span data-lang="es">Indicador rojo permanente</span><span data-lang="en">Permanent red indicator</span>
           </div>
 
+          <!-- Ground + dynamic box shadow -->
           <div class="swt-demo-ground"></div>
+          <div class="swt-demo-box-shadow"></div>
+
+          <!-- Impact waves -->
           <div class="swt-demo-wave"></div>
           <div class="swt-demo-wave"></div>
           <div class="swt-demo-wave"></div>
 
-          <!-- Box first (without label) -->
+          <!-- Dust particles on impact -->
+          <div class="swt-demo-dust swt-demo-dust-1"></div>
+          <div class="swt-demo-dust swt-demo-dust-2"></div>
+          <div class="swt-demo-dust swt-demo-dust-3"></div>
+          <div class="swt-demo-dust swt-demo-dust-4"></div>
+          <div class="swt-demo-dust swt-demo-dust-5"></div>
+          <div class="swt-demo-dust swt-demo-dust-6"></div>
+          <div class="swt-demo-dust swt-demo-dust-7"></div>
+          <div class="swt-demo-dust swt-demo-dust-8"></div>
+
+          <!-- Flash overlay on impact -->
+          <div class="swt-demo-flash"></div>
+
+          <!-- Box (sin etiqueta inicialmente) -->
           <div class="swt-demo-box">
             <div class="swt-demo-tape"></div>
           </div>
@@ -6682,6 +6772,15 @@ html:not(.vw) section[data-view]{display:revert}
               <div class="swt-demo-label-foot">Inspect if red</div>
             </div>
           </div>
+
+          <!-- Green check that pops briefly when label lands successfully -->
+          <div class="swt-demo-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+
+          <!-- Timeline progress + 4 phase dots -->
+          <div class="swt-demo-phase-dots"><span></span><span></span><span></span><span></span></div>
+          <div class="swt-demo-timeline"><div class="swt-demo-timeline-fill"></div></div>
         </div>
 
         <!-- RIGHT: 4 explanatory steps that highlight in sync -->
