@@ -3930,6 +3930,107 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
   .wch-card,.wch-hero-watch,.wch-card-watch,.wch-card-bg-glow,.wch-hero-orbit-dot,.wch-hero-ring,.wch-demo-pin::before,.wch-sim-badge::before,.wch-card-cta::before,.wch-final-cta .btn-primary::before,.wch-hero-btns .btn-primary::before,.wch-demo-route{animation:none!important}
 }
 
+/* ══════════════════════════════════════════════════════════════
+   SHOCKWATCH · Detectores de Impacto · v1
+══════════════════════════════════════════════════════════════ */
+@keyframes swtPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.85}}
+@keyframes swtShake{0%,100%{transform:translateX(0) rotate(0)}25%{transform:translateX(-3px) rotate(-1deg)}75%{transform:translateX(3px) rotate(1deg)}}
+@keyframes swtFillRed{0%{background:#ffffff}50%{background:#ffffff}55%{background:#ef4444}100%{background:#ef4444}}
+@keyframes swtFade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── HOME TEASER (estilo gateway) ── */
+#shock-home{position:relative;overflow:hidden;background:linear-gradient(135deg,#1a0908 0%,#3d1408 50%,#7c2d12 100%);padding:clamp(60px,8vw,108px) 0}
+#shock-home::before{content:'';position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 70% 80% at 78% 20%,rgba(251,146,60,.28),transparent 60%),radial-gradient(ellipse 60% 70% at 12% 90%,rgba(239,68,68,.18),transparent 62%)}
+#shock-home::after{content:'';position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 30%,transparent 80%);pointer-events:none}
+#shock-home .container{position:relative;z-index:2}
+.sh-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.sh-kicker{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fdba74;background:rgba(251,146,60,.14);border:1px solid rgba(251,146,60,.32);padding:7px 16px;border-radius:50px;margin-bottom:20px;backdrop-filter:blur(8px)}
+.sh-kicker-dot{width:8px;height:8px;border-radius:50%;background:#fb923c;box-shadow:0 0 12px #fb923c;animation:egPulse 2s ease-in-out infinite}
+.sh-title{font-family:var(--ff-head,inherit);font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1.08;margin:0 0 18px}
+.sh-title em{font-style:normal;background:linear-gradient(120deg,#fbbf24,#ef4444);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sh-sub{font-size:1.06rem;color:rgba(255,220,200,.78);line-height:1.65;margin:0 0 28px;max-width:540px}
+.sh-btns{display:flex;gap:14px;flex-wrap:wrap}
+.sh-btn-main{display:inline-flex;align-items:center;gap:10px;font-size:1rem;font-weight:800;color:#1a0908;background:linear-gradient(135deg,#fbbf24,#fb923c);padding:17px 32px;border-radius:14px;text-decoration:none;box-shadow:0 16px 40px -10px rgba(251,146,60,.6);transition:transform .3s ease,box-shadow .3s ease}
+.sh-btn-main:hover{transform:translateY(-3px);box-shadow:0 22px 52px -10px rgba(251,146,60,.85)}
+.sh-btn-ghost{display:inline-flex;align-items:center;gap:9px;font-size:1rem;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.28);padding:16px 28px;border-radius:14px;text-decoration:none;transition:background .3s ease,border-color .3s ease}
+.sh-btn-ghost:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.5)}
+.sh-features-row{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.sh-feat-chip{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;font-weight:600;color:rgba(255,255,255,.78);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);padding:7px 13px;border-radius:50px}
+.sh-feat-chip svg{flex-shrink:0;color:#fbbf24}
+
+/* Mock label visual (right side) */
+.sh-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:340px}
+.sh-label-stack{position:relative;width:100%;max-width:380px;aspect-ratio:1/1;perspective:1200px}
+.sh-label{position:absolute;width:78%;aspect-ratio:1/1.3;background:#fff;border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,.55);padding:18px 14px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;font-family:Arial,sans-serif}
+.sh-label-1{top:5%;left:5%;transform:rotate(-8deg);z-index:1}
+.sh-label-2{top:15%;right:5%;transform:rotate(6deg);z-index:2}
+.sh-label-3{bottom:0;left:50%;transform:translateX(-50%) rotate(-2deg);z-index:3;animation:swtPulse 3s ease-in-out infinite}
+.sh-label-top{display:flex;align-items:center;gap:6px;font-size:.55rem;font-weight:800;color:#1a0908;text-transform:uppercase;letter-spacing:.5px;width:100%;border-bottom:2px solid #1a0908;padding-bottom:4px}
+.sh-label-tri{width:14px;height:14px;background:#fbbf24;clip-path:polygon(50% 0%,0% 100%,100% 100%);position:relative;flex-shrink:0}
+.sh-label-dot{width:50%;aspect-ratio:1;border-radius:50%;border:5px solid #1a0908;background:#fff;position:relative;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:900;color:#1a0908}
+.sh-label-1 .sh-label-dot{background:#fb923c}
+.sh-label-2 .sh-label-dot{background:#fbbf24}
+.sh-label-3 .sh-label-dot{background:#ef4444;color:#fff;animation:swtFillRed 4s ease-in-out infinite}
+.sh-label-foot{font-size:.5rem;font-weight:700;color:#1a0908;text-align:center;line-height:1.2;letter-spacing:.3px}
+.sh-label-g{position:absolute;top:8px;right:8px;font-size:.62rem;font-weight:900;color:#1a0908;background:rgba(0,0,0,.08);padding:2px 6px;border-radius:4px;letter-spacing:.5px}
+
+/* ── FULL VIEW SHOCKWATCH ── */
+.swt-hero{background:radial-gradient(ellipse 90% 70% at 70% 30%,#7c2d12 0%,#3d1408 45%,#1a0908 100%);padding:96px 0 80px;position:relative;overflow:hidden}
+.swt-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(251,146,60,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(251,146,60,.06) 1px,transparent 1px);background-size:60px 60px;animation:wchGrid 20s linear infinite;pointer-events:none;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,#000 30%,transparent 80%)}
+.swt-hero .container{position:relative;z-index:2}
+.swt-hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.swt-hero-left{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.swt-tag{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.45);border-radius:50px;font-size:.7rem;font-weight:700;color:#fdba74;letter-spacing:.9px;text-transform:uppercase;backdrop-filter:blur(8px)}
+.swt-tag-dot{width:7px;height:7px;border-radius:50%;background:#fb923c;box-shadow:0 0 12px #fb923c;animation:pulse 2s infinite}
+.swt-hero-title{font-family:var(--ff-head);font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.035em}
+.swt-hero-title span{background:linear-gradient(130deg,#fbbf24,#fb923c 50%,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block}
+.swt-hero-sub{font-size:1.02rem;color:rgba(255,220,200,.7);max-width:560px;line-height:1.7}
+
+/* Cómo funciona */
+.swt-how{padding:88px 0;background:#0d0504;position:relative;overflow:hidden}
+.swt-how::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 25% 30%,rgba(251,146,60,.1),transparent 50%),radial-gradient(circle at 75% 70%,rgba(239,68,68,.08),transparent 50%);pointer-events:none}
+.swt-how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:48px;position:relative;z-index:2}
+.swt-how-step{position:relative;padding:32px 24px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:18px;transition:transform .3s,border-color .3s}
+.swt-how-step:hover{transform:translateY(-6px);border-color:rgba(251,146,60,.35)}
+.swt-how-num{position:absolute;top:-18px;left:24px;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#fb923c,#ea580c);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;color:#fff;font-family:var(--ff-head);box-shadow:0 8px 24px rgba(251,146,60,.5);transform:rotate(-4deg)}
+.swt-how-visual{width:100%;height:90px;background:#fff;border-radius:10px;margin:14px 0 18px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.swt-how-visual-dot{width:54px;height:54px;border-radius:50%;border:4px solid #1a0908;background:#fff;transition:background .5s ease}
+.swt-how-step:nth-child(1) .swt-how-visual-dot{background:#fff}
+.swt-how-step:nth-child(2) .swt-how-visual-dot{background:#fbbf24}
+.swt-how-step:nth-child(3) .swt-how-visual-dot{background:#ef4444;animation:swtShake 1.5s ease-in-out infinite}
+.swt-how-title{font-size:1.05rem;font-weight:700;color:#fff;font-family:var(--ff-head);letter-spacing:-.01em;margin-bottom:8px}
+.swt-how-desc{font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.6}
+
+/* Niveles G (catálogo de sensibilidades) */
+.swt-levels{padding:88px 0;background:linear-gradient(180deg,#0d0504 0%,#1a0908 100%);position:relative}
+.swt-levels-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px;margin-top:48px}
+.swt-level{padding:24px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;transition:transform .3s,border-color .3s,background .3s;opacity:0;animation:swtFade .6s cubic-bezier(.16,1,.3,1) forwards}
+.swt-level:nth-child(1){animation-delay:.05s}.swt-level:nth-child(2){animation-delay:.1s}
+.swt-level:nth-child(3){animation-delay:.15s}.swt-level:nth-child(4){animation-delay:.2s}
+.swt-level:nth-child(5){animation-delay:.25s}.swt-level:nth-child(6){animation-delay:.3s}
+.swt-level:nth-child(7){animation-delay:.35s}
+.swt-level:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.06)}
+.swt-level-dot{width:64px;height:64px;border-radius:50%;border:5px solid #fff;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.swt-level-g{font-size:1.6rem;font-weight:900;color:#fff;font-family:var(--ff-head);letter-spacing:-.02em;line-height:1}
+.swt-level-label{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.6px}
+.swt-level-desc{font-size:.75rem;color:rgba(255,255,255,.5);line-height:1.4;margin-top:-4px}
+
+/* Aplicaciones */
+.swt-apps{padding:88px 0;background:#1a0908;position:relative}
+.swt-apps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:48px}
+.swt-app{padding:24px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;display:flex;align-items:center;gap:14px;transition:transform .3s,border-color .3s}
+.swt-app:hover{transform:translateY(-4px);border-color:rgba(251,146,60,.32)}
+.swt-app-icon{width:46px;height:46px;border-radius:12px;background:rgba(251,146,60,.12);border:1px solid rgba(251,146,60,.28);color:#fdba74;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.swt-app-txt{font-size:.92rem;font-weight:600;color:#fff;line-height:1.3}
+
+/* Final CTA */
+.swt-final{padding:88px 0;background:linear-gradient(180deg,#1a0908 0%,#0d0504 100%);text-align:center;border-top:1px solid rgba(251,146,60,.15)}
+.swt-final p{font-size:1rem;color:rgba(255,220,200,.65);max-width:580px;margin:0 auto 28px;line-height:1.6}
+.swt-final-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.swt-final .btn-primary{background:linear-gradient(135deg,#fb923c,#ea580c)!important;box-shadow:0 12px 36px rgba(251,146,60,.45)!important;padding:15px 30px!important}
+
+@media(max-width:900px){.sh-wrap,.swt-hero-inner{grid-template-columns:1fr;gap:36px}.sh-visual{max-width:340px;margin:0 auto;min-height:280px}}
+
 /* Smooth transition for theme switching */
 body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben-card,.faq-item,.co,.cf-wrap{transition:background-color .3s ease,color .3s ease,border-color .3s ease !important}
 
@@ -4989,7 +5090,12 @@ html:not(.vw) section[data-view]{display:revert}
               <a href="#relojes" class="nd-item" style="border:1px solid rgba(168,85,247,.18)">
                 <div class="nd-item-bg" style="background:linear-gradient(145deg,#1a0533,#2d1057)"></div>
                 <div class="nd-item-ov" style="background:linear-gradient(180deg,rgba(26,5,51,.2),rgba(26,5,51,.85))"></div>
-                <div class="nd-item-c"><span class="nd-title" style="color:#c084fc">⌚ <span data-lang="es">Relojes GPS &amp; Seguridad</span><span data-lang="en">GPS Watches &amp; Security</span></span><span class="nd-desc"><span data-lang="es">Senior · Niños · Deportivo · Flota</span><span data-lang="en">Senior · Kids · Sports · Fleet</span></span><div class="nd-bar" style="background:#a855f7"></div></div>
+                <div class="nd-item-c"><span class="nd-title" style="color:#c084fc">⌚ <span data-lang="es">Relojes GPS &amp; Seguridad</span><span data-lang="en">GPS Watches &amp; Security</span></span><span class="nd-desc"><span data-lang="es">Senior · Niños · Deportivo · Mascotas</span><span data-lang="en">Senior · Kids · Sports · Pets</span></span><div class="nd-bar" style="background:#a855f7"></div></div>
+              </a>
+              <a href="#shockwatch" class="nd-item" style="border:1px solid rgba(251,146,60,.22)">
+                <div class="nd-item-bg" style="background:linear-gradient(145deg,#3d1408,#7c2d12)"></div>
+                <div class="nd-item-ov" style="background:linear-gradient(180deg,rgba(61,20,8,.2),rgba(61,20,8,.85))"></div>
+                <div class="nd-item-c"><span class="nd-title" style="color:#fdba74">⚠️ <span data-lang="es">ShockWatch · Impacto</span><span data-lang="en">ShockWatch · Impact</span></span><span class="nd-desc"><span data-lang="es">Etiquetas detectoras de golpes</span><span data-lang="en">Impact detection labels</span></span><div class="nd-bar" style="background:#fb923c"></div></div>
               </a>
             </div>
           </div>
@@ -5116,6 +5222,7 @@ html:not(.vw) section[data-view]{display:revert}
     <div class="mob-sub-item" onclick="closeMobGo('#productos')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-chart"/></svg></span> 05 · <span data-lang="es">Monitoreo de Redes</span><span data-lang="en">Network Monitoring</span></div>
     <div class="mob-sub-item" onclick="closeMobGo('#productos')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span> <span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span> <span data-lang="es">Monitoreo Energético</span><span data-lang="en">Energy Monitoring</span></div>
     <div class="mob-sub-item" onclick="closeMobGo('#relojes')" style="color:#c084fc;font-weight:600">⌚ <span data-lang="es">Relojes GPS &amp; Seguridad</span><span data-lang="en">GPS Watches &amp; Security</span></div>
+    <div class="mob-sub-item" onclick="closeMobGo('#shockwatch')" style="color:#fdba74;font-weight:600">⚠️ <span data-lang="es">ShockWatch · Detectores de Impacto</span><span data-lang="en">ShockWatch · Impact Detectors</span></div>
   </div>
   <div class="mob-link" onclick="toggleMobSub('sub2')"><span data-lang="es">Servicios</span><span data-lang="en">Services</span> <span>›</span></div>
   <div class="mob-sub" id="sub2">
@@ -6312,6 +6419,213 @@ html:not(.vw) section[data-view]{display:revert}
 
 
 <!-- ═══════════════════════════════════════════════════════════
+     SHOCKWATCH · Detectores de Impacto (vista completa)
+═══════════════════════════════════════════════════════════ -->
+<section id="shockwatch" data-view="shockwatch">
+
+  <!-- HERO -->
+  <div class="swt-hero">
+    <div class="container">
+      <div class="swt-hero-inner">
+        <div class="swt-hero-left">
+          <div class="swt-tag"><span class="swt-tag-dot"></span><span data-lang="es">Detectores de Impacto · Logística</span><span data-lang="en">Impact Detectors · Logistics</span></div>
+          <h1 class="swt-hero-title">
+            <span data-lang="es">Si tu carga recibió un golpe, <span>lo vas a saber.</span></span>
+            <span data-lang="en">If your cargo took a hit, <span>you'll know it.</span></span>
+          </h1>
+          <p class="swt-hero-sub">
+            <span data-lang="es">Etiquetas adhesivas con indicador mecánico que se activa de forma irreversible cuando un paquete sufre un impacto mayor al umbral configurado. Disponibles en 7 niveles de sensibilidad para cargas frágiles, electrónicas, médicas e industriales.</span>
+            <span data-lang="en">Adhesive labels with mechanical indicator that activates irreversibly when a package suffers an impact above the configured threshold. Available in 7 sensitivity levels for fragile, electronic, medical and industrial cargo.</span>
+          </p>
+        </div>
+
+        <!-- Right: mock label visual -->
+        <div class="sh-visual rv" aria-hidden="true">
+          <div class="sh-label-stack">
+            <div class="sh-label sh-label-1">
+              <div class="sh-label-top"><span class="sh-label-tri"></span><span>WARNING</span></div>
+              <div class="sh-label-dot">5G</div>
+              <div class="sh-label-foot">IMPACT INDICATOR</div>
+              <div class="sh-label-g">5G</div>
+            </div>
+            <div class="sh-label sh-label-2">
+              <div class="sh-label-top"><span class="sh-label-tri"></span><span>WARNING</span></div>
+              <div class="sh-label-dot">25G</div>
+              <div class="sh-label-foot">IMPACT INDICATOR</div>
+              <div class="sh-label-g">25G</div>
+            </div>
+            <div class="sh-label sh-label-3">
+              <div class="sh-label-top"><span class="sh-label-tri"></span><span>ACTIVATED</span></div>
+              <div class="sh-label-dot">37G</div>
+              <div class="sh-label-foot">DO NOT ACCEPT IF RED</div>
+              <div class="sh-label-g">37G</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CÓMO FUNCIONA -->
+  <div class="swt-how">
+    <div class="container">
+      <div class="centered rv" style="margin-bottom:24px">
+        <div class="tag" style="color:#fdba74!important;background:rgba(251,146,60,.12)!important;border-color:rgba(251,146,60,.3)!important"><span class="tag-dot" style="background:#fb923c!important;box-shadow:0 0 10px #fb923c"></span><span data-lang="es">Cómo funciona</span><span data-lang="en">How it works</span></div>
+        <h2 class="s-title" style="color:#fff!important"><span data-lang="es">Indicador <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">visual e irreversible</span></span><span data-lang="en">Visual <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">irreversible indicator</span></span></h2>
+        <p class="s-sub" style="color:rgba(255,220,200,.7)!important"><span data-lang="es">Una vez activado por un impacto, el indicador se vuelve rojo y no puede revertirse. Evidencia indiscutible de mal manejo en cualquier punto de la cadena.</span><span data-lang="en">Once activated by an impact, the indicator turns red and cannot be reversed. Undeniable evidence of mishandling at any point in the chain.</span></p>
+      </div>
+
+      <div class="swt-how-grid">
+        <div class="swt-how-step rv">
+          <div class="swt-how-num">1</div>
+          <div class="swt-how-visual"><div class="swt-how-visual-dot"></div></div>
+          <div class="swt-how-title"><span data-lang="es">1. Se aplica al paquete</span><span data-lang="en">1. Apply to the package</span></div>
+          <div class="swt-how-desc"><span data-lang="es">La etiqueta adhesiva se coloca en el exterior de la caja antes del envío. Sin necesidad de equipo especial.</span><span data-lang="en">The adhesive label is placed on the outside of the box before shipping. No special equipment needed.</span></div>
+        </div>
+
+        <div class="swt-how-step rv">
+          <div class="swt-how-num">2</div>
+          <div class="swt-how-visual"><div class="swt-how-visual-dot"></div></div>
+          <div class="swt-how-title"><span data-lang="es">2. Indicador en blanco / color</span><span data-lang="en">2. White / color indicator</span></div>
+          <div class="swt-how-desc"><span data-lang="es">Durante el envío, el indicador permanece intacto en su color base. Cada nivel G tiene su color identificador.</span><span data-lang="en">During shipping, the indicator stays intact in its base color. Each G level has its own identifier color.</span></div>
+        </div>
+
+        <div class="swt-how-step rv">
+          <div class="swt-how-num">3</div>
+          <div class="swt-how-visual"><div class="swt-how-visual-dot"></div></div>
+          <div class="swt-how-title"><span data-lang="es">3. Si recibe un golpe → ROJO</span><span data-lang="en">3. If impacted → RED</span></div>
+          <div class="swt-how-desc"><span data-lang="es">Al superar el umbral de G-force configurado, el indicador se vuelve rojo de forma permanente. Evidencia visual para reclamos.</span><span data-lang="en">When the G-force threshold is exceeded, the indicator turns permanently red. Visual evidence for claims.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NIVELES G DISPONIBLES -->
+  <div class="swt-levels">
+    <div class="container">
+      <div class="centered rv" style="margin-bottom:24px">
+        <div class="tag" style="color:#fdba74!important;background:rgba(251,146,60,.12)!important;border-color:rgba(251,146,60,.3)!important"><span class="tag-dot" style="background:#fb923c!important;box-shadow:0 0 10px #fb923c"></span><span data-lang="es">7 niveles · una para cada carga</span><span data-lang="en">7 levels · one for every cargo</span></div>
+        <h2 class="s-title" style="color:#fff!important"><span data-lang="es">Niveles de <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">sensibilidad disponibles</span></span><span data-lang="en">Available <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">sensitivity levels</span></span></h2>
+        <p class="s-sub" style="color:rgba(255,220,200,.7)!important"><span data-lang="es">Elige la sensibilidad según la fragilidad de tu carga. A menor G-force, más sensible es el detector.</span><span data-lang="en">Choose the sensitivity based on how fragile your cargo is. Lower G-force means more sensitive.</span></p>
+      </div>
+
+      <div class="swt-levels-grid">
+        <div class="swt-level">
+          <div class="swt-level-dot" style="background:#fb923c"></div>
+          <div class="swt-level-g">5G</div>
+          <div class="swt-level-label"><span data-lang="es">Naranja</span><span data-lang="en">Orange</span></div>
+          <div class="swt-level-desc"><span data-lang="es">Equipo médico, lab, electrónica delicada</span><span data-lang="en">Medical, lab, delicate electronics</span></div>
+        </div>
+        <div class="swt-level">
+          <div class="swt-level-dot" style="background:#ef4444"></div>
+          <div class="swt-level-g">10G</div>
+          <div class="swt-level-label"><span data-lang="es">Rojo</span><span data-lang="en">Red</span></div>
+          <div class="swt-level-desc"><span data-lang="es">Electrónica frágil · servidores</span><span data-lang="en">Fragile electronics · servers</span></div>
+        </div>
+        <div class="swt-level">
+          <div class="swt-level-dot" style="background:#fbbf24"></div>
+          <div class="swt-level-g">15G</div>
+          <div class="swt-level-label"><span data-lang="es">Amarillo</span><span data-lang="en">Yellow</span></div>
+          <div class="swt-level-desc"><span data-lang="es">Equipos sensibles · instrumentos</span><span data-lang="en">Sensitive equipment · instruments</span></div>
+        </div>
+        <div class="swt-level">
+          <div class="swt-level-dot" style="background:#22c55e"></div>
+          <div class="swt-level-g">25G</div>
+          <div class="swt-level-label"><span data-lang="es">Verde</span><span data-lang="en">Green</span></div>
+          <div class="swt-level-desc"><span data-lang="es">Equipos industriales · oficina</span><span data-lang="en">Industrial · office equipment</span></div>
+        </div>
+        <div class="swt-level">
+          <div class="swt-level-dot" style="background:#a855f7"></div>
+          <div class="swt-level-g">37G</div>
+          <div class="swt-level-label"><span data-lang="es">Morado</span><span data-lang="en">Purple</span></div>
+          <div class="swt-level-desc"><span data-lang="es">Equipo pesado · electrodomésticos</span><span data-lang="en">Heavy equipment · appliances</span></div>
+        </div>
+        <div class="swt-level">
+          <div class="swt-level-dot" style="background:#3b82f6"></div>
+          <div class="swt-level-g">50G</div>
+          <div class="swt-level-label"><span data-lang="es">Azul</span><span data-lang="en">Blue</span></div>
+          <div class="swt-level-desc"><span data-lang="es">Maquinaria pesada · motores</span><span data-lang="en">Heavy machinery · motors</span></div>
+        </div>
+        <div class="swt-level">
+          <div class="swt-level-dot" style="background:#0ea5e9"></div>
+          <div class="swt-level-g">75-100G</div>
+          <div class="swt-level-label"><span data-lang="es">Cian</span><span data-lang="en">Cyan</span></div>
+          <div class="swt-level-desc"><span data-lang="es">Cargas extremas · industria pesada</span><span data-lang="en">Extreme loads · heavy industry</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APLICACIONES -->
+  <div class="swt-apps">
+    <div class="container">
+      <div class="centered rv" style="margin-bottom:24px">
+        <div class="tag" style="color:#fdba74!important;background:rgba(251,146,60,.12)!important;border-color:rgba(251,146,60,.3)!important"><span class="tag-dot" style="background:#fb923c!important;box-shadow:0 0 10px #fb923c"></span><span data-lang="es">Aplicaciones</span><span data-lang="en">Applications</span></div>
+        <h2 class="s-title" style="color:#fff!important"><span data-lang="es">Industrias que <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">protegen su carga</span></span><span data-lang="en">Industries that <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">protect their cargo</span></span></h2>
+      </div>
+
+      <div class="swt-apps-grid">
+        <div class="swt-app rv">
+          <div class="swt-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="swt-app-txt"><span data-lang="es">Electrónica & TI</span><span data-lang="en">Electronics & IT</span></div>
+        </div>
+        <div class="swt-app rv">
+          <div class="swt-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div class="swt-app-txt"><span data-lang="es">Equipo médico</span><span data-lang="en">Medical equipment</span></div>
+        </div>
+        <div class="swt-app rv">
+          <div class="swt-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <div class="swt-app-txt"><span data-lang="es">Logística & shipping</span><span data-lang="en">Logistics & shipping</span></div>
+        </div>
+        <div class="swt-app rv">
+          <div class="swt-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="swt-app-txt"><span data-lang="es">Laboratorios</span><span data-lang="en">Laboratories</span></div>
+        </div>
+        <div class="swt-app rv">
+          <div class="swt-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="swt-app-txt"><span data-lang="es">Industria pesada</span><span data-lang="en">Heavy industry</span></div>
+        </div>
+        <div class="swt-app rv">
+          <div class="swt-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="swt-app-txt"><span data-lang="es">Aseguradoras & RMA</span><span data-lang="en">Insurance & RMA</span></div>
+        </div>
+        <div class="swt-app rv">
+          <div class="swt-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <div class="swt-app-txt"><span data-lang="es">Telecom & antenas</span><span data-lang="en">Telecom & antennas</span></div>
+        </div>
+        <div class="swt-app rv">
+          <div class="swt-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <div class="swt-app-txt"><span data-lang="es">E-commerce & retail</span><span data-lang="en">E-commerce & retail</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA con catálogo -->
+  <div class="swt-final">
+    <div class="container">
+      <div class="rv">
+        <div class="tag" style="color:#fdba74!important;background:rgba(251,146,60,.12)!important;border-color:rgba(251,146,60,.3)!important;margin-bottom:18px"><span class="tag-dot" style="background:#fb923c!important;box-shadow:0 0 10px #fb923c"></span><span data-lang="es">Cotiza tu pedido</span><span data-lang="en">Quote your order</span></div>
+        <h2 class="s-title" style="color:#fff!important;margin-bottom:14px"><span data-lang="es">Protege tu carga, <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">desde hoy</span></span><span data-lang="en">Protect your cargo <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">starting today</span></span></h2>
+        <p><span data-lang="es">Envíos al por mayor para empresas, distribuidores y operadores logísticos. Te ayudamos a elegir el nivel G correcto según tu carga.</span><span data-lang="en">Bulk shipments for businesses, distributors and logistics operators. We help you choose the right G level for your cargo.</span></p>
+        <div class="swt-final-btns">
+          <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+cotizar+etiquetas+detectoras+de+impacto+%28ShockWatch%29" class="btn btn-primary" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            <span data-lang="es">Cotizar por WhatsApp →</span><span data-lang="en">Quote on WhatsApp →</span>
+          </a>
+          <a href="https://wa.me/50766743062?text=Hola%2C+me+gustar%C3%ADa+recibir+el+cat%C3%A1logo+PDF+de+los+detectores+de+impacto" target="_blank" rel="noopener" class="btn btn-outline" style="color:#fdba74;border-color:rgba(253,186,116,.4)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-lang="es">Solicitar catálogo PDF</span><span data-lang="en">Request PDF catalog</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
      CTA GATEWAY · Puente al Monitoreo Energético
 ═══════════════════════════════════════════════════════════ -->
 <section id="energia-gateway" data-view="home">
@@ -6481,6 +6795,69 @@ html:not(.vw) section[data-view]{display:revert}
         <a href="assets/prose-camouflage-catalog.pdf" target="_blank" rel="noopener" class="btn btn-outline"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-doc"/></svg></span> <span data-lang="es">Ver catálogo PDF</span><span data-lang="en">Catalog PDF</span></a>
         <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesan%20las%20antenas%20PROSE%20%28camuflaje%20%2F%20DAS%29" target="_blank" rel="noopener" class="btn btn-wa"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span> <span data-lang="es">Cotizar</span><span data-lang="en">Quote</span></a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SHOCKWATCH · Detectores de Impacto (home teaser)
+═══════════════════════════════════════════════════════════ -->
+<section id="shock-home" data-view="home">
+  <div class="container">
+    <div class="sh-wrap">
+
+      <!-- Left: copy -->
+      <div class="sh-left rv">
+        <span class="sh-kicker"><span class="sh-kicker-dot"></span><span data-lang="es">Etiquetas detectoras de impacto</span><span data-lang="en">Impact detection labels</span></span>
+        <h2 class="sh-title">
+          <span data-lang="es">¿Tu carga llegó con <em>golpes</em> que nadie reporta?</span>
+          <span data-lang="en">Did your cargo arrive with <em>impacts</em> no one reports?</span>
+        </h2>
+        <p class="sh-sub">
+          <span data-lang="es">Etiquetas adhesivas que se ponen rojas cuando el paquete sufre un impacto. Evidencia visual de mal manejo para reclamos a transportistas, aseguradoras y proveedores.</span>
+          <span data-lang="en">Adhesive labels that turn red when a package is impacted. Visual proof of mishandling for claims with carriers, insurers and suppliers.</span>
+        </p>
+        <div class="sh-btns">
+          <a href="#shockwatch" class="sh-btn-main">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+            <span data-lang="es">Ver detectores de impacto →</span><span data-lang="en">See impact detectors →</span>
+          </a>
+          <a href="https://wa.me/50766743062?text=Hola%2C%20me%20interesan%20las%20etiquetas%20detectoras%20de%20impacto%20%28tipo%20ShockWatch%29" target="_blank" rel="noopener" class="sh-btn-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            <span data-lang="es">Hablar por WhatsApp</span><span data-lang="en">Chat on WhatsApp</span>
+          </a>
+        </div>
+        <div class="sh-features-row">
+          <span class="sh-feat-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">7 niveles de sensibilidad</span><span data-lang="en">7 sensitivity levels</span></span>
+          <span class="sh-feat-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Indicador irreversible</span><span data-lang="en">Tamper-proof indicator</span></span>
+          <span class="sh-feat-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Stock en Panamá</span><span data-lang="en">Stock in Panama</span></span>
+        </div>
+      </div>
+
+      <!-- Right: 3 etiquetas mock apiladas -->
+      <div class="sh-visual rv" aria-hidden="true">
+        <div class="sh-label-stack">
+          <div class="sh-label sh-label-1">
+            <div class="sh-label-top"><span class="sh-label-tri"></span><span>WARNING</span></div>
+            <div class="sh-label-dot">5G</div>
+            <div class="sh-label-foot">IMPACT INDICATOR</div>
+            <div class="sh-label-g">5G</div>
+          </div>
+          <div class="sh-label sh-label-2">
+            <div class="sh-label-top"><span class="sh-label-tri"></span><span>WARNING</span></div>
+            <div class="sh-label-dot">15G</div>
+            <div class="sh-label-foot">IMPACT INDICATOR</div>
+            <div class="sh-label-g">15G</div>
+          </div>
+          <div class="sh-label sh-label-3">
+            <div class="sh-label-top"><span class="sh-label-tri"></span><span>ACTIVATED</span></div>
+            <div class="sh-label-dot">25G</div>
+            <div class="sh-label-foot">DO NOT ACCEPT IF RED</div>
+            <div class="sh-label-g">25G</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -7751,7 +8128,7 @@ html:not(.vw) section[data-view]{display:revert}
 <script>
 /* ═══ ROUTER DE VISTAS — una sola página, estilo YouTube tabs ═══ */
 document.documentElement.classList.add('vw');
-window.VIEW_OF={hero:'home',about:'home',trustbar:'home','energia-gateway':'home','relojes-gateway':'home','prose-home':'home',testimonials:'home',faq:'home','cta-sec':'home',contacto:'home',servicios:'servicios',productos:'catalogo',catalogo:'catalogo',prose:'prose',casos:'casos',solutions:'medidor',markets:'medidor',how:'medidor','dash-sec':'medidor',visualization:'medidor',comparativa:'medidor','video-sec':'medidor','emporia-eco':'medidor',medidor:'medidor',relojes:'relojes'};
+window.VIEW_OF={hero:'home',about:'home',trustbar:'home','energia-gateway':'home','relojes-gateway':'home','prose-home':'home','shock-home':'home',testimonials:'home',faq:'home','cta-sec':'home',contacto:'home',servicios:'servicios',productos:'catalogo',catalogo:'catalogo',prose:'prose',casos:'casos',solutions:'medidor',markets:'medidor',how:'medidor','dash-sec':'medidor',visualization:'medidor',comparativa:'medidor','video-sec':'medidor','emporia-eco':'medidor',medidor:'medidor',relojes:'relojes',shockwatch:'shockwatch'};
 
 /* ═══ Image cycler para los relojes (data-cycle) ═══ */
 (function(){
@@ -7912,7 +8289,15 @@ const SEARCH_INDEX=[
   {name:'Reloj Deportivo GPS V-28C',alias:['reloj deportivo','v-28c','gps deportivo','running watch','sports watch','reloj runner','frecuencia cardiaca','heart rate','multideporte'],cat:'GPS & Seguridad Personal',catKey:'relojes',ico:'settings',target:'#relojes'},
   {name:'Tracker GPS Mascotas y Activos',alias:['tracker mascota','perro','dog','pet tracker','rastreador mascota','p-fa58p','tracker vehiculo','rastreo vehiculo','gps vehiculo','rastreador','flota','vehicle tracker','gps flota','localizador auto','collar gps'],cat:'GPS & Seguridad Personal',catKey:'relojes',ico:'settings',target:'#relojes'},
   {name:'Reloj con Cámara GPS K-FA81',alias:['reloj camara','k-fa81','e-fa81','reloj guardia','reloj seguridad campo','camera watch','guard watch','personal de campo'],cat:'GPS & Seguridad Personal',catKey:'relojes',ico:'settings',target:'#relojes'},
-  {name:'Relojes GPS & Seguridad Personal',alias:['reloj gps','gps watch','relojes','watch','rastreo personal','localizacion personal','seguridad personal','gps panama'],cat:'GPS & Seguridad Personal',catKey:'relojes',ico:'settings',target:'#relojes'}
+  {name:'Relojes GPS & Seguridad Personal',alias:['reloj gps','gps watch','relojes','watch','rastreo personal','localizacion personal','seguridad personal','gps panama'],cat:'GPS & Seguridad Personal',catKey:'relojes',ico:'settings',target:'#relojes'},
+
+  // ── 08 · SHOCKWATCH · Detectores de Impacto ──
+  {name:'ShockWatch · Detectores de Impacto',alias:['shockwatch','shock watch','etiqueta golpe','impact indicator','impact label','detector impacto','detector de golpe','etiqueta impacto','sensor golpe'],cat:'Detectores de Impacto',catKey:'shockwatch',ico:'bolt',target:'#shockwatch'},
+  {name:'Etiquetas detectoras de impacto 5G',alias:['5g label','5g shockwatch','etiqueta 5g','impact 5g','muy fragil','equipo medico'],cat:'Detectores de Impacto',catKey:'shockwatch',ico:'bolt',target:'#shockwatch'},
+  {name:'Etiquetas detectoras de impacto 10G / 15G',alias:['10g','15g','impact 10g','impact 15g','etiqueta 10g','etiqueta 15g','electronica fragil'],cat:'Detectores de Impacto',catKey:'shockwatch',ico:'bolt',target:'#shockwatch'},
+  {name:'Etiquetas detectoras de impacto 25G / 37G',alias:['25g','37g','industrial label','impact 25g','impact 37g'],cat:'Detectores de Impacto',catKey:'shockwatch',ico:'bolt',target:'#shockwatch'},
+  {name:'Etiquetas detectoras de impacto 50G / 75G / 100G',alias:['50g','75g','100g','heavy impact','maquinaria pesada'],cat:'Detectores de Impacto',catKey:'shockwatch',ico:'bolt',target:'#shockwatch'},
+  {name:'Indicadores de impacto para shipping',alias:['shipping label','indicador shipping','impact shipping','reclamo carga','reclamo transportista','cargo claim'],cat:'Detectores de Impacto',catKey:'shockwatch',ico:'truck',target:'#shockwatch'}
 ];
 
 function _norm(s){return (s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
