@@ -4135,9 +4135,35 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 /* Hand/cursor pointer during application phase */
 @keyframes swtHand{0%,4%{opacity:0;transform:translate(60%,-160%) rotate(-20deg)}8%{opacity:.9;transform:translate(60%,-160%) rotate(-20deg)}15%{opacity:.9;transform:translate(0,-60%) rotate(-10deg)}20%{opacity:.9;transform:translate(0,-30%) rotate(0deg)}23%{opacity:0;transform:translate(0,-30%) rotate(0deg)}100%{opacity:0}}
 
+/* ── SCI-FI HUD: telemetry chips, alert banner, claim seal ── */
+@keyframes swtHudShow{0%,28%{opacity:0;transform:translateY(8px)}32%,52%{opacity:1;transform:translateY(0)}55%{opacity:1;transform:translateY(0)}100%{opacity:1;transform:translateY(0)}}
+@keyframes swtHudSafe{0%,53%{color:#22c55e;border-color:rgba(34,197,94,.45);background:rgba(34,197,94,.1)}55%,100%{color:#ef4444;border-color:rgba(239,68,68,.55);background:rgba(239,68,68,.12)}}
+@keyframes swtHudValueG{0%,28%{content:"0.0 G"}30%{content:"0.1 G"}40%{content:"0.2 G"}48%{content:"0.3 G"}54%{content:"12.4 G"}55%{content:"28.7 G"}56%{content:"34.1 G"}57%{content:"31.2 G"}59%{content:"35.4 G"}62%,100%{content:"32.1 G"}}
+@keyframes swtHudValueStatus{0%,28%{content:"--"}32%,53%{content:"● SAFE"}55%,100%{content:"● IMPACT"}}
+@keyframes swtHudValueGPS{0%,28%{content:"--"}32%,52%{content:"8.97° N"}54%,100%{content:"8.97° N"}}
+@keyframes swtAlertBanner{0%,53%{opacity:0;transform:translate(-50%,-50%) scale(.7);filter:blur(8px)}55%{opacity:1;transform:translate(-50%,-50%) scale(1.06);filter:blur(0)}58%{opacity:1;transform:translate(-50%,-50%) scale(1);filter:blur(0)}70%{opacity:1;transform:translate(-50%,-50%) scale(1);filter:blur(0)}74%{opacity:0;transform:translate(-50%,-50%) scale(.95);filter:blur(4px)}100%{opacity:0}}
+@keyframes swtClaimSeal{0%,72%{opacity:0;transform:translate(0,0) scale(.4) rotate(-30deg)}77%{opacity:1;transform:translate(0,0) scale(1.15) rotate(-15deg)}82%,100%{opacity:.95;transform:translate(0,0) scale(1) rotate(-12deg)}}
+@keyframes swtClaimSpin{0%,72%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes swtScanLine{0%,9%{transform:translateY(-100%);opacity:0}11%{opacity:.9}14%{transform:translateY(100vh);opacity:0}
+  29%{transform:translateY(-100%);opacity:0}31%{opacity:.9}34%{transform:translateY(100vh);opacity:0}
+  53%{transform:translateY(-100%);opacity:0}55%{opacity:1}58%{transform:translateY(100vh);opacity:0}
+  71%{transform:translateY(-100%);opacity:0}73%{opacity:.9}76%{transform:translateY(100vh);opacity:0}
+  100%{opacity:0}}
+@keyframes swtConveyorScroll{0%{background-position:0 0}100%{background-position:-40px 0}}
+@keyframes swtConveyorShow{0%,28%{opacity:0}32%,52%{opacity:.85}55%,100%{opacity:0}}
+@keyframes swtVibrate{0%,30%,52%,100%{transform:translate(0,0)}33%{transform:translate(0,1px)}36%{transform:translate(0,-1px)}39%{transform:translate(1px,0)}42%{transform:translate(-1px,0)}45%{transform:translate(0,1px)}48%{transform:translate(0,-1px)}}
+@keyframes swtTaglineSwap{
+  0%,7%{opacity:0;transform:translateX(-20px)}
+  10%,20%{opacity:1;transform:translateX(0)}
+  23%{opacity:0;transform:translateX(20px)}
+  30%,45%{opacity:0;transform:translateX(-20px)}
+  100%{opacity:0}
+}
+
 .swt-demo-video{padding:88px 0;background:linear-gradient(180deg,#0d0504 0%,#1a0908 100%);position:relative;overflow:hidden}
 .swt-demo-video::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(251,146,60,.12),transparent 70%);pointer-events:none}
-.swt-demo-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center;position:relative;z-index:2;margin-top:48px}
+.swt-demo-wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:42px;align-items:center;position:relative;z-index:2;margin-top:48px}
+.swt-demo-stage{max-width:none!important}
 .swt-demo-stage{position:relative;aspect-ratio:1/1;max-width:480px;border-radius:24px;background:linear-gradient(180deg,#1a0a04 0%,#0d0504 60%,#000 100%);border:1px solid rgba(251,146,60,.18);box-shadow:0 30px 80px rgba(0,0,0,.5);overflow:hidden;animation:swtStageShake 10s cubic-bezier(.4,0,.6,1) infinite,swtBgPulse 10s ease-in-out infinite}
 .swt-demo-stage::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(251,146,60,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(251,146,60,.05) 1px,transparent 1px);background-size:30px 30px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 30%,transparent 90%);pointer-events:none}
 
@@ -4206,6 +4232,47 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 /* Hand/cursor pointer during application phase */
 .swt-demo-hand{position:absolute;top:18%;left:50%;margin-left:-13%;width:26%;aspect-ratio:1/1;z-index:4;opacity:0;animation:swtHand 10s cubic-bezier(.4,0,.6,1) infinite;pointer-events:none;display:flex;align-items:flex-end;justify-content:center}
 .swt-demo-hand svg{width:54%;height:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));margin-bottom:-30%}
+
+/* ── HUD: Telemetry chips, alert banner, claim seal, scan lines, conveyor ── */
+.swt-demo-hud{position:absolute;bottom:24%;left:50%;transform:translateX(-50%);z-index:6;display:flex;gap:8px;flex-wrap:nowrap;padding:0 14px;width:auto;opacity:0;animation:swtHudShow 10s ease-in-out infinite;font-family:'JetBrains Mono','Consolas','Monaco',monospace}
+.swt-demo-hud-chip{padding:6px 11px;background:rgba(0,0,0,.78);backdrop-filter:blur(10px);border:1px solid rgba(34,197,94,.4);border-radius:8px;display:flex;align-items:center;gap:8px;font-size:.62rem;font-weight:700;letter-spacing:.4px;color:#22c55e;white-space:nowrap;animation:swtHudSafe 10s ease-in-out infinite}
+.swt-demo-hud-chip.no-color{animation:none;color:#67e8f9;border-color:rgba(34,211,238,.4);background:rgba(0,0,0,.78)}
+.swt-demo-hud-chip-label{font-size:.55rem;font-weight:800;letter-spacing:.7px;color:rgba(255,255,255,.5);text-transform:uppercase}
+.swt-demo-hud-chip-value{font-weight:900;letter-spacing:.3px}
+.swt-demo-hud-chip-gps .swt-demo-hud-chip-value::after{content:"--";animation:swtHudValueGPS 10s steps(1,end) infinite}
+.swt-demo-hud-chip-g .swt-demo-hud-chip-value::after{content:"0.0 G";animation:swtHudValueG 10s steps(1,end) infinite}
+.swt-demo-hud-chip-status .swt-demo-hud-chip-value::after{content:"● --";animation:swtHudValueStatus 10s steps(1,end) infinite}
+
+/* IMPACT DETECTED · big alert banner during impact */
+.swt-demo-alert{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.7);z-index:8;opacity:0;animation:swtAlertBanner 10s cubic-bezier(.34,1.5,.64,1) infinite;text-align:center;pointer-events:none;font-family:'JetBrains Mono','Consolas','Monaco',monospace}
+.swt-demo-alert-title{font-size:1.6rem;font-weight:900;color:#ef4444;letter-spacing:.4em;text-shadow:0 0 20px rgba(239,68,68,.9),0 0 40px rgba(239,68,68,.5);margin-bottom:6px;display:block}
+.swt-demo-alert-sub{font-size:.75rem;font-weight:700;color:rgba(255,180,180,.95);letter-spacing:.3em;text-transform:uppercase;display:block}
+.swt-demo-alert-line{height:2px;width:100%;background:linear-gradient(90deg,transparent,#ef4444,transparent);margin:8px 0;box-shadow:0 0 10px rgba(239,68,68,.8)}
+.swt-demo-alert-meta{display:flex;gap:14px;justify-content:center;margin-top:8px;font-size:.6rem;letter-spacing:.2em;color:rgba(255,255,255,.45)}
+
+/* CLAIM VALIDATION seal — bottom-right stamp during verification */
+.swt-demo-claim{position:absolute;bottom:32%;right:20px;z-index:7;width:108px;height:108px;opacity:0;animation:swtClaimSeal 10s cubic-bezier(.34,1.5,.64,1) infinite;pointer-events:none}
+.swt-demo-claim-ring{position:absolute;inset:0;border-radius:50%;border:2px solid #ef4444;animation:swtClaimSpin 10s linear infinite}
+.swt-demo-claim-ring::before,.swt-demo-claim-ring::after{content:'';position:absolute;background:#ef4444}
+.swt-demo-claim-ring::before{top:-3px;left:50%;width:6px;height:6px;border-radius:50%;transform:translateX(-50%);box-shadow:0 0 10px #ef4444}
+.swt-demo-claim-ring::after{bottom:-3px;left:50%;width:6px;height:6px;border-radius:50%;transform:translateX(-50%);box-shadow:0 0 10px #ef4444}
+.swt-demo-claim-inner{position:absolute;inset:8px;border-radius:50%;background:rgba(239,68,68,.18);backdrop-filter:blur(10px);border:1px dashed rgba(239,68,68,.65);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;font-family:'JetBrains Mono','Consolas','Monaco',monospace;padding:4px}
+.swt-demo-claim-icon{font-size:1.2rem;line-height:1;margin-bottom:2px}
+.swt-demo-claim-txt{font-size:.5rem;font-weight:900;letter-spacing:.15em;line-height:1.15;text-transform:uppercase;color:#ffd1d1}
+
+/* Scan line sweep between scenes */
+.swt-demo-scan{position:absolute;left:0;right:0;top:-100%;height:3px;background:linear-gradient(90deg,transparent,rgba(251,146,60,.9),rgba(251,191,36,.95),rgba(251,146,60,.9),transparent);z-index:9;pointer-events:none;animation:swtScanLine 10s ease-out infinite;box-shadow:0 0 16px rgba(251,191,36,.7),0 0 30px rgba(251,146,60,.45)}
+.swt-demo-scan::after{content:'';position:absolute;left:0;right:0;top:3px;height:80px;background:linear-gradient(180deg,rgba(251,146,60,.15),transparent);pointer-events:none}
+
+/* Conveyor belt under box during transit */
+.swt-demo-conveyor{position:absolute;bottom:14%;left:8%;right:8%;height:6px;background:repeating-linear-gradient(90deg,rgba(251,146,60,.55) 0,rgba(251,146,60,.55) 12px,rgba(0,0,0,.4) 12px,rgba(0,0,0,.4) 22px);border-radius:3px;z-index:1;opacity:0;animation:swtConveyorShow 10s ease-in-out infinite,swtConveyorScroll .4s linear infinite;box-shadow:0 0 12px rgba(251,146,60,.4)}
+
+/* Rotating taglines at the very top of the stage */
+.swt-demo-tagline{position:absolute;top:60px;left:0;right:0;text-align:center;z-index:5;font-family:'JetBrains Mono','Consolas','Monaco',monospace;font-size:.66rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,200,140,.85);text-shadow:0 0 12px rgba(251,146,60,.5);opacity:0;pointer-events:none;animation:swtTaglineSwap 10s ease-in-out infinite}
+.swt-demo-tagline.t1{animation-delay:0s}
+.swt-demo-tagline.t2{animation-delay:-7.5s}
+.swt-demo-tagline.t3{animation-delay:-5.5s}
+.swt-demo-tagline.t4{animation-delay:-2.5s;color:rgba(255,140,140,.95);text-shadow:0 0 14px rgba(239,68,68,.6)}
 
 /* Timeline progress bar at bottom */
 .swt-demo-timeline{position:absolute;bottom:0;left:0;right:0;height:6px;background:rgba(0,0,0,.5);z-index:6;display:flex;align-items:center;padding:0}
@@ -6769,9 +6836,9 @@ html:not(.vw) section[data-view]{display:revert}
   <div class="swt-demo-video">
     <div class="container">
       <div class="centered rv" style="margin-bottom:24px">
-        <div class="tag" style="color:#fdba74!important;background:rgba(251,146,60,.12)!important;border-color:rgba(251,146,60,.3)!important"><span class="tag-dot" style="background:#fb923c!important;box-shadow:0 0 10px #fb923c"></span><span data-lang="es">Demo en vivo</span><span data-lang="en">Live demo</span></div>
-        <h2 class="s-title" style="color:#fff!important"><span data-lang="es">Mira <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">cómo se activa</span></span><span data-lang="en">Watch <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">it activate</span></span></h2>
-        <p class="s-sub" style="color:rgba(255,220,200,.7)!important"><span data-lang="es">Simulación del momento exacto en que un paquete recibe un impacto y la etiqueta cambia a rojo. El indicador es permanente — una vez activado, no se puede revertir.</span><span data-lang="en">Simulation of the exact moment a package gets impacted and the label turns red. The indicator is permanent — once activated, it cannot be reversed.</span></p>
+        <div class="tag" style="color:#fdba74!important;background:rgba(251,146,60,.12)!important;border-color:rgba(251,146,60,.3)!important;font-family:'JetBrains Mono','Consolas',monospace;letter-spacing:.2em"><span class="tag-dot" style="background:#fb923c!important;box-shadow:0 0 10px #fb923c"></span><span data-lang="es">// Simulación · Control de impactos</span><span data-lang="en">// Simulation · Impact monitoring</span></div>
+        <h2 class="s-title" style="color:#fff!important"><span data-lang="es">Monitorea impactos críticos <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">en tiempo real</span></span><span data-lang="en">Monitor critical impacts <span style="background:linear-gradient(130deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">in real time</span></span></h2>
+        <p class="s-sub" style="color:rgba(255,220,200,.7)!important;max-width:620px;margin:14px auto 0"><span data-lang="es">Detecta caídas antes de que los daños sean invisibles. Telemetría en vivo, evidencia visual inmediata y validación de reclamos — todo desde una etiqueta sin pilas.</span><span data-lang="en">Detect drops before damage becomes invisible. Live telemetry, instant visual evidence and claim validation — all from a battery-free label.</span></p>
       </div>
 
       <div class="swt-demo-wrap">
@@ -6811,6 +6878,12 @@ html:not(.vw) section[data-view]{display:revert}
           <!-- Top-left simulation badge (constant) -->
           <div class="swt-demo-badge"><span data-lang="es">Simulación</span><span data-lang="en">Simulation</span></div>
 
+          <!-- Rotating sci-fi taglines (one per scene) -->
+          <div class="swt-demo-tagline t1"><span data-lang="es">// SENSOR APLICADO AL PAQUETE</span><span data-lang="en">// SENSOR APPLIED TO PACKAGE</span></div>
+          <div class="swt-demo-tagline t2"><span data-lang="es">// MONITOREO EN TIEMPO REAL · STATUS SAFE</span><span data-lang="en">// REAL-TIME MONITORING · STATUS SAFE</span></div>
+          <div class="swt-demo-tagline t3"><span data-lang="es">// IMPACTO CRÍTICO DETECTADO</span><span data-lang="en">// CRITICAL IMPACT DETECTED</span></div>
+          <div class="swt-demo-tagline t4"><span data-lang="es">// EVIDENCIA REGISTRADA · CLAIM VALIDATION</span><span data-lang="en">// EVIDENCE RECORDED · CLAIM VALIDATION</span></div>
+
           <!-- G-meter top-right that spikes during impact -->
           <div class="swt-demo-gmeter">
             <div class="swt-demo-gmeter-label">G-Force</div>
@@ -6818,6 +6891,15 @@ html:not(.vw) section[data-view]{display:revert}
               <div class="swt-demo-gmeter-needle"></div>
             </div>
             <div class="swt-demo-gmeter-val"></div>
+          </div>
+
+          <!-- CLAIM VALIDATION seal (appears in phase 4) -->
+          <div class="swt-demo-claim">
+            <div class="swt-demo-claim-ring"></div>
+            <div class="swt-demo-claim-inner">
+              <div class="swt-demo-claim-icon">⚠</div>
+              <div class="swt-demo-claim-txt"><span data-lang="es">Claim<br>Validation</span><span data-lang="en">Claim<br>Validation</span></div>
+            </div>
           </div>
 
           <!-- Phase badges (top center, swap in sync) -->
@@ -6834,10 +6916,42 @@ html:not(.vw) section[data-view]{display:revert}
             <span data-lang="es">Indicador rojo permanente</span><span data-lang="en">Permanent red indicator</span>
           </div>
 
+          <!-- Conveyor belt during transit phase -->
+          <div class="swt-demo-conveyor"></div>
+
           <!-- Ground + dynamic box shadow + impact cracks -->
           <div class="swt-demo-ground"></div>
           <div class="swt-demo-box-shadow"></div>
           <div class="swt-demo-crack"></div>
+
+          <!-- Scan line that sweeps between scenes -->
+          <div class="swt-demo-scan"></div>
+
+          <!-- Telemetry HUD (GPS · G-FORCE · STATUS) bottom-center -->
+          <div class="swt-demo-hud">
+            <div class="swt-demo-hud-chip no-color swt-demo-hud-chip-gps">
+              <span class="swt-demo-hud-chip-label">GPS</span>
+              <span class="swt-demo-hud-chip-value"></span>
+            </div>
+            <div class="swt-demo-hud-chip swt-demo-hud-chip-g">
+              <span class="swt-demo-hud-chip-label">G-FORCE</span>
+              <span class="swt-demo-hud-chip-value"></span>
+            </div>
+            <div class="swt-demo-hud-chip swt-demo-hud-chip-status">
+              <span class="swt-demo-hud-chip-label">STATUS</span>
+              <span class="swt-demo-hud-chip-value"></span>
+            </div>
+          </div>
+
+          <!-- IMPACT DETECTED big alert banner (centered, brief) -->
+          <div class="swt-demo-alert">
+            <span class="swt-demo-alert-title">IMPACT DETECTED</span>
+            <div class="swt-demo-alert-line"></div>
+            <span class="swt-demo-alert-sub">25G THRESHOLD EXCEEDED</span>
+            <div class="swt-demo-alert-meta">
+              <span>Δ 35.4 G</span><span>·</span><span>0.012 S</span><span>·</span><span>LOG #4821</span>
+            </div>
+          </div>
 
           <!-- Impact waves -->
           <div class="swt-demo-wave"></div>
@@ -6891,35 +7005,40 @@ html:not(.vw) section[data-view]{display:revert}
           <div class="swt-demo-timeline"><div class="swt-demo-timeline-fill"></div></div>
         </div>
 
-        <!-- RIGHT: 4 explanatory steps that highlight in sync -->
+        <!-- RIGHT: 4 escenas explicativas (40% del layout) -->
         <div class="swt-demo-info rv">
           <div class="swt-demo-step-card">
             <div class="swt-demo-step-num">1</div>
             <div class="swt-demo-step-txt">
-              <div class="swt-demo-step-title"><span data-lang="es">Se aplica la etiqueta al paquete</span><span data-lang="en">Apply the label to the package</span></div>
-              <div class="swt-demo-step-desc"><span data-lang="es">Despegas la cinta de protección y pegas la etiqueta en el exterior de la caja antes del envío.</span><span data-lang="en">Peel the protective backing and stick the label on the outside of the box before shipping.</span></div>
+              <div class="swt-demo-step-title"><span data-lang="es">Armado · Sensor aplicado</span><span data-lang="en">Setup · Sensor applied</span></div>
+              <div class="swt-demo-step-desc"><span data-lang="es">El indicador queda listo para monitorear impactos durante el transporte. Sin equipo especial, sin configuración.</span><span data-lang="en">The indicator is ready to monitor impacts during transport. No special equipment, no setup.</span></div>
             </div>
           </div>
           <div class="swt-demo-step-card">
             <div class="swt-demo-step-num">2</div>
             <div class="swt-demo-step-txt">
-              <div class="swt-demo-step-title"><span data-lang="es">El paquete viaja en tránsito</span><span data-lang="en">The package travels in transit</span></div>
-              <div class="swt-demo-step-desc"><span data-lang="es">La etiqueta permanece en blanco mientras no haya impactos. Soporta vibraciones normales del transporte.</span><span data-lang="en">The label stays white as long as there are no impacts. It handles normal shipping vibrations.</span></div>
+              <div class="swt-demo-step-title"><span data-lang="es">Transporte · Status SAFE</span><span data-lang="en">Transit · Status SAFE</span></div>
+              <div class="swt-demo-step-desc"><span data-lang="es">Monitoreo en vivo. Las vibraciones normales del transporte no activan el sensor — solo impactos sobre el umbral G.</span><span data-lang="en">Live monitoring. Normal transport vibrations don't trigger the sensor — only impacts above the G threshold.</span></div>
             </div>
           </div>
           <div class="swt-demo-step-card">
             <div class="swt-demo-step-num">3</div>
             <div class="swt-demo-step-txt">
-              <div class="swt-demo-step-title"><span data-lang="es">Recibe un golpe mayor a 25G</span><span data-lang="en">Receives an impact above 25G</span></div>
-              <div class="swt-demo-step-desc"><span data-lang="es">El paquete sufre un impacto superior al umbral configurado (25G en este ejemplo). El mecanismo se activa.</span><span data-lang="en">The package suffers an impact above the configured threshold (25G in this example). The mechanism activates.</span></div>
+              <div class="swt-demo-step-title"><span data-lang="es">Impacto · 25G excedido</span><span data-lang="en">Impact · 25G exceeded</span></div>
+              <div class="swt-demo-step-desc"><span data-lang="es">El paquete sufre un golpe superior al umbral. El mecanismo se dispara instantáneamente y de forma irreversible.</span><span data-lang="en">The package suffers an impact above the threshold. The mechanism fires instantly and irreversibly.</span></div>
             </div>
           </div>
           <div class="swt-demo-step-card">
             <div class="swt-demo-step-num">4</div>
             <div class="swt-demo-step-txt">
-              <div class="swt-demo-step-title"><span data-lang="es">Indicador → ROJO permanente</span><span data-lang="en">Indicator → permanent RED</span></div>
-              <div class="swt-demo-step-desc"><span data-lang="es">El cambio es irreversible. Evidencia visual indiscutible de mal manejo para reclamos a transportistas o aseguradoras.</span><span data-lang="en">The change is irreversible. Undeniable visual evidence of mishandling for claims with carriers or insurers.</span></div>
+              <div class="swt-demo-step-title"><span data-lang="es">Verificación · Claim válido</span><span data-lang="en">Verification · Valid claim</span></div>
+              <div class="swt-demo-step-desc"><span data-lang="es">Indicador rojo permanente. Evidencia visual indiscutible para reclamos a transportistas, aseguradoras o proveedores.</span><span data-lang="en">Permanent red indicator. Undeniable visual evidence for claims with carriers, insurers or suppliers.</span></div>
             </div>
+          </div>
+
+          <!-- Sci-fi tagline footer -->
+          <div style="margin-top:12px;padding:14px 18px;background:rgba(251,146,60,.06);border:1px solid rgba(251,146,60,.18);border-radius:12px;font-family:'JetBrains Mono','Consolas',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,200,140,.78);text-align:center">
+            <span data-lang="es">// Protección inteligente para mercancía sensible</span><span data-lang="en">// Smart protection for sensitive cargo</span>
           </div>
         </div>
       </div>
