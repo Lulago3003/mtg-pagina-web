@@ -3878,23 +3878,25 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 .wch-demo-features{list-style:none;display:flex;flex-direction:column;gap:14px}
 .wch-demo-features li{display:flex;align-items:flex-start;gap:14px;font-size:.88rem;color:rgba(255,255,255,.72);line-height:1.5}
 .wch-demo-features li svg{flex-shrink:0;color:#c084fc;margin-top:.15em}
-.wch-demo-map{position:relative;aspect-ratio:4/3;border-radius:22px;overflow:hidden;background:#0a0a1a;border:1px solid rgba(168,85,247,.25);box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.wch-demo-map-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1a1a3a 0%,#0a0a1a 100%)}
-.wch-demo-map-bg::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(168,85,247,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(168,85,247,.1) 1px,transparent 1px);background-size:30px 30px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 30%,transparent 90%)}
-.wch-demo-map-bg::after{content:'';position:absolute;top:30%;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,rgba(168,85,247,.6),transparent);box-shadow:0 0 20px rgba(168,85,247,.4)}
-.wch-demo-pin{position:absolute;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#7c3aed);box-shadow:0 0 30px rgba(168,85,247,.7);animation:wchGlow 2.4s infinite;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.7rem;border:3px solid #fff}
-.wch-demo-pin::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(168,85,247,.5);animation:wchPulseRing 2.4s infinite}
-.wch-demo-pin-1{top:25%;left:25%}
-.wch-demo-pin-2{top:55%;left:60%;background:linear-gradient(135deg,#22d3ee,#0891b2);box-shadow:0 0 30px rgba(34,211,238,.7)}
-.wch-demo-pin-2::before{border-color:rgba(34,211,238,.5)}
-.wch-demo-pin-3{top:70%;left:35%;background:linear-gradient(135deg,#f59e0b,#d97706);box-shadow:0 0 30px rgba(245,158,11,.7)}
-.wch-demo-pin-3::before{border-color:rgba(245,158,11,.5)}
-.wch-demo-route{position:absolute;top:30%;left:25%;width:35%;height:30%;border-top:2px dashed rgba(168,85,247,.5);border-right:2px dashed rgba(168,85,247,.5);border-radius:0 22px 0 0;animation:wchBlink 2s infinite}
-.wch-demo-panel{position:absolute;bottom:16px;left:16px;right:16px;padding:14px 18px;background:rgba(8,0,18,.85);backdrop-filter:blur(12px);border:1px solid rgba(168,85,247,.3);border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.wch-demo-panel-l{display:flex;flex-direction:column;gap:2px}
-.wch-demo-panel-label{font-size:.64rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.6px;font-weight:600}
-.wch-demo-panel-val{font-size:.92rem;color:#fff;font-weight:700}
-.wch-demo-panel-signal{display:flex;align-items:flex-end;gap:3px;height:18px}
+.wch-demo-map{position:relative;aspect-ratio:4/3;border-radius:22px;overflow:hidden;background:#0a0a1a;border:1px solid rgba(168,85,247,.25);box-shadow:0 30px 80px rgba(0,0,0,.5);transition:transform .6s ease}
+.wch-demo-map:hover{transform:translateY(-6px)}
+.wch-demo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.wch-demo-map:hover .wch-demo-img{transform:scale(1.06)}
+.wch-demo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,0,18,.1) 0%,rgba(8,0,18,.45) 60%,rgba(8,0,18,.85) 100%);z-index:1;pointer-events:none}
+.wch-demo-tl-badge{position:absolute;top:18px;left:18px;z-index:3;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(8,0,18,.75);backdrop-filter:blur(12px);border:1px solid rgba(168,85,247,.4);border-radius:50px;color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.wch-demo-tl-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#22d3ee;box-shadow:0 0 12px #22d3ee;animation:wchBlink 1.4s infinite}
+.wch-demo-pin{position:absolute;width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#7c3aed);box-shadow:0 0 30px rgba(168,85,247,.8);animation:wchGlow 2.4s infinite;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.72rem;border:3px solid #fff;z-index:2}
+.wch-demo-pin::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(168,85,247,.55);animation:wchPulseRing 2.4s infinite}
+.wch-demo-pin-1{top:22%;left:22%}
+.wch-demo-pin-2{top:48%;right:18%;left:auto;background:linear-gradient(135deg,#22d3ee,#0891b2);box-shadow:0 0 30px rgba(34,211,238,.8)}
+.wch-demo-pin-2::before{border-color:rgba(34,211,238,.55)}
+.wch-demo-pin-3{top:62%;left:38%;background:linear-gradient(135deg,#fbbf24,#d97706);box-shadow:0 0 30px rgba(251,191,36,.8)}
+.wch-demo-pin-3::before{border-color:rgba(251,191,36,.55)}
+.wch-demo-panel{position:absolute;bottom:18px;left:18px;right:18px;padding:14px 18px;background:rgba(8,0,18,.85);backdrop-filter:blur(12px);border:1px solid rgba(168,85,247,.32);border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:14px;z-index:3}
+.wch-demo-panel-l{display:flex;flex-direction:column;gap:2px;min-width:0}
+.wch-demo-panel-label{font-size:.64rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.6px;font-weight:600}
+.wch-demo-panel-val{font-size:.92rem;color:#fff;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wch-demo-panel-signal{display:flex;align-items:flex-end;gap:3px;height:18px;flex-shrink:0}
 .wch-demo-panel-signal span{width:4px;background:#22d3ee;border-radius:1px;animation:wchSignal 1.5s ease-in-out infinite;transform-origin:bottom}
 .wch-demo-panel-signal span:nth-child(1){height:30%;animation-delay:0s}
 .wch-demo-panel-signal span:nth-child(2){height:55%;animation-delay:.15s}
@@ -5924,7 +5926,6 @@ html:not(.vw) section[data-view]{display:revert}
             <div class="wch-stat"><span class="wch-stat-n">5</span><span class="wch-stat-l"><span data-lang="es">Perfiles</span><span data-lang="en">Profiles</span></span></div>
             <div class="wch-stat"><span class="wch-stat-n">4G</span><span class="wch-stat-l">LTE · GPS</span></div>
             <div class="wch-stat"><span class="wch-stat-n">SOS</span><span class="wch-stat-l"><span data-lang="es">Pánico</span><span data-lang="en">Panic</span></span></div>
-            <div class="wch-stat"><span class="wch-stat-n">24/7</span><span class="wch-stat-l"><span data-lang="es">Soporte</span><span data-lang="en">Support</span></span></div>
           </div>
 
           <div class="wch-hero-btns">
@@ -6267,22 +6268,23 @@ html:not(.vw) section[data-view]{display:revert}
             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Ubicación GPS actualizada cada 30 segundos</span><span data-lang="en">GPS location refreshed every 30 seconds</span></li>
             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Historial de rutas hasta 90 días atrás</span><span data-lang="en">Route history up to 90 days back</span></li>
             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Notificaciones push de SOS, geofence y batería</span><span data-lang="en">Push notifications for SOS, geofence and battery</span></li>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Acceso multiusuario para toda la familia o equipo</span><span data-lang="en">Multi-user access for the whole family or team</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-lang="es">Acceso compartido para toda la familia o equipo</span><span data-lang="en">Shared access for the whole family or team</span></li>
           </ul>
         </div>
 
-        <div class="wch-demo-map rv" aria-hidden="true">
-          <div class="wch-demo-map-bg"></div>
-          <div class="wch-demo-route"></div>
-          <div class="wch-demo-pin wch-demo-pin-1">A</div>
-          <div class="wch-demo-pin wch-demo-pin-2">B</div>
-          <div class="wch-demo-pin wch-demo-pin-3">C</div>
+        <div class="wch-demo-map rv">
+          <img class="wch-demo-img" src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&auto=format&fit=crop&q=80" alt="Vista de app de tracking GPS en tiempo real desde un smartphone" loading="lazy">
+          <div class="wch-demo-overlay"></div>
+          <div class="wch-demo-tl-badge"><span data-lang="es">Tracking en vivo</span><span data-lang="en">Live tracking</span></div>
+          <div class="wch-demo-pin wch-demo-pin-1" aria-hidden="true">A</div>
+          <div class="wch-demo-pin wch-demo-pin-2" aria-hidden="true">B</div>
+          <div class="wch-demo-pin wch-demo-pin-3" aria-hidden="true">C</div>
           <div class="wch-demo-panel">
             <div class="wch-demo-panel-l">
-              <div class="wch-demo-panel-label"><span data-lang="es">Última señal</span><span data-lang="en">Last signal</span></div>
-              <div class="wch-demo-panel-val">Ciudad de Panamá · Hace 12s</div>
+              <div class="wch-demo-panel-label"><span data-lang="es">Última señal · GPS</span><span data-lang="en">Last signal · GPS</span></div>
+              <div class="wch-demo-panel-val">Ciudad de Panamá · <span data-lang="es">Hace 12s</span><span data-lang="en">12s ago</span></div>
             </div>
-            <div class="wch-demo-panel-signal">
+            <div class="wch-demo-panel-signal" aria-hidden="true">
               <span></span><span></span><span></span><span></span>
             </div>
           </div>
