@@ -3724,6 +3724,71 @@ html.dark #sticky-cta p{color:rgba(255,255,255,.8) !important}
 /* ── Progress bar stays visible ── */
 html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 
+/* ── Relojes GPS & Seguridad Personal ── */
+.wch-hero{background:linear-gradient(135deg,#1a0533 0%,#2d1057 40%,#0f172a 100%);padding:80px 0 56px;position:relative;overflow:hidden}
+.wch-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(168,85,247,.18) 0%,transparent 70%);pointer-events:none}
+.wch-hero-inner{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.wch-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(168,85,247,.15);border:1px solid rgba(168,85,247,.35);border-radius:50px;font-size:.69rem;font-weight:700;color:#c084fc;letter-spacing:.8px;text-transform:uppercase}
+.wch-tag-dot{width:6px;height:6px;border-radius:50%;background:#a855f7;animation:pulse 2s infinite}
+.wch-hero-title{font-family:var(--ff-head);font-size:clamp(2rem,4vw,2.9rem);font-weight:800;color:#fff;line-height:1.08;letter-spacing:-.03em}
+.wch-hero-title span{background:linear-gradient(130deg,#c084fc,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.wch-hero-sub{font-size:.97rem;color:rgba(255,255,255,.62);max-width:560px;line-height:1.75}
+.wch-hero-stats{display:flex;gap:28px;margin-top:8px;flex-wrap:wrap}
+.wch-stat{display:flex;flex-direction:column;align-items:flex-start}
+.wch-stat-n{font-size:1.5rem;font-weight:800;color:#c084fc;line-height:1;font-family:var(--ff-head)}
+.wch-stat-l{font-size:.72rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.wch-hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.wch-grid-section{padding:72px 0 96px;background:var(--g950)}
+.wch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
+.wch-card{background:var(--card);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;position:relative}
+.wch-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:rgba(168,85,247,.28)}
+.wch-card-img{height:220px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.wch-card-img img{height:190px;width:auto;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 12px 32px rgba(0,0,0,.28));transition:transform .35s ease}
+.wch-card:hover .wch-card-img img{transform:scale(1.06) translateY(-4px)}
+.wch-card-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1;gap:14px}
+.wch-card-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.wch-card-cat{font-size:.63rem;font-weight:700;letter-spacing:.7px;text-transform:uppercase;padding:4px 10px;border-radius:50px;border:1px solid;white-space:nowrap}
+.wch-card-code{font-size:.7rem;font-weight:700;color:var(--txt2);font-family:monospace;margin-left:auto;background:var(--g900);padding:3px 8px;border-radius:6px;border:1px solid var(--bdr)}
+.wch-card-name{font-size:1.05rem;font-weight:700;color:var(--txt);font-family:var(--ff-head);line-height:1.25;letter-spacing:-.015em}
+.wch-card-sub{font-size:.82rem;color:var(--txt2);line-height:1.55;margin-top:-4px}
+.wch-features{list-style:none;display:flex;flex-direction:column;gap:7px}
+.wch-features li{display:flex;align-items:flex-start;gap:8px;font-size:.8rem;color:var(--txt2);line-height:1.45}
+.wch-features li::before{content:'✓';font-size:.72rem;font-weight:800;flex-shrink:0;margin-top:.1em}
+.wch-card-footer{margin-top:auto;padding-top:4px}
+.wch-card-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px 16px;border-radius:11px;font-size:.83rem;font-weight:700;color:#fff;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s,filter .2s;text-decoration:none}
+.wch-card-cta:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+/* Per-card color accents */
+.wch-img-amber{background:linear-gradient(145deg,#1c1208 0%,#3d2a04 100%)}
+.wch-feat-amber li::before{color:#f59e0b}
+.wch-cat-amber{color:#f59e0b;background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.22)}
+.wch-cta-amber{background:linear-gradient(135deg,#b45309,#d97706)}
+.wch-img-teal{background:linear-gradient(145deg,#061a16 0%,#083d2f 100%)}
+.wch-feat-teal li::before{color:#14b8a6}
+.wch-cat-teal{color:#14b8a6;background:rgba(20,184,166,.08);border-color:rgba(20,184,166,.22)}
+.wch-cta-teal{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+.wch-img-blue{background:linear-gradient(145deg,#040c1e 0%,#0c2050 100%)}
+.wch-feat-blue li::before{color:#60a5fa}
+.wch-cat-blue{color:#60a5fa;background:rgba(96,165,250,.08);border-color:rgba(96,165,250,.22)}
+.wch-cta-blue{background:linear-gradient(135deg,#1d4ed8,#2563eb)}
+.wch-img-violet{background:linear-gradient(145deg,#0d0520 0%,#2d1057 100%)}
+.wch-feat-violet li::before{color:#c084fc}
+.wch-cat-violet{color:#c084fc;background:rgba(192,132,252,.08);border-color:rgba(192,132,252,.22)}
+.wch-cta-violet{background:linear-gradient(135deg,#7c3aed,#a855f7)}
+.wch-img-rose{background:linear-gradient(145deg,#1a0408 0%,#3d0a10 100%)}
+.wch-feat-rose li::before{color:#fb7185}
+.wch-cat-rose{color:#fb7185;background:rgba(251,113,133,.08);border-color:rgba(251,113,133,.22)}
+.wch-cta-rose{background:linear-gradient(135deg,#be123c,#f43f5e)}
+/* Dark mode overrides */
+html.dark .wch-grid-section{background:#080d19 !important}
+html.dark .wch-card{background:#0b1225 !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .wch-card:hover{border-color:rgba(168,85,247,.35) !important}
+html.dark .wch-card-name{color:#f1f5f9 !important}
+html.dark .wch-card-sub{color:#94a3b8 !important}
+html.dark .wch-features li{color:#94a3b8 !important}
+html.dark .wch-card-code{background:rgba(255,255,255,.06) !important;color:rgba(255,255,255,.5) !important;border-color:rgba(255,255,255,.08) !important}
+@media(max-width:900px){.wch-hero{padding:64px 0 44px}}
+@media(max-width:600px){.wch-grid{grid-template-columns:1fr;gap:20px}.wch-card-img{height:180px}.wch-card-img img{height:150px}}
+
 /* Smooth transition for theme switching */
 body,#nav,.s-title,.s-sub,.a-card,.sol-card,.prod-card,.svc-card,.test-card,.ben-card,.faq-item,.co,.cf-wrap{transition:background-color .3s ease,color .3s ease,border-color .3s ease !important}
 
@@ -4738,6 +4803,11 @@ html:not(.vw) section[data-view]{display:revert}
                 <div class="nd-item-ov" style="background:linear-gradient(180deg,rgba(8,20,55,.2),rgba(8,20,55,.92))"></div>
                 <div class="nd-item-c"><span class="nd-title"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-signal"/></svg></span> <span data-lang="es">PROSE · Antenas &amp; Camuflaje</span><span data-lang="en">PROSE · Antennas &amp; Camouflage</span></span><span class="nd-desc"><span data-lang="es">Sistemas DAS · cobertura urbana</span><span data-lang="en">DAS systems · urban coverage</span></span><div class="nd-bar"></div></div>
               </a>
+              <a href="#relojes" class="nd-item" style="border:1px solid rgba(168,85,247,.18)">
+                <div class="nd-item-bg" style="background:linear-gradient(145deg,#1a0533,#2d1057)"></div>
+                <div class="nd-item-ov" style="background:linear-gradient(180deg,rgba(26,5,51,.2),rgba(26,5,51,.85))"></div>
+                <div class="nd-item-c"><span class="nd-title" style="color:#c084fc">⌚ <span data-lang="es">Relojes GPS &amp; Seguridad</span><span data-lang="en">GPS Watches &amp; Security</span></span><span class="nd-desc"><span data-lang="es">Senior · Niños · Deportivo · Flota</span><span data-lang="en">Senior · Kids · Sports · Fleet</span></span><div class="nd-bar" style="background:#a855f7"></div></div>
+              </a>
             </div>
           </div>
         </li>
@@ -4862,6 +4932,7 @@ html:not(.vw) section[data-view]{display:revert}
     <div class="mob-sub-item" onclick="closeMobGo('#productos')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-server"/></svg></span> 04 · Data Centers & <span data-lang="es">Redes</span><span data-lang="en">Networks</span></div>
     <div class="mob-sub-item" onclick="closeMobGo('#productos')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-chart"/></svg></span> 05 · <span data-lang="es">Monitoreo de Redes</span><span data-lang="en">Network Monitoring</span></div>
     <div class="mob-sub-item" onclick="closeMobGo('#productos')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span> <span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span> <span data-lang="es">Monitoreo Energético</span><span data-lang="en">Energy Monitoring</span></div>
+    <div class="mob-sub-item" onclick="closeMobGo('#relojes')" style="color:#c084fc;font-weight:600">⌚ <span data-lang="es">Relojes GPS &amp; Seguridad</span><span data-lang="en">GPS Watches &amp; Security</span></div>
   </div>
   <div class="mob-link" onclick="toggleMobSub('sub2')"><span data-lang="es">Servicios</span><span data-lang="en">Services</span> <span>›</span></div>
   <div class="mob-sub" id="sub2">
@@ -5639,6 +5710,220 @@ html:not(.vw) section[data-view]{display:revert}
 </div>
 
 
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     RELOJES GPS & SEGURIDAD PERSONAL
+═══════════════════════════════════════════════════════════ -->
+<section id="relojes" data-view="relojes">
+
+  <!-- Hero header -->
+  <div class="wch-hero">
+    <div class="container">
+      <div class="wch-hero-inner">
+        <div class="wch-tag"><div class="wch-tag-dot"></div><span data-lang="es">GPS · Seguridad Personal</span><span data-lang="en">GPS · Personal Security</span></div>
+        <h1 class="wch-hero-title">
+          <span data-lang="es">Relojes GPS &amp; <span>Rastreo Inteligente</span></span>
+          <span data-lang="en">GPS Watches &amp; <span>Smart Tracking</span></span>
+        </h1>
+        <p class="wch-hero-sub">
+          <span data-lang="es">Soluciones de localización y seguridad personal para adultos mayores, niños, deportistas y activos empresariales. Conectividad 4G · GPS en tiempo real · SOS instantáneo.</span>
+          <span data-lang="en">Location and personal security solutions for seniors, children, athletes and business assets. 4G connectivity · Real-time GPS · Instant SOS.</span>
+        </p>
+        <div class="wch-hero-stats">
+          <div class="wch-stat"><span class="wch-stat-n">5</span><span class="wch-stat-l"><span data-lang="es">Modelos</span><span data-lang="en">Models</span></span></div>
+          <div class="wch-stat"><span class="wch-stat-n">4G</span><span class="wch-stat-l">LTE / GPS</span></div>
+          <div class="wch-stat"><span class="wch-stat-n">SOS</span><span class="wch-stat-l"><span data-lang="es">Pánico</span><span data-lang="en">Panic</span></span></div>
+          <div class="wch-stat"><span class="wch-stat-n">24/7</span><span class="wch-stat-l"><span data-lang="es">Soporte</span><span data-lang="en">Support</span></span></div>
+        </div>
+        <div class="wch-hero-btns">
+          <a href="https://wa.me/50766743062?text=Hola%2C+me+interesan+los+relojes+GPS+%C2%BFqu%C3%A9+modelos+tienen+disponibles%3F" class="btn btn-primary" target="_blank" rel="noopener">
+            <span data-lang="es">Cotizar por WhatsApp →</span><span data-lang="en">Quote on WhatsApp →</span>
+          </a>
+          <a href="#cta-sec" class="btn btn-outline" style="color:#c084fc;border-color:rgba(192,132,252,.45)">
+            <span data-lang="es">Solicitar asesoría</span><span data-lang="en">Request advice</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product grid -->
+  <div class="wch-grid-section">
+    <div class="container">
+
+      <!-- Intro label -->
+      <div class="centered rv" style="margin-bottom:48px">
+        <div class="tag"><span class="tag-dot"></span><span data-lang="es">Línea completa · 5 modelos</span><span data-lang="en">Full line · 5 models</span></div>
+        <h2 class="s-title"><span data-lang="es">Elige el reloj <span>para cada perfil</span></span><span data-lang="en">Choose the watch <span>for every profile</span></span></h2>
+        <p class="s-sub"><span data-lang="es">Cada modelo está diseñado para un uso específico. Todos incluyen GPS en tiempo real, conectividad celular y botón SOS.</span><span data-lang="en">Each model is designed for a specific use. All include real-time GPS, cellular connectivity and SOS button.</span></p>
+      </div>
+
+      <div class="wch-grid">
+
+        <!-- ── E-D17 · Adultos Mayores ── -->
+        <div class="wch-card">
+          <div class="wch-card-img wch-img-amber">
+            <img src="assets/e-d17-cutout.png" alt="Reloj GPS Senior E-D17 para adultos mayores" loading="lazy" width="200" height="190">
+          </div>
+          <div class="wch-card-body">
+            <div class="wch-card-top">
+              <span class="wch-card-cat wch-cat-amber"><span data-lang="es">Senior · Adultos Mayores</span><span data-lang="en">Senior · Elderly</span></span>
+              <span class="wch-card-code">E-D17</span>
+            </div>
+            <div>
+              <div class="wch-card-name"><span data-lang="es">Reloj de Seguridad Senior</span><span data-lang="en">Senior Security Watch</span></div>
+              <div class="wch-card-sub"><span data-lang="es">Cuidado inteligente para adultos mayores con GPS, SOS y monitoreo de salud</span><span data-lang="en">Smart care for seniors with GPS, SOS and health monitoring</span></div>
+            </div>
+            <ul class="wch-features wch-feat-amber">
+              <li><span data-lang="es">GPS en tiempo real con geofence de zona segura</span><span data-lang="en">Real-time GPS with safe zone geofence</span></li>
+              <li><span data-lang="es">Botón SOS de pánico con llamada instantánea</span><span data-lang="en">SOS panic button with instant call</span></li>
+              <li><span data-lang="es">Llamadas bidireccionales integradas</span><span data-lang="en">Built-in two-way calls</span></li>
+              <li><span data-lang="es">Monitor de pasos y actividad diaria</span><span data-lang="en">Step counter and daily activity monitor</span></li>
+            </ul>
+            <div class="wch-card-footer">
+              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+reloj+GPS+Senior+E-D17+%C2%BFqu%C3%A9+precio+tiene%3F" class="wch-card-cta wch-cta-amber" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                <span data-lang="es">Cotizar E-D17</span><span data-lang="en">Quote E-D17</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── K-FA103 · Niños ── -->
+        <div class="wch-card">
+          <div class="wch-card-img wch-img-teal">
+            <img src="assets/k-fa103-cutout.png" alt="Reloj GPS Infantil K-FA103 para niños" loading="lazy" width="200" height="190">
+          </div>
+          <div class="wch-card-body">
+            <div class="wch-card-top">
+              <span class="wch-card-cat wch-cat-teal"><span data-lang="es">Infantil · Niños</span><span data-lang="en">Kids · Children</span></span>
+              <span class="wch-card-code">K-FA103</span>
+            </div>
+            <div>
+              <div class="wch-card-name"><span data-lang="es">Reloj Infantil con GPS</span><span data-lang="en">Kids GPS Watch</span></div>
+              <div class="wch-card-sub"><span data-lang="es">Seguridad y localización para niños con control parental desde el celular</span><span data-lang="en">Safety and location for children with parental control from the phone</span></div>
+            </div>
+            <ul class="wch-features wch-feat-teal">
+              <li><span data-lang="es">GPS + WiFi + LBS para máxima precisión</span><span data-lang="en">GPS + WiFi + LBS for maximum accuracy</span></li>
+              <li><span data-lang="es">Llamadas a contactos seguros únicamente</span><span data-lang="en">Calls to trusted contacts only</span></li>
+              <li><span data-lang="es">SOS de emergencia y alerta a padres</span><span data-lang="en">Emergency SOS and parent alert</span></li>
+              <li><span data-lang="es">Modo clase: silencia el reloj en horario escolar</span><span data-lang="en">School mode: silences during class hours</span></li>
+            </ul>
+            <div class="wch-card-footer">
+              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+reloj+GPS+Infantil+K-FA103+%C2%BFqu%C3%A9+precio+tiene%3F" class="wch-card-cta wch-cta-teal" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                <span data-lang="es">Cotizar K-FA103</span><span data-lang="en">Quote K-FA103</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── V-28C · Deportivo ── -->
+        <div class="wch-card">
+          <div class="wch-card-img wch-img-blue">
+            <img src="assets/e-v28c-cutout.png" alt="Reloj GPS Deportivo V-28C para deportistas" loading="lazy" width="200" height="190">
+          </div>
+          <div class="wch-card-body">
+            <div class="wch-card-top">
+              <span class="wch-card-cat wch-cat-blue"><span data-lang="es">Deportivo · Profesional</span><span data-lang="en">Sports · Professional</span></span>
+              <span class="wch-card-code">V-28C</span>
+            </div>
+            <div>
+              <div class="wch-card-name"><span data-lang="es">Reloj Deportivo GPS</span><span data-lang="en">Sports GPS Watch</span></div>
+              <div class="wch-card-sub"><span data-lang="es">Rendimiento y monitoreo avanzado para deportistas y profesionales activos</span><span data-lang="en">Advanced performance and monitoring for athletes and active professionals</span></div>
+            </div>
+            <ul class="wch-features wch-feat-blue">
+              <li><span data-lang="es">GPS integrado con mapa de ruta en tiempo real</span><span data-lang="en">Built-in GPS with real-time route map</span></li>
+              <li><span data-lang="es">Monitor de frecuencia cardíaca continuo</span><span data-lang="en">Continuous heart rate monitor</span></li>
+              <li><span data-lang="es">Resistente al agua IP67 · multideporte</span><span data-lang="en">IP67 water resistant · multisport</span></li>
+              <li><span data-lang="es">Batería de hasta 7 días en modo normal</span><span data-lang="en">Battery up to 7 days in normal mode</span></li>
+            </ul>
+            <div class="wch-card-footer">
+              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+reloj+Deportivo+GPS+V-28C+%C2%BFqu%C3%A9+precio+tiene%3F" class="wch-card-cta wch-cta-blue" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                <span data-lang="es">Cotizar V-28C</span><span data-lang="en">Quote V-28C</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── P-FA58P · Tracker Vehículos ── -->
+        <div class="wch-card">
+          <div class="wch-card-img wch-img-violet">
+            <img src="assets/p-fa58p-cutout.png" alt="Tracker GPS Vehículos P-FA58P" loading="lazy" width="200" height="190">
+          </div>
+          <div class="wch-card-body">
+            <div class="wch-card-top">
+              <span class="wch-card-cat wch-cat-violet"><span data-lang="es">Rastreo · Activos</span><span data-lang="en">Tracking · Assets</span></span>
+              <span class="wch-card-code">P-FA58P</span>
+            </div>
+            <div>
+              <div class="wch-card-name"><span data-lang="es">Tracker GPS Vehículos</span><span data-lang="en">Vehicle GPS Tracker</span></div>
+              <div class="wch-card-sub"><span data-lang="es">Rastreo y protección de activos vehiculares para flotas y empresas</span><span data-lang="en">Vehicle asset tracking and protection for fleets and businesses</span></div>
+            </div>
+            <ul class="wch-features wch-feat-violet">
+              <li><span data-lang="es">Ubicación GPS en tiempo real con historial de ruta</span><span data-lang="en">Real-time GPS location with route history</span></li>
+              <li><span data-lang="es">Alertas de velocidad y salida de zona</span><span data-lang="en">Speed and zone exit alerts</span></li>
+              <li><span data-lang="es">Geofence configurable por área o zona segura</span><span data-lang="en">Configurable geofence by area or safe zone</span></li>
+              <li><span data-lang="es">Batería de larga duración · instalación oculta</span><span data-lang="en">Long battery life · hidden installation</span></li>
+            </ul>
+            <div class="wch-card-footer">
+              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+Tracker+GPS+P-FA58P+para+veh%C3%ADculos+%C2%BFqu%C3%A9+precio+tiene%3F" class="wch-card-cta wch-cta-violet" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                <span data-lang="es">Cotizar P-FA58P</span><span data-lang="en">Quote P-FA58P</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── K-FA81 · Cámara / Campo ── -->
+        <div class="wch-card">
+          <div class="wch-card-img wch-img-rose">
+            <img src="assets/e-fa81-cutout.png" alt="Reloj GPS con Cámara K-FA81 para personal de campo" loading="lazy" width="200" height="190">
+          </div>
+          <div class="wch-card-body">
+            <div class="wch-card-top">
+              <span class="wch-card-cat wch-cat-rose"><span data-lang="es">Seguridad · Campo</span><span data-lang="en">Security · Field</span></span>
+              <span class="wch-card-code">K-FA81</span>
+            </div>
+            <div>
+              <div class="wch-card-name"><span data-lang="es">Reloj con Cámara GPS</span><span data-lang="en">GPS Camera Watch</span></div>
+              <div class="wch-card-sub"><span data-lang="es">Seguridad con visión para personal en campo y guardias de seguridad</span><span data-lang="en">Visual security for field staff and security guards</span></div>
+            </div>
+            <ul class="wch-features wch-feat-rose">
+              <li><span data-lang="es">Cámara integrada para fotos y video en campo</span><span data-lang="en">Integrated camera for field photos and video</span></li>
+              <li><span data-lang="es">GPS en tiempo real + historial de movimientos</span><span data-lang="en">Real-time GPS + movement history</span></li>
+              <li><span data-lang="es">SOS de emergencia con alerta a central</span><span data-lang="en">Emergency SOS with control room alert</span></li>
+              <li><span data-lang="es">Comunicación bidireccional resistente a impactos</span><span data-lang="en">Two-way communication, impact resistant</span></li>
+            </ul>
+            <div class="wch-card-footer">
+              <a href="https://wa.me/50766743062?text=Hola%2C+me+interesa+el+reloj+con+c%C3%A1mara+K-FA81+%C2%BFqu%C3%A9+precio+tiene%3F" class="wch-card-cta wch-cta-rose" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                <span data-lang="es">Cotizar K-FA81</span><span data-lang="en">Quote K-FA81</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /wch-grid -->
+
+      <!-- Bottom CTA strip -->
+      <div class="rv" style="margin-top:64px;text-align:center">
+        <p style="font-size:.92rem;color:var(--txt2);margin-bottom:20px"><span data-lang="es">¿No encuentras el modelo que necesitas? Tenemos más referencias disponibles.</span><span data-lang="en">Can't find the model you need? We have more references available.</span></p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a href="https://wa.me/50766743062?text=Hola%2C+busco+un+reloj+GPS+%C2%BFqu%C3%A9+modelos+tienen+disponibles%3F" class="btn btn-primary" target="_blank" rel="noopener">
+            <span data-lang="es">Ver todos los modelos →</span><span data-lang="en">See all models →</span>
+          </a>
+          <a href="#cta-sec" class="btn btn-outline">
+            <span data-lang="es">Solicitar catálogo completo</span><span data-lang="en">Request full catalog</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -7010,7 +7295,7 @@ html:not(.vw) section[data-view]{display:revert}
 <script>
 /* ═══ ROUTER DE VISTAS — una sola página, estilo YouTube tabs ═══ */
 document.documentElement.classList.add('vw');
-window.VIEW_OF={hero:'home',about:'home',trustbar:'home','energia-gateway':'home',testimonials:'home',faq:'home','cta-sec':'home',contacto:'home',servicios:'servicios',productos:'catalogo',catalogo:'catalogo',prose:'prose',casos:'casos',solutions:'medidor',markets:'medidor',how:'medidor','dash-sec':'medidor',visualization:'medidor',comparativa:'medidor','video-sec':'medidor','emporia-eco':'medidor',medidor:'medidor'};
+window.VIEW_OF={hero:'home',about:'home',trustbar:'home','energia-gateway':'home',testimonials:'home',faq:'home','cta-sec':'home',contacto:'home',servicios:'servicios',productos:'catalogo',catalogo:'catalogo',prose:'prose',casos:'casos',solutions:'medidor',markets:'medidor',how:'medidor','dash-sec':'medidor',visualization:'medidor',comparativa:'medidor','video-sec':'medidor','emporia-eco':'medidor',medidor:'medidor',relojes:'relojes'};
 window.showView=function(v){
   document.querySelectorAll('section[data-view]').forEach(function(s){ s.classList.toggle('vw-active', s.dataset.view===v); });
   try{ window.scrollTo({top:0,behavior:'auto'}); }catch(e){ window.scrollTo(0,0); }
@@ -7141,7 +7426,15 @@ const SEARCH_INDEX=[
   {name:'Calibración de Equipos de Medición',alias:['calibración','calibration','calibrar otdr','ajuste técnico','verificación'],cat:'Servicio',catKey:'svc',ico:'ruler',target:'#servicios'},
   {name:'Servicios de Campo (Field Services)',alias:['field service','site survey','levantamiento','inspección','servicios campo'],cat:'Servicio',catKey:'svc',ico:'truck',target:'#servicios'},
   {name:'Proyectos Llave en Mano',alias:['llave en mano','turnkey','proyecto integral','epc'],cat:'Servicio',catKey:'svc',ico:'key',target:'#servicios'},
-  {name:'Integración de Soluciones Tecnológicas',alias:['integración','integration','sistemas integrados','consultoría técnica'],cat:'Servicio',catKey:'svc',ico:'puzzle',target:'#servicios'}
+  {name:'Integración de Soluciones Tecnológicas',alias:['integración','integration','sistemas integrados','consultoría técnica'],cat:'Servicio',catKey:'svc',ico:'puzzle',target:'#servicios'},
+
+  // ── 07 · RELOJES GPS & SEGURIDAD PERSONAL ──
+  {name:'Reloj GPS Senior E-D17',alias:['reloj senior','adultos mayores','gps senior','e-d17','reloj seguridad','reloj abuelito','reloj abuelo','senior watch','panic button','boton panico'],cat:'GPS & Seguridad Personal',catKey:'relojes',ico:'settings',target:'#relojes'},
+  {name:'Reloj Infantil GPS K-FA103',alias:['reloj niños','reloj niño','k-fa103','gps niños','reloj infantil','kids watch','reloj hijo','control parental','parental control'],cat:'GPS & Seguridad Personal',catKey:'relojes',ico:'settings',target:'#relojes'},
+  {name:'Reloj Deportivo GPS V-28C',alias:['reloj deportivo','v-28c','gps deportivo','running watch','sports watch','reloj runner','frecuencia cardiaca','heart rate','multideporte'],cat:'GPS & Seguridad Personal',catKey:'relojes',ico:'settings',target:'#relojes'},
+  {name:'Tracker GPS Vehículos P-FA58P',alias:['tracker vehiculo','p-fa58p','rastreo vehiculo','gps vehiculo','rastreador','flota','vehicle tracker','gps flota','localizador auto'],cat:'GPS & Seguridad Personal',catKey:'relojes',ico:'settings',target:'#relojes'},
+  {name:'Reloj con Cámara GPS K-FA81',alias:['reloj camara','k-fa81','e-fa81','reloj guardia','reloj seguridad campo','camera watch','guard watch','personal de campo'],cat:'GPS & Seguridad Personal',catKey:'relojes',ico:'settings',target:'#relojes'},
+  {name:'Relojes GPS & Seguridad Personal',alias:['reloj gps','gps watch','relojes','watch','rastreo personal','localizacion personal','seguridad personal','gps panama'],cat:'GPS & Seguridad Personal',catKey:'relojes',ico:'settings',target:'#relojes'}
 ];
 
 function _norm(s){return (s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
