@@ -3331,7 +3331,7 @@ body.catx-modal-locked{overflow:hidden}
 .catx-modal-nav{margin-top:22px;padding-top:16px;border-top:1px solid rgba(37,99,235,.12)}
 .catx-modal-nav-label{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-bottom:10px}
 .catx-modal-nav-row{display:flex;gap:8px;flex-wrap:wrap}
-.catx-nav-chip{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:11px;border:1.5px solid rgba(37,99,235,.16);background:#fff;cursor:pointer;font-size:.78rem;font-weight:600;color:#1e293b;transition:all .15s;line-height:1}
+.catx-nav-chip{display:inline-flex;align-items:center;gap:7px;padding:11px 14px;min-height:42px;border-radius:11px;border:1.5px solid rgba(37,99,235,.16);background:#fff;cursor:pointer;font-size:.78rem;font-weight:600;color:#1e293b;transition:all .15s;line-height:1.1}
 .catx-nav-chip:hover{border-color:#2563eb;background:#eff5ff;transform:translateY(-1px)}
 .catx-nav-chip.is-current{background:#2563eb;color:#fff;border-color:#2563eb;cursor:default}
 .catx-nav-chip-num{font-size:.66rem;font-weight:800;opacity:.6}
@@ -9803,6 +9803,15 @@ window.addEventListener('scroll',()=>{
    ══════════════════════════════════════════════════════════════ */
 // Orden e íconos por categoría (para navegación y placeholders reconocibles)
 const CATX_ORDER = ['fibra','rf','infra','dc','monitor','energia'];
+// Nombres cortos para los chips de navegación (compactos en móvil)
+const CATX_SHORT = {
+  fibra:   { es:'Fibra Óptica',    en:'Fiber Optic' },
+  rf:      { es:'RF y Cobertura',  en:'RF & Coverage' },
+  infra:   { es:'Infraestructura', en:'Infrastructure' },
+  dc:      { es:'Data Centers',    en:'Data Centers' },
+  monitor: { es:'Monitoreo Redes', en:'Network Monitoring' },
+  energia: { es:'Energía',         en:'Energy' },
+};
 const CATX_ICONS = {
   fibra:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c6 0 6-12 12-12"/><circle cx="4" cy="18" r="1.6"/><circle cx="16" cy="6" r="1.6"/><path d="M19 9l2-2-2-2"/></svg>',
   rf:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0"/><path d="M8.5 12a3.5 3.5 0 0 1 7 0"/><circle cx="12" cy="12" r="1.4"/><line x1="12" y1="13.5" x2="12" y2="21"/></svg>',
@@ -10022,10 +10031,11 @@ function openCatX(cat){
   if(navRow){
     navRow.innerHTML = CATX_ORDER.map(c => {
       const d = CATX_DATA[c];
+      const label = (CATX_SHORT[c] && CATX_SHORT[c][lang]) || d.title[lang];
       const cur = c === cat ? ' is-current' : '';
       const onclick = c === cat ? '' : ` onclick="openCatX('${c}')"`;
       return `<button type="button" class="catx-nav-chip${cur}"${onclick}>
-        <span class="catx-nav-chip-num">${d.num}</span>${d.title[lang]}</button>`;
+        <span class="catx-nav-chip-num">${d.num}</span>${label}</button>`;
     }).join('');
   }
 
