@@ -3321,8 +3321,24 @@ body.catx-modal-locked{overflow:hidden}
 .catx-featured-row::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:2px}
 .catx-feat-card{flex:0 0 148px;border-radius:14px;background:#fff;border:1.5px solid rgba(37,99,235,.10);overflow:hidden;scroll-snap-align:start;transition:transform .2s,box-shadow .2s;cursor:default}
 .catx-feat-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(37,99,235,.14)}
-.catx-feat-img-wrap{width:100%;aspect-ratio:1;background:#f8faff;display:flex;align-items:center;justify-content:center;padding:12px}
+.catx-feat-img-wrap{width:100%;aspect-ratio:1;background:#f8faff;display:flex;align-items:center;justify-content:center;padding:12px;position:relative}
 .catx-feat-img-wrap img{width:100%;height:100%;object-fit:contain}
+/* Placeholder cuando la imagen del dispositivo no carga — sigue siendo reconocible */
+.catx-feat-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#eef4ff,#e0ecff);color:#2563eb;text-align:center;padding:8px}
+.catx-feat-ph svg{width:34px;height:34px;opacity:.8}
+.catx-feat-ph-txt{font-size:.62rem;font-weight:700;letter-spacing:.04em;color:#1e40af;line-height:1.2}
+/* Navegación entre catálogos dentro del modal */
+.catx-modal-nav{margin-top:22px;padding-top:16px;border-top:1px solid rgba(37,99,235,.12)}
+.catx-modal-nav-label{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-bottom:10px}
+.catx-modal-nav-row{display:flex;gap:8px;flex-wrap:wrap}
+.catx-nav-chip{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:11px;border:1.5px solid rgba(37,99,235,.16);background:#fff;cursor:pointer;font-size:.78rem;font-weight:600;color:#1e293b;transition:all .15s;line-height:1}
+.catx-nav-chip:hover{border-color:#2563eb;background:#eff5ff;transform:translateY(-1px)}
+.catx-nav-chip.is-current{background:#2563eb;color:#fff;border-color:#2563eb;cursor:default}
+.catx-nav-chip-num{font-size:.66rem;font-weight:800;opacity:.6}
+html.dark .catx-feat-ph{background:linear-gradient(135deg,rgba(37,99,235,.18),rgba(37,99,235,.08)) !important;color:#93b4ff !important}
+html.dark .catx-feat-ph-txt{color:#bcd0ff !important}
+html.dark .catx-nav-chip{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.1) !important;color:#cbd5e1 !important}
+html.dark .catx-nav-chip:hover{background:rgba(37,99,235,.2) !important;border-color:#3b82f6 !important}
 .catx-feat-body{padding:10px 12px 12px}
 .catx-feat-brand{font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2563eb;margin-bottom:3px}
 .catx-feat-name{font-size:.8rem;font-weight:600;color:#0f172a;line-height:1.3}
@@ -6586,6 +6602,12 @@ html:not(.vw) section[data-view]{display:revert}
         </div>
       </div>
 
+      <!-- Navegación entre catálogos (conexión entre líneas de producto) -->
+      <div class="catx-modal-nav" id="catxModalNav">
+        <div class="catx-modal-nav-label"><span data-lang="es">Explora las otras líneas</span><span data-lang="en">Explore the other lines</span></div>
+        <div class="catx-modal-nav-row" id="catxModalNavRow"></div>
+      </div>
+
     </div><!-- end catx-modal-body -->
 
     <!-- Sticky action footer -->
@@ -9779,6 +9801,18 @@ window.addEventListener('scroll',()=>{
 /* ═══════════════════════════════════════════════════════════════
    CATÁLOGO MODERNO — Bento Grid + Modal
    ══════════════════════════════════════════════════════════════ */
+// Orden e íconos por categoría (para navegación y placeholders reconocibles)
+const CATX_ORDER = ['fibra','rf','infra','dc','monitor','energia'];
+const CATX_ICONS = {
+  fibra:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c6 0 6-12 12-12"/><circle cx="4" cy="18" r="1.6"/><circle cx="16" cy="6" r="1.6"/><path d="M19 9l2-2-2-2"/></svg>',
+  rf:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0"/><path d="M8.5 12a3.5 3.5 0 0 1 7 0"/><circle cx="12" cy="12" r="1.4"/><line x1="12" y1="13.5" x2="12" y2="21"/></svg>',
+  infra:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21l4-16 4 16"/><path d="M6 21h12"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="10" y1="14" x2="14" y2="14"/></svg>',
+  dc:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="6" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/><line x1="7" y1="7" x2="7" y2="7"/><line x1="7" y1="17" x2="7" y2="17"/></svg>',
+  monitor: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 13l3-4 2 3 2-5 3 6"/><line x1="9" y1="21" x2="15" y2="21"/></svg>',
+  energia: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 4 14 11 14 10 22 20 9 13 9 13 2"/></svg>',
+  _default:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>',
+};
+
 const CATX_DATA = {
   fibra: {
     num: '01',
@@ -9922,6 +9956,18 @@ const CATX_DATA = {
   }
 };
 
+// Fallback de imagen de dispositivo: si no carga, muestra placa reconocible.
+function catxFeatImgError(img){
+  if(img.dataset._phDone) return;   // evita bucles
+  img.dataset._phDone = '1';
+  img.style.display = 'none';
+  const icon = CATX_ICONS[img.dataset.cat] || CATX_ICONS._default;
+  const ph = document.createElement('div');
+  ph.className = 'catx-feat-ph';
+  ph.innerHTML = icon + '<div class="catx-feat-ph-txt">' + (img.dataset.label || '') + '</div>';
+  img.parentElement.appendChild(ph);
+}
+
 function openCatX(cat){
   const data = CATX_DATA[cat];
   if(!data) return;
@@ -9952,10 +9998,14 @@ function openCatX(cat){
   const featRow = document.getElementById('catxModalFeaturedRow');
   if(data.featured && data.featured.length > 0){
     featSection.style.display = '';
+    // Si la imagen del dispositivo no carga, catxFeatImgError() pinta una placa
+    // con su marca + nombre + ícono → el cliente siempre reconoce el dispositivo.
     featRow.innerHTML = data.featured.map(f => `
       <div class="catx-feat-card">
         <div class="catx-feat-img-wrap">
-          <img src="${f.img}" alt="${f.name}" loading="lazy" onerror="this.parentElement.style.background='#f1f5f9';this.style.display='none'">
+          <img src="${f.img}" alt="${f.brand} ${f.name}" loading="lazy"
+               data-cat="${cat}" data-label="${(f.brand+' · '+f.name).replace(/"/g,'&quot;')}"
+               onerror="catxFeatImgError(this)">
         </div>
         <div class="catx-feat-body">
           <div class="catx-feat-brand">${f.brand}</div>
@@ -9965,6 +10015,18 @@ function openCatX(cat){
       </div>`).join('');
   } else {
     featSection.style.display = 'none';
+  }
+
+  // ── Navegación entre catálogos (líneas conectadas) ──────────────────────
+  const navRow = document.getElementById('catxModalNavRow');
+  if(navRow){
+    navRow.innerHTML = CATX_ORDER.map(c => {
+      const d = CATX_DATA[c];
+      const cur = c === cat ? ' is-current' : '';
+      const onclick = c === cat ? '' : ` onclick="openCatX('${c}')"`;
+      return `<button type="button" class="catx-nav-chip${cur}"${onclick}>
+        <span class="catx-nav-chip-num">${d.num}</span>${d.title[lang]}</button>`;
+    }).join('');
   }
 
   // Value
