@@ -136,6 +136,10 @@ fbq('init',PIXEL_ID);fbq('track','PageView');})();
   --ff:'Inter',system-ui,-apple-system,sans-serif;
   --ff-head:'DM Sans','Inter',system-ui,sans-serif;
 }
+/* ── Modo oscuro: redefine SOLO los colores de texto (estas vars
+   nunca se usan como fondo/borde, asi que es seguro voltearlas).
+   Garantiza que ningun texto quede oscuro sobre fondo oscuro. ── */
+html.dark{--white:#f1f5f9;--txt:#cbd5e1;--txt2:#94a3b8;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--ff);background:var(--g950);color:var(--txt);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -1231,21 +1235,24 @@ span[data-lang]{display:none}
   .mob-sub-item{padding:11px 13px;font-size:.85rem;min-height:42px;display:flex;align-items:center;gap:8px}
 
   /* hero — más respiro */
-  #hero{min-height:560px;height:auto;padding:120px 0 48px;margin-top:60px}
+  #hero{min-height:auto;height:auto;padding:0;margin-top:60px;background:linear-gradient(160deg,#0b1e4d 0%,#08142c 100%)}
+  #hero .container{padding-top:56px;padding-bottom:28px}
   .slide{position:relative;display:none}
   .slide.active{display:flex}
   .slide-content{padding:0 4px;max-width:100%}
   .slide-eyebrow{font-size:.62rem;padding:6px 12px;margin-bottom:16px}
-  .slide-h1{font-size:clamp(1.85rem,7vw,2.4rem);line-height:1.1;margin-bottom:14px}
+  .slide-h1{font-size:clamp(1.9rem,7.4vw,2.4rem);line-height:1.12;margin-bottom:14px}
   .slide-p{font-size:.92rem;line-height:1.65;margin-bottom:24px;max-width:100%}
   .slide-btns{flex-direction:column;gap:10px;align-items:stretch}
   .slide-btns .btn{width:100%;justify-content:center;padding:15px 20px;font-size:.95rem;min-height:50px}
-  .hero-stats{position:relative;margin-top:32px}
-  .hs-item{padding:14px 16px}
-  .hs-num{font-size:1.2rem}
-  .hs-lbl{font-size:.6rem}
   .slider-arrows{display:none}
-  .slider-ctrl{bottom:auto;top:140px}
+  /* puntos del slider: fluyen centrados bajo el contenido (ya no flotan sobre el titulo) */
+  .slider-ctrl{position:static;transform:none;margin:20px auto 0;justify-content:center;width:100%}
+  /* stats: 3 por fila (3+2 centradas) en vez de 5 apretujadas */
+  .hero-stats{position:relative;margin-top:16px;flex-wrap:wrap;justify-content:center;background:rgba(11,30,77,.5) !important}
+  .hs-item{flex:0 0 33.33%;border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:13px 8px;text-align:center;align-items:center}
+  .hs-num{font-size:1.18rem}
+  .hs-lbl{font-size:.58rem;line-height:1.3}
 
   /* partners strip */
   #partners{padding:16px 0}
@@ -1505,12 +1512,13 @@ span[data-lang]{display:none}
 
 /* ── iOS Safari fixes ── */
 @supports (-webkit-touch-callout: none){
-  /* Fix viewport height en Safari iOS */
-  #hero{min-height:-webkit-fill-available}
   /* Evitar zoom al hacer tap en inputs */
   input,select,textarea{font-size:16px!important}
   /* Smooth scroll nativo */
   html{-webkit-overflow-scrolling:touch}
+  /* Fix viewport height en Safari iOS — solo tablet/desktop (el hero
+     movil ahora es de alto automatico, no necesita llenar la pantalla) */
+  @media(min-width:769px){#hero{min-height:-webkit-fill-available}}
 }
 
 /* ── Android / Touch general ── */
@@ -3597,6 +3605,15 @@ html.dark .astat-v{color:#60a5fa !important}
 html.dark .astat-l{color:rgba(255,255,255,.45) !important}
 html.dark .astat{border-right-color:rgba(255,255,255,.06) !important}
 html.dark .about-stats{border-color:rgba(255,255,255,.07) !important}
+/* Fix especificidad: las reglas de tema claro del About usan ID
+   (#about .x) y le ganaban a html.dark .x — las re-forzamos con ID. */
+html.dark #about h2.s-title,
+html.dark #about h2.s-title span{color:#f1f5f9 !important;-webkit-text-fill-color:#f1f5f9 !important;background:none !important}
+html.dark #about .about-p{color:#94a3b8 !important}
+html.dark #about .about-p strong{color:#e2e8f0 !important}
+html.dark #about .a-card{background:rgba(13,20,38,.95) !important;border-color:rgba(255,255,255,.08) !important}
+html.dark #about .a-card h4{color:#f1f5f9 !important}
+html.dark #about .a-card p{color:#94a3b8 !important}
 
 /* ── Solutions ── */
 html.dark #solutions{background:#080d19 !important}
@@ -3694,6 +3711,7 @@ html.dark .mkt-tile-desc{color:rgba(255,255,255,.5) !important}
 /* ── FAQ ── */
 html.dark #faq{background:#0b1020 !important}
 html.dark .faq-item{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.07) !important}
+html.dark .faq-item.open{background:rgba(13,20,38,.96) !important;border-color:rgba(20,184,166,.3) !important}
 html.dark .faq-q{color:#e2e8f0 !important}
 html.dark .faq-q-txt{color:#e2e8f0 !important}
 html.dark .faq-a,html.dark .faq-a-inner{color:#94a3b8 !important}
@@ -5138,6 +5156,40 @@ html.vw section[data-view]{display:none !important}
 html.vw section[data-view].vw-active{display:revert !important}
 .nav-cur{color:#2563eb !important}
 html:not(.vw) section[data-view]{display:revert}
+
+/* ════════════════════════════════════════════════════════════
+   FIX MODO OSCURO (botón luna). Las reglas de tema claro usan
+   selectores con #id, que por especificidad le ganaban a las
+   reglas html.dark (solo clases) — por eso al activar el modo
+   oscuro había texto y tarjetas ilegibles (FAQ, Nosotros,
+   Testimonios, Contacto). Estas reglas usan #id + van al final
+   del CSS, así ganan correctamente. SOLO afectan al modo oscuro;
+   el tema claro (por defecto) queda igual.
+   ════════════════════════════════════════════════════════════ */
+/* Títulos de sección legibles en oscuro */
+html.dark #about .s-title,html.dark #about .s-title span[data-lang],
+html.dark #solutions .s-title,html.dark #solutions .s-title span[data-lang],
+html.dark #how .s-title,html.dark #how .s-title span[data-lang],
+html.dark #markets .s-title,html.dark #markets .s-title span[data-lang],
+html.dark #benefits .s-title,html.dark #benefits .s-title span[data-lang],
+html.dark #faq .s-title,html.dark #faq .s-title span[data-lang],
+html.dark #testimonials .s-title,html.dark #testimonials .s-title span[data-lang],
+html.dark #productos .s-title,html.dark #productos .s-title span[data-lang],
+html.dark #servicios .s-title,html.dark #servicios .s-title span[data-lang]{
+  color:#f1f5f9 !important;-webkit-text-fill-color:#f1f5f9 !important;
+}
+/* Tarjetas / superficies oscuras */
+html.dark #about .a-card,
+html.dark #testimonials .test-card,
+html.dark #faq .faq-item,
+html.dark #cta-sec .co{background:rgba(13,20,38,.92) !important;border-color:rgba(255,255,255,.08) !important}
+html.dark #faq .faq-item.open{background:rgba(13,20,38,.97) !important;border-color:rgba(20,184,166,.3) !important}
+html.dark #cta-sec .cf-wrap{background:rgba(13,20,38,.95) !important;border-color:rgba(255,255,255,.08) !important}
+/* Textos dentro de esas tarjetas */
+html.dark #about .a-card h4,html.dark #testimonials .test-name,html.dark #cta-sec .co h4{color:#f1f5f9 !important}
+html.dark #about .a-card p,html.dark #testimonials .test-text,html.dark #cta-sec .co p,html.dark #testimonials .test-role{color:#94a3b8 !important}
+html.dark #cta-sec .cf-label{color:#cbd5e1 !important}
+html.dark #cta-sec .cf-input,html.dark #cta-sec select.cf-input,html.dark #cta-sec textarea.cf-input{background:rgba(8,13,25,.85) !important;border-color:rgba(255,255,255,.12) !important;color:#f1f5f9 !important}
 
 </style>
 </head>
@@ -9614,9 +9666,10 @@ function toggleTheme(){applyTheme(!document.documentElement.classList.contains('
 (function(){
   const savedLang=localStorage.getItem('mtg-lang');
   if(savedLang&&savedLang!=='es')setLang(savedLang);
+  // Arranca SIEMPRE en blanco por defecto. Solo va a oscuro si el
+  // cliente lo eligio antes (queda guardado en su navegador).
   const savedTheme=localStorage.getItem('mtg-theme');
-  const prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
-  applyTheme(savedTheme==='dark'||(savedTheme===null&&prefersDark));
+  applyTheme(savedTheme==='dark');
 })();
 
 /* ── HERO SLIDER ── */
