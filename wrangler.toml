@@ -1,0 +1,8 @@
+name = "mtg-pagina-web"
+compatibility_date = "2024-09-01"
+
+# Sitio estático (HTML/CSS/JS). Cloudflare sirve los archivos tal cual,
+# sin paso de build. index.html es la raiz.
+[assets]
+directory = "./"
+not_found_handling = "single-page-application"
