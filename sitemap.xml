@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lulago3003.github.io/mtg-pagina-web/</loc>
+    <loc>https://mtglobalpa.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lulago3003.github.io/mtg-pagina-web/#servicios</loc>
+    <loc>https://mtglobalpa.com/#servicios</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lulago3003.github.io/mtg-pagina-web/#productos</loc>
+    <loc>https://mtglobalpa.com/#productos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lulago3003.github.io/mtg-pagina-web/#prose</loc>
+    <loc>https://mtglobalpa.com/#prose</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lulago3003.github.io/mtg-pagina-web/#solutions</loc>
+    <loc>https://mtglobalpa.com/#solutions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lulago3003.github.io/mtg-pagina-web/#about</loc>
+    <loc>https://mtglobalpa.com/#about</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lulago3003.github.io/mtg-pagina-web/#cta-sec</loc>
+    <loc>https://mtglobalpa.com/#cta-sec</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lulago3003.github.io/mtg-pagina-web/assets/prose-camouflage-catalog.pdf</loc>
+    <loc>https://mtglobalpa.com/assets/prose-camouflage-catalog.pdf</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -4,4 +4,4 @@ Allow: /
 Disallow: /assets/*.pdf$
 Crawl-delay: 1
 
-Sitemap: https://lulago3003.github.io/mtg-pagina-web/sitemap.xml
+Sitemap: https://mtglobalpa.com/sitemap.xml
