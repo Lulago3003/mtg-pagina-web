@@ -5191,6 +5191,64 @@ html.dark #about .a-card p,html.dark #testimonials .test-text,html.dark #cta-sec
 html.dark #cta-sec .cf-label{color:#cbd5e1 !important}
 html.dark #cta-sec .cf-input,html.dark #cta-sec select.cf-input,html.dark #cta-sec textarea.cf-input{background:rgba(8,13,25,.85) !important;border-color:rgba(255,255,255,.12) !important;color:#f1f5f9 !important}
 
+/* ═══════════════════════════════════════════════════════════
+   TEMA CLARO SIEMPRE + ARREGLO DE TEXTO DEGRADADO (iOS)
+   1) Se ocultan los botones de tema oscuro (sitio siempre claro).
+   2) El texto con degradado (-webkit-background-clip:text) se
+      rompe en iOS Safari y muestra BLOQUES de color sobre las
+      palabras. La skill "impeccable" lo prohíbe: se reemplaza por
+      color sólido de marca. Misma jerarquía, sin bloques.
+   ═══════════════════════════════════════════════════════════ */
+.theme-toggle,.mob-theme{display:none !important}
+
+/* Resaltados de títulos + números sobre fondo CLARO → azul de marca */
+.s-title span:not([data-lang]),
+#about .s-title span:not([data-lang]),
+#solutions .s-title span:not([data-lang]),
+#productos .s-title span:not([data-lang]),
+#servicios .s-title span:not([data-lang]),
+#servicios .svc-hero-strip .s-title span:not([data-lang]),
+:is(#prose,#prose-home) .s-title span:not([data-lang]),
+.ben-num,.astat-v,#about .astat-v,.ss-val,#stats-strip .ss-val,
+.ss-item:hover .ss-val,.calc-big,.how-step-num,#servicios .svc-stat-n{
+  background:none !important;background-image:none !important;
+  -webkit-text-fill-color:#2563eb !important;color:#2563eb !important;
+}
+/* Hero + stats del hero sobre fondo OSCURO → cyan claro */
+.slide-h1 em,#hero .slide-h1 em,.hs-num span,.cta-h2 span:not([data-lang]){
+  background:none !important;background-image:none !important;
+  -webkit-text-fill-color:#38bdf8 !important;color:#38bdf8 !important;animation:none !important;
+}
+/* CTA: el texto plano del título (fondo oscuro) debe ser blanco,
+   no degradado/transparente (antes salía como bloque) */
+.cta-h2 span[data-lang]{
+  background:none !important;background-image:none !important;
+  -webkit-text-fill-color:#ffffff !important;color:#ffffff !important;
+}
+/* Energía (cyan) */
+.eg-title em,.eg-card-big .eg-pct{
+  background:none !important;background-image:none !important;
+  -webkit-text-fill-color:#0ea5e9 !important;color:#0ea5e9 !important;
+}
+/* Relojes GPS (púrpura) */
+.wch-hero-title span,.wch-stat-n,.wch-grid-section .centered .s-title span,
+.wch-demo-text h3 span,.rg-title em,.vid-ad-title em{
+  background:none !important;background-image:none !important;
+  -webkit-text-fill-color:#a78bfa !important;color:#a78bfa !important;
+}
+/* Detector de impacto (naranja) */
+.sh-title em,.swt-hero-title span{
+  background:none !important;background-image:none !important;
+  -webkit-text-fill-color:#fb923c !important;color:#fb923c !important;
+}
+/* Resaltados con estilo INLINE en el HTML → heredan el color del título */
+[style*="-webkit-background-clip:text"],[style*="-webkit-background-clip: text"]{
+  -webkit-text-fill-color:currentColor !important;
+  background:none !important;background-image:none !important;
+}
+/* Etiquetas de stats del hero: mejor contraste sobre fondo oscuro */
+.hs-lbl{color:rgba(255,255,255,.62) !important}
+
 </style>
 </head>
 <body>
@@ -9661,15 +9719,15 @@ function applyTheme(dark){
   if(icon2)icon2.textContent=ico;
   localStorage.setItem('mtg-theme',dark?'dark':'light');
 }
-function toggleTheme(){applyTheme(!document.documentElement.classList.contains('dark'));}
+function toggleTheme(){applyTheme(false);} /* modo oscuro deshabilitado: siempre claro */
 // Load saved preferences on init
 (function(){
   const savedLang=localStorage.getItem('mtg-lang');
   if(savedLang&&savedLang!=='es')setLang(savedLang);
-  // Arranca SIEMPRE en blanco por defecto. Solo va a oscuro si el
-  // cliente lo eligio antes (queda guardado en su navegador).
-  const savedTheme=localStorage.getItem('mtg-theme');
-  applyTheme(savedTheme==='dark');
+  // Tema claro SIEMPRE. El modo oscuro quedo deshabilitado (los
+  // botones de luna estan ocultos). El sitio se ve igual de bien
+  // para todos y sin bugs de contraste.
+  applyTheme(false);
 })();
 
 /* ── HERO SLIDER ── */
