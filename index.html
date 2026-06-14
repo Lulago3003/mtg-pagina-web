@@ -162,10 +162,11 @@ img{max-width:100%;display:block}
 .btn-outline:hover{background:rgba(20,184,166,.08);transform:translateY(-2px);border-color:var(--grn)}
 .btn-wa{background:#25D366;color:#fff}
 .btn-wa:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,211,102,.4)}
-.rv{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .rv.up{opacity:1;transform:translateY(0)}
-.rv:nth-child(2){transition-delay:.1s}.rv:nth-child(3){transition-delay:.2s}
-.rv:nth-child(4){transition-delay:.3s}.rv:nth-child(5){transition-delay:.4s}.rv:nth-child(6){transition-delay:.5s}
+.rv:nth-child(2){transition-delay:.07s}.rv:nth-child(3){transition-delay:.14s}
+.rv:nth-child(4){transition-delay:.21s}.rv:nth-child(5){transition-delay:.28s}.rv:nth-child(6){transition-delay:.35s}
+.rv:nth-child(7){transition-delay:.42s}.rv:nth-child(8){transition-delay:.49s}.rv:nth-child(9){transition-delay:.56s}
 #prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--grn),var(--cyn));z-index:2001;width:0;transition:width .1s linear}
 
 /* ═══ NAVBAR ════════════════════════════════════════════════ */
@@ -1842,13 +1843,13 @@ span[data-lang]{display:none}
   transition:background .3s ease;
 }
 
-/* ── Scroll reveal mejorado ── */
+/* ── Scroll reveal mejorado (ease-out-expo · sensación premium) ── */
 .rv{
   opacity:0;
-  transform:translateY(20px);
-  transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1);
+  transform:translateY(22px);
+  transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);
 }
-.rv.in,.rv.show{opacity:1;transform:translateY(0)}
+.rv.in,.rv.show,.rv.up{opacity:1;transform:translateY(0)}
 
 /* ── Loading screen smoother ── */
 #loader{
@@ -5155,6 +5156,9 @@ html.dark .faq-cat.active{background:linear-gradient(135deg,#3b82f6,#60a5fa);col
 /* ── Single-page view switching (estilo YouTube tabs) ── */
 html.vw section[data-view]{display:none !important}
 html.vw section[data-view].vw-active{display:revert !important}
+@keyframes mtgViewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+html.vw section[data-view]:not([data-view="home"]).vw-active{animation:mtgViewIn .42s cubic-bezier(.16,1,.3,1)}
+@media(prefers-reduced-motion:reduce){html.vw section[data-view].vw-active{animation:none !important}.rv{transition:opacity .2s linear !important;transform:none !important}}
 .nav-cur{color:#2563eb !important}
 html:not(.vw) section[data-view]{display:revert}
 
