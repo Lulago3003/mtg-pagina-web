@@ -5279,6 +5279,17 @@ html.dark #cta-sec .cf-input,html.dark #cta-sec select.cf-input,html.dark #cta-s
 .catx-pc-ficha{display:inline-flex;align-items:center;justify-content:center;width:42px;border:1px solid rgba(37,99,235,.2);color:#2563eb;border-radius:10px;text-decoration:none;transition:.18s;flex-shrink:0}
 .catx-pc-ficha:hover{background:#eef3fc;border-color:rgba(37,99,235,.4)}
 .catx-prod-empty{display:none;text-align:center;color:#94a3b8;font-size:.9rem;padding:32px 0}
+.catx-pc-brandrow{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.catx-pc-official{display:inline-flex;align-items:center;gap:3px;background:#e7f6ee;color:#0f7a4e;font-size:.58rem;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.03em;text-transform:uppercase}
+.catx-pc-ver{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(37,99,235,.22);color:#2563eb;border-radius:10px;padding:10px 13px;font-size:.8rem;font-weight:700;font-family:var(--ff);cursor:pointer;white-space:nowrap;transition:.18s;min-height:42px}
+.catx-pc-ver:hover{background:#eef3fc;border-color:rgba(37,99,235,.42)}
+.catx-mi-banner{display:flex;align-items:center;gap:15px;margin-top:20px;padding:16px 20px;background:linear-gradient(120deg,#eef3fc,#e6f6ff);border:1px solid rgba(37,99,235,.16);border-radius:14px;text-decoration:none;transition:.2s}
+.catx-mi-banner:hover{border-color:rgba(37,99,235,.34);transform:translateY(-2px);box-shadow:0 10px 30px -12px rgba(37,99,235,.25)}
+.catx-mi-ic{flex-shrink:0;width:44px;height:44px;border-radius:12px;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center}
+.catx-mi-tx{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.catx-mi-tx strong{font-family:var(--ff-head);font-size:.95rem;font-weight:800;color:#0f172a}
+.catx-mi-tx > span{font-size:.82rem;color:#475569;line-height:1.4}
+.catx-mi-go{flex-shrink:0;font-size:.85rem;font-weight:800;color:#2563eb;white-space:nowrap}
 .catx-shop-divider{margin-top:46px;border-top:1px solid rgba(37,99,235,.1)}
 @media(max-width:600px){
   .catx-prod-grid{grid-template-columns:repeat(2,1fr);gap:11px;margin-top:14px}
@@ -5286,8 +5297,10 @@ html.dark #cta-sec .cf-input,html.dark #cta-sec select.cf-input,html.dark #cta-s
   .catx-pc-body{padding:11px 12px 13px;gap:6px}
   .catx-pc-name{font-size:.86rem}
   .catx-pc-desc{font-size:.73rem}
-  .catx-pc-cot{font-size:.76rem;padding:9px;min-height:40px}
-  .catx-pc-ficha{width:40px}
+  .catx-pc-actions{flex-direction:column;gap:7px}
+  .catx-pc-cot,.catx-pc-ver{width:100%;font-size:.78rem;padding:10px;min-height:40px}
+  .catx-mi-banner{flex-wrap:wrap;gap:11px;padding:14px 16px}
+  .catx-mi-go{width:100%}
   .catx-shop-title{font-size:1.05rem}
 }
 
@@ -6567,10 +6580,19 @@ html.dark #cta-sec .cf-input,html.dark #cta-sec select.cf-input,html.dark #cta-s
       <button type="button" class="catx-catpill" onclick="catxCatPill('infra',this)"><span data-lang="es">Infraestructura</span><span data-lang="en">Infrastructure</span></button>
       <button type="button" class="catx-catpill" onclick="catxCatPill('dc',this)"><span data-lang="es">Data centers</span><span data-lang="en">Data centers</span></button>
       <button type="button" class="catx-catpill" onclick="catxCatPill('monitor',this)"><span data-lang="es">Monitoreo</span><span data-lang="en">Monitoring</span></button>
-      <button type="button" class="catx-catpill" onclick="catxCatPill('energia',this)"><span data-lang="es">Energía</span><span data-lang="en">Energy</span></button>
     </div>
     <div class="catx-prod-grid" id="catxProducts"></div>
     <p class="catx-prod-empty" id="catxProdEmpty"><span data-lang="es">Sin resultados. Prueba con otra marca o categoría.</span><span data-lang="en">No results. Try another brand or category.</span></p>
+
+    <!-- Banner: el monitoreo energético es el servicio Medidor Inteligente -->
+    <a href="#solutions" class="catx-mi-banner rv">
+      <span class="catx-mi-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+      <span class="catx-mi-tx">
+        <strong><span data-lang="es">¿Monitoreo energético?</span><span data-lang="en">Energy monitoring?</span></strong>
+        <span data-lang="es">Eso es nuestro servicio Medidor Inteligente — sensores Emporia + IA, hasta 40% menos en tu factura.</span><span data-lang="en">That's our Medidor Inteligente service — Emporia sensors + AI, up to 40% lower bill.</span>
+      </span>
+      <span class="catx-mi-go"><span data-lang="es">Conocer</span><span data-lang="en">Learn more</span> →</span>
+    </a>
 
     <!-- ── Explorar las 6 líneas completas ── -->
     <div class="catx-shop-divider"></div>
@@ -10328,12 +10350,15 @@ const CATX_POP = new Set(['AXS-120','MaxTester 715D','FiberWatch RTU','Modelo 43
 const CATX_BKEY = {'EXFO':'exfo','N-TEST':'n-test','Bird':'bird','CRFS':'crfs','PROMAX':'promax','KHIPU':'khipu','PROSE':'prose','GL Communications':'gl','AEM Networks':'aem','Emporia':'emporia'};
 const CATX_PRODUCTS = (function(){
   const out=[]; const seen={};
+  const OFFICIAL=new Set(['EXFO','N-TEST','PROSE','KHIPU']);   // distribuidor oficial declarado
+  const SKIP=new Set(['energia']);   // Emporia = servicio Medidor Inteligente, no va en la tienda de equipos
   CATX_ORDER.forEach(cat=>{
+    if(SKIP.has(cat)) return;
     const d=CATX_DATA[cat];
     (d.featured||[]).forEach(f=>{
       if(seen[f.name]) return;          // evita el mismo producto en 2 líneas
       seen[f.name]=1;
-      out.push({cat:cat, brand:f.brand, bkey:CATX_BKEY[f.brand]||'', name:f.name, img:f.img, desc:f.desc, pdf:d.pdf, pop:CATX_POP.has(f.name)});
+      out.push({cat:cat, brand:f.brand, bkey:CATX_BKEY[f.brand]||'', name:f.name, img:f.img, desc:f.desc, pdf:d.pdf, pop:CATX_POP.has(f.name), official:OFFICIAL.has(f.brand)});
     });
   });
   return out.sort(function(a,b){return (b.pop?1:0)-(a.pop?1:0);});
@@ -10364,9 +10389,7 @@ function renderCatxProducts(){
   if(empty) empty.style.display=list.length?'none':'block';
   grid.innerHTML=list.map(function(p){
     var wa='https://wa.me/50766743062?text='+encodeURIComponent('Hola, me interesa el producto '+p.brand+' '+p.name);
-    var ficha=(p.pdf && /^https?:/.test(p.pdf))
-      ? '<a class="catx-pc-ficha" href="'+p.pdf+'" target="_blank" rel="noopener" aria-label="Ficha tecnica"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></a>'
-      : '';
+    var off=p.official ? '<span class="catx-pc-official"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'+(lang==='en'?'Official':'Oficial')+'</span>' : '';
     var hot=p.pop ? '<span class="catx-pc-hot">'+(lang==='en'?'Most wanted':'Más buscado')+'</span>' : '';
     return '<article class="catx-pcard">'
       + '<button type="button" class="catx-pc-img" onclick="openCatX(\''+p.cat+'\')" aria-label="'+p.brand+' '+p.name+'">'
@@ -10374,12 +10397,12 @@ function renderCatxProducts(){
       + '<img src="'+p.img+'" alt="'+p.brand+' '+p.name+'" loading="lazy" data-cat="'+p.cat+'" data-label="'+(p.brand+' · '+p.name).replace(/"/g,'&quot;')+'" onerror="catxFeatImgError(this)">'
       + '</button>'
       + '<div class="catx-pc-body">'
-      + '<span class="catx-pc-brand">'+p.brand+'</span>'
+      + '<div class="catx-pc-brandrow"><span class="catx-pc-brand">'+p.brand+'</span>'+off+'</div>'
       + '<h4 class="catx-pc-name">'+p.name+'</h4>'
       + '<p class="catx-pc-desc">'+p.desc[lang]+'</p>'
       + '<div class="catx-pc-actions">'
       + '<a class="catx-pc-cot" href="'+wa+'" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" width="15" height="15"><use href="#i-message"/></svg></span>'+(lang==='en'?'Quote':'Cotizar')+'</a>'
-      + ficha
+      + '<button type="button" class="catx-pc-ver" onclick="openCatX(\''+p.cat+'\')">'+(lang==='en'?'Details':'Ver detalle')+'</button>'
       + '</div></div></article>';
   }).join('');
 }
