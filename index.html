@@ -4005,6 +4005,9 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
 .sh-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 .sh-kicker{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fdba74;background:rgba(251,146,60,.14);border:1px solid rgba(251,146,60,.32);padding:7px 16px;border-radius:50px;margin-bottom:20px;backdrop-filter:blur(8px)}
 .sh-kicker-dot{width:8px;height:8px;border-radius:50%;background:#fb923c;box-shadow:0 0 12px #fb923c;animation:egPulse 2s ease-in-out infinite}
+.sh-video-card{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45);border:1px solid rgba(251,146,60,.28);background:#000;aspect-ratio:16/9}
+.sh-video{width:100%;height:100%;display:block;object-fit:cover;background:#000}
+.sh-video-card .sh-photo-badge{z-index:2}
 .sh-title{font-family:var(--ff-head,inherit);font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1.08;margin:0 0 18px}
 .sh-title em{font-style:normal;background:linear-gradient(120deg,#fbbf24,#ef4444);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .sh-sub{font-size:1.06rem;color:rgba(255,220,200,.78);line-height:1.65;margin:0 0 28px;max-width:540px}
@@ -5257,6 +5260,12 @@ html.dark #cta-sec .cf-input,html.dark #cta-sec select.cf-input,html.dark #cta-s
 /* ═══════════════════════════════════════════════════════════
    CATÁLOGO · VISTA TIENDA (productos como protagonistas)
    ═══════════════════════════════════════════════════════════ */
+.catx-quicklinks{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px;margin:18px auto 0;max-width:880px}
+.catx-ql-lbl{font-size:.82rem;font-weight:700;color:#64748b;margin-right:2px}
+.catx-quicklinks button{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid rgba(37,99,235,.18);color:#2563eb;border-radius:999px;padding:9px 16px;font-size:.83rem;font-weight:700;font-family:var(--ff);cursor:pointer;transition:.18s}
+.catx-quicklinks button:hover{background:#2563eb;border-color:#2563eb;color:#fff;transform:translateY(-1px);box-shadow:0 6px 16px rgba(37,99,235,.22)}
+.catx-quicklinks button i{font-style:normal;font-size:.9rem;opacity:.7}
+@media(max-width:600px){.catx-quicklinks{gap:7px}.catx-quicklinks button{padding:8px 13px;font-size:.78rem}.catx-ql-lbl{width:100%;text-align:center;margin-bottom:2px}}
 .catx-shop-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:40px 0 0;flex-wrap:wrap}
 .catx-shop-title{font-family:var(--ff-head);font-size:1.18rem;font-weight:800;color:#0f172a;letter-spacing:-.02em}
 .catx-shop-sub{font-size:.82rem;color:#64748b;margin-top:2px}
@@ -6064,7 +6073,7 @@ body.catx-q-locked{overflow:hidden}
           </div>
         </div>
         <a href="#cta-sec" class="btn btn-primary nav-cta-btn">
-          <span data-lang="es">Solicitar demo</span><span data-lang="en">Get a demo</span>
+          <span data-lang="es">Solicitar análisis</span><span data-lang="en">Request analysis</span>
         </a>
       </div>
 
@@ -6611,6 +6620,17 @@ body.catx-q-locked{overflow:hidden}
       <div class="tag"><span class="tag-dot"></span><span data-lang="es">Catálogo de Productos</span><span data-lang="en">Product Catalog</span></div>
       <h2 class="s-title"><span data-lang="es">Soluciones <span>de extremo a extremo</span></span><span data-lang="en">Solutions <span>end to end</span></span></h2>
       <p class="s-sub"><span data-lang="es">Seis líneas especializadas · 200+ referencias · 9 marcas de clase mundial. Toca cualquier categoría para ver el detalle completo.</span><span data-lang="en">Six specialized lines · 200+ references · 9 world-class brands. Tap any category to see full details.</span></p>
+    </div>
+
+    <!-- ── Acceso rápido a cada catálogo por línea ── -->
+    <div class="catx-quicklinks rv">
+      <span class="catx-ql-lbl"><span data-lang="es">Catálogos:</span><span data-lang="en">Catalogs:</span></span>
+      <button type="button" onclick="openCatX('fibra')"><span data-lang="es">Fibra Óptica</span><span data-lang="en">Fiber Optic</span> <i>→</i></button>
+      <button type="button" onclick="openCatX('rf')"><span data-lang="es">RF y Cobertura</span><span data-lang="en">RF &amp; Coverage</span> <i>→</i></button>
+      <button type="button" onclick="openCatX('infra')"><span data-lang="es">Infraestructura</span><span data-lang="en">Infrastructure</span> <i>→</i></button>
+      <button type="button" onclick="openCatX('dc')"><span data-lang="es">Data Centers</span><span data-lang="en">Data Centers</span> <i>→</i></button>
+      <button type="button" onclick="openCatX('monitor')"><span data-lang="es">Monitoreo</span><span data-lang="en">Monitoring</span> <i>→</i></button>
+      <button type="button" onclick="openCatX('energia')"><span data-lang="es">Energía</span><span data-lang="en">Energy</span> <i>→</i></button>
     </div>
 
     <!-- ── Stats mini-bar ── -->
@@ -7637,7 +7657,7 @@ body.catx-q-locked{overflow:hidden}
   </div>
 
   <!-- NIVELES G DISPONIBLES -->
-  <div class="swt-levels">
+  <div class="swt-levels" hidden>
     <div class="container">
       <div class="centered rv" style="margin-bottom:24px">
         <div class="tag" style="color:#fdba74!important;background:rgba(251,146,60,.12)!important;border-color:rgba(251,146,60,.3)!important"><span class="tag-dot" style="background:#fb923c!important;box-shadow:0 0 10px #fb923c"></span><span data-lang="es">7 niveles · una para cada carga</span><span data-lang="en">7 levels · one for every cargo</span></div>
@@ -8117,29 +8137,13 @@ body.catx-q-locked{overflow:hidden}
 
       <!-- Right: foto real de cajas + etiquetas octagonales (sin marca) -->
       <div class="sh-visual rv">
-        <div class="sh-photo-card">
-          <img src="https://images.unsplash.com/photo-1601598851547-4302969d0614?w=900&auto=format&fit=crop&q=80" alt="Cajas de cartón con etiquetas detectoras de impacto" loading="lazy">
-          <div class="sh-photo-overlay"></div>
-          <div class="sh-label-stack" aria-hidden="true">
-            <div class="sh-label sh-label-1">
-              <div class="sh-label-band">5G</div>
-              <div class="sh-label-dot">5G</div>
-              <div class="sh-label-foot">Inspect if red</div>
-            </div>
-            <div class="sh-label sh-label-2">
-              <div class="sh-label-band">15G</div>
-              <div class="sh-label-dot">15G</div>
-              <div class="sh-label-foot">Inspect if red</div>
-            </div>
-            <div class="sh-label sh-label-3">
-              <div class="sh-label-band">25G</div>
-              <div class="sh-label-dot">25G</div>
-              <div class="sh-label-foot">Do not accept</div>
-            </div>
-          </div>
+        <div class="sh-video-card">
+          <video class="sh-video" controls preload="metadata" playsinline poster="assets/demo-shockwatch-poster.jpg">
+            <source src="assets/demo-shockwatch.mp4" type="video/mp4">
+          </video>
           <div class="sh-photo-badge">
             <span class="sh-photo-badge-dot"></span>
-            <span data-lang="es">Producto real en uso</span><span data-lang="en">Real product in use</span>
+            <span data-lang="es">Demostración real</span><span data-lang="en">Real demo</span>
           </div>
         </div>
       </div>
@@ -9063,8 +9067,8 @@ body.catx-q-locked{overflow:hidden}
         <div class="caso-card-body">
           <span class="caso-card-cat"><span data-lang="es">Residencial · Costa del Este</span><span data-lang="en">Residential · Costa del Este</span></span>
           <h3><span data-lang="es">Casa familiar — Medidor Inteligente</span><span data-lang="en">Family home — Smart Meter</span></h3>
-          <p><span data-lang="es">Instalamos sensor de 16 circuitos. Detectamos consumo fantasma del A/C en standby y fugas en cuarto de lavandería. Ahorro mensual confirmado: B/.38.</span><span data-lang="en">We installed a 16-circuit sensor. Detected A/C standby phantom load and laundry leakage. Confirmed monthly savings: B/.38.</span></p>
-          <div class="caso-stats"><span><strong>B/.38</strong>/mes</span><span><strong>14 meses</strong> ROI</span></div>
+          <p><span data-lang="es">Instalamos sensor de 16 circuitos. Detectamos consumo fantasma del A/C en standby y fugas en cuarto de lavandería. Ahorro mensual confirmado en la factura.</span><span data-lang="en">We installed a 16-circuit sensor. Detected A/C standby phantom load and laundry leakage. Confirmed monthly savings on the bill.</span></p>
+          <div class="caso-stats"><span><strong>−32%</strong> <span data-lang="es">consumo</span><span data-lang="en">usage</span></span><span><strong>14 <span data-lang="es">meses</span><span data-lang="en">months</span></strong> ROI</span></div>
         </div>
       </div>
       <div class="caso-card">
@@ -9135,7 +9139,7 @@ body.catx-q-locked{overflow:hidden}
       <div class="test-card rv">
         <div class="test-badge">Medidor Inteligente · Comercial</div>
         <div class="test-stars"><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span><span class="test-star"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-star"/></svg></span></span></div>
-        <p class="test-text"><span data-lang="es">Instalaron todo en mi local en menos de 2 horas. Descubrí que el servidor de cámaras nunca se apagaba en fin de semana. Ahorro B/.38 al mes sin cambiar nada de hardware.</span><span data-lang="en">They installed everything in my store in under 2 hours. Discovered the camera server never shut down on weekends. Save B/.38/month without changing any hardware.</span></p>
+        <p class="test-text"><span data-lang="es">Instalaron todo en mi local en menos de 2 horas. Descubrí que el servidor de cámaras nunca se apagaba en fin de semana. Ahorro real cada mes sin cambiar nada de hardware.</span><span data-lang="en">They installed everything in my store in under 2 hours. Discovered the camera server never shut down on weekends. Real savings every month without changing any hardware.</span></p>
         <div class="test-author">
           <div class="test-avatar-letter" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff">MC</div>
           <div>
