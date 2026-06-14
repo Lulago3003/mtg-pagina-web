@@ -5336,6 +5336,46 @@ html.dark #cta-sec .cf-input,html.dark #cta-sec select.cf-input,html.dark #cta-s
 .catx-q-send:hover{background:#15803d}
 .catx-q-send .ico{width:17px;height:17px;display:inline-flex}
 body.catx-q-locked{overflow:hidden}
+/* ── Comparador ── */
+.catx-pc-imgwrap{position:relative}
+.catx-cmp-chk{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.92);border:1px solid rgba(37,99,235,.2);color:#64748b;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3;transition:.16s;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.catx-cmp-chk:hover{border-color:#2563eb;color:#2563eb}
+.catx-cmp-chk.on{background:#2563eb;border-color:#2563eb;color:#fff}
+.catx-cmp-bar{display:none;align-items:center;gap:12px;flex-wrap:wrap;background:#0b1e4d;color:#fff;border-radius:14px;padding:12px 16px;margin:18px 0 2px}
+.catx-cmp-bar.show{display:flex}
+.catx-cmp-info{display:inline-flex;align-items:center;gap:7px;font-size:.85rem;font-weight:700;white-space:nowrap}
+.catx-cmp-count{background:#38bdf8;color:#06263f;min-width:20px;height:20px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800}
+.catx-cmp-thumbs{display:flex;gap:10px;flex:1;flex-wrap:wrap}
+.catx-cmp-thumb{position:relative;width:42px;height:42px;border-radius:9px;background:#fff;display:flex;align-items:center;justify-content:center;padding:4px}
+.catx-cmp-thumb img{max-width:100%;max-height:100%;object-fit:contain}
+.catx-cmp-thumb button{position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:50%;background:#ef4444;color:#fff;border:0;font-size:.72rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.catx-cmp-go{background:#38bdf8;color:#06263f;border:0;border-radius:10px;padding:10px 16px;font-weight:800;font-size:.85rem;cursor:pointer;font-family:var(--ff);white-space:nowrap}
+.catx-cmp-go:hover{background:#7dd3fc}
+.catx-cmp-clear{background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:9px;width:38px;height:38px;font-size:1.2rem;cursor:pointer;flex-shrink:0}
+.catx-cmp-modal{position:fixed;inset:0;z-index:9600;display:none}
+.catx-cmp-modal.open{display:block}
+.catx-cmp-modal-bg{position:absolute;inset:0;background:rgba(8,13,25,.55)}
+.catx-cmp-modal-box{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(820px,94vw);max-height:88vh;background:#fff;border-radius:16px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.catx-cmp-modal-head{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid #eef1f6;flex-shrink:0}
+.catx-cmp-modal-head strong{font-family:var(--ff-head);font-size:1.15rem;color:#0f172a}
+.catx-cmp-modal-head button{background:0;border:0;font-size:1.7rem;color:#94a3b8;cursor:pointer;line-height:1}
+.catx-cmp-modal-body{overflow:auto;padding:6px}
+.catx-cmp-table{width:100%;border-collapse:collapse;font-size:.84rem}
+.catx-cmp-table th{text-align:left;color:#64748b;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.03em;padding:12px 14px;vertical-align:top;width:118px;background:#f8fafc;position:sticky;left:0}
+.catx-cmp-table td{padding:12px 14px;vertical-align:top;color:#334155;border-left:1px solid #eef1f6;min-width:150px}
+.catx-cmp-table tr+tr{border-top:1px solid #eef1f6}
+.catx-cmp-hrow td{text-align:center}
+.catx-cmp-himg{height:88px;background:#f4f7fc;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:8px;margin-bottom:8px}
+.catx-cmp-himg img{max-width:100%;max-height:100%;object-fit:contain}
+.catx-cmp-hb{font-size:.64rem;font-weight:800;color:#2563eb;text-transform:uppercase}
+.catx-cmp-hn{font-family:var(--ff-head);font-weight:700;color:#0f172a;font-size:.92rem;line-height:1.2;margin-top:2px}
+.catx-cmp-of{color:#0f7a4e;font-size:.58rem}
+.catx-cmp-av{font-weight:700;color:#64748b}
+.catx-cmp-av.on{color:#0f7a4e}
+.catx-cmp-tag{display:inline-block;background:#eef3fc;color:#2563eb;font-size:.66rem;font-weight:700;padding:2px 7px;border-radius:5px;margin:0 3px 3px 0}
+.catx-cmp-add{background:#2563eb;color:#fff;border:0;border-radius:9px;padding:8px 13px;font-size:.78rem;font-weight:700;cursor:pointer;font-family:var(--ff)}
+.catx-cmp-add:hover{background:#1d4ed8}
+@media(max-width:600px){.catx-cmp-table th{width:88px;font-size:.64rem;padding:10px 8px}.catx-cmp-table td{min-width:128px;padding:10px 8px}.catx-cmp-himg{height:68px}.catx-cmp-hn{font-size:.82rem}}
 .catx-shop-divider{margin-top:46px;border-top:1px solid rgba(37,99,235,.1)}
 @media(max-width:600px){
   .catx-prod-grid{grid-template-columns:repeat(2,1fr);gap:11px;margin-top:14px}
@@ -6626,6 +6666,12 @@ body.catx-q-locked{overflow:hidden}
       <button type="button" class="catx-catpill" onclick="catxCatPill('infra',this)"><span data-lang="es">Infraestructura</span><span data-lang="en">Infrastructure</span></button>
       <button type="button" class="catx-catpill" onclick="catxCatPill('dc',this)"><span data-lang="es">Data centers</span><span data-lang="en">Data centers</span></button>
       <button type="button" class="catx-catpill" onclick="catxCatPill('monitor',this)"><span data-lang="es">Monitoreo</span><span data-lang="en">Monitoring</span></button>
+    </div>
+    <div class="catx-cmp-bar" id="catxCompareBar">
+      <span class="catx-cmp-info"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h13l-3-3M21 16H8l3 3"/></svg> <span data-lang="es">Comparar</span><span data-lang="en">Compare</span> <span class="catx-cmp-count">0</span></span>
+      <span class="catx-cmp-thumbs"></span>
+      <button type="button" class="catx-cmp-go" onclick="catxCompareOpen()"><span data-lang="es">Ver comparación</span><span data-lang="en">View comparison</span> →</button>
+      <button type="button" class="catx-cmp-clear" onclick="catxCompareClear()" aria-label="Limpiar">&times;</button>
     </div>
     <div class="catx-prod-grid" id="catxProducts"></div>
     <p class="catx-prod-empty" id="catxProdEmpty"><span data-lang="es">Sin resultados. Prueba con otra marca o categoría.</span><span data-lang="en">No results. Try another brand or category.</span></p>
@@ -10482,10 +10528,13 @@ function renderCatxProducts(){
     var tagsHtml=(p.tags||[]).slice(0,2).map(function(t){return '<button type="button" class="catx-pc-tag" onclick="catxTagFilter(this.textContent)">'+t+'</button>';}).join('');
     var metaHtml='<div class="catx-pc-meta">'+availHtml+tagsHtml+'</div>';
     return '<article class="catx-pcard">'
+      + '<div class="catx-pc-imgwrap">'
       + '<button type="button" class="catx-pc-img" onclick="openCatX(\''+p.cat+'\')" aria-label="'+p.brand+' '+p.name+'">'
       + hot
       + '<img src="'+p.img+'" alt="'+p.brand+' '+p.name+'" loading="lazy" data-cat="'+p.cat+'" data-label="'+(p.brand+' · '+p.name).replace(/"/g,'&quot;')+'" onerror="catxFeatImgError(this)">'
       + '</button>'
+      + '<button type="button" class="catx-cmp-chk'+(catxInCompare(p.name)?' on':'')+'" data-pn="'+p.name.replace(/"/g,'&quot;')+'" onclick="catxCompareToggle(this.dataset.pn)" aria-label="Comparar" title="Comparar"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h13l-3-3M21 16H8l3 3"/></svg></button>'
+      + '</div>'
       + '<div class="catx-pc-body">'
       + '<div class="catx-pc-brandrow"><span class="catx-pc-brand">'+p.brand+'</span>'+off+'</div>'
       + '<h4 class="catx-pc-name">'+p.name+'</h4>'
@@ -10498,6 +10547,7 @@ function renderCatxProducts(){
       + '</div></div></article>';
   }).join('');
   if(typeof catxQuoteUpdate==='function')catxQuoteUpdate();
+  if(typeof catxSyncCompareUI==='function')catxSyncCompareUI();
 }
 
 // ── Carrito de cotización (agregar varios → un solo WhatsApp) ─────────
@@ -10533,6 +10583,43 @@ function catxQuoteSend(){
   var intro=(lang==='en'?'Hello, I would like a quote for these products:':'Hola, quisiera cotizar estos productos:');
   window.open('https://wa.me/50766743062?text='+encodeURIComponent(intro+'\n'+lines.join('\n')),'_blank');
 }
+
+// ── Comparador de productos (hasta 3, tabla lado a lado) ─────────────
+let catxCompare=[];
+function catxInCompare(n){return catxCompare.indexOf(n)>=0;}
+function catxQuoteAddByName(name){ if(catxQuote.indexOf(name)<0){catxQuote.push(name);try{localStorage.setItem('mtg-quote',JSON.stringify(catxQuote));}catch(e){}catxQuoteUpdate();renderCatxProducts();} }
+function catxCompareToggle(name){
+  var i=catxCompare.indexOf(name);
+  if(i>=0)catxCompare.splice(i,1);
+  else{ if(catxCompare.length>=3)return; catxCompare.push(name); }
+  catxSyncCompareUI();
+}
+function catxSyncCompareUI(){
+  document.querySelectorAll('.catx-cmp-chk').forEach(function(b){b.classList.toggle('on',catxInCompare(b.dataset.pn));});
+  var bar=document.getElementById('catxCompareBar'); if(!bar)return;
+  if(catxCompare.length<2){bar.classList.remove('show');return;}
+  bar.classList.add('show');
+  var cnt=bar.querySelector('.catx-cmp-count'); if(cnt)cnt.textContent=catxCompare.length;
+  var th=bar.querySelector('.catx-cmp-thumbs');
+  if(th){th.innerHTML=catxCompare.map(function(name){var p=CATX_PRODUCTS.filter(function(x){return x.name===name;})[0]; if(!p)return ''; return '<span class="catx-cmp-thumb"><img src="'+p.img+'" alt="" data-cat="'+p.cat+'" onerror="catxFeatImgError(this)"><button type="button" data-pn="'+name.replace(/"/g,'&quot;')+'" onclick="catxCompareToggle(this.dataset.pn)" aria-label="Quitar">&times;</button></span>';}).join('');}
+}
+function catxCompareClear(){catxCompare=[];catxSyncCompareUI();}
+function catxCompareOpen(){
+  if(catxCompare.length<2)return;
+  var lang=document.documentElement.classList.contains('lang-en')?'en':'es';
+  var prods=catxCompare.map(function(n){return CATX_PRODUCTS.filter(function(x){return x.name===n;})[0];}).filter(Boolean);
+  var lineOf=function(p){var d=CATX_DATA[p.cat];return d?d.title[lang]:'';};
+  function row(label,fn){return '<tr><th>'+label+'</th>'+prods.map(function(p){return '<td>'+fn(p)+'</td>';}).join('')+'</tr>';}
+  var head='<tr class="catx-cmp-hrow"><th></th>'+prods.map(function(p){return '<td><div class="catx-cmp-himg"><img src="'+p.img+'" data-cat="'+p.cat+'" onerror="catxFeatImgError(this)" alt="'+p.name+'"></div><div class="catx-cmp-hb">'+p.brand+(p.official?' <span class="catx-cmp-of">✓ '+(lang==='en'?'Official':'Oficial')+'</span>':'')+'</div><div class="catx-cmp-hn">'+p.name+'</div></td>';}).join('')+'</tr>';
+  var rows=row(lang==='en'?'Line':'Línea',lineOf)
+    +row(lang==='en'?'Availability':'Disponibilidad',function(p){return p.avail==='stock'?'<span class="catx-cmp-av on">'+(lang==='en'?'In Panama':'Disponible en Panamá')+'</span>':'<span class="catx-cmp-av">'+(lang==='en'?'On request':'Bajo pedido')+'</span>';})
+    +row(lang==='en'?'Specs':'Características',function(p){return ((p.specs&&p.specs[lang])||[]).join('<br>')||'—';})
+    +row(lang==='en'?'Tags':'Etiquetas',function(p){return ((p.tags)||[]).map(function(t){return '<span class="catx-cmp-tag">'+t+'</span>';}).join(' ')||'—';})
+    +'<tr class="catx-cmp-frow"><th></th>'+prods.map(function(p){return '<td><button type="button" class="catx-cmp-add" data-pn="'+p.name.replace(/"/g,'&quot;')+'" onclick="catxQuoteAddByName(this.dataset.pn)">+ '+(lang==='en'?'Add':'Agregar')+'</button></td>';}).join('')+'</tr>';
+  document.getElementById('catxCmpBody').innerHTML='<table class="catx-cmp-table">'+head+rows+'</table>';
+  var m=document.getElementById('catxCmpModal'); m.classList.add('open'); document.body.classList.add('catx-q-locked');
+}
+function catxCompareClose(){var m=document.getElementById('catxCmpModal');if(m)m.classList.remove('open');document.body.classList.remove('catx-q-locked');}
 renderCatxProducts();
 
 // Ctrl+K / Cmd+K focuses catalog search if catalog is in viewport
@@ -11384,6 +11471,17 @@ window.addEventListener('hashchange',function(){_mtgInitWaFab();});
       <button type="button" class="catx-q-clear" onclick="catxQuoteClear()"><span data-lang="es">Vaciar</span><span data-lang="en">Clear</span></button>
       <button type="button" class="catx-q-send" onclick="catxQuoteSend()"><span class="ico"><svg viewBox="0 0 24 24" width="17" height="17"><use href="#i-message"/></svg></span><span data-lang="es">Enviar por WhatsApp</span><span data-lang="en">Send via WhatsApp</span></button>
     </div>
+  </div>
+</div>
+<!-- ═══ Comparador de productos ═══ -->
+<div id="catxCmpModal" class="catx-cmp-modal">
+  <div class="catx-cmp-modal-bg" onclick="catxCompareClose()"></div>
+  <div class="catx-cmp-modal-box">
+    <div class="catx-cmp-modal-head">
+      <strong><span data-lang="es">Comparar productos</span><span data-lang="en">Compare products</span></strong>
+      <button type="button" onclick="catxCompareClose()" aria-label="Cerrar">&times;</button>
+    </div>
+    <div class="catx-cmp-modal-body" id="catxCmpBody"></div>
   </div>
 </div>
 </body>
