@@ -5283,6 +5283,18 @@ html.dark #cta-sec .cf-input,html.dark #cta-sec select.cf-input,html.dark #cta-s
 .catx-pc-official{display:inline-flex;align-items:center;gap:3px;background:#e7f6ee;color:#0f7a4e;font-size:.58rem;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.03em;text-transform:uppercase}
 .catx-pc-ver{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(37,99,235,.22);color:#2563eb;border-radius:10px;padding:10px 13px;font-size:.8rem;font-weight:700;font-family:var(--ff);cursor:pointer;white-space:nowrap;transition:.18s;min-height:42px}
 .catx-pc-ver:hover{background:#eef3fc;border-color:rgba(37,99,235,.42)}
+.catx-pc-specs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+.catx-pc-specs li{position:relative;padding-left:15px;font-size:.74rem;color:#475569;line-height:1.35}
+.catx-pc-specs li::before{content:'';position:absolute;left:0;top:6px;width:6px;height:6px;border-radius:50%;background:#2563eb;opacity:.55}
+.catx-pc-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:1px}
+.catx-pc-av{display:inline-flex;align-items:center;gap:5px;font-size:.64rem;font-weight:700;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.catx-pc-av i{width:6px;height:6px;border-radius:50%;display:inline-block;flex-shrink:0}
+.av-stock{background:#e7f6ee;color:#0f7a4e}
+.av-stock i{background:#16a34a}
+.av-order{background:#f1f5f9;color:#64748b}
+.av-order i{background:#94a3b8}
+.catx-pc-tag{background:#eef3fc;color:#2563eb;border:0;font-size:.64rem;font-weight:700;padding:3px 8px;border-radius:6px;cursor:pointer;font-family:var(--ff);transition:.15s}
+.catx-pc-tag:hover{background:#dbe7fb}
 .catx-mi-banner{display:flex;align-items:center;gap:15px;margin-top:20px;padding:16px 20px;background:linear-gradient(120deg,#eef3fc,#e6f6ff);border:1px solid rgba(37,99,235,.16);border-radius:14px;text-decoration:none;transition:.2s}
 .catx-mi-banner:hover{border-color:rgba(37,99,235,.34);transform:translateY(-2px);box-shadow:0 10px 30px -12px rgba(37,99,235,.25)}
 .catx-mi-ic{flex-shrink:0;width:44px;height:44px;border-radius:12px;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center}
@@ -5290,6 +5302,35 @@ html.dark #cta-sec .cf-input,html.dark #cta-sec select.cf-input,html.dark #cta-s
 .catx-mi-tx strong{font-family:var(--ff-head);font-size:.95rem;font-weight:800;color:#0f172a}
 .catx-mi-tx > span{font-size:.82rem;color:#475569;line-height:1.4}
 .catx-mi-go{flex-shrink:0;font-size:.85rem;font-weight:800;color:#2563eb;white-space:nowrap}
+.catx-pc-add{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;background:#2563eb;color:#fff;border:0;border-radius:10px;padding:10px 12px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:var(--ff);transition:.18s;min-height:42px;white-space:nowrap}
+.catx-pc-add:hover{background:#1d4ed8;transform:translateY(-1px)}
+.catx-pc-add.in{background:#16a34a}
+.catx-pc-add.in:hover{background:#15803d}
+.catx-qbar{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(160%);z-index:7500;display:flex;align-items:center;gap:11px;background:#2563eb;color:#fff;padding:13px 18px 13px 20px;border-radius:999px;box-shadow:0 14px 38px rgba(37,99,235,.45);cursor:pointer;font-family:var(--ff);font-weight:700;font-size:.9rem;transition:transform .35s cubic-bezier(.34,1.3,.4,1)}
+.catx-qbar.show{transform:translateX(-50%) translateY(0)}
+.catx-qbar:hover{background:#1d4ed8}
+.catx-qbar-n{background:#fff;color:#2563eb;min-width:23px;height:23px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:800;padding:0 6px}
+.catx-qpanel{position:fixed;inset:0;z-index:9500;display:none}
+.catx-qpanel.open{display:block}
+.catx-qpanel-bg{position:absolute;inset:0;background:rgba(8,13,25,.5)}
+.catx-qpanel-box{position:absolute;right:0;top:0;bottom:0;width:min(420px,92vw);background:#fff;display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.28);transform:translateX(100%);transition:transform .34s cubic-bezier(.4,0,.2,1)}
+.catx-qpanel.open .catx-qpanel-box{transform:translateX(0)}
+.catx-qpanel-head{display:flex;align-items:center;justify-content:space-between;padding:20px;border-bottom:1px solid #eef1f6}
+.catx-qpanel-head strong{font-family:var(--ff-head);font-size:1.12rem;color:#0f172a}
+.catx-qpanel-head button{background:0;border:0;font-size:1.7rem;color:#94a3b8;cursor:pointer;line-height:1}
+.catx-qpanel-list{flex:1;overflow-y:auto;padding:14px 20px;display:flex;flex-direction:column;gap:8px}
+.catx-q-empty{color:#94a3b8;font-size:.9rem;text-align:center;padding:34px 0}
+.catx-q-item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#f7faff;border:1px solid rgba(37,99,235,.1);border-radius:10px;padding:11px 13px;font-size:.84rem;color:#334155}
+.catx-q-item strong{color:#2563eb;font-weight:800;font-size:.68rem;text-transform:uppercase;letter-spacing:.03em;margin-right:4px}
+.catx-q-item button{background:0;border:0;font-size:1.3rem;color:#94a3b8;cursor:pointer;line-height:1;flex-shrink:0;padding:0 2px}
+.catx-q-item button:hover{color:#ef4444}
+.catx-qpanel-foot{display:flex;gap:10px;padding:16px 20px;border-top:1px solid #eef1f6}
+.catx-q-clear{background:0;border:1px solid rgba(15,23,42,.16);color:#64748b;border-radius:10px;padding:12px 16px;font-weight:700;font-size:.85rem;cursor:pointer;font-family:var(--ff)}
+.catx-q-clear:hover{background:#f8fafc}
+.catx-q-send{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#16a34a;color:#fff;border:0;border-radius:10px;padding:12px 16px;font-weight:800;font-size:.88rem;cursor:pointer;font-family:var(--ff)}
+.catx-q-send:hover{background:#15803d}
+.catx-q-send .ico{width:17px;height:17px;display:inline-flex}
+body.catx-q-locked{overflow:hidden}
 .catx-shop-divider{margin-top:46px;border-top:1px solid rgba(37,99,235,.1)}
 @media(max-width:600px){
   .catx-prod-grid{grid-template-columns:repeat(2,1fr);gap:11px;margin-top:14px}
@@ -5298,7 +5339,7 @@ html.dark #cta-sec .cf-input,html.dark #cta-sec select.cf-input,html.dark #cta-s
   .catx-pc-name{font-size:.86rem}
   .catx-pc-desc{font-size:.73rem}
   .catx-pc-actions{flex-direction:column;gap:7px}
-  .catx-pc-cot,.catx-pc-ver{width:100%;font-size:.78rem;padding:10px;min-height:40px}
+  .catx-pc-add,.catx-pc-ver{width:100%;font-size:.78rem;padding:10px;min-height:40px}
   .catx-mi-banner{flex-wrap:wrap;gap:11px;padding:14px 16px}
   .catx-mi-go{width:100%}
   .catx-shop-title{font-size:1.05rem}
@@ -10348,6 +10389,26 @@ function catxBrandBtn(brand, btn){
 // buscador. Los "más buscados" salen primero con su badge.
 const CATX_POP = new Set(['AXS-120','MaxTester 715D','FiberWatch RTU','Modelo 43 Wattmeter','Vue 3 — 16 circuitos','RFeye Node 100-8']);
 const CATX_BKEY = {'EXFO':'exfo','N-TEST':'n-test','Bird':'bird','CRFS':'crfs','PROMAX':'promax','KHIPU':'khipu','PROSE':'prose','GL Communications':'gl','AEM Networks':'aem','Emporia':'emporia'};
+// Specs clave (2), etiquetas de uso y disponibilidad por producto.
+// avail: 'stock' = Disponible en Panamá · 'order' = Bajo pedido (ajustable).
+const CATX_META = {
+  'FiberWatch RTU':{specs:{es:['Monitoreo remoto 24/7','Alarmas en tiempo real'],en:['Remote monitoring 24/7','Real-time alarms']},tags:['Fibra','Monitoreo'],avail:'stock'},
+  'MaxTester 715D':{specs:{es:['OTDR singlemode','1310 / 1550 nm'],en:['Singlemode OTDR','1310 / 1550 nm']},tags:['FTTH','Testing'],avail:'stock'},
+  'MaxTester 730D':{specs:{es:['OTDR multimodo + SM','850/1300 · 1310/1550 nm'],en:['Multimode + SM OTDR','850/1300 · 1310/1550 nm']},tags:['LAN','Testing'],avail:'order'},
+  'AXS-120':{specs:{es:['OTDR compacto SM','1310 / 1550 nm'],en:['Compact SM OTDR','1310 / 1550 nm']},tags:['FTTH','Última milla'],avail:'stock'},
+  'RFeye Node 100-8':{specs:{es:['Espectro 9 kHz – 8 GHz','Monitoreo continuo'],en:['Spectrum 9 kHz – 8 GHz','Continuous monitoring']},tags:['RF','Espectro'],avail:'order'},
+  'Modelo 43 Wattmeter':{specs:{es:['Wattmetro direccional','Elementos intercambiables'],en:['Directional wattmeter','Plug-in elements']},tags:['RF','Medición'],avail:'stock'},
+  'RANGERNeo+':{specs:{es:['Medidor de campo','TV / Cable / Satélite'],en:['Field meter','TV / Cable / Sat']},tags:['Broadcast','Testing'],avail:'order'},
+  'Antenas BTS':{specs:{es:['2G / 3G / 4G / 5G','Multi-banda'],en:['2G / 3G / 4G / 5G','Multi-band']},tags:['RF','Sitio'],avail:'order'},
+  'Sistemas DAS':{specs:{es:['Cobertura in-building','Pasivo / activo'],en:['In-building coverage','Passive / active']},tags:['DAS','Cobertura'],avail:'order'},
+  'Camuflaje Arquitectónico':{specs:{es:['Integración estética','Personalizable'],en:['Aesthetic integration','Customizable']},tags:['Sitio','Camuflaje'],avail:'order'},
+  'Antenas Microondas':{specs:{es:['Backhaul punto a punto','Alta capacidad'],en:['Point-to-point backhaul','High capacity']},tags:['Backhaul','RF'],avail:'order'},
+  'Micro Data Center':{specs:{es:['Modular pre-ensamblado','Plug & play'],en:['Pre-assembled modular','Plug & play']},tags:['Data center'],avail:'order'},
+  'Modular DC':{specs:{es:['Escalable por módulos','Refrigeración integrada'],en:['Scalable modules','Integrated cooling']},tags:['Data center'],avail:'order'},
+  'Site Components':{specs:{es:['Racks y accesorios','Certificados'],en:['Racks & accessories','Certified']},tags:['Infraestructura'],avail:'stock'},
+  'tProbe T1/E1':{specs:{es:['Analizador T1 / E1','Portátil'],en:['T1 / E1 analyzer','Portable']},tags:['Testing','Datacom'],avail:'order'},
+  'TestPro CV100':{specs:{es:['Certificador cobre + fibra','De mano'],en:['Copper + fiber certifier','Handheld']},tags:['Certificación','Testing'],avail:'order'}
+};
 const CATX_PRODUCTS = (function(){
   const out=[]; const seen={};
   const OFFICIAL=new Set(['EXFO','N-TEST','PROSE','KHIPU']);   // distribuidor oficial declarado
@@ -10358,17 +10419,27 @@ const CATX_PRODUCTS = (function(){
     (d.featured||[]).forEach(f=>{
       if(seen[f.name]) return;          // evita el mismo producto en 2 líneas
       seen[f.name]=1;
-      out.push({cat:cat, brand:f.brand, bkey:CATX_BKEY[f.brand]||'', name:f.name, img:f.img, desc:f.desc, pdf:d.pdf, pop:CATX_POP.has(f.name), official:OFFICIAL.has(f.brand)});
+      const m=CATX_META[f.name]||{};
+      out.push({cat:cat, brand:f.brand, bkey:CATX_BKEY[f.brand]||'', name:f.name, img:f.img, desc:f.desc, pdf:d.pdf, pop:CATX_POP.has(f.name), official:OFFICIAL.has(f.brand), specs:m.specs||null, tags:m.tags||[], avail:m.avail||'order'});
     });
   });
   return out.sort(function(a,b){return (b.pop?1:0)-(a.pop?1:0);});
 })();
 let _catxCat='all';
+let catxQuote=[]; try{catxQuote=JSON.parse(localStorage.getItem('mtg-quote')||'[]');if(!Array.isArray(catxQuote))catxQuote=[];}catch(e){catxQuote=[];}
 function catxCatPill(cat,btn){
   _catxCat=cat;
   document.querySelectorAll('.catx-catpill').forEach(function(b){b.classList.remove('on');});
   if(btn)btn.classList.add('on');
   renderCatxProducts();
+}
+// Clic en una etiqueta de uso (FTTH, DAS…) → filtra por esa aplicación
+function catxTagFilter(tag){
+  var si=document.getElementById('catxSearch');
+  if(si) si.value=tag;
+  var cb=document.getElementById('catxSearchClear'); if(cb)cb.style.display='flex';
+  renderCatxProducts();
+  var g=document.getElementById('catxProducts'); if(g)g.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function renderCatxProducts(){
   const grid=document.getElementById('catxProducts');
@@ -10380,7 +10451,7 @@ function renderCatxProducts(){
   const list=CATX_PRODUCTS.filter(function(p){
     if(_catxCat!=='all' && p.cat!==_catxCat) return false;
     if(ab!=='all' && p.bkey!==ab) return false;
-    if(q){ var hay=(p.brand+' '+p.name+' '+p.desc.es+' '+p.desc.en).toLowerCase(); if(hay.indexOf(q)<0) return false; }
+    if(q){ var hay=(p.brand+' '+p.name+' '+p.desc.es+' '+p.desc.en+' '+(p.tags||[]).join(' ')+' '+((p.specs&&p.specs.es)||[]).join(' ')+' '+((p.specs&&p.specs.en)||[]).join(' ')).toLowerCase(); if(hay.indexOf(q)<0) return false; }
     return true;
   });
   const cnt=document.getElementById('catxProdCount');
@@ -10391,6 +10462,12 @@ function renderCatxProducts(){
     var wa='https://wa.me/50766743062?text='+encodeURIComponent('Hola, me interesa el producto '+p.brand+' '+p.name);
     var off=p.official ? '<span class="catx-pc-official"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'+(lang==='en'?'Official':'Oficial')+'</span>' : '';
     var hot=p.pop ? '<span class="catx-pc-hot">'+(lang==='en'?'Most wanted':'Más buscado')+'</span>' : '';
+    var specsHtml=(p.specs&&p.specs[lang]&&p.specs[lang].length) ? '<ul class="catx-pc-specs">'+p.specs[lang].map(function(s){return '<li>'+s+'</li>';}).join('')+'</ul>' : '';
+    var availHtml=(p.avail==='stock')
+      ? '<span class="catx-pc-av av-stock"><i></i>'+(lang==='en'?'In Panama':'Disponible en Panamá')+'</span>'
+      : '<span class="catx-pc-av av-order"><i></i>'+(lang==='en'?'On request':'Bajo pedido')+'</span>';
+    var tagsHtml=(p.tags||[]).slice(0,2).map(function(t){return '<button type="button" class="catx-pc-tag" onclick="catxTagFilter(this.textContent)">'+t+'</button>';}).join('');
+    var metaHtml='<div class="catx-pc-meta">'+availHtml+tagsHtml+'</div>';
     return '<article class="catx-pcard">'
       + '<button type="button" class="catx-pc-img" onclick="openCatX(\''+p.cat+'\')" aria-label="'+p.brand+' '+p.name+'">'
       + hot
@@ -10400,11 +10477,48 @@ function renderCatxProducts(){
       + '<div class="catx-pc-brandrow"><span class="catx-pc-brand">'+p.brand+'</span>'+off+'</div>'
       + '<h4 class="catx-pc-name">'+p.name+'</h4>'
       + '<p class="catx-pc-desc">'+p.desc[lang]+'</p>'
+      + specsHtml
+      + metaHtml
       + '<div class="catx-pc-actions">'
-      + '<a class="catx-pc-cot" href="'+wa+'" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" width="15" height="15"><use href="#i-message"/></svg></span>'+(lang==='en'?'Quote':'Cotizar')+'</a>'
+      + '<button type="button" class="catx-pc-add'+(catxInQuote(p.name)?' in':'')+'" data-pn="'+p.name.replace(/"/g,'&quot;')+'" onclick="catxQuoteToggle(this)">'+catxAddLabel(p.name,lang)+'</button>'
       + '<button type="button" class="catx-pc-ver" onclick="openCatX(\''+p.cat+'\')">'+(lang==='en'?'Details':'Ver detalle')+'</button>'
       + '</div></div></article>';
   }).join('');
+  if(typeof catxQuoteUpdate==='function')catxQuoteUpdate();
+}
+
+// ── Carrito de cotización (agregar varios → un solo WhatsApp) ─────────
+function catxInQuote(name){return catxQuote.indexOf(name)>=0;}
+function catxAddLabel(name,lang){return catxInQuote(name)?(lang==='en'?'✓ Added':'✓ Agregado'):(lang==='en'?'+ Add':'+ Agregar');}
+function catxQuoteToggle(btn){
+  var name=btn.dataset.pn; var i=catxQuote.indexOf(name);
+  if(i>=0)catxQuote.splice(i,1); else catxQuote.push(name);
+  try{localStorage.setItem('mtg-quote',JSON.stringify(catxQuote));}catch(e){}
+  var lang=document.documentElement.classList.contains('lang-en')?'en':'es';
+  btn.classList.toggle('in',catxInQuote(name)); btn.textContent=catxAddLabel(name,lang);
+  catxQuoteUpdate();
+}
+function catxQuoteUpdate(){
+  var cnt=document.getElementById('catxQuoteCount'); if(cnt)cnt.textContent=catxQuote.length;
+  var bar=document.getElementById('catxQuoteBar'); if(bar)bar.classList.toggle('show',catxQuote.length>0);
+}
+function catxQuoteOpen(){
+  var lang=document.documentElement.classList.contains('lang-en')?'en':'es';
+  var panel=document.getElementById('catxQuotePanel'), listEl=document.getElementById('catxQuoteList');
+  if(!panel||!listEl)return;
+  if(catxQuote.length===0){listEl.innerHTML='<p class="catx-q-empty">'+(lang==='en'?'No products yet.':'Aún no hay productos.')+'</p>';}
+  else{listEl.innerHTML=catxQuote.map(function(name){var p=CATX_PRODUCTS.filter(function(x){return x.name===name;})[0]||{brand:'',name:name};return '<div class="catx-q-item"><span><strong>'+(p.brand||'')+'</strong> '+name+'</span><button type="button" data-pn="'+name.replace(/"/g,'&quot;')+'" onclick="catxQuoteRemove(this.dataset.pn)" aria-label="Quitar">×</button></div>';}).join('');}
+  panel.classList.add('open'); document.body.classList.add('catx-q-locked');
+}
+function catxQuoteClose(){var p=document.getElementById('catxQuotePanel');if(p)p.classList.remove('open');document.body.classList.remove('catx-q-locked');}
+function catxQuoteRemove(name){var i=catxQuote.indexOf(name);if(i>=0)catxQuote.splice(i,1);try{localStorage.setItem('mtg-quote',JSON.stringify(catxQuote));}catch(e){}catxQuoteUpdate();catxQuoteOpen();renderCatxProducts();}
+function catxQuoteClear(){catxQuote=[];try{localStorage.setItem('mtg-quote','[]');}catch(e){}catxQuoteUpdate();catxQuoteOpen();renderCatxProducts();}
+function catxQuoteSend(){
+  if(catxQuote.length===0)return;
+  var lang=document.documentElement.classList.contains('lang-en')?'en':'es';
+  var lines=catxQuote.map(function(name){var p=CATX_PRODUCTS.filter(function(x){return x.name===name;})[0]||{brand:'',name:name};return '• '+(p.brand?p.brand+' ':'')+name;});
+  var intro=(lang==='en'?'Hello, I would like a quote for these products:':'Hola, quisiera cotizar estos productos:');
+  window.open('https://wa.me/50766743062?text='+encodeURIComponent(intro+'\n'+lines.join('\n')),'_blank');
 }
 renderCatxProducts();
 
@@ -11238,5 +11352,26 @@ if(document.readyState!=='loading')_mtgInitWaFab();else document.addEventListene
 // Re-set on hashchange (view switches change hash)
 window.addEventListener('hashchange',function(){_mtgInitWaFab();});
 </script>
+
+<!-- ═══ Carrito de cotización ═══ -->
+<div id="catxQuoteBar" class="catx-qbar" onclick="catxQuoteOpen()" role="button" tabindex="0">
+  <span class="catx-qbar-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a3 3 0 0 1 6 0v5"/><path d="M5 9h14l1 11H4z"/></svg></span>
+  <span class="catx-qbar-tx"><span data-lang="es">Pedir cotización</span><span data-lang="en">Request quote</span></span>
+  <span id="catxQuoteCount" class="catx-qbar-n">0</span>
+</div>
+<div id="catxQuotePanel" class="catx-qpanel">
+  <div class="catx-qpanel-bg" onclick="catxQuoteClose()"></div>
+  <div class="catx-qpanel-box">
+    <div class="catx-qpanel-head">
+      <strong><span data-lang="es">Tu cotización</span><span data-lang="en">Your quote</span></strong>
+      <button type="button" onclick="catxQuoteClose()" aria-label="Cerrar">&times;</button>
+    </div>
+    <div id="catxQuoteList" class="catx-qpanel-list"></div>
+    <div class="catx-qpanel-foot">
+      <button type="button" class="catx-q-clear" onclick="catxQuoteClear()"><span data-lang="es">Vaciar</span><span data-lang="en">Clear</span></button>
+      <button type="button" class="catx-q-send" onclick="catxQuoteSend()"><span class="ico"><svg viewBox="0 0 24 24" width="17" height="17"><use href="#i-message"/></svg></span><span data-lang="es">Enviar por WhatsApp</span><span data-lang="en">Send via WhatsApp</span></button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
