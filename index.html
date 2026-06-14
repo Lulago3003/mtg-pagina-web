@@ -5249,6 +5249,48 @@ html.dark #cta-sec .cf-input,html.dark #cta-sec select.cf-input,html.dark #cta-s
 /* Etiquetas de stats del hero: mejor contraste sobre fondo oscuro */
 .hs-lbl{color:rgba(255,255,255,.62) !important}
 
+/* ═══════════════════════════════════════════════════════════
+   CATÁLOGO · VISTA TIENDA (productos como protagonistas)
+   ═══════════════════════════════════════════════════════════ */
+.catx-shop-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:40px 0 0;flex-wrap:wrap}
+.catx-shop-title{font-family:var(--ff-head);font-size:1.18rem;font-weight:800;color:#0f172a;letter-spacing:-.02em}
+.catx-shop-sub{font-size:.82rem;color:#64748b;margin-top:2px}
+.catx-shop-sub #catxProdCount{font-weight:800;color:#2563eb}
+.catx-catpills{display:flex;gap:8px;overflow-x:auto;padding:16px 0 6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.catx-catpills::-webkit-scrollbar{display:none}
+.catx-catpill{flex-shrink:0;border:1px solid rgba(37,99,235,.18);background:#fff;color:#475569;border-radius:999px;padding:8px 16px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:var(--ff);transition:.18s;min-height:38px;white-space:nowrap}
+.catx-catpill:hover{border-color:rgba(37,99,235,.4);color:#2563eb}
+.catx-catpill.on{background:#2563eb;border-color:#2563eb;color:#fff}
+.catx-prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-top:18px}
+.catx-pcard{background:#fff;border:1px solid rgba(37,99,235,.1);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .22s,border-color .22s}
+.catx-pcard:hover{transform:translateY(-4px);box-shadow:0 16px 40px -14px rgba(15,23,42,.18);border-color:rgba(37,99,235,.3)}
+.catx-pc-img{position:relative;border:0;width:100%;height:165px;background:#f4f7fc;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:14px;overflow:hidden}
+.catx-pc-img img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .3s ease}
+.catx-pcard:hover .catx-pc-img img{transform:scale(1.06)}
+.catx-pc-hot{position:absolute;top:10px;left:10px;background:#fde9d3;color:#9a3412;font-size:.62rem;font-weight:800;padding:4px 9px;border-radius:7px;letter-spacing:.03em;text-transform:uppercase;z-index:2}
+.catx-pc-body{padding:13px 15px 15px;display:flex;flex-direction:column;gap:7px;flex:1}
+.catx-pc-brand{align-self:flex-start;background:#eef3fc;color:#2563eb;font-size:.62rem;font-weight:800;padding:3px 9px;border-radius:6px;letter-spacing:.04em;text-transform:uppercase}
+.catx-pc-name{font-family:var(--ff-head);font-size:.96rem;font-weight:700;color:#0f172a;line-height:1.25;margin:0}
+.catx-pc-desc{font-size:.79rem;color:#64748b;line-height:1.45;margin:0;flex:1}
+.catx-pc-actions{display:flex;gap:8px;margin-top:6px}
+.catx-pc-cot{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;background:#2563eb;color:#fff;border-radius:10px;padding:10px 12px;font-size:.82rem;font-weight:700;text-decoration:none;transition:.18s;min-height:42px}
+.catx-pc-cot:hover{background:#1d4ed8;transform:translateY(-1px)}
+.catx-pc-cot .ico{width:15px;height:15px}
+.catx-pc-ficha{display:inline-flex;align-items:center;justify-content:center;width:42px;border:1px solid rgba(37,99,235,.2);color:#2563eb;border-radius:10px;text-decoration:none;transition:.18s;flex-shrink:0}
+.catx-pc-ficha:hover{background:#eef3fc;border-color:rgba(37,99,235,.4)}
+.catx-prod-empty{display:none;text-align:center;color:#94a3b8;font-size:.9rem;padding:32px 0}
+.catx-shop-divider{margin-top:46px;border-top:1px solid rgba(37,99,235,.1)}
+@media(max-width:600px){
+  .catx-prod-grid{grid-template-columns:repeat(2,1fr);gap:11px;margin-top:14px}
+  .catx-pc-img{height:130px;padding:11px}
+  .catx-pc-body{padding:11px 12px 13px;gap:6px}
+  .catx-pc-name{font-size:.86rem}
+  .catx-pc-desc{font-size:.73rem}
+  .catx-pc-cot{font-size:.76rem;padding:9px;min-height:40px}
+  .catx-pc-ficha{width:40px}
+  .catx-shop-title{font-size:1.05rem}
+}
+
 </style>
 </head>
 <body>
@@ -6509,6 +6551,32 @@ html.dark #cta-sec .cf-input,html.dark #cta-sec select.cf-input,html.dark #cta-s
       <button class="catx-bfbtn" data-brand="crfs" onclick="catxBrandBtn('crfs',this)">CRFS</button>
       <button class="catx-bfbtn" data-brand="bird" onclick="catxBrandBtn('bird',this)">Bird</button>
       <button class="catx-bfbtn" data-brand="exfo" onclick="catxBrandBtn('exfo',this)">EXFO</button>
+    </div>
+
+    <!-- ── Vista TIENDA: productos como protagonistas ── -->
+    <div class="catx-shop-head rv">
+      <div>
+        <div class="catx-shop-title"><span data-lang="es">Más solicitados</span><span data-lang="en">Most requested</span></div>
+        <div class="catx-shop-sub"><span id="catxProdCount">0</span> <span data-lang="es">productos · toca para ver detalle o cotizar</span><span data-lang="en">products · tap to view detail or quote</span></div>
+      </div>
+    </div>
+    <div class="catx-catpills rv" id="catxCatPills">
+      <button type="button" class="catx-catpill on" onclick="catxCatPill('all',this)"><span data-lang="es">Todas</span><span data-lang="en">All</span></button>
+      <button type="button" class="catx-catpill" onclick="catxCatPill('fibra',this)"><span data-lang="es">Fibra óptica</span><span data-lang="en">Fiber optic</span></button>
+      <button type="button" class="catx-catpill" onclick="catxCatPill('rf',this)"><span data-lang="es">RF y cobertura</span><span data-lang="en">RF & coverage</span></button>
+      <button type="button" class="catx-catpill" onclick="catxCatPill('infra',this)"><span data-lang="es">Infraestructura</span><span data-lang="en">Infrastructure</span></button>
+      <button type="button" class="catx-catpill" onclick="catxCatPill('dc',this)"><span data-lang="es">Data centers</span><span data-lang="en">Data centers</span></button>
+      <button type="button" class="catx-catpill" onclick="catxCatPill('monitor',this)"><span data-lang="es">Monitoreo</span><span data-lang="en">Monitoring</span></button>
+      <button type="button" class="catx-catpill" onclick="catxCatPill('energia',this)"><span data-lang="es">Energía</span><span data-lang="en">Energy</span></button>
+    </div>
+    <div class="catx-prod-grid" id="catxProducts"></div>
+    <p class="catx-prod-empty" id="catxProdEmpty"><span data-lang="es">Sin resultados. Prueba con otra marca o categoría.</span><span data-lang="en">No results. Try another brand or category.</span></p>
+
+    <!-- ── Explorar las 6 líneas completas ── -->
+    <div class="catx-shop-divider"></div>
+    <div class="centered rv" style="margin-top:36px;margin-bottom:4px">
+      <h3 class="s-title" style="font-size:clamp(1.3rem,2vw,1.75rem)"><span data-lang="es">Explora las <span>6 líneas completas</span></span><span data-lang="en">Explore the <span>6 full lines</span></span></h3>
+      <p class="s-sub"><span data-lang="es">Cada línea con su catálogo, marcas y datasheet.</span><span data-lang="en">Each line with its catalog, brands and datasheet.</span></p>
     </div>
 
     <!-- ── Bento grid de 6 categorías ── -->
@@ -9704,6 +9772,7 @@ function setLang(lang){
   document.getElementById('mob-en').classList.toggle('active',lang==='en');
   document.getElementById('langSw').classList.remove('open');
   if(typeof renderCatalogDetail==='function')renderCatalogDetail(currentCatalogKey);
+  if(typeof renderCatxProducts==='function')renderCatxProducts();
   localStorage.setItem('mtg-lang',lang);
 }
 function toggleLangDrop(){document.getElementById('langSw').classList.toggle('open')}
@@ -10212,6 +10281,7 @@ function catxFilter(query){
   });
 
   empty.style.display = visible === 0 ? 'block' : 'none';
+  if(typeof renderCatxProducts==='function') renderCatxProducts();
 }
 
 function catxClearSearch(){
@@ -10247,7 +10317,73 @@ function catxBrandBtn(brand, btn){
   // Also clear text search when filtering by brand
   const input = document.getElementById('catxSearch');
   if(input) { input.value = ''; document.getElementById('catxSearchClear').style.display='none'; }
+  renderCatxProducts();
 }
+
+// ═══ Vista TIENDA: productos como protagonistas ══════════════════════
+// Lista plana de todos los productos destacados (con imagen real) de las
+// 6 líneas. Se filtra por categoría (pills), marca (filtro existente) y
+// buscador. Los "más buscados" salen primero con su badge.
+const CATX_POP = new Set(['AXS-120','MaxTester 715D','FiberWatch RTU','Modelo 43 Wattmeter','Vue 3 — 16 circuitos','RFeye Node 100-8']);
+const CATX_BKEY = {'EXFO':'exfo','N-TEST':'n-test','Bird':'bird','CRFS':'crfs','PROMAX':'promax','KHIPU':'khipu','PROSE':'prose','GL Communications':'gl','AEM Networks':'aem','Emporia':'emporia'};
+const CATX_PRODUCTS = (function(){
+  const out=[]; const seen={};
+  CATX_ORDER.forEach(cat=>{
+    const d=CATX_DATA[cat];
+    (d.featured||[]).forEach(f=>{
+      if(seen[f.name]) return;          // evita el mismo producto en 2 líneas
+      seen[f.name]=1;
+      out.push({cat:cat, brand:f.brand, bkey:CATX_BKEY[f.brand]||'', name:f.name, img:f.img, desc:f.desc, pdf:d.pdf, pop:CATX_POP.has(f.name)});
+    });
+  });
+  return out.sort(function(a,b){return (b.pop?1:0)-(a.pop?1:0);});
+})();
+let _catxCat='all';
+function catxCatPill(cat,btn){
+  _catxCat=cat;
+  document.querySelectorAll('.catx-catpill').forEach(function(b){b.classList.remove('on');});
+  if(btn)btn.classList.add('on');
+  renderCatxProducts();
+}
+function renderCatxProducts(){
+  const grid=document.getElementById('catxProducts');
+  if(!grid) return;
+  const lang=document.documentElement.classList.contains('lang-en')?'en':'es';
+  const si=document.getElementById('catxSearch');
+  const q=((si&&si.value)||'').toLowerCase().trim();
+  const ab=(typeof _activeBrand!=='undefined')?_activeBrand:'all';
+  const list=CATX_PRODUCTS.filter(function(p){
+    if(_catxCat!=='all' && p.cat!==_catxCat) return false;
+    if(ab!=='all' && p.bkey!==ab) return false;
+    if(q){ var hay=(p.brand+' '+p.name+' '+p.desc.es+' '+p.desc.en).toLowerCase(); if(hay.indexOf(q)<0) return false; }
+    return true;
+  });
+  const cnt=document.getElementById('catxProdCount');
+  if(cnt) cnt.textContent=list.length;
+  const empty=document.getElementById('catxProdEmpty');
+  if(empty) empty.style.display=list.length?'none':'block';
+  grid.innerHTML=list.map(function(p){
+    var wa='https://wa.me/50766743062?text='+encodeURIComponent('Hola, me interesa el producto '+p.brand+' '+p.name);
+    var ficha=(p.pdf && /^https?:/.test(p.pdf))
+      ? '<a class="catx-pc-ficha" href="'+p.pdf+'" target="_blank" rel="noopener" aria-label="Ficha tecnica"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></a>'
+      : '';
+    var hot=p.pop ? '<span class="catx-pc-hot">'+(lang==='en'?'Most wanted':'Más buscado')+'</span>' : '';
+    return '<article class="catx-pcard">'
+      + '<button type="button" class="catx-pc-img" onclick="openCatX(\''+p.cat+'\')" aria-label="'+p.brand+' '+p.name+'">'
+      + hot
+      + '<img src="'+p.img+'" alt="'+p.brand+' '+p.name+'" loading="lazy" data-cat="'+p.cat+'" data-label="'+(p.brand+' · '+p.name).replace(/"/g,'&quot;')+'" onerror="catxFeatImgError(this)">'
+      + '</button>'
+      + '<div class="catx-pc-body">'
+      + '<span class="catx-pc-brand">'+p.brand+'</span>'
+      + '<h4 class="catx-pc-name">'+p.name+'</h4>'
+      + '<p class="catx-pc-desc">'+p.desc[lang]+'</p>'
+      + '<div class="catx-pc-actions">'
+      + '<a class="catx-pc-cot" href="'+wa+'" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" width="15" height="15"><use href="#i-message"/></svg></span>'+(lang==='en'?'Quote':'Cotizar')+'</a>'
+      + ficha
+      + '</div></div></article>';
+  }).join('');
+}
+renderCatxProducts();
 
 // Ctrl+K / Cmd+K focuses catalog search if catalog is in viewport
 document.addEventListener('keydown', e => {
