@@ -2594,13 +2594,7 @@ html{scroll-behavior:smooth}
 /* Scroll progress bar */
 #scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#14b8a6,#06b6d4,#6366f1);z-index:9999;transition:width .1s linear;border-radius:0 2px 2px 0}
 
-/* Floating WhatsApp button */
-.wa-fab{position:fixed;bottom:28px;right:28px;z-index:8000;display:flex;align-items:center;gap:10px;background:#25d366;color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;padding:14px 20px 14px 16px;border-radius:50px;box-shadow:0 6px 32px rgba(37,211,102,.45);text-decoration:none;transition:transform .2s ease,box-shadow .2s ease;animation:waPulse 2.5s ease-in-out infinite}
-.wa-fab:hover{transform:scale(1.06) translateY(-2px);box-shadow:0 10px 40px rgba(37,211,102,.6);color:#fff}
-.wa-fab svg{width:22px;height:22px;fill:#fff;flex-shrink:0}
-.wa-fab-txt{white-space:nowrap}
-@keyframes waPulse{0%,100%{box-shadow:0 6px 32px rgba(37,211,102,.45)}50%{box-shadow:0 6px 32px rgba(37,211,102,.45),0 0 0 8px rgba(37,211,102,.12)}}
-@media(max-width:600px){.wa-fab-txt{display:none}.wa-fab{padding:16px}}
+/* (Píldora flotante de WhatsApp eliminada — reemplazada por el FAB con menú .wa-wrap) */
 
 /* Emporia card product images — white bg for official PNGs */
 .emp-card-img{background:#fff;border-radius:14px 14px 0 0;overflow:hidden}
@@ -4651,8 +4645,6 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
   .mob-link,.mob-sub-item{padding:14px 18px}
   .mob-link{font-size:.95rem}
 
-  /* WhatsApp FAB */
-  #wa-fab{bottom:16px!important;right:16px!important}
 }
 
 /* ── Very small screens (≤400px) ── */
@@ -5411,11 +5403,7 @@ body.catx-q-locked{overflow:hidden}
 <!-- Scroll progress bar (conectado al JS existente via id="prog") -->
 <div id="scroll-progress" style="display:none"></div>
 
-<!-- Floating WhatsApp button -->
-<a href="https://wa.me/50766743062?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Medidor%20Inteligente" target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp MTG">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.99 2C6.47 2 2 6.47 2 12c0 1.797.476 3.505 1.322 4.99L2 22l5.125-1.298A9.953 9.953 0 0 0 11.99 22C17.51 22 22 17.53 22 12S17.51 2 11.99 2zm0 18c-1.652 0-3.197-.456-4.516-1.24l-.323-.19-3.044.77.806-2.965-.21-.337A7.948 7.948 0 0 1 3.99 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
-  <span class="wa-fab-txt">WhatsApp</span>
-</a>
+<!-- (Píldora flotante de WhatsApp eliminada — reemplazada por el FAB con menú al final del body) -->
 
 <!-- ═══ SVG ICON SPRITE (reutilizable via <svg><use href="#i-..."/></svg>) ═══ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
