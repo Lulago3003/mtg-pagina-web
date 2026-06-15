@@ -4460,7 +4460,7 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
   body{overflow-x:hidden}
   .container{padding:0 18px}
   .sec{padding:60px 0}
-  h1,h2,h3{word-wrap:break-word;hyphens:auto}
+  h1,h2,h3{word-wrap:break-word;hyphens:manual}
 
   /* ── Energía gateway ── */
   #energia-gateway{padding:54px 0}
@@ -4666,6 +4666,11 @@ html.dark #prog{background:linear-gradient(90deg,#3b82f6,#0ea5e9) !important}
   .catx-stats-bar{flex-direction:column}
   .catx-stat{flex:1 1 100%}
   .ftr-grid{grid-template-columns:1fr!important}
+  /* About stats: tighter so 3 cols breathe on tiny screens */
+  #about .about-stats{gap:6px}
+  #about .astat{padding:12px 6px}
+  #about .astat-v{font-size:1.3rem}
+  #about .astat-l{font-size:.55rem;letter-spacing:.3px;line-height:1.25}
 }
 
 /* ── Landscape mobile: avoid hero taking full screen height ── */
