@@ -911,7 +911,7 @@ html.dark .cat-filters-wrap::after{background:linear-gradient(to left,rgba(8,13,
 .svc-list{list-style:none;display:flex;flex-direction:column;gap:7px;padding:0;margin:0 0 14px}
 .svc-list li{display:flex;align-items:flex-start;gap:8px;font-size:.77rem;color:var(--txt);line-height:1.55}
 .svc-list li::before{content:'›';color:var(--grn-lt);font-weight:800;font-size:.95rem;line-height:1.3;flex-shrink:0}
-.svc-value{margin-top:auto;padding:11px 14px;background:rgba(6,196,212,.06);border-left:2px solid var(--cyn);border-radius:0 8px 8px 0;font-size:.76rem;color:var(--txt);line-height:1.55;font-style:italic}
+.svc-value{margin-top:auto;padding:11px 14px;background:rgba(6,196,212,.06);border:1px solid rgba(6,196,212,.22);border-radius:10px;font-size:.76rem;color:var(--txt);line-height:1.55;font-style:italic}
 .svc-value strong{color:var(--cyn-lt);font-style:normal;font-weight:700;display:block;margin-bottom:2px;font-size:.62rem;text-transform:uppercase;letter-spacing:.6px}
 @media(max-width:1024px){#servicios .svc-grid{grid-template-columns:repeat(2,1fr) !important}#servicios .svc-card:nth-child(7){max-width:100% !important;margin:0 !important;grid-column:auto !important}}
 @media(max-width:600px){.svc-grid{grid-template-columns:1fr;gap:14px}}
@@ -2791,8 +2791,8 @@ footer .f-soc-em:hover{box-shadow:0 6px 20px rgba(37,99,235,.45) !important}
 /* valor box */
 .svc-value{
   background:linear-gradient(135deg,rgba(37,99,235,.06),rgba(124,58,237,.04)) !important;
-  border-left:3px solid #2563eb !important;
-  border-radius:0 10px 10px 0 !important;
+  border:1px solid rgba(37,99,235,.18) !important;
+  border-radius:12px !important;
   padding:12px 16px !important;
   color:#475569 !important;font-size:.8rem !important
 }
@@ -3382,6 +3382,28 @@ body.catx-modal-locked{overflow:hidden}
 .catx-nav-chip-num{font-size:.66rem;font-weight:800;opacity:.6}
 html.dark .catx-feat-ph{background:linear-gradient(135deg,rgba(37,99,235,.18),rgba(37,99,235,.08)) !important;color:#93b4ff !important}
 html.dark .catx-feat-ph-txt{color:#bcd0ff !important}
+
+/* ── Catálogo como PÁGINA propia (vista enrutada, estilo PROSE) ───────── */
+.catx-page{background:linear-gradient(180deg,#fafbff 0%,#eef2fa 100%);min-height:100vh}
+#catdetail.catx-page{padding:118px 0 80px !important}
+/* Fix idioma: el display:block del label "Resultado/Outcome" mostraba ES y EN a la vez */
+.catx-modal-value strong[data-lang]{display:none}
+.lang-es .catx-modal-value strong[data-lang="es"],
+.lang-en .catx-modal-value strong[data-lang="en"]{display:block}
+.catx-back{display:inline-flex;align-items:center;gap:9px;margin-bottom:22px;padding:11px 20px;border-radius:50px;border:1.5px solid rgba(37,99,235,.18);background:#fff;color:#1e293b;font-family:var(--ff-head);font-size:.88rem;font-weight:600;cursor:pointer;transition:transform .2s,border-color .2s,background .2s;box-shadow:0 2px 12px rgba(15,23,42,.06)}
+.catx-back:hover{border-color:#2563eb;background:#eff5ff;transform:translateX(-4px)}
+.catx-back svg{transition:transform .2s}
+.catx-back:hover svg{transform:translateX(-2px)}
+.catx-page-panel{position:relative;width:100%;max-width:1000px;margin:0 auto;max-height:none;transform:none;box-shadow:0 30px 80px rgba(15,23,42,.16),0 0 0 1px rgba(15,23,42,.05)}
+.catx-page-panel .catx-modal-body{overflow:visible;max-height:none}
+.catx-page-panel .catx-modal-hero{height:clamp(220px,32vw,320px)}
+.catx-page-panel .catx-modal-footer{position:sticky;bottom:0;border-radius:0 0 24px 24px}
+html.dark .catx-page{background:linear-gradient(180deg,#0b1120 0%,#0a0f1c 100%)}
+@media(max-width:640px){
+  #catdetail.catx-page{padding:92px 0 64px !important}
+  .catx-page-panel{border-radius:20px}
+  .catx-page-panel .catx-modal-footer{flex-direction:column}
+}
 html.dark .catx-nav-chip{background:rgba(13,20,38,.9) !important;border-color:rgba(255,255,255,.1) !important;color:#cbd5e1 !important}
 html.dark .catx-nav-chip:hover{background:rgba(37,99,235,.2) !important;border-color:#3b82f6 !important}
 .catx-feat-body{padding:10px 12px 12px}
@@ -5966,27 +5988,27 @@ body.catx-q-locked{overflow:hidden}
           <a><span data-lang="es">Productos</span><span data-lang="en">Products</span> <span class="drop-arr">▾</span></a>
           <div class="nav-drop">
             <div class="nd-grid nd-grid-3">
-              <a href="#productos" class="nd-item">
+              <a href="#cat-fibra" data-catx="fibra" class="nd-item">
                 <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&auto=format&fit=crop&q=70')"></div>
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-fiber"/></svg></span> <span data-lang="es">Fibra Óptica</span><span data-lang="en">Fiber Optic</span></span><span class="nd-desc"><span data-lang="es">Cables · ODF · Splitters</span><span data-lang="en">Cables · ODF · Splitters</span></span><div class="nd-bar"></div></div>
               </a>
-              <a href="#productos" class="nd-item">
+              <a href="#cat-rf" data-catx="rf" class="nd-item">
                 <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&auto=format&fit=crop&q=70')"></div>
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-signal"/></svg></span> <span data-lang="es">RF y Cobertura</span><span data-lang="en">RF & Coverage</span></span><span class="nd-desc"><span data-lang="es">DAS · Antenas · Repetidores</span><span data-lang="en">DAS · Antennas · Repeaters</span></span><div class="nd-bar"></div></div>
               </a>
-              <a href="#productos" class="nd-item">
+              <a href="#cat-infra" data-catx="infra" class="nd-item">
                 <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&auto=format&fit=crop&q=70')"></div>
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-tower"/></svg></span> <span data-lang="es">Infraestructura Telecom</span><span data-lang="en">Telecom Infra</span></span><span class="nd-desc"><span data-lang="es">Torres · Racks · Prose</span><span data-lang="en">Towers · Racks · Prose</span></span><div class="nd-bar"></div></div>
               </a>
-              <a href="#productos" class="nd-item">
+              <a href="#cat-dc" data-catx="dc" class="nd-item">
                 <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1580584126903-c17d41830450?w=400&auto=format&fit=crop&q=70')"></div>
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-server"/></svg></span> Data Centers</span><span class="nd-desc">KHIPU · Modular · Outdoor</span><div class="nd-bar"></div></div>
               </a>
-              <a href="#productos" class="nd-item">
+              <a href="#cat-monitor" data-catx="monitor" class="nd-item">
                 <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&auto=format&fit=crop&q=70')"></div>
                 <div class="nd-item-ov"></div>
                 <div class="nd-item-c"><span class="nd-title"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-chart"/></svg></span> <span data-lang="es">Monitoreo Redes</span><span data-lang="en">Network Monitoring</span></span><span class="nd-desc">N-Test · OTDR · OPM</span><div class="nd-bar"></div></div>
@@ -6059,34 +6081,7 @@ body.catx-q-locked{overflow:hidden}
           </div>
         </li>
 
-        <!-- MERCADOS -->
-        <li>
-          <a><span data-lang="es">Mercados</span><span data-lang="en">Markets</span> <span class="drop-arr">▾</span></a>
-          <div class="nav-drop">
-            <div class="nd-grid nd-grid-2">
-              <a href="#solutions" class="nd-item">
-                <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&auto=format&fit=crop&q=70')"></div>
-                <div class="nd-item-ov"></div>
-                <div class="nd-item-c"><span class="nd-title"><span data-lang="es">Residencial</span><span data-lang="en">Residential</span></span><span class="nd-desc"><span data-lang="es">Hogares · Aptos</span><span data-lang="en">Homes · Apts</span></span><div class="nd-bar"></div></div>
-              </a>
-              <a href="#solutions" class="nd-item">
-                <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&auto=format&fit=crop&q=70')"></div>
-                <div class="nd-item-ov"></div>
-                <div class="nd-item-c"><span class="nd-title"><span data-lang="es">Comercial</span><span data-lang="en">Commercial</span></span><span class="nd-desc"><span data-lang="es">Oficinas · Locales</span><span data-lang="en">Offices · Stores</span></span><div class="nd-bar"></div></div>
-              </a>
-              <a href="#solutions" class="nd-item">
-                <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&auto=format&fit=crop&q=70')"></div>
-                <div class="nd-item-ov"></div>
-                <div class="nd-item-c"><span class="nd-title"><span data-lang="es">Industrial</span><span data-lang="en">Industrial</span></span><span class="nd-desc"><span data-lang="es">Talleres · Plantas</span><span data-lang="en">Workshops · Plants</span></span><div class="nd-bar"></div></div>
-              </a>
-              <a href="#solutions" class="nd-item">
-                <div class="nd-item-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&auto=format&fit=crop&q=70')"></div>
-                <div class="nd-item-ov"></div>
-                <div class="nd-item-c"><span class="nd-title"><span data-lang="es">Edificios</span><span data-lang="en">Buildings</span></span><span class="nd-desc"><span data-lang="es">Áreas comunes</span><span data-lang="en">Common areas</span></span><div class="nd-bar"></div></div>
-              </a>
-            </div>
-          </div>
-        </li>
+        <!-- (Menú "Mercados" retirado a pedido — la segmentación por tipo de propiedad vive dentro de Medidor Inteligente) -->
         <li><a href="#cta-sec"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a></li>
       </ul>
 
@@ -6129,11 +6124,11 @@ body.catx-q-locked{overflow:hidden}
   </div>
   <div class="mob-link" onclick="toggleMobSub('sub3')"><span data-lang="es">Productos</span><span data-lang="en">Products</span> <span>›</span></div>
   <div class="mob-sub" id="sub3">
-    <div class="mob-sub-item" onclick="closeMobGo('#productos')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-fiber"/></svg></span> <span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-fiber"/></svg></span> <span data-lang="es">Fibra Óptica</span><span data-lang="en">Fiber Optic</span></div>
-    <div class="mob-sub-item" onclick="closeMobGo('#productos')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-signal"/></svg></span> 02 · <span data-lang="es">RF y Cobertura</span><span data-lang="en">RF & Coverage</span></div>
-    <div class="mob-sub-item" onclick="closeMobGo('#productos')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-tower"/></svg></span> <span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-tower"/></svg></span> <span data-lang="es">Infraestructura Telecom</span><span data-lang="en">Telecom Infrastructure</span></div>
-    <div class="mob-sub-item" onclick="closeMobGo('#productos')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-server"/></svg></span> 04 · Data Centers & <span data-lang="es">Redes</span><span data-lang="en">Networks</span></div>
-    <div class="mob-sub-item" onclick="closeMobGo('#productos')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-chart"/></svg></span> 05 · <span data-lang="es">Monitoreo de Redes</span><span data-lang="en">Network Monitoring</span></div>
+    <div class="mob-sub-item" onclick="mobCat('fibra')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-fiber"/></svg></span> <span data-lang="es">Fibra Óptica</span><span data-lang="en">Fiber Optic</span></div>
+    <div class="mob-sub-item" onclick="mobCat('rf')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-signal"/></svg></span> <span data-lang="es">RF y Cobertura</span><span data-lang="en">RF & Coverage</span></div>
+    <div class="mob-sub-item" onclick="mobCat('infra')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-tower"/></svg></span> <span data-lang="es">Infraestructura Telecom</span><span data-lang="en">Telecom Infrastructure</span></div>
+    <div class="mob-sub-item" onclick="mobCat('dc')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-server"/></svg></span> Data Centers</div>
+    <div class="mob-sub-item" onclick="mobCat('monitor')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-chart"/></svg></span> <span data-lang="es">Monitoreo de Redes</span><span data-lang="en">Network Monitoring</span></div>
     <div class="mob-sub-item" onclick="closeMobGo('#productos')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span> <span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span> <span data-lang="es">Monitoreo Energético</span><span data-lang="en">Energy Monitoring</span></div>
     <div class="mob-sub-item" onclick="closeMobGo('#relojes')" style="color:#c084fc;font-weight:600">⌚ <span data-lang="es">Relojes GPS &amp; Seguridad</span><span data-lang="en">GPS Watches &amp; Security</span></div>
     <div class="mob-sub-item" onclick="closeMobGo('#shockwatch')" style="color:#fdba74;font-weight:600">⚠️ <span data-lang="es">ShockWatch · Detectores de Impacto</span><span data-lang="en">ShockWatch · Impact Detectors</span></div>
@@ -6148,12 +6143,6 @@ body.catx-q-locked{overflow:hidden}
     <div class="mob-sub-item" onclick="closeMobGo('#servicios')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-key"/></svg></span> <span data-lang="es">Llave en mano</span><span data-lang="en">Turnkey</span></div>
     <div class="mob-sub-item" onclick="closeMobGo('#servicios')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-puzzle"/></svg></span> <span data-lang="es">Integración</span><span data-lang="en">Integration</span></div>
     <div class="mob-sub-item" onclick="closeMobGo('#solutions')"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-bolt"/></svg></span> <span data-lang="es">Medidor Inteligente</span><span data-lang="en">Smart Metering</span></div>
-  </div>
-  <div class="mob-link" onclick="toggleMobSub('sub4')"><span data-lang="es">Mercados</span><span data-lang="en">Markets</span> <span>›</span></div>
-  <div class="mob-sub" id="sub4">
-    <div class="mob-sub-item" onclick="closeMobGo('#solutions')"><span data-lang="es">Residencial</span><span data-lang="en">Residential</span></div>
-    <div class="mob-sub-item" onclick="closeMobGo('#solutions')"><span data-lang="es">Comercial</span><span data-lang="en">Commercial</span></div>
-    <div class="mob-sub-item" onclick="closeMobGo('#solutions')"><span data-lang="es">Industrial</span><span data-lang="en">Industrial</span></div>
   </div>
   <div class="mob-link" onclick="closeMobGo('#cta-sec')"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></div>
   <div class="mob-div"></div>
@@ -6898,12 +6887,14 @@ body.catx-q-locked{overflow:hidden}
 <!-- ═══════════════════════════════════════════════════════════
      MODAL DE DETALLE — Catálogo
 ═══════════════════════════════════════════════════════════ -->
-<div class="catx-modal" id="catxModal" role="dialog" aria-modal="true" aria-labelledby="catxModalTitle" hidden>
-  <div class="catx-modal-overlay" onclick="closeCatX()"></div>
-  <div class="catx-modal-panel">
-    <button type="button" class="catx-modal-close" onclick="closeCatX()" aria-label="Cerrar">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+<!-- ═══ DETALLE DE CATÁLOGO · vista propia por línea (pestaña, estilo PROSE) ═══ -->
+<section class="sec catx-page" id="catdetail" data-view="catdetail" aria-labelledby="catxModalTitle">
+  <div class="container">
+    <button type="button" class="catx-back" onclick="catxBack()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span data-lang="es">Volver al catálogo</span><span data-lang="en">Back to catalog</span>
     </button>
+    <div class="catx-modal-panel catx-page-panel">
 
     <div class="catx-modal-hero">
       <img id="catxModalImg" src="" alt="" loading="lazy">
@@ -6968,8 +6959,9 @@ body.catx-q-locked{overflow:hidden}
         <span data-lang="es">Cotizar por WhatsApp</span><span data-lang="en">Quote on WhatsApp</span>
       </a>
     </div>
-  </div>
-</div>
+    </div><!-- /.catx-page-panel -->
+  </div><!-- /.container -->
+</section>
 
 
 
@@ -9399,7 +9391,7 @@ body.catx-q-locked{overflow:hidden}
           <li><a href="https://wa.me/50766743062" target="_blank" rel="noopener"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-message"/></svg></span> +507 6674-3062</a></li>
           <li><a href="mailto:meta.tecpty@gmail.com"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-mail"/></svg></span> meta.tecpty@gmail.com</a></li>
           <li><a href="https://www.instagram.com/metatecglobal/" target="_blank" rel="noopener"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2zM17.5 6.5h.01"/></svg></span> @metatecglobal</a></li>
-          <li><a href="#"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-pin"/></svg></span> <span data-lang="es">San Francisco, Panamá</span><span data-lang="en">San Francisco, Panama</span></a></li>
+          <li><a href="https://maps.app.goo.gl/wtqi5NnLH8ZkPtXU7?g_st=ic" target="_blank" rel="noopener" title="Ver ubicación en Google Maps"><span class="ico ico-sm" style="vertical-align:-0.15em"><svg><use href="#i-pin"/></svg></span> <span data-lang="es">San Francisco, Panamá</span><span data-lang="en">San Francisco, Panama</span></a></li>
         </ul>
       </div>
     </div>
@@ -9452,7 +9444,7 @@ body.catx-q-locked{overflow:hidden}
 <script>
 /* ═══ ROUTER DE VISTAS — una sola página, estilo YouTube tabs ═══ */
 document.documentElement.classList.add('vw');
-window.VIEW_OF={hero:'home',about:'home',trustbar:'home','energia-gateway':'home','relojes-gateway':'home','prose-home':'home','shock-home':'home',testimonials:'home',faq:'home','cta-sec':'home',contacto:'home',servicios:'servicios',productos:'catalogo',catalogo:'catalogo',prose:'prose',casos:'casos',solutions:'medidor',markets:'medidor',how:'medidor','dash-sec':'medidor',visualization:'medidor',comparativa:'medidor','video-sec':'medidor','emporia-eco':'medidor',medidor:'medidor',relojes:'relojes',shockwatch:'shockwatch'};
+window.VIEW_OF={hero:'home',about:'home',trustbar:'home','energia-gateway':'home','relojes-gateway':'home','prose-home':'home','shock-home':'home',testimonials:'home',faq:'home','cta-sec':'home',contacto:'home',servicios:'servicios',productos:'catalogo',catalogo:'catalogo',prose:'prose',casos:'casos',solutions:'medidor',markets:'medidor',how:'medidor','dash-sec':'medidor',visualization:'medidor',comparativa:'medidor','video-sec':'medidor','emporia-eco':'medidor',medidor:'medidor',relojes:'relojes',shockwatch:'shockwatch',catdetail:'catdetail'};
 
 /* ═══ Image cycler para los relojes (data-cycle) ═══ */
 (function(){
@@ -9490,13 +9482,25 @@ window.navTo=function(id){
 };
 document.addEventListener('click',function(e){
   var a=e.target.closest('a[href^="#"]'); if(!a) return;
+  // Acceso directo a una pestaña de catálogo desde el menú (data-catx="fibra"…)
+  var cx=a.getAttribute('data-catx');
+  if(cx){ e.preventDefault(); if(typeof openCatX==='function') openCatX(cx); return; }
   var h=a.getAttribute('href'); if(!h||h.length<2) return;
   var id=h.slice(1);
   if(window.VIEW_OF[id]!==undefined){ e.preventDefault(); window.navTo(id); }
 },true);
+// Helper para el menú móvil: cierra el panel y abre la pestaña de catálogo
+window.mobCat=function(c){ try{ if(typeof closeMob==='function') closeMob(); }catch(e){} if(typeof openCatX==='function') openCatX(c); };
 window.closeMobGo=function(h){ try{ if(typeof closeMob==='function') closeMob(); }catch(e){} window.navTo(h); };
 window.addEventListener('DOMContentLoaded',function(){
   var h=location.hash ? location.hash.slice(1) : '';
+  // Deep-link a una pestaña de catálogo: #cat-fibra, #cat-rf, …
+  if(/^cat-/.test(h)){
+    window.showView('catdetail');
+    var c=h.slice(4);
+    setTimeout(function(){ if(typeof openCatX==='function') openCatX(c); },0);
+    return;
+  }
   window.showView( (h && window.VIEW_OF[h]) ? window.VIEW_OF[h] : 'home' );
 });
 
@@ -9925,6 +9929,8 @@ function setLang(lang){
   document.getElementById('langSw').classList.remove('open');
   if(typeof renderCatalogDetail==='function')renderCatalogDetail(currentCatalogKey);
   if(typeof renderCatxProducts==='function')renderCatxProducts();
+  // Si hay una pestaña de catálogo abierta, re-render en el nuevo idioma (sin saltar scroll)
+  if(typeof openCatX==='function' && window._catxCurrent && document.querySelector('section[data-view="catdetail"].vw-active')) openCatX(window._catxCurrent,{keep:true});
   localStorage.setItem('mtg-lang',lang);
 }
 function toggleLangDrop(){document.getElementById('langSw').classList.toggle('open')}
@@ -10354,11 +10360,11 @@ function catxFeatImgError(img){
   img.parentElement.appendChild(ph);
 }
 
-function openCatX(cat){
+function openCatX(cat, opts){
   const data = CATX_DATA[cat];
   if(!data) return;
   const lang = document.documentElement.classList.contains('lang-en') ? 'en' : 'es';
-  const modal = document.getElementById('catxModal');
+  window._catxCurrent = cat;
 
   // Hero
   const img = document.getElementById('catxModalImg');
@@ -10423,24 +10429,27 @@ function openCatX(cat){
   document.getElementById('catxModalPdf').href = data.pdf;
   document.getElementById('catxModalWA').href = `https://wa.me/50766743062?text=${data.waText}`;
 
-  // Show
-  modal.removeAttribute('hidden');
-  requestAnimationFrame(() => modal.classList.add('catx-modal-open'));
-  document.body.classList.add('catx-modal-locked');
+  // Mostrar como vista/página propia — cada línea tiene su pestaña: #cat-<cat>
+  if(window.showView) window.showView('catdetail');
+  // opts.keep = re-render por cambio de idioma sin saltar el scroll
+  if(!(opts && opts.keep)){
+    try{ window.scrollTo({top:0,behavior:'auto'}); }catch(e){ window.scrollTo(0,0); }
+    try{ history.replaceState(null,'','#cat-'+cat); }catch(e){}
+  }
 }
 
-function closeCatX(){
-  const modal = document.getElementById('catxModal');
-  modal.classList.remove('catx-modal-open');
-  document.body.classList.remove('catx-modal-locked');
-  setTimeout(() => { modal.setAttribute('hidden',''); }, 300);
+// Volver al catálogo (la "X" / botón atrás ahora navega como página)
+function catxBack(){
+  if(window.navTo) window.navTo('productos'); else location.hash = 'productos';
 }
+// Compat: cualquier referencia antigua a closeCatX vuelve al catálogo
+function closeCatX(){ catxBack(); }
 
-// ESC to close modal
+// ESC → volver al catálogo cuando estás en la vista de detalle
 document.addEventListener('keydown', e => {
   if(e.key === 'Escape'){
-    const modal = document.getElementById('catxModal');
-    if(modal && modal.classList.contains('catx-modal-open')) closeCatX();
+    const cur = document.querySelector('section[data-view="catdetail"].vw-active');
+    if(cur) catxBack();
   }
 });
 
