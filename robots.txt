@@ -1,7 +1,5 @@
-# Meta Technology Global — robots.txt
+# Meta Technology Global
 User-agent: *
 Allow: /
-Disallow: /assets/*.pdf$
-Crawl-delay: 1
 
 Sitemap: https://mtglobalpa.com/sitemap.xml

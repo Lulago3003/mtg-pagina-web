@@ -1,9 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mtglobalpa.com/</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/"/>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/catalogo.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/catalogo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/catalogo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/en/catalogo.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/catalogo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/catalogo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/data-centers.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/data-centers.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/data-centers.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/en/data-centers.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/data-centers.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/data-centers.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/fibra-optica.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/fibra-optica.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/fibra-optica.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/en/fibra-optica.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/fibra-optica.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/fibra-optica.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/infraestructura.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/infraestructura.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/infraestructura.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/en/infraestructura.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/infraestructura.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/infraestructura.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/medidor.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/medidor.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/medidor.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/en/medidor.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/medidor.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/medidor.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/monitoreo-redes.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/monitoreo-redes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/monitoreo-redes.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/en/monitoreo-redes.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/monitoreo-redes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/monitoreo-redes.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/prose.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/prose.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/prose.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/en/prose.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/prose.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/prose.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/relojes.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/relojes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/relojes.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/en/relojes.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/relojes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/relojes.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/rf-cobertura.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/rf-cobertura.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/rf-cobertura.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/en/rf-cobertura.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/rf-cobertura.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/rf-cobertura.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/servicios.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/servicios.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/en/servicios.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/servicios.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/shockwatch.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/shockwatch.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/shockwatch.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mtglobalpa.com/en/shockwatch.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mtglobalpa.com/shockwatch.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mtglobalpa.com/en/shockwatch.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
